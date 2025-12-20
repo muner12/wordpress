@@ -1,0 +1,477 @@
+/* About Book Page Specific Styles */
+
+/* Page Background */
+.about-book-page {
+    background: #FFFFFF;
+}
+
+.about-book-page .top-bar {
+    background-color: var(--primary-blue) !important;
+}
+
+/* About Book Hero Section (White background, 20px border-radius, padding 40px 150px 80px) */
+.about-book-hero-section {
+    background: #FFFFFF;
+    padding: 40px 150px 80px;
+    border-radius: 20px;
+    margin: 0 56px 58px;
+}
+
+.about-book-page-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
+
+.about-book-page-title .text-primary-blue {
+    color: var(--primary-blue) !important;
+}
+
+.about-book-page-title .text-warning {
+    color: var(--primary-yellow) !important;
+}
+
+/* Book Main Title */
+.book-section-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #4E4E4E;
+    margin-bottom: 24px;
+    letter-spacing: 0;
+}
+
+/* Book Intro Highlight - Bold blue text */
+.book-intro-highlight {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    color: #275BA7;
+}
+
+/* Book Description Text */
+.book-description-text {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    color: #000000;
+}
+
+/* Book Description Subheading */
+.book-description-subheading {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    color: #000000;
+}
+
+/* Book Rating */
+.book-rating-number {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.25;
+    color: #333333;
+}
+
+/* Excerpts Section */
+.excerpts-section {
+    border-color: #9BA6A7 !important;
+}
+
+.excerpts-title {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.3;
+    color: #061E40;
+}
+
+/* Excerpts Toggle Button - Circle with chevron */
+.excerpts-toggle-btn {
+    width: 28px;
+    height: 28px;
+    border-color: #000000 !important;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.excerpts-toggle-btn:hover {
+    background: #f8f9fa;
+}
+
+.excerpts-toggle-btn i {
+    font-size: 12px;
+    color: #000000;
+    transition: transform 0.3s ease;
+}
+
+.excerpts-toggle-btn[aria-expanded="false"] i {
+    transform: rotate(-90deg);
+}
+
+.excerpts-list a {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #4D4D4D;
+    transition: all 0.3s ease;
+}
+
+.excerpts-list li:first-child a {
+    color: #275BA7;
+    line-height: 1.55;
+    font-weight: 500;
+}
+
+.excerpts-list a:hover {
+    color: #275BA7;
+    text-decoration: underline;
+}
+
+/* Book Action Buttons (Figma: Preview Book - Poppins 700, 24px; Send Email - Open Sans 700, 24px) */
+.about-book-actions .btn {
+    padding: 16px 32px;
+    border-radius: 6.71px;
+    border-width: 2px;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.btn-preview-book {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background-color: #FAD30C;
+    border-color: #FAD30C;
+    color: #333333;
+}
+
+.btn-preview-book:hover {
+    background-color: #e5c00b;
+    border-color: #e5c00b;
+    color: #333333;
+}
+
+.btn-email-book {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    background-color: transparent;
+    border-color: #FAD30C;
+    color: #333333;
+}
+
+.btn-email-book:hover {
+    background-color: #FAD30C;
+    border-color: #FAD30C;
+    color: #333333;
+}
+
+/* About Book Reviews Section - Uses existing review-card styles from style.css */
+.about-book-reviews-section {
+    background: #FFFFFF;
+    padding: 60px 0 80px;
+}
+
+.reviews-section-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #275BA7;
+}
+
+/* More From Todd Section (Figma: black background) */
+.more-from-todd-section {
+    background: transparent;
+    padding: 60px 0 80px;
+}
+
+.more-from-todd-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
+
+.more-from-todd-title .text-primary-blue {
+    color: var(--primary-blue) !important;
+}
+
+.more-from-todd-title .text-warning {
+    color: var(--primary-yellow) !important;
+}
+
+/* Book Card for More From Todd - White card on black background */
+.more-from-todd-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    max-width: 370px;
+    border: none;
+    padding: 20px;
+}
+
+.more-from-todd-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.12);
+}
+
+.more-from-todd-card-image-wrapper {
+    position: relative;
+    background: linear-gradient(135deg, #fef9dc 0%, #fef3a8 100%);
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.more-from-todd-card-image {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.more-from-todd-card-content {
+    padding: 0;
+    text-align: left;
+    background: transparent;
+}
+
+.more-from-todd-card-title {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.4;
+    color: #000000;
+    margin-bottom: 12px;
+    text-transform: capitalize;
+}
+
+.more-from-todd-card-author {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 12px;
+    text-transform: capitalize;
+}
+
+.more-from-todd-card-rating {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.more-from-todd-card-rating-stars {
+    display: flex;
+    gap: 5px;
+}
+
+.more-from-todd-card-rating-stars i {
+    color: #FF971D;
+    font-size: 21px;
+}
+
+.more-from-todd-card-rating-stars i.far {
+    color: #CCCCCC;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .about-book-main-title {
+        font-size: 36px;
+    }
+
+    .about-book-page-title {
+        font-size: 34px;
+    }
+
+    .book-section-title {
+        font-size: 38px;
+    }
+
+    .reviews-section-title {
+        font-size: 32px;
+    }
+
+    .more-from-todd-title {
+        font-size: 34px;
+    }
+
+    .about-book-actions {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1400px) {
+    .about-book-hero-section {
+        margin: 0 30px 40px;
+        padding: 40px 80px 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-book-hero-section {
+        padding: 20px 12px 40px;
+        margin: 0 12px 20px;
+        border-radius: 12px;
+    }
+
+    .about-book-hero-section .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .about-book-main-title {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .about-book-page-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
+
+    .book-section-title {
+        font-size: 32px;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+    }
+
+    .book-intro-highlight {
+        font-size: 16px;
+    }
+
+    .book-description-text {
+        font-size: 15px;
+    }
+
+    .reviews-section-title {
+        font-size: 28px;
+    }
+
+    .more-from-todd-title {
+        font-size: 28px;
+    }
+
+    .excerpts-list a {
+        font-size: 14px;
+    }
+
+    .excerpts-title {
+        font-size: 18px;
+    }
+
+    .about-book-actions .btn {
+        font-size: 15px;
+        padding: 14px 28px;
+    }
+
+    .book-rating-wrapper {
+        justify-content: center;
+    }
+
+    .excerpts-section {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-book-hero-section {
+        padding: 16px 12px 30px;
+        margin: 0 12px 16px;
+    }
+
+    .about-book-hero-section .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .about-book-page-title {
+        font-size: 24px;
+        margin-bottom: 16px;
+        line-height: 1.3;
+    }
+
+    .book-section-title {
+        font-size: 28px;
+        letter-spacing: 1.5px;
+        word-spacing: 3px;
+    }
+
+    .book-intro-highlight {
+        font-size: 15px;
+    }
+
+    .book-description-text {
+        font-size: 14px;
+    }
+
+    .book-rating-number {
+        font-size: 18px;
+    }
+
+    .about-book-main-title {
+        font-size: 24px;
+    }
+
+    .reviews-section-title {
+        font-size: 24px;
+    }
+
+    .more-from-todd-title {
+        font-size: 24px;
+    }
+
+    .more-from-todd-card {
+        max-width: 100%;
+    }
+
+    .more-from-todd-card-title {
+        font-size: 20px;
+    }
+
+    .more-from-todd-card-author {
+        font-size: 16px;
+    }
+
+    .excerpts-list a {
+        font-size: 13px;
+    }
+
+    .excerpts-title {
+        font-size: 16px;
+    }
+
+    .about-book-actions .btn {
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+}
+
