@@ -16,11 +16,11 @@
                 <div class="col-6 col-lg-4 mb-4 mb-lg-0 footer-services-column">
                     <h5 class="footer-title-yellow">SERVICES</h5>
                     <ul class="footer-list">
-                        <li><a href="<?php echo esc_url( toddpatkin_get_page_url( 'about-author', 'templates/template-about-author.php' ) ); ?>" class="footer-link">About Author</a></li>
-                        <li><a href="<?php echo esc_url( toddpatkin_get_page_url( 'expertise', 'templates/template-expertise.php' ) ); ?>" class="footer-link">Expertise</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/about-author' ) ); ?>" class="footer-link">About Author</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/expertise' ) ); ?>" class="footer-link">Expertise</a></li>
                         <li><a href="#books" class="footer-link">Author Books</a></li>
-                        <li><a href="<?php echo esc_url( toddpatkin_get_page_url( 'course', 'templates/template-course.php' ) ); ?>" class="footer-link">Courses</a></li>
-                        <li><a href="<?php echo esc_url( toddpatkin_get_page_url( 'blog', 'templates/template-blog.php' ) ); ?>" class="footer-link">Blogs</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/course' ) ); ?>" class="footer-link">Courses</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="footer-link">Blogs</a></li>
                         <li><a href="#video" class="footer-link">Videos</a></li>
                     </ul>
                 </div>

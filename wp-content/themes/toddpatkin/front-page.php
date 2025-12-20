@@ -88,7 +88,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href="<?php echo esc_url( toddpatkin_get_page_url( 'expertise', 'templates/template-expertise.php' ) ); ?>" class="btn btn-warning features-btn mb-1"><span class="btn-content">Explore
+                <a href="<?php echo esc_url( home_url( '/expertise' ) ); ?>" class="btn btn-warning features-btn mb-1"><span class="btn-content">Explore
                         More</span></a>
             </div>
         </div>
@@ -193,9 +193,9 @@
                                 <p class="book-description-text book-description-italic">You'll discover the exact strategies that transformed Todd's life and have since helped thousands find lasting joy. <strong>The book includes his proven, step-by-step "Twelve Weeks to Living a Happier Life" program</strong>—your clear roadmap to authentic happiness.</p>
                                 <p class="book-description-text">If you're tired of struggling on the inside while looking fine on the outside, this book is the way forward.</p>
                                 <div class="d-flex gap-3 flex-nowrap mb-1">
-                                    <a href="<?php echo esc_url( toddpatkin_get_page_url( 'preview-book', 'templates/template-preview-book.php' ) ); ?>" class="btn btn-warning btn-lg book-preview-btn"><span
+                                    <a href="<?php echo esc_url( home_url( '/preview-book' ) ); ?>" class="btn btn-warning btn-lg book-preview-btn"><span
                                             class="btn-content">PREVIEW BOOK</span></a>
-                                    <a href="<?php echo esc_url( toddpatkin_get_page_url( 'about-book', 'templates/template-about-book.php' ) ); ?>" class="btn btn-outline-dark btn-lg book-purchase-btn"><span
+                                    <a href="<?php echo esc_url( home_url( '/about-book' ) ); ?>" class="btn btn-outline-dark btn-lg book-purchase-btn"><span
                                             class="btn-content">PURCHASE BOOK</span></a>
                                 </div>
                             </div>
@@ -254,9 +254,9 @@
                                     employees—they must create passionate ones. This book will teach you how to develop
                                     a culture that does just that.</p>
                                 <div class="d-flex gap-3 flex-nowrap mb-4">
-                                    <a href="<?php echo esc_url( toddpatkin_get_page_url( 'preview-book', 'templates/template-preview-book.php' ) ); ?>" class="btn btn-warning btn-lg book-preview-btn"><span
+                                    <a href="<?php echo esc_url( home_url( '/preview-book' ) ); ?>" class="btn btn-warning btn-lg book-preview-btn"><span
                                             class="btn-content">PREVIEW BOOK</span></a>
-                                    <a href="<?php echo esc_url( toddpatkin_get_page_url( 'about-book', 'templates/template-about-book.php' ) ); ?>" class="btn btn-outline-dark btn-lg book-purchase-btn"><span
+                                    <a href="<?php echo esc_url( home_url( '/about-book' ) ); ?>" class="btn btn-outline-dark btn-lg book-purchase-btn"><span
                                             class="btn-content">PURCHASE BOOK</span></a>
                                 </div>
                 </div>
@@ -315,9 +315,9 @@
                                     employees—they must create passionate ones. This book will teach you how to develop
                                     a culture that does just that.</p>
                                 <div class="d-flex gap-3 flex-nowrap mb-4">
-                                    <a href="<?php echo esc_url( toddpatkin_get_page_url( 'preview-book', 'templates/template-preview-book.php' ) ); ?>" class="btn btn-warning btn-lg book-preview-btn"><span
+                                    <a href="<?php echo esc_url( home_url( '/preview-book' ) ); ?>" class="btn btn-warning btn-lg book-preview-btn"><span
                                             class="btn-content">PREVIEW BOOK</span></a>
-                                    <a href="<?php echo esc_url( toddpatkin_get_page_url( 'about-book', 'templates/template-about-book.php' ) ); ?>" class="btn btn-outline-dark btn-lg book-purchase-btn"><span
+                                    <a href="<?php echo esc_url( home_url( '/about-book' ) ); ?>" class="btn btn-outline-dark btn-lg book-purchase-btn"><span
                                             class="btn-content">PURCHASE BOOK</span></a>
                                 </div>
                             </div>
@@ -690,7 +690,7 @@
                                 <strong class="about-culture-blueprint">The Culture Blueprint:</strong> Todd transformed his insights into a comprehensive system that's helped thousands build sustainable happiness. His vulnerability in sharing his story—including the painful and embarrassing moments—has opened doors for others to acknowledge their own struggles and seek the help they deserve. Since the sale of the family business to Advance Auto Parts in 2005, Todd has devoted himself to his true passions: philanthropy, giving back, spending time with family and friends, and helping people discover genuine happiness.
                             </p>
                         </div>
-                        <a href="<?php echo esc_url( toddpatkin_get_page_url( 'about-author', 'templates/template-about-author.php' ) ); ?>" class="btn about-read-more-btn">READ MORE</a>
+                        <a href="<?php echo esc_url( home_url( '/about-author' ) ); ?>" class="btn about-read-more-btn">READ MORE</a>
                     </div>
                     <div class="about-image-wrapper d-none d-lg-block">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-todd-1eb55f.png" alt="Todd Patkin" class="about-image">
@@ -721,7 +721,7 @@
                 </div>
             </div>
             <div class="text-center mt-5">
-                <a href="<?php echo esc_url( toddpatkin_get_page_url( 'podcast', 'templates/template-podcast.php' ) ); ?>" class="btn btn-warning btn-lg"><span class="btn-content">View More</span></a>
+                <a href="<?php echo esc_url( home_url( '/podcast' ) ); ?>" class="btn btn-warning btn-lg"><span class="btn-content">View More</span></a>
             </div>
         </div>
     </section>
@@ -795,7 +795,7 @@
         </div>
 
         <div class="text-center mt-5">
-            <a href="<?php echo esc_url( toddpatkin_get_page_url( 'blog', 'templates/template-blog.php' ) ); ?>"
+            <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>"
                 class="btn btn-warning btn-lg">
                 <span class="btn-content">View More</span>
             </a>

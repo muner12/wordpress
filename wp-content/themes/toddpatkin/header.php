@@ -97,12 +97,12 @@
                     <?php
                     }
                     ?>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( toddpatkin_get_page_url( 'expertise', 'templates/template-expertise.php' ) ); ?>">Expertise</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( toddpatkin_get_page_url( 'about-book', 'templates/template-about-book.php' ) ); ?>">About Book</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( toddpatkin_get_page_url( 'about-author', 'templates/template-about-author.php' ) ); ?>">About Author</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( toddpatkin_get_page_url( 'course', 'templates/template-course.php' ) ); ?>">Course</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( toddpatkin_get_page_url( 'podcast', 'templates/template-podcast.php' ) ); ?>">Podcast</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( toddpatkin_get_page_url( 'blog', 'templates/template-blog.php' ) ); ?>">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/expertise' ) ); ?>">Expertise</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/about-book' ) ); ?>">About Book</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/about-author' ) ); ?>">About Author</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/course' ) ); ?>">Course</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/podcast' ) ); ?>">Podcast</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/blog' ) ); ?>">Blog</a></li>
                 </ul>
                 <div class="d-flex align-items-center ms-auto">
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>#contact" class="btn btn-warning"><span class="btn-content">Hire Todd</span></a>
