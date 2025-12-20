@@ -23,7 +23,7 @@
 define( 'DB_NAME', 'test' );
 
 /** Database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'root1' );
 
 /** Database password */
 define( 'DB_PASSWORD', '' );

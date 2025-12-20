@@ -17,7 +17,7 @@
              <div class="container ">
                  <div class="row justify-content-center ">
                 <div class="col-lg-10">
-                         <p class="hero-tagline">TWELVE WEEKS TO LIVING A HAPPIER LIFE</p>
+                         <p class="hero-tagline">TWELVE WEEKS TO LIVING A HAPPIER LIFE.</p>
                     <h1 class="hero-main-heading mb-4">Discover the power <br class="d-none d-md-block">of <span class="text-warning">positive mind</span></h1>
                          <p class="hero-subtitle mb-2">Finding Happiness with Todd</p>
                          <p class="hero-subtitle-secondary mb-4">Check out Todd's new video series</p>
