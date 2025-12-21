@@ -259,7 +259,20 @@ function toddpatkin_intercept_missing_pages( $wp ) {
         if ( isset( $page_template['parent'] ) ) {
             $parent_page = get_page_by_path( $page_template['parent'] );
             if ( $parent_page ) {
+                // Try full path first
                 $page = get_page_by_path( $page_template['parent'] . '/' . $check_slug );
+                // If not found, try to find by slug and verify parent
+                if ( ! $page ) {
+                    $pages = get_pages( array(
+                        'name' => $check_slug,
+                        'post_type' => 'page',
+                        'post_status' => 'publish',
+                        'number' => 1
+                    ) );
+                    if ( ! empty( $pages ) && $pages[0]->post_parent == $parent_page->ID ) {
+                        $page = $pages[0];
+                    }
+                }
             } else {
                 $page = null;
             }
@@ -385,7 +398,20 @@ function toddpatkin_handle_404_create_page() {
         if ( isset( $page_template['parent'] ) ) {
             $parent_page = get_page_by_path( $page_template['parent'] );
             if ( $parent_page ) {
+                // Try full path first
                 $page = get_page_by_path( $page_template['parent'] . '/' . $check_slug );
+                // If not found, try to find by slug and verify parent
+                if ( ! $page ) {
+                    $pages = get_pages( array(
+                        'name' => $check_slug,
+                        'post_type' => 'page',
+                        'post_status' => 'publish',
+                        'number' => 1
+                    ) );
+                    if ( ! empty( $pages ) && $pages[0]->post_parent == $parent_page->ID ) {
+                        $page = $pages[0];
+                    }
+                }
             } else {
                 $page = null;
             }
@@ -454,28 +480,262 @@ function toddpatkin_add_create_pages_menu() {
 function toddpatkin_create_pages_admin_page() {
     if ( isset( $_POST['create_pages'] ) && check_admin_referer( 'toddpatkin_create_pages_action' ) ) {
         toddpatkin_create_required_pages();
-        echo '<div class="notice notice-success"><p>All required pages have been created successfully!</p></div>';
+        flush_rewrite_rules();
+        echo '<div class="notice notice-success"><p>All required pages have been created successfully and permalinks have been flushed!</p></div>';
     }
+    
+    if ( isset( $_POST['flush_permalinks'] ) && check_admin_referer( 'toddpatkin_flush_permalinks_action' ) ) {
+        flush_rewrite_rules();
+        echo '<div class="notice notice-success"><p>Permalinks have been flushed successfully!</p></div>';
+    }
+    
+    if ( isset( $_POST['fix_templates'] ) && check_admin_referer( 'toddpatkin_fix_templates_action' ) ) {
+        $fixed = toddpatkin_fix_page_templates();
+        echo '<div class="notice notice-success"><p>' . $fixed . ' page templates have been fixed!</p></div>';
+    }
+    
+    // Check permalink structure
+    $permalink_structure = get_option( 'permalink_structure' );
+    $is_plain_permalinks = empty( $permalink_structure );
     
     ?>
     <div class="wrap">
         <h1>Create Required Pages</h1>
+        
+        <?php if ( $is_plain_permalinks ) : ?>
+            <div class="notice notice-error">
+                <p><strong>Warning:</strong> Your permalink structure is set to "Plain". Nested URLs like <code>/course/module-1</code> will not work with plain permalinks.</p>
+                <p>Please go to <a href="<?php echo admin_url( 'options-permalink.php' ); ?>">Settings → Permalinks</a> and select "Post name" or another pretty permalink structure, then save changes.</p>
+            </div>
+        <?php else : ?>
+            <div class="notice notice-info">
+                <p>Your permalink structure is configured correctly. Current structure: <code><?php echo esc_html( $permalink_structure ); ?></code></p>
+            </div>
+        <?php endif; ?>
+        
         <p>This will create all required pages for the Todd Patkin theme:</p>
         <ul>
             <li>Expertise</li>
             <li>About Book</li>
             <li>About Author</li>
             <li>Course</li>
+            <li>Course Modules (Module 1-12)</li>
             <li>Podcast</li>
             <li>Blog</li>
             <li>Preview Book</li>
         </ul>
-        <form method="post" action="">
+        
+        <form method="post" action="" style="margin: 20px 0;">
             <?php wp_nonce_field( 'toddpatkin_create_pages_action' ); ?>
             <p>
                 <input type="submit" name="create_pages" class="button button-primary" value="Create All Pages Now" />
             </p>
         </form>
+        
+        <form method="post" action="" style="margin: 20px 0;">
+            <?php wp_nonce_field( 'toddpatkin_flush_permalinks_action' ); ?>
+            <p>
+                <input type="submit" name="flush_permalinks" class="button button-secondary" value="Flush Permalinks" />
+                <span class="description">Use this if pages exist but URLs are still showing 404 errors.</span>
+            </p>
+        </form>
+        
+        <form method="post" action="" style="margin: 20px 0;">
+            <?php wp_nonce_field( 'toddpatkin_fix_templates_action' ); ?>
+            <p>
+                <input type="submit" name="fix_templates" class="button button-secondary" value="Fix Page Templates" />
+                <span class="description">Use this if pages are loading but showing the wrong template (e.g., showing "PAGE.PHP" message).</span>
+            </p>
+        </form>
+        
+        <div class="card" style="max-width: 800px;">
+            <h2>Troubleshooting</h2>
+            <p>If you're still getting 404 errors after creating pages:</p>
+            <ol>
+                <li>Make sure permalinks are set to "Post name" (not "Plain") in <a href="<?php echo admin_url( 'options-permalink.php' ); ?>">Settings → Permalinks</a></li>
+                <li>Click "Save Changes" on the Permalinks page (even without changing anything) to flush rewrite rules</li>
+                <li>Click the "Flush Permalinks" button above</li>
+                <li>Clear any caching plugins if you're using them</li>
+            </ol>
+        </div>
     </div>
     <?php
+}
+
+/**
+ * Force correct template to load based on page slug
+ * This ensures custom templates are used even if WordPress doesn't recognize them
+ */
+add_filter( 'page_template', 'toddpatkin_force_page_template' );
+function toddpatkin_force_page_template( $template ) {
+    global $post;
+    
+    if ( ! $post || ! is_page() ) {
+        return $template;
+    }
+    
+    // Get page slug
+    $page_slug = $post->post_name;
+    
+    // Check if it's a child page (module page)
+    $is_module = false;
+    $parent_id = $post->post_parent;
+    
+    if ( $parent_id ) {
+        $parent_page = get_post( $parent_id );
+        if ( $parent_page && $parent_page->post_name === 'course' ) {
+            $is_module = true;
+        }
+    }
+    
+    // Template mapping
+    $template_map = array(
+        'expertise' => 'templates/template-expertise.php',
+        'about-book' => 'templates/template-about-book.php',
+        'about-author' => 'templates/template-about-author.php',
+        'course' => 'templates/template-course.php',
+        'podcast' => 'templates/template-podcast.php',
+        'blog' => 'templates/template-blog.php',
+        'preview-book' => 'templates/template-preview-book.php',
+        'module-1' => 'templates/template-module-1.php',
+        'module-2' => 'templates/template-module-2.php',
+        'module-3' => 'templates/template-module-3.php',
+        'module-4' => 'templates/template-module-4.php',
+        'module-5' => 'templates/template-module-5.php',
+        'module-6' => 'templates/template-module-6.php',
+        'module-7' => 'templates/template-module-7.php',
+        'module-8' => 'templates/template-module-8.php',
+        'module-9' => 'templates/template-module-9.php',
+        'module-10' => 'templates/template-module-10.php',
+        'module-11' => 'templates/template-module-11.php',
+        'module-12' => 'templates/template-module-12.php',
+    );
+    
+    // Check if this page has a custom template
+    if ( isset( $template_map[ $page_slug ] ) ) {
+        $custom_template = get_template_directory() . '/' . $template_map[ $page_slug ];
+        if ( file_exists( $custom_template ) ) {
+            return $custom_template;
+        }
+    }
+    
+    return $template;
+}
+
+/**
+ * Alternative approach: Use template_include filter as backup
+ * This runs later and can override if page_template didn't work
+ */
+add_filter( 'template_include', 'toddpatkin_force_template_include', 99 );
+function toddpatkin_force_template_include( $template ) {
+    // Only process if we're on a page
+    if ( ! is_page() ) {
+        return $template;
+    }
+    
+    global $post;
+    if ( ! $post ) {
+        return $template;
+    }
+    
+    $page_slug = $post->post_name;
+    
+    // Check if it's a child page (module page)
+    $is_module = false;
+    $parent_id = $post->post_parent;
+    
+    if ( $parent_id ) {
+        $parent_page = get_post( $parent_id );
+        if ( $parent_page && $parent_page->post_name === 'course' ) {
+            $is_module = true;
+        }
+    }
+    
+    // Template mapping
+    $template_map = array(
+        'expertise' => 'templates/template-expertise.php',
+        'about-book' => 'templates/template-about-book.php',
+        'about-author' => 'templates/template-about-author.php',
+        'course' => 'templates/template-course.php',
+        'podcast' => 'templates/template-podcast.php',
+        'blog' => 'templates/template-blog.php',
+        'preview-book' => 'templates/template-preview-book.php',
+        'module-1' => 'templates/template-module-1.php',
+        'module-2' => 'templates/template-module-2.php',
+        'module-3' => 'templates/template-module-3.php',
+        'module-4' => 'templates/template-module-4.php',
+        'module-5' => 'templates/template-module-5.php',
+        'module-6' => 'templates/template-module-6.php',
+        'module-7' => 'templates/template-module-7.php',
+        'module-8' => 'templates/template-module-8.php',
+        'module-9' => 'templates/template-module-9.php',
+        'module-10' => 'templates/template-module-10.php',
+        'module-11' => 'templates/template-module-11.php',
+        'module-12' => 'templates/template-module-12.php',
+    );
+    
+    // Check if this page has a custom template
+    if ( isset( $template_map[ $page_slug ] ) ) {
+        $custom_template = get_template_directory() . '/' . $template_map[ $page_slug ];
+        if ( file_exists( $custom_template ) ) {
+            // Only override if current template is the default page.php
+            $current_template = basename( $template );
+            if ( $current_template === 'page.php' || strpos( $template, 'page.php' ) !== false ) {
+                return $custom_template;
+            }
+        }
+    }
+    
+    return $template;
+}
+
+/**
+ * Fix page templates for existing pages
+ * Ensures all pages have the correct template assigned
+ */
+function toddpatkin_fix_page_templates() {
+    $template_map = array(
+        'expertise' => 'templates/template-expertise.php',
+        'about-book' => 'templates/template-about-book.php',
+        'about-author' => 'templates/template-about-author.php',
+        'course' => 'templates/template-course.php',
+        'podcast' => 'templates/template-podcast.php',
+        'blog' => 'templates/template-blog.php',
+        'preview-book' => 'templates/template-preview-book.php',
+        'module-1' => 'templates/template-module-1.php',
+        'module-2' => 'templates/template-module-2.php',
+        'module-3' => 'templates/template-module-3.php',
+        'module-4' => 'templates/template-module-4.php',
+        'module-5' => 'templates/template-module-5.php',
+        'module-6' => 'templates/template-module-6.php',
+        'module-7' => 'templates/template-module-7.php',
+        'module-8' => 'templates/template-module-8.php',
+        'module-9' => 'templates/template-module-9.php',
+        'module-10' => 'templates/template-module-10.php',
+        'module-11' => 'templates/template-module-11.php',
+        'module-12' => 'templates/template-module-12.php',
+    );
+    
+    $fixed_count = 0;
+    
+    // Get all pages
+    $pages = get_pages();
+    
+    foreach ( $pages as $page ) {
+        $page_slug = $page->post_name;
+        
+        // Check if this page should have a custom template
+        if ( isset( $template_map[ $page_slug ] ) ) {
+            $expected_template = $template_map[ $page_slug ];
+            $current_template = get_page_template_slug( $page->ID );
+            
+            // Fix if template is wrong or missing
+            if ( $current_template !== $expected_template ) {
+                update_post_meta( $page->ID, '_wp_page_template', $expected_template );
+                $fixed_count++;
+            }
+        }
+    }
+    
+    return $fixed_count;
 }
