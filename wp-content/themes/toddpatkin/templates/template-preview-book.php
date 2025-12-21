@@ -54,6 +54,32 @@ get_header();
         </div>
     </div>
 </section>
+
+<!-- Purchase Book Modal -->
+<div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content purchase-modal-content">
+            <div class="modal-body purchase-modal-body">
+                <!-- Alert Icon -->
+                <div class="purchase-modal-icon">
+                    <div class="alert-icon-circle">
+                        <i class="fas fa-exclamation"></i>
+                    </div>
+                </div>
+                <!-- Message -->
+                <p class="purchase-modal-message">
+                    Please purchase the book to get complete access to the book
+                </p>
+                <!-- Action Buttons -->
+                <div class="purchase-modal-buttons">
+                    <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                    <a href="mailto:todd@toddpatkin.com" class="btn btn-buy-now">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <?php
 get_footer();
 ?>

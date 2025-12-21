@@ -113,7 +113,7 @@ get_header();
                         <p class="review-text">Todd's story is incredibly moving and relatable. His insights on finding happiness amidst life's challenges have truly transformed my perspective. A must-read for anyone seeking genuine fulfillment.</p>
                         <hr class="review-divider">
                         <div class="d-flex align-items-center gap-3">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/review-author-1.png" alt="Maria Gottschalk" class="review-author-image rounded-3">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Gottschalk_Marie.jpg" alt="Maria Gottschalk" class="review-author-image rounded-3">
                             <div class="review-author-info">
                                 <h5 class="review-author-name">Maria Gottschalk</h5>
                                 <small class="review-author-role">Reader</small>

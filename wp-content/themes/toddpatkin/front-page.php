@@ -527,10 +527,10 @@
                                         <span class="course-meta-divider"></span>
                                         <div class="d-flex align-items-center gap-1">
                                             <i class="far fa-clock"></i>
-                                            <span>Week 1</span>
+                                            <span>Week 2</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Week 1: Focus on: Being Easier on Yourself</h5>
+                                    <h5 class="course-episode-title">Week 2: Focus on: Movement</h5>
                                     <p class="course-episode-description">Congratulations, graduates! (And parents of graduates, too.) As you gaze with pride on your diplomas, I'm sure you're also thinking about what comes next. No</p>
                                 </div>
                                 <a href="#" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Purchase Now <i class="fas fa-arrow-right text-white"></i></a>
@@ -557,10 +557,10 @@
                                         <span class="course-meta-divider bg-muted"></span>
                                         <div class="course-meta-item">
                                             <i class="far fa-clock"></i>
-                                <span>Week 2</span>
+                                <span>Week 3</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Week 2: Focus on Taking Change of Your Mind</h5>
+                                    <h5 class="course-episode-title">Week 3: Focus on Taking Change of Your Mind</h5>
                                     <p class="course-episode-description">Congratulations, graduates! (And parents of graduates, too.) As you gaze with pride on your diplomas, I'm sure you're also thinking about what comes next. No</p>
                                 </div>
                                 <a href="#" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Purchase Now <i class="fas fa-arrow-right"></i></a>
@@ -587,10 +587,10 @@
                                         <span class="course-meta-divider"></span>
                                         <div class="course-meta-item">
                                             <i class="far fa-clock"></i>
-                                <span>Week 3</span>
+                                <span>Week 4</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Week 3: Focus on:BEING EASIER ON YOURSELF</h5>
+                                    <h5 class="course-episode-title">Week 4: Focus on Living in the Present</h5>
                                     <p class="course-episode-description">Congratulations, graduates! (And parents of graduates, too.) As you gaze with pride on your diplomas, I'm sure you're also thinking about what comes next. No</p>
                                 </div>
                                 <a href="#" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Purchase Now <i class="fas fa-arrow-right"></i></a>

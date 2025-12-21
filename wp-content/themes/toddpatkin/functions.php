@@ -26,8 +26,13 @@ function toddpatkin_create_required_pages() {
         array( 'slug' => 'about-author', 'title' => 'About Author', 'template' => 'templates/template-about-author.php' ),
         array( 'slug' => 'course', 'title' => 'Course', 'template' => 'templates/template-course.php' ),
         array( 'slug' => 'podcast', 'title' => 'Podcast', 'template' => 'templates/template-podcast.php' ),
+        // Podcast detail pages
+        array( 'slug' => 'podcast/podcast-1', 'title' => 'Podcast 1: Crack the Happiness Code', 'template' => 'templates/template-podcast-1.php' ),
+        array( 'slug' => 'podcast/podcast-2', 'title' => 'Podcast 2: Helping Others Helps You', 'template' => 'templates/template-podcast-2.php' ),
+        array( 'slug' => 'podcast/podcast-3', 'title' => 'Podcast 3: Happiness Isn\'t What You Think', 'template' => 'templates/template-podcast-3.php' ),
         array( 'slug' => 'blog', 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
         array( 'slug' => 'preview-book', 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
+        array( 'slug' => 'hire', 'title' => 'Hire Todd', 'template' => 'templates/template-hire.php' ),
         // Course module pages
         array( 'slug' => 'course/module-1', 'title' => 'Module 1: Being Easier on Yourself', 'template' => 'templates/template-module-1.php' ),
         array( 'slug' => 'course/module-2', 'title' => 'Module 2: Taking Charge of Your Mind', 'template' => 'templates/template-module-2.php' ),
@@ -142,7 +147,7 @@ function toddpatkin_force_create_pages_on_load() {
         return;
     }
     
-    $required_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book' );
+    $required_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'hire' );
     $missing = false;
     
     foreach ( $required_slugs as $slug ) {
@@ -166,7 +171,7 @@ function toddpatkin_force_create_pages_on_load() {
 add_action( 'init', 'toddpatkin_ensure_pages_exist', 1 );
 function toddpatkin_ensure_pages_exist() {
     // Check if any required pages are missing
-    $required_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book' );
+    $required_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'hire' );
     $missing = false;
     
     foreach ( $required_slugs as $slug ) {
@@ -203,9 +208,11 @@ function toddpatkin_intercept_missing_pages( $wp ) {
     // Remove .html extension if present
     $request_uri = rtrim( $request_uri, '/.html' );
     
-    // Check if it's a nested path (course/module-X)
+    // Check if it's a nested path (course/module-X or podcast/podcast-X)
     $is_course_module = false;
+    $is_podcast_page = false;
     $module_slug = '';
+    $podcast_slug = '';
     
     // Check various patterns for course modules
     if ( preg_match( '#course[/-]module-(\d+)#i', $request_uri, $matches ) ) {
@@ -221,6 +228,20 @@ function toddpatkin_intercept_missing_pages( $wp ) {
         }
     }
     
+    // Check various patterns for podcast pages
+    if ( preg_match( '#podcast[/-]podcast-(\d+)#i', $request_uri, $matches ) ) {
+        $podcast_slug = 'podcast-' . $matches[1];
+        $is_podcast_page = true;
+    } elseif ( strpos( $request_uri, 'podcast/' ) !== false ) {
+        $parts = explode( 'podcast/', $request_uri );
+        if ( isset( $parts[1] ) ) {
+            $podcast_slug = trim( $parts[1], '/' );
+            $podcast_slug = strtok( $podcast_slug, '?' );
+            $podcast_slug = rtrim( $podcast_slug, '/.html' );
+            $is_podcast_page = true;
+        }
+    }
+    
     $path_parts = array_filter( explode( '/', $request_uri ) );
     $slug = end( $path_parts );
     $slug = strtok( $slug, '?' );
@@ -232,8 +253,13 @@ function toddpatkin_intercept_missing_pages( $wp ) {
         'about-author' => array( 'title' => 'About Author', 'template' => 'templates/template-about-author.php' ),
         'course' => array( 'title' => 'Course', 'template' => 'templates/template-course.php' ),
         'podcast' => array( 'title' => 'Podcast', 'template' => 'templates/template-podcast.php' ),
+        // Podcast detail pages
+        'podcast-1' => array( 'title' => 'Podcast 1: Crack the Happiness Code', 'template' => 'templates/template-podcast-1.php', 'parent' => 'podcast' ),
+        'podcast-2' => array( 'title' => 'Podcast 2: Helping Others Helps You', 'template' => 'templates/template-podcast-2.php', 'parent' => 'podcast' ),
+        'podcast-3' => array( 'title' => 'Podcast 3: Happiness Isn\'t What You Think', 'template' => 'templates/template-podcast-3.php', 'parent' => 'podcast' ),
         'blog' => array( 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
         'preview-book' => array( 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
+        'hire' => array( 'title' => 'Hire Todd', 'template' => 'templates/template-hire.php' ),
         // Course modules
         'module-1' => array( 'title' => 'Module 1: Being Easier on Yourself', 'template' => 'templates/template-module-1.php', 'parent' => 'course' ),
         'module-2' => array( 'title' => 'Module 2: Taking Charge of Your Mind', 'template' => 'templates/template-module-2.php', 'parent' => 'course' ),
@@ -249,8 +275,8 @@ function toddpatkin_intercept_missing_pages( $wp ) {
         'module-12' => array( 'title' => 'Module 12: Sustaining Your Practice', 'template' => 'templates/template-module-12.php', 'parent' => 'course' ),
     );
     
-    // Use module slug if it's a course module
-    $check_slug = $is_course_module ? $module_slug : $slug;
+    // Use module slug if it's a course module, or podcast slug if it's a podcast page
+    $check_slug = $is_course_module ? $module_slug : ( $is_podcast_page ? $podcast_slug : $slug );
     
     if ( ! empty( $check_slug ) && isset( $page_templates[ $check_slug ] ) ) {
         $page_template = $page_templates[ $check_slug ];
@@ -347,9 +373,11 @@ function toddpatkin_handle_404_create_page() {
     $slug = strtok( $slug, '?' );
     $slug = rtrim( $slug, '/.html' );
     
-    // Check if it's a nested path (course/module-X) - improved detection
+    // Check if it's a nested path (course/module-X or podcast/podcast-X) - improved detection
     $is_course_module = false;
+    $is_podcast_page = false;
     $module_slug = '';
+    $podcast_slug = '';
     
     // Check various patterns for course modules
     if ( preg_match( '#course[/-]module-(\d+)#i', $request_uri, $matches ) ) {
@@ -365,14 +393,33 @@ function toddpatkin_handle_404_create_page() {
         }
     }
     
+    // Check various patterns for podcast pages
+    if ( preg_match( '#podcast[/-]podcast-(\d+)#i', $request_uri, $matches ) ) {
+        $podcast_slug = 'podcast-' . $matches[1];
+        $is_podcast_page = true;
+    } elseif ( strpos( $request_uri, 'podcast/' ) !== false ) {
+        $parts = explode( 'podcast/', $request_uri );
+        if ( isset( $parts[1] ) ) {
+            $podcast_slug = trim( $parts[1], '/' );
+            $podcast_slug = strtok( $podcast_slug, '?' );
+            $podcast_slug = rtrim( $podcast_slug, '/.html' );
+            $is_podcast_page = true;
+        }
+    }
+    
     $page_templates = array(
         'expertise' => array( 'title' => 'Expertise', 'template' => 'templates/template-expertise.php' ),
         'about-book' => array( 'title' => 'About Book', 'template' => 'templates/template-about-book.php' ),
         'about-author' => array( 'title' => 'About Author', 'template' => 'templates/template-about-author.php' ),
         'course' => array( 'title' => 'Course', 'template' => 'templates/template-course.php' ),
         'podcast' => array( 'title' => 'Podcast', 'template' => 'templates/template-podcast.php' ),
+        // Podcast detail pages
+        'podcast-1' => array( 'title' => 'Podcast 1: Crack the Happiness Code', 'template' => 'templates/template-podcast-1.php', 'parent' => 'podcast' ),
+        'podcast-2' => array( 'title' => 'Podcast 2: Helping Others Helps You', 'template' => 'templates/template-podcast-2.php', 'parent' => 'podcast' ),
+        'podcast-3' => array( 'title' => 'Podcast 3: Happiness Isn\'t What You Think', 'template' => 'templates/template-podcast-3.php', 'parent' => 'podcast' ),
         'blog' => array( 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
         'preview-book' => array( 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
+        'hire' => array( 'title' => 'Hire Todd', 'template' => 'templates/template-hire.php' ),
         // Course modules
         'module-1' => array( 'title' => 'Module 1: Being Easier on Yourself', 'template' => 'templates/template-module-1.php', 'parent' => 'course' ),
         'module-2' => array( 'title' => 'Module 2: Taking Charge of Your Mind', 'template' => 'templates/template-module-2.php', 'parent' => 'course' ),
@@ -388,8 +435,8 @@ function toddpatkin_handle_404_create_page() {
         'module-12' => array( 'title' => 'Module 12: Sustaining Your Practice', 'template' => 'templates/template-module-12.php', 'parent' => 'course' ),
     );
     
-    // Use module slug if it's a course module
-    $check_slug = $is_course_module ? $module_slug : $slug;
+    // Use module slug if it's a course module, or podcast slug if it's a podcast page
+    $check_slug = $is_course_module ? $module_slug : ( $is_podcast_page ? $podcast_slug : $slug );
     
     if ( ! empty( $check_slug ) && isset( $page_templates[ $check_slug ] ) ) {
         $page_template = $page_templates[ $check_slug ];
@@ -523,6 +570,7 @@ function toddpatkin_create_pages_admin_page() {
             <li>Podcast</li>
             <li>Blog</li>
             <li>Preview Book</li>
+            <li>Hire Todd</li>
         </ul>
         
         <form method="post" action="" style="margin: 20px 0;">
@@ -595,6 +643,9 @@ function toddpatkin_force_page_template( $template ) {
         'about-author' => 'templates/template-about-author.php',
         'course' => 'templates/template-course.php',
         'podcast' => 'templates/template-podcast.php',
+        'podcast-1' => 'templates/template-podcast-1.php',
+        'podcast-2' => 'templates/template-podcast-2.php',
+        'podcast-3' => 'templates/template-podcast-3.php',
         'blog' => 'templates/template-blog.php',
         'preview-book' => 'templates/template-preview-book.php',
         'module-1' => 'templates/template-module-1.php',
@@ -609,6 +660,7 @@ function toddpatkin_force_page_template( $template ) {
         'module-10' => 'templates/template-module-10.php',
         'module-11' => 'templates/template-module-11.php',
         'module-12' => 'templates/template-module-12.php',
+        'hire' => 'templates/template-hire.php',
     );
     
     // Check if this page has a custom template
@@ -658,6 +710,9 @@ function toddpatkin_force_template_include( $template ) {
         'about-author' => 'templates/template-about-author.php',
         'course' => 'templates/template-course.php',
         'podcast' => 'templates/template-podcast.php',
+        'podcast-1' => 'templates/template-podcast-1.php',
+        'podcast-2' => 'templates/template-podcast-2.php',
+        'podcast-3' => 'templates/template-podcast-3.php',
         'blog' => 'templates/template-blog.php',
         'preview-book' => 'templates/template-preview-book.php',
         'module-1' => 'templates/template-module-1.php',
@@ -672,6 +727,7 @@ function toddpatkin_force_template_include( $template ) {
         'module-10' => 'templates/template-module-10.php',
         'module-11' => 'templates/template-module-11.php',
         'module-12' => 'templates/template-module-12.php',
+        'hire' => 'templates/template-hire.php',
     );
     
     // Check if this page has a custom template
@@ -700,6 +756,9 @@ function toddpatkin_fix_page_templates() {
         'about-author' => 'templates/template-about-author.php',
         'course' => 'templates/template-course.php',
         'podcast' => 'templates/template-podcast.php',
+        'podcast-1' => 'templates/template-podcast-1.php',
+        'podcast-2' => 'templates/template-podcast-2.php',
+        'podcast-3' => 'templates/template-podcast-3.php',
         'blog' => 'templates/template-blog.php',
         'preview-book' => 'templates/template-preview-book.php',
         'module-1' => 'templates/template-module-1.php',
@@ -714,6 +773,7 @@ function toddpatkin_fix_page_templates() {
         'module-10' => 'templates/template-module-10.php',
         'module-11' => 'templates/template-module-11.php',
         'module-12' => 'templates/template-module-12.php',
+        'hire' => 'templates/template-hire.php',
     );
     
     $fixed_count = 0;

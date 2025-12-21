@@ -5,6 +5,35 @@
  */
 get_header();
 ?>
+<style>
+    /* Fix podcast images - no cropping, container matches image size */
+    .podcast-page-section .podcast-card-image {
+        height: auto !important;
+        width: 100%;
+        object-fit: contain !important;
+        object-position: center;
+        display: block;
+        max-width: 100%;
+    }
+    
+    .podcast-page-section .podcast-card {
+        height: auto !important;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .podcast-page-section .card {
+        height: auto !important;
+    }
+    
+    .podcast-page-section .h-100 {
+        height: auto !important;
+    }
+    
+    .podcast-page-section .overflow-hidden {
+        overflow: hidden !important;
+    }
+</style>
 <!-- Podcast Section -->
 <section class="podcast-page-section bg-light">
     <div class="container">
@@ -22,7 +51,7 @@ get_header();
                 <!-- Podcast Card 1 -->
                 <div class="col-12 col-md-6">
                     <a href="<?php echo esc_url( home_url( '/podcast/podcast-1' ) ); ?>" class="text-decoration-none">
-                        <div class="card border-0 shadow-sm h-100 overflow-hidden position-relative podcast-card">
+                        <div class="card border-0 shadow-sm overflow-hidden position-relative podcast-card">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast-1.png" class="img-fluid w-100 podcast-card-image" alt="Crack the happiness code">
                             <div class="position-absolute bottom-0 start-0 p-4 text-white w-100 podcast-card-overlay">
                                 <h5 class="fw-bold mb-2 podcast-card-title">CRACK THE HAPPINESS CODE</h5>
@@ -35,17 +64,14 @@ get_header();
                 <!-- Podcast Card 2 -->
                 <div class="col-12 col-md-6">
                     <a href="<?php echo esc_url( home_url( '/podcast/podcast-2' ) ); ?>" class="text-decoration-none">
-                        <div class="card border-0 shadow-sm h-100 overflow-hidden position-relative podcast-card">
+                        <div class="card border-0 shadow-sm overflow-hidden position-relative podcast-card">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast-2.png" class="img-fluid w-100 podcast-card-image" alt="Helping others helps you">
                             <!-- Episode Badge Overlay -->
                             <div class="position-absolute top-0 end-0 p-3">
                                 <span class="podcast-episode-badge">EPISODE 412</span>
                             </div>
                             <!-- Title Overlay -->
-                            <div class="position-absolute top-0 start-0 p-4 text-white">
-                                <h5 class="fw-bold mb-1 podcast-card-title-overlay">"HELPING OTHERS HELPS YOU"</h5>
-                                <p class="mb-0 podcast-card-subtitle">WITH TODD PATKIN</p>
-                            </div>
+                            
                             <!-- Bottom Content -->
                             <div class="position-absolute bottom-0 start-0 p-4 text-white w-100 podcast-card-overlay">
                                 <h5 class="fw-bold mb-2 podcast-card-title">CRACK THE HAPPINESS CODE</h5>
@@ -64,8 +90,8 @@ get_header();
             <div class="row g-4">
                 <div class="col-12 col-md-6">
                     <a href="<?php echo esc_url( home_url( '/podcast/podcast-3' ) ); ?>" class="text-decoration-none">
-                        <div class="card border-0 shadow-sm h-100 overflow-hidden position-relative podcast-card">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog-3.png" class="img-fluid w-100 podcast-card-image" alt="Happiness isn't what you think">
+                        <div class="card border-0 shadow-sm overflow-hidden position-relative podcast-card">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast-3.png" class="img-fluid w-100 podcast-card-image" alt="Happiness isn't what you think">
                             <!-- Title Overlay -->
                             <div class="position-absolute top-0 start-0 p-4 text-white w-100">
                                 <h5 class="fw-bold mb-1 podcast-card-title-overlay">

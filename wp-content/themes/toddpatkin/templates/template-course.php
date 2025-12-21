@@ -85,7 +85,7 @@ get_header();
                                             <span>Week 2</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Module 2: Taking Charge of Your Mind</h5>
+                                    <h5 class="course-episode-title">Module 2: Focus on Movement</h5>
                                     <p class="course-episode-description">Discover how to manage negative thought patterns and anxiety before they manage you.</p>
                                 </div>
                                 <a href="<?php echo esc_url( home_url( '/course/module-2' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">
