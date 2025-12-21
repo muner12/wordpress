@@ -2594,7 +2594,7 @@ h5 {
     left: 0;
     right: 45%;
     bottom: 0;
-    background-image: url('assets/images/thod_img.png');
+    background-image: url('../images/thod_img.png');
     background-size: cover;
     background-position: left center;
     background-repeat: no-repeat;
@@ -2624,7 +2624,7 @@ h5 {
     top: 0;
     width: 50%;
     height: 50%;
-    background-image: url('assets/images/testimonial-decorative-pattern.svg');
+    background-image: url('../images/testimonial-decorative-pattern.svg');
     background-size: contain;
     background-position: top right;
     background-repeat: no-repeat;
@@ -2696,6 +2696,13 @@ h5 {
     position: relative;
     height: 100%;
     z-index: 10;
+}
+
+.testimonial-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .testimonial-content {
@@ -3033,8 +3040,9 @@ section .text-muted {
 
 /* Blog Cards */
 .blog-section .card {
-    border: 0.894px solid #CDCDCD;
+    border: 1px solid #CDCDCD;
     border-radius: 17.89px;
+    padding: 4px;
 }
 
 .blog-section .badge {
@@ -3050,20 +3058,22 @@ section .text-muted {
 .blog-section .card-title {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 16px;
     color: var(--text-950);
+    line-height: 1.4;
 }
 
 .blog-section .card-text {
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     color: var(--text-500);
-    line-height: 1.56;
+    line-height: 1.5;
 }
 
 .blog-section .btn {
     border-radius: 8.5px;
-    font-size: 14.88px;
+    font-size: 13px;
+    padding: 6px 16px;
 }
 
 /* Quote Section */
@@ -3140,12 +3150,31 @@ section .text-muted {
 /* Course left and right content now use Bootstrap grid */
 /* .course-text-content - Uses Bootstrap gap utilities in HTML */
 
+.course-right-content {
+    padding-right: 15px !important;
+}
+
+.course-left-content {
+    padding-left: 15px !important;
+}
+
+@media (min-width: 992px) {
+    .course-right-content {
+        padding-right: 20px !important;
+    }
+    
+    .course-left-content {
+        padding-left: 20px !important;
+    }
+}
+
 .course-description-text {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 1.7999998728434246em;
+    font-size: 15px;
+    line-height: 1.6em;
     color: #FFFFFF;
+    text-align: justify;
 }
 
 /* Course Video Container */
@@ -3869,22 +3898,46 @@ section .text-muted {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 24px;
+    font-size: 35px;
     line-height: 120%;
     letter-spacing: -0.7px;
     text-align: center;
     vertical-align: middle;
     color: #FAD30C;
     margin: 0;
+    display: inline-block;
+}
+
+@media (min-width: 992px) {
+    .course-cta-text-line1 {
+        display: inline;
+        margin-right: 8px;
+    }
+    
+    .course-cta-text-line2 {
+        display: inline;
+    }
+}
+
+.course-cta-text-line1 .course-cta-text-line2 {
+    display: inline;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+    margin-left: 8px;
 }
 
 .course-cta-text-line2 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     font-style: normal;
-    font-size: 35px;
+    font-size: 24px;
     line-height: 120%;
-    letter-spacing: -0.7px;
+    letter-spacing: -0.5px;
     text-align: center;
     vertical-align: middle;
     color: #FFFFFF;
@@ -3893,16 +3946,18 @@ section .text-muted {
 
 .course-cta-button {
     font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 0.625em;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2em;
     color: #333333;
     background-color: #FAD30C;
-    border: 1px solid #16163F;
+    border: 2px solid #16163F;
     border-radius: 100px;
-    padding: 24px;
+    padding: 18px 40px;
     text-decoration: none;
     transition: all 0.3s ease;
+    display: inline-block;
+    min-width: 200px;
 }
 
 .course-cta-button {
@@ -4467,13 +4522,13 @@ section .text-muted {
 
 /* Course View More */
 .course-view-more-button {
-    padding: 15px 22px;
+    padding: 12px 24px;
     background-color: #FAD30C;
     border-radius: 8px;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 24px;
-    line-height: 1.3999999364217122em;
+    font-size: 16px;
+    line-height: 1.5em;
     color: #333333;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -4702,7 +4757,9 @@ section .text-muted {
 @media (min-width: 992px) {
     .services-cards-container {
         grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
     }
 }
 
@@ -4729,7 +4786,7 @@ section .text-muted {
 
 .service-card-header {
     background-color: #1B73D2;
-    padding: 20px 0;
+    padding: 15px 0;
     border-radius: 20px 20px 0 0;
     /* display, justify-content, align-items, width now handled by Bootstrap d-flex justify-content-center align-items-center w-100 classes */
 }
@@ -4737,7 +4794,7 @@ section .text-muted {
 .service-card-header h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 1.2em;
     letter-spacing: -2.0000000794728594%;
     text-transform: uppercase;
@@ -4749,7 +4806,7 @@ section .text-muted {
     width: 100%;
     max-width: 100%;
     padding: 0;
-    margin: 0 0 20px 0;
+    margin: 0 0 15px 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -4761,7 +4818,7 @@ section .text-muted {
     position: relative;
     display: flex;
     align-items: center;
-    padding: 12px 0;
+    padding: 8px 0;
     border-bottom: 1px solid #DDDDDD;
 }
 
@@ -4789,7 +4846,7 @@ section .text-muted {
 }
 
 .service-card .card-body {
-    padding: 30px 20px;
+    padding: 20px 15px;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -4800,23 +4857,23 @@ section .text-muted {
 .service-card-description {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.4;
     color: #FFFFFF;
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: 0;
     text-align: center;
 }
 
 .service-card-button {
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: 0;
 }
 
 .service-card .btn,
 .service-card-button {
-    padding: 15px 40px;
-    font-size: 17px;
+    padding: 12px 30px;
+    font-size: 15px;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     line-height: 1;
@@ -4958,21 +5015,29 @@ section .text-muted {
     }
 
     .course-description-text {
-        font-size: 20px;
+        font-size: 14px;
     }
 
     .course-video-thumbnail img {
         max-height: 220px;
     }
 
-    .course-cta-text-line1,
-    .course-cta-text-line2 {
+    .course-cta-text-line1 {
         font-size: 28px;
+    }
+    
+    .course-cta-text-line1 .course-cta-text-line2 {
+        font-size: 22px;
+    }
+    
+    .course-cta-text-line2 {
+        font-size: 22px;
     }
 
     .course-cta-button {
-        font-size: 20px;
-        padding: 20px 30px;
+        font-size: 18px;
+        padding: 16px 32px;
+        min-width: 180px;
     }
 
     .course-episode-title {
@@ -5236,18 +5301,19 @@ section .text-muted {
 .about-section {
     position: relative;
     width: 100%;
+    margin-top: 60px;
 }
 
 .about-section-background {
     background: #F4F4F4;
-    width: 1808px;
-    max-width: 100%;
-    height: 925.423828125px;
-    min-height: 925.423828125px;
+    width: 100%;
+    max-width: 1808px;
+    height: auto;
+    min-height: auto;
     padding: 80px 150px;
     border-radius: 20px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -5255,23 +5321,15 @@ section .text-muted {
 }
 
 .about-section-background::before {
-    content: '';
-    position: absolute;
-    top: -361.51px;
-    right: 1014.31px;
-    width: 869.04px;
-    height: 1030.42px;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODY5IiBoZWlnaHQ9IjEwMzAiIHZpZXdCb3g9IjAgMCA4NjkgMTAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgMEg4NjlWMTAzMEgwVjBaIiBmaWxsPSJ3aGl0ZSIgZmlsbC1vcGFjaXR5PSIwLjciLz4KPC9zdmc+');
-    opacity: 0.7;
-    pointer-events: none;
-    z-index: 0;
+    display: none;
 }
 
 .about-section-container {
     position: relative;
     z-index: 1;
     width: 100%;
-    height: 100%;
+    height: auto;
+    min-height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -5284,12 +5342,15 @@ section .text-muted {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: auto;
+    min-height: auto;
     gap: 60px;
+    flex-wrap: wrap;
 }
 
 .about-text-content {
-    flex: 0 0 50%;
+    flex: 1 1 50%;
+    min-width: 300px;
     max-width: 50%;
     display: flex;
     flex-direction: column;
@@ -5297,7 +5358,8 @@ section .text-muted {
 }
 
 .about-image-wrapper {
-    flex: 0 0 45%;
+    flex: 1 1 45%;
+    min-width: 300px;
     max-width: 45%;
     display: flex;
     align-items: center;
@@ -5352,6 +5414,10 @@ section .text-muted {
     width: 100%;
 }
 
+.about-text-paragraphs {
+    margin-bottom: 20px;
+}
+
 .about-paragraph-last {
     height: auto;
     overflow: visible;
@@ -5367,23 +5433,25 @@ section .text-muted {
 
 .about-read-more-btn {
     font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 1.0751634744497447em;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.2em;
     text-transform: uppercase;
     color: #333333;
     background-color: #FAD30C;
     border: 1.12px solid #1B73D2;
     border-radius: 6.71px;
-    padding: 23.48px 45.84px;
+    padding: 12px 30px;
     text-decoration: none;
-    width: 260.68994140625px;
-    height: 74.96314239501953px;
+    width: auto !important;
+    max-width: fit-content;
+    height: auto;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
     transition: all 0.3s ease;
+    margin-top: 20px;
 }
 
 .about-read-more-btn {
@@ -5402,8 +5470,9 @@ section .text-muted {
 .about-image {
     width: 100%;
     max-width: 100%;
+    max-height: 500px;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 20px;
     display: block;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
@@ -5420,6 +5489,12 @@ section .text-muted {
         width: 100%;
         max-width: 100%;
         padding: 60px 100px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .about-section-background {
+        padding: 60px 80px;
     }
 }
 
@@ -5528,12 +5603,107 @@ section .text-muted {
     background-color: #F4F4F4;
 }
 
-.podcast-section .card img {
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+/* Custom Grid System for Podcast Section */
+.podcast-custom-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.podcast-section .card:hover img {
-    transform: scale(1.1);
+.podcast-grid-item {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .podcast-custom-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+}
+
+@media (min-width: 992px) {
+    .podcast-custom-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+
+.podcast-section .card img,
+.podcast-card-img {
+    transition: none;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 992px) {
+    .podcast-section .card img,
+    .podcast-card-img {
+        max-width: 500px;
+        margin: 0 auto;
+        object-fit: contain;
+        height: auto;
+    }
+}
+
+.podcast-card {
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid transparent !important;
+    padding: 0 !important;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    overflow: hidden;
+    height: auto;
+}
+
+.podcast-section .card {
+    padding: 0 !important;
+    margin: 0;
+    overflow: hidden;
+    height: auto;
+}
+
+@media (min-width: 992px) {
+    .podcast-section .col-md-6 {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .podcast-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .podcast-section .card img,
+    .podcast-card-img {
+        height: auto;
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .podcast-section .card img,
+    .podcast-card-img {
+        height: auto;
+        max-height: 350px;
+    }
 }
 
 /* Podcast Page Section */
@@ -5578,18 +5748,19 @@ section .text-muted {
 }
 
 .podcast-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+    transform: none !important;
+    border: 3px solid #ffc107 !important;
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.3) !important;
 }
 
 .podcast-card-image {
     height: 400px;
     object-fit: cover;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: none;
 }
 
 .podcast-card:hover .podcast-card-image {
-    transform: scale(1.1);
+    transform: none !important;
 }
 
 .podcast-card-overlay {
@@ -5870,12 +6041,86 @@ section .text-muted {
     background-color: var(--bg-white);
 }
 
-.blog-section .card img {
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+.blog-section .container {
+    max-width: 1200px;
 }
 
-.blog-section .card:hover img {
-    transform: scale(1.1);
+.blog-section .card img,
+.blog-card-img {
+    transition: all 0.3s ease;
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+}
+
+.blog-card {
+    padding: 4px !important;
+    overflow: hidden;
+    border: 1px solid #CDCDCD !important;
+}
+
+.blog-section .card {
+    padding: 4px !important;
+    overflow: hidden;
+}
+
+.blog-card:hover {
+    border: 3px solid #ffc107 !important;
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.3) !important;
+    transform: none !important;
+}
+
+.blog-section .card:hover img,
+.blog-card:hover .blog-card-img {
+    transform: none;
+}
+
+@media (min-width: 992px) {
+    .blog-section .card img,
+    .blog-card-img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 991px) {
+    .blog-section .card img,
+    .blog-card-img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-section .card img,
+    .blog-card-img {
+        height: 160px;
+    }
+    
+    .blog-section .card-title {
+        font-size: 15px;
+    }
+    
+    .blog-section .card-text {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 576px) {
+    .blog-section .card img,
+    .blog-card-img {
+        height: 150px;
+    }
+    
+    .blog-section .card-title {
+        font-size: 14px;
+    }
+    
+    .blog-section .card-text {
+        font-size: 12px;
+    }
 }
 
 /* Blog Page Section */
@@ -5930,18 +6175,18 @@ section .text-muted {
 }
 
 .blog-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+    transform: none !important;
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.3) !important;
 }
 
 .blog-card-image {
     height: 300px;
     object-fit: cover;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: none;
 }
 
 .blog-card:hover .blog-card-image {
-    transform: scale(1.1);
+    transform: none !important;
 }
 
 .blog-badge {
@@ -7290,17 +7535,25 @@ section .text-muted {
     }
 
     .course-description-text {
-        font-size: 16px;
+        font-size: 14px;
     }
 
-    .course-cta-text-line1,
-    .course-cta-text-line2 {
+    .course-cta-text-line1 {
         font-size: 22px;
+    }
+    
+    .course-cta-text-line1 .course-cta-text-line2 {
+        font-size: 18px;
+    }
+    
+    .course-cta-text-line2 {
+        font-size: 18px;
     }
 
     .course-cta-button {
         font-size: 16px;
-        padding: 16px 24px;
+        padding: 14px 28px;
+        min-width: 160px;
     }
 
     .course-episode-title {

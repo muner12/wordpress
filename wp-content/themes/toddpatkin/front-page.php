@@ -364,7 +364,7 @@
                             <p class="review-text">Todd is a gifted storyteller whose powerful, uplifting stories motivate and inspire us to strive for the stars. He provides a true-life path that can take any one of us from despair to hope, from anguish to joy.</p>
                             <hr class="review-divider">
                             <div class="d-flex align-items-center gap-3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/review-author-1.png" alt="Dr. Richard Levin"
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Dr. Richard Levin.jpeg" alt="Dr. Richard Levin"
                                     class="review-author-image rounded-3">
                                 <div class="review-author-info">
                                     <h5 class="review-author-name">Dr. Richard Levin</h5>
@@ -392,7 +392,7 @@
                             <p class="review-text">Depression with high achievers is sadly too common. Todd courageously pulls back the curtain and reveals a practical prescription to a more balanced and satisfying life through his own heartfelt story.</p>
                             <hr class="review-divider">
                             <div class="d-flex align-items-center gap-3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/review-author-2.png" alt="Jeffrey S. Davis"
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Jeffrey S. Davis.jpeg" alt="Jeffrey S. Davis"
                                     class="review-author-image rounded-3">
                                 <div class="review-author-info">
                                     <h5 class="review-author-name">Jeffrey S. Davis</h5>
@@ -464,7 +464,7 @@
             </div>
 
             <!-- Main Content Layout -->
-            <div class="row g-4  g-lg-5">
+            <div class="row g-4 g-lg-3">
                 <!-- Right Side: Video and Episode Cards - First on Mobile -->
                 <div class="col-12 col-lg-6 course-right-content order-1 order-lg-2 d-flex justify-content-center">
                     <!-- Video Container -->
@@ -483,7 +483,8 @@
                 <div class="col-12  col-lg-6 course-left-content order-2 order-lg-1">
                     <div class="course-text-content">
                         <p class="course-description-text">Transform your relationship with stress, anxiety, and negative thinking through Todd's comprehensive 12-week video course. Based on the proven program that helped him recover from complete breakdown and refined through years of helping others, this MasterClass takes you step-by-step through practical strategies for building sustainable happiness.</p>
-                        <p class="course-description-text">Each week builds on the last, creating sustainable change rather than quick fixes. You'll get lifetime access to all videos, downloadable workbooks, and bonus materials.</p>
+                        <p class="course-description-text">Each week builds on the last, creating sustainable change rather than quick fixes. You'll discover how to identify and break free from the patterns that keep you stuck in cycles of worry and self-doubt. Through Todd's personal stories and evidence-based techniques, you'll learn to reframe your thoughts, manage overwhelming emotions, and develop resilience that lasts.</p>
+                        <p class="course-description-text">The course covers essential topics including understanding the root causes of anxiety, developing healthy coping mechanisms, building self-compassion, and creating meaningful connections. You'll explore practical exercises designed to help you implement these strategies in your daily life, making real progress week by week.</p>
                     </div>
                 </div>
             </div>
@@ -494,7 +495,8 @@
                     <div class="course-cta-box w-100">
                         <div class="text-center">
                             <p class="course-cta-text-line1">Purchase the MasterClass and receive a FREE signed copy of</p>
-                            <p class="course-cta-text-line2">Finding Happiness</p>
+                            
+                            <p class="course-cta-text-line2">Congrats! You've Been Promoted</p>
                         </div>
                         <div class="text-center mt-3">
                             <a href="#" class="btn course-cta-button">Buy Now ($29.99)</a>
@@ -558,7 +560,7 @@
                                 <span>Week 2</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Week 2: Focus on Taking Charge of Your Mind</h5>
+                                    <h5 class="course-episode-title">Week 2: Focus on Taking Change of Your Mind</h5>
                                     <p class="course-episode-description">Congratulations, graduates! (And parents of graduates, too.) As you gaze with pride on your diplomas, I'm sure you're also thinking about what comes next. No</p>
                                 </div>
                                 <a href="#" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Purchase Now <i class="fas fa-arrow-right"></i></a>
@@ -588,7 +590,7 @@
                                 <span>Week 3</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Week 3: Focus on: Living in the Present</h5>
+                                    <h5 class="course-episode-title">Week 3: Focus on:BEING EASIER ON YOURSELF</h5>
                                     <p class="course-episode-description">Congratulations, graduates! (And parents of graduates, too.) As you gaze with pride on your diplomas, I'm sure you're also thinking about what comes next. No</p>
                                 </div>
                                 <a href="#" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Purchase Now <i class="fas fa-arrow-right"></i></a>
@@ -708,13 +710,13 @@
                         class="text-warning">Podcast</span></h2>
                 <p class="text-muted">Listen to Todd share insights on happiness, mental health, and personal transformation</p>
             </div>
-            <div class="row g-4">
-                <div class="col-12 col-md-6">
+            <div class="podcast-custom-grid">
+                <div class="podcast-grid-item">
                     <div class="card border-0 shadow-sm h-100 overflow-hidden position-relative podcast-card">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast_1.png" class="img-fluid w-100 podcast-card-img" alt="Crack the happiness code">
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="podcast-grid-item">
                     <div class="card border-0 shadow-sm h-100 overflow-hidden position-relative podcast-card">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast_2.png" class="img-fluid w-100 podcast-card-img" alt="Why Helping Others is the Secret to Helping Yourself">
                     </div>
@@ -729,79 +731,60 @@
     <!-- Blog Section -->
     <section id="blogs" class="blog-section bg-white">
         <div class="container ">
-        <div class="text-center mb-5">
-            <h2 class="display-5 fw-bold text-primary-blue text-uppercase mb-2">
-                Featured <span class="text-warning">Blogs</span>
-            </h2>
-            <p class="text-muted">Listen to Todd share insights on happiness, mental health, and personal transformation</p>
-        </div>
-
-        <div class="row g-4">
-            <?php
-            $default_image = get_template_directory_uri() . '/assets/images/default-blog.webp';
-
-            $args = [
-                'post_type'      => 'post',
-                'posts_per_page' => 3,
-                'post_status'    => 'publish'
-            ];
-
-            $home_blogs = new WP_Query($args);
-
-            if ($home_blogs->have_posts()) :
-                while ($home_blogs->have_posts()) : $home_blogs->the_post();
-            ?>
-
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-primary-blue text-uppercase mb-2">Featured <span
+                        class="text-warning">Blogs</span></h2>
+                <p class="text-muted">Listen to Todd share insights on happiness, mental health, and personal transformation</p>
+            </div>
+            <div class="row g-4">
                 <div class="col-12 col-md-4">
                     <div class="card shadow-sm h-100 blog-card">
-
-                        <img src="<?php echo has_post_thumbnail()
-                            ? get_the_post_thumbnail_url(get_the_ID(), 'medium')
-                            : esc_url($default_image); ?>"
-                            class="card-img-top blog-card-img"
-                            alt="<?php the_title_attribute(); ?>"
-                            style="height: 300px; object-fit: cover;">
-
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_1.png" class="card-img-top blog-card-img"
+                            alt="Masks: The Other Side of the Coin">
                         <div class="card-body p-3">
                             <div class="d-flex align-items-center mb-2">
-                                <span class="badge bg-warning text-dark me-2">
-                                    <?php
-                                    $category = get_the_category();
-                                    echo $category ? esc_html($category[0]->name) : 'Blogs';
-                                    ?>
-                                </span>
+                                <span class="badge bg-warning text-dark me-2">Blogs</span>
                             </div>
-
-                            <h4 class="card-title fw-bold mb-2">
-                                <?php the_title(); ?>
-                            </h4>
-
-                            <p class="card-text text-muted mb-3">
-                                <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
-                            </p>
-
-                            <a href="<?php the_permalink(); ?>" class="btn btn-warning btn-sm">
-                                <span class="btn-content">Read More</span>
-                            </a>
+                            <h4 class="card-title fw-bold mb-2">Money and Happiness: Why More Isn't Always Better</h4>
+                            <p class="card-text text-muted mb-3">Despite achieving financial success beyond my wildest dreams, I discovered the hard way that wealth can't buy happiness. Here's what actually creates lasting contentment...</p>
+                            <a href="#" class="btn btn-warning btn-sm"><span class="btn-content">Read More</span></a>
                         </div>
                     </div>
                 </div>
-
-            <?php
-                endwhile;
-                wp_reset_postdata();
-            endif;
-            ?>
+                <div class="col-12 col-md-4">
+                    <div class="card shadow-sm h-100 blog-card">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_2.png" class="card-img-top blog-card-img"
+                            alt="Season of Peace: The Importance of Quiet Time">
+                        <div class="card-body p-3">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-warning text-dark me-2">Blogs</span>
+                            </div>
+                            <h4 class="card-title fw-bold mb-2">The Quiet Time Revolution: Why Doing Nothing Changed Everything</h4>
+                            <p class="card-text text-muted mb-3">As a chronic achiever and perfectionist, the concept of 'quiet time' seemed impossible—and unnecessary. But learning to be still became one of the most transformative...</p>
+                            <a href="#" class="btn btn-warning btn-sm"><span class="btn-content">Read More</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card shadow-sm h-100 blog-card">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_3.png" class="card-img-top blog-card-img"
+                            alt="5 Things Your Employees Are Dying to Hear from You">
+                        <div class="card-body p-3">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-warning text-dark me-2">Blogs</span>
+                            </div>
+                            <h4 class="card-title fw-bold mb-2">5 Signs You're a High-Functioning Depressive (And What to Do About It)</h4>
+                            <p class="card-text text-muted mb-3">You're successful, accomplished, and from the outside your life looks perfect. But inside, you're struggling. These are the warning signs I wish I'd recognized sooner...</p>
+                            <a href="#" class="btn btn-warning btn-sm"><span class="btn-content">Read More</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="btn btn-warning btn-lg"><span class="btn-content">View More</span></a>
+            </div>
         </div>
-
-        <div class="text-center mt-5">
-            <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>"
-                class="btn btn-warning btn-lg">
-                <span class="btn-content">View More</span>
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Contact Section -->
     <section  id="contact" class="contact-section text-white text-center" style="cursor: pointer;">

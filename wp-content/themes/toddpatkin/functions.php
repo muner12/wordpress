@@ -28,32 +28,97 @@ function toddpatkin_create_required_pages() {
         array( 'slug' => 'podcast', 'title' => 'Podcast', 'template' => 'templates/template-podcast.php' ),
         array( 'slug' => 'blog', 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
         array( 'slug' => 'preview-book', 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
+        // Course module pages
+        array( 'slug' => 'course/module-1', 'title' => 'Module 1: Being Easier on Yourself', 'template' => 'templates/template-module-1.php' ),
+        array( 'slug' => 'course/module-2', 'title' => 'Module 2: Taking Charge of Your Mind', 'template' => 'templates/template-module-2.php' ),
+        array( 'slug' => 'course/module-3', 'title' => 'Module 3: Living in the Present', 'template' => 'templates/template-module-3.php' ),
+        array( 'slug' => 'course/module-4', 'title' => 'Module 4: The Power of Self-Love', 'template' => 'templates/template-module-4.php' ),
+        array( 'slug' => 'course/module-5', 'title' => 'Module 5: Exercise as Medicine', 'template' => 'templates/template-module-5.php' ),
+        array( 'slug' => 'course/module-6', 'title' => 'Module 6: Connecting to Your Higher Power', 'template' => 'templates/template-module-6.php' ),
+        array( 'slug' => 'course/module-7', 'title' => 'Module 7: The Relationship Factor', 'template' => 'templates/template-module-7.php' ),
+        array( 'slug' => 'course/module-8', 'title' => 'Module 8: Handling Negative People', 'template' => 'templates/template-module-8.php' ),
+        array( 'slug' => 'course/module-9', 'title' => 'Module 9: The Gratitude Practice', 'template' => 'templates/template-module-9.php' ),
+        array( 'slug' => 'course/module-10', 'title' => 'Module 10: The Service Secret', 'template' => 'templates/template-module-10.php' ),
+        array( 'slug' => 'course/module-11', 'title' => 'Module 11: Building Your Support System', 'template' => 'templates/template-module-11.php' ),
+        array( 'slug' => 'course/module-12', 'title' => 'Module 12: Sustaining Your Practice', 'template' => 'templates/template-module-12.php' ),
     );
     
+    // First, get the course page ID for child pages
+    $course_page = get_page_by_path( 'course' );
+    $course_page_id = $course_page ? $course_page->ID : 0;
+    
     foreach ( $pages as $page_data ) {
-        $page = get_page_by_path( $page_data['slug'] );
+        // Check if this is a nested path (course module)
+        $is_nested = strpos( $page_data['slug'], '/' ) !== false;
         
-        if ( ! $page ) {
-            $new_page = array(
-                'post_title'    => $page_data['title'],
-                'post_name'     => $page_data['slug'],
-                'post_status'   => 'publish',
-                'post_type'     => 'page',
-                'post_content'  => '',
-                'post_author'   => 1,
-            );
+        if ( $is_nested ) {
+            // Handle nested paths like 'course/module-1'
+            $path_parts = explode( '/', $page_data['slug'] );
+            $parent_slug = $path_parts[0];
+            $child_slug = $path_parts[1];
             
-            $page_id = wp_insert_post( $new_page, true );
+            // Get parent page
+            $parent_page = get_page_by_path( $parent_slug );
+            if ( ! $parent_page ) {
+                continue; // Skip if parent doesn't exist
+            }
             
-            if ( ! is_wp_error( $page_id ) && $page_id && ! empty( $page_data['template'] ) ) {
-                update_post_meta( $page_id, '_wp_page_template', $page_data['template'] );
+            // Check if child page exists
+            $child_page = get_page_by_path( $page_data['slug'] );
+            
+            if ( ! $child_page ) {
+                $new_page = array(
+                    'post_title'    => $page_data['title'],
+                    'post_name'     => $child_slug,
+                    'post_status'   => 'publish',
+                    'post_type'     => 'page',
+                    'post_content'  => '',
+                    'post_author'   => 1,
+                    'post_parent'   => $parent_page->ID,
+                );
+                
+                $page_id = wp_insert_post( $new_page, true );
+                
+                if ( ! is_wp_error( $page_id ) && $page_id ) {
+                    if ( ! empty( $page_data['template'] ) ) {
+                        update_post_meta( $page_id, '_wp_page_template', $page_data['template'] );
+                    }
+                }
+            } else {
+                // Update template if page exists
+                if ( ! empty( $page_data['template'] ) ) {
+                    $current_template = get_page_template_slug( $child_page->ID );
+                    if ( $current_template !== $page_data['template'] ) {
+                        update_post_meta( $child_page->ID, '_wp_page_template', $page_data['template'] );
+                    }
+                }
             }
         } else {
-            // Update template if page exists
-            if ( ! empty( $page_data['template'] ) ) {
-                $current_template = get_page_template_slug( $page->ID );
-                if ( $current_template !== $page_data['template'] ) {
-                    update_post_meta( $page->ID, '_wp_page_template', $page_data['template'] );
+            // Handle regular pages
+            $page = get_page_by_path( $page_data['slug'] );
+            
+            if ( ! $page ) {
+                $new_page = array(
+                    'post_title'    => $page_data['title'],
+                    'post_name'     => $page_data['slug'],
+                    'post_status'   => 'publish',
+                    'post_type'     => 'page',
+                    'post_content'  => '',
+                    'post_author'   => 1,
+                );
+                
+                $page_id = wp_insert_post( $new_page, true );
+                
+                if ( ! is_wp_error( $page_id ) && $page_id && ! empty( $page_data['template'] ) ) {
+                    update_post_meta( $page_id, '_wp_page_template', $page_data['template'] );
+                }
+            } else {
+                // Update template if page exists
+                if ( ! empty( $page_data['template'] ) ) {
+                    $current_template = get_page_template_slug( $page->ID );
+                    if ( $current_template !== $page_data['template'] ) {
+                        update_post_meta( $page->ID, '_wp_page_template', $page_data['template'] );
+                    }
                 }
             }
         }
@@ -131,6 +196,31 @@ function toddpatkin_intercept_missing_pages( $wp ) {
     }
     
     $request_uri = trim( $_SERVER['REQUEST_URI'], '/' );
+    
+    // Remove query string
+    $request_uri = strtok( $request_uri, '?' );
+    
+    // Remove .html extension if present
+    $request_uri = rtrim( $request_uri, '/.html' );
+    
+    // Check if it's a nested path (course/module-X)
+    $is_course_module = false;
+    $module_slug = '';
+    
+    // Check various patterns for course modules
+    if ( preg_match( '#course[/-]module-(\d+)#i', $request_uri, $matches ) ) {
+        $module_slug = 'module-' . $matches[1];
+        $is_course_module = true;
+    } elseif ( strpos( $request_uri, 'course/' ) !== false ) {
+        $parts = explode( 'course/', $request_uri );
+        if ( isset( $parts[1] ) ) {
+            $module_slug = trim( $parts[1], '/' );
+            $module_slug = strtok( $module_slug, '?' );
+            $module_slug = rtrim( $module_slug, '/.html' );
+            $is_course_module = true;
+        }
+    }
+    
     $path_parts = array_filter( explode( '/', $request_uri ) );
     $slug = end( $path_parts );
     $slug = strtok( $slug, '?' );
@@ -144,27 +234,63 @@ function toddpatkin_intercept_missing_pages( $wp ) {
         'podcast' => array( 'title' => 'Podcast', 'template' => 'templates/template-podcast.php' ),
         'blog' => array( 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
         'preview-book' => array( 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
+        // Course modules
+        'module-1' => array( 'title' => 'Module 1: Being Easier on Yourself', 'template' => 'templates/template-module-1.php', 'parent' => 'course' ),
+        'module-2' => array( 'title' => 'Module 2: Taking Charge of Your Mind', 'template' => 'templates/template-module-2.php', 'parent' => 'course' ),
+        'module-3' => array( 'title' => 'Module 3: Living in the Present', 'template' => 'templates/template-module-3.php', 'parent' => 'course' ),
+        'module-4' => array( 'title' => 'Module 4: The Power of Self-Love', 'template' => 'templates/template-module-4.php', 'parent' => 'course' ),
+        'module-5' => array( 'title' => 'Module 5: Exercise as Medicine', 'template' => 'templates/template-module-5.php', 'parent' => 'course' ),
+        'module-6' => array( 'title' => 'Module 6: Connecting to Your Higher Power', 'template' => 'templates/template-module-6.php', 'parent' => 'course' ),
+        'module-7' => array( 'title' => 'Module 7: The Relationship Factor', 'template' => 'templates/template-module-7.php', 'parent' => 'course' ),
+        'module-8' => array( 'title' => 'Module 8: Handling Negative People', 'template' => 'templates/template-module-8.php', 'parent' => 'course' ),
+        'module-9' => array( 'title' => 'Module 9: The Gratitude Practice', 'template' => 'templates/template-module-9.php', 'parent' => 'course' ),
+        'module-10' => array( 'title' => 'Module 10: The Service Secret', 'template' => 'templates/template-module-10.php', 'parent' => 'course' ),
+        'module-11' => array( 'title' => 'Module 11: Building Your Support System', 'template' => 'templates/template-module-11.php', 'parent' => 'course' ),
+        'module-12' => array( 'title' => 'Module 12: Sustaining Your Practice', 'template' => 'templates/template-module-12.php', 'parent' => 'course' ),
     );
     
-    if ( ! empty( $slug ) && isset( $page_templates[ $slug ] ) ) {
-        $page = get_page_by_path( $slug );
+    // Use module slug if it's a course module
+    $check_slug = $is_course_module ? $module_slug : $slug;
+    
+    if ( ! empty( $check_slug ) && isset( $page_templates[ $check_slug ] ) ) {
+        $page_template = $page_templates[ $check_slug ];
+        
+        // Check if it's a child page
+        if ( isset( $page_template['parent'] ) ) {
+            $parent_page = get_page_by_path( $page_template['parent'] );
+            if ( $parent_page ) {
+                $page = get_page_by_path( $page_template['parent'] . '/' . $check_slug );
+            } else {
+                $page = null;
+            }
+        } else {
+            $page = get_page_by_path( $check_slug );
+        }
         
         if ( ! $page ) {
             // Create the page immediately
             $page_data = array(
-                'post_title'    => $page_templates[ $slug ]['title'],
-                'post_name'     => $slug,
+                'post_title'    => $page_template['title'],
+                'post_name'     => $check_slug,
                 'post_status'   => 'publish',
                 'post_type'     => 'page',
                 'post_content'  => '',
                 'post_author'   => 1,
             );
             
+            // Set parent if it's a child page
+            if ( isset( $page_template['parent'] ) ) {
+                $parent_page = get_page_by_path( $page_template['parent'] );
+                if ( $parent_page ) {
+                    $page_data['post_parent'] = $parent_page->ID;
+                }
+            }
+            
             $page_id = wp_insert_post( $page_data, false ); // Use false to avoid validation issues
             
             if ( $page_id && ! is_wp_error( $page_id ) ) {
-                if ( ! empty( $page_templates[ $slug ]['template'] ) ) {
-                    update_post_meta( $page_id, '_wp_page_template', $page_templates[ $slug ]['template'] );
+                if ( ! empty( $page_template['template'] ) ) {
+                    update_post_meta( $page_id, '_wp_page_template', $page_template['template'] );
                 }
                 
                 // Flush rewrite rules
@@ -196,10 +322,35 @@ function toddpatkin_handle_404_create_page() {
     }
     
     $request_uri = trim( $_SERVER['REQUEST_URI'], '/' );
+    
+    // Remove query string
+    $request_uri = strtok( $request_uri, '?' );
+    
+    // Remove .html extension if present
+    $request_uri = rtrim( $request_uri, '/.html' );
+    
     $path_parts = array_filter( explode( '/', $request_uri ) );
     $slug = end( $path_parts );
     $slug = strtok( $slug, '?' );
     $slug = rtrim( $slug, '/.html' );
+    
+    // Check if it's a nested path (course/module-X) - improved detection
+    $is_course_module = false;
+    $module_slug = '';
+    
+    // Check various patterns for course modules
+    if ( preg_match( '#course[/-]module-(\d+)#i', $request_uri, $matches ) ) {
+        $module_slug = 'module-' . $matches[1];
+        $is_course_module = true;
+    } elseif ( strpos( $request_uri, 'course/' ) !== false ) {
+        $parts = explode( 'course/', $request_uri );
+        if ( isset( $parts[1] ) ) {
+            $module_slug = trim( $parts[1], '/' );
+            $module_slug = strtok( $module_slug, '?' );
+            $module_slug = rtrim( $module_slug, '/.html' );
+            $is_course_module = true;
+        }
+    }
     
     $page_templates = array(
         'expertise' => array( 'title' => 'Expertise', 'template' => 'templates/template-expertise.php' ),
@@ -209,26 +360,62 @@ function toddpatkin_handle_404_create_page() {
         'podcast' => array( 'title' => 'Podcast', 'template' => 'templates/template-podcast.php' ),
         'blog' => array( 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
         'preview-book' => array( 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
+        // Course modules
+        'module-1' => array( 'title' => 'Module 1: Being Easier on Yourself', 'template' => 'templates/template-module-1.php', 'parent' => 'course' ),
+        'module-2' => array( 'title' => 'Module 2: Taking Charge of Your Mind', 'template' => 'templates/template-module-2.php', 'parent' => 'course' ),
+        'module-3' => array( 'title' => 'Module 3: Living in the Present', 'template' => 'templates/template-module-3.php', 'parent' => 'course' ),
+        'module-4' => array( 'title' => 'Module 4: The Power of Self-Love', 'template' => 'templates/template-module-4.php', 'parent' => 'course' ),
+        'module-5' => array( 'title' => 'Module 5: Exercise as Medicine', 'template' => 'templates/template-module-5.php', 'parent' => 'course' ),
+        'module-6' => array( 'title' => 'Module 6: Connecting to Your Higher Power', 'template' => 'templates/template-module-6.php', 'parent' => 'course' ),
+        'module-7' => array( 'title' => 'Module 7: The Relationship Factor', 'template' => 'templates/template-module-7.php', 'parent' => 'course' ),
+        'module-8' => array( 'title' => 'Module 8: Handling Negative People', 'template' => 'templates/template-module-8.php', 'parent' => 'course' ),
+        'module-9' => array( 'title' => 'Module 9: The Gratitude Practice', 'template' => 'templates/template-module-9.php', 'parent' => 'course' ),
+        'module-10' => array( 'title' => 'Module 10: The Service Secret', 'template' => 'templates/template-module-10.php', 'parent' => 'course' ),
+        'module-11' => array( 'title' => 'Module 11: Building Your Support System', 'template' => 'templates/template-module-11.php', 'parent' => 'course' ),
+        'module-12' => array( 'title' => 'Module 12: Sustaining Your Practice', 'template' => 'templates/template-module-12.php', 'parent' => 'course' ),
     );
     
-    if ( ! empty( $slug ) && isset( $page_templates[ $slug ] ) ) {
-        $page = get_page_by_path( $slug );
+    // Use module slug if it's a course module
+    $check_slug = $is_course_module ? $module_slug : $slug;
+    
+    if ( ! empty( $check_slug ) && isset( $page_templates[ $check_slug ] ) ) {
+        $page_template = $page_templates[ $check_slug ];
+        
+        // Check if it's a child page
+        if ( isset( $page_template['parent'] ) ) {
+            $parent_page = get_page_by_path( $page_template['parent'] );
+            if ( $parent_page ) {
+                $page = get_page_by_path( $page_template['parent'] . '/' . $check_slug );
+            } else {
+                $page = null;
+            }
+        } else {
+            $page = get_page_by_path( $check_slug );
+        }
         
         if ( ! $page ) {
             $page_data = array(
-                'post_title'    => $page_templates[ $slug ]['title'],
-                'post_name'     => $slug,
+                'post_title'    => $page_template['title'],
+                'post_name'     => $check_slug,
                 'post_status'   => 'publish',
                 'post_type'     => 'page',
                 'post_content'  => '',
                 'post_author'   => 1,
             );
             
+            // Set parent if it's a child page
+            if ( isset( $page_template['parent'] ) ) {
+                $parent_page = get_page_by_path( $page_template['parent'] );
+                if ( $parent_page ) {
+                    $page_data['post_parent'] = $parent_page->ID;
+                }
+            }
+            
             $page_id = wp_insert_post( $page_data, false );
             
             if ( $page_id && ! is_wp_error( $page_id ) ) {
-                if ( ! empty( $page_templates[ $slug ]['template'] ) ) {
-                    update_post_meta( $page_id, '_wp_page_template', $page_templates[ $slug ]['template'] );
+                if ( ! empty( $page_template['template'] ) ) {
+                    update_post_meta( $page_id, '_wp_page_template', $page_template['template'] );
                 }
                 
                 flush_rewrite_rules( false );
