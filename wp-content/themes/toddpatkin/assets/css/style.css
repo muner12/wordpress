@@ -3692,6 +3692,38 @@ section .text-muted {
     color: #FAD30C;
 }
 
+/* Course Episode Cards Horizontal - 3 cards in one row */
+.course-episode-cards-horizontal {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* Mobile: 1 column */
+@media (max-width: 767px) {
+    .course-episode-cards-horizontal {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) and (max-width: 991px) {
+    .course-episode-cards-horizontal {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 992px) {
+    .course-episode-cards-horizontal {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
 /* Course Date Overlay */
 .course-date-overlay {
     position: absolute;
