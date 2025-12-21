@@ -801,8 +801,8 @@
                                 <i class="fas fa-calendar-alt fa-2x text-dark"></i>
                             </div>
                         </div>
-                        <h4 class="fw-bold text-uppercase mb-3">Get Consultation</h4>
-                        <p class="text-muted mb-4 flex-grow-1">Schedule a free 30-minute call with Todd to discuss your organization's needs. We'll explore how Todd's programs can help your team build resilience, manage stress, and create a healthier workplace culture.</p>
+                        <h4 class="fw-bold text-uppercase mb-3 text-white">Get Consultation</h4>
+                        <p class="text-white mb-4 flex-grow-1">Schedule a free 30-minute call with Todd to discuss your organization's needs. We'll explore how Todd's programs can help your team build resilience, manage stress, and create a healthier workplace culture.</p>
                         <a href="#" class="btn btn-warning w-100 contact-card-btn" data-bs-toggle="modal" data-bs-target="#contactModal"><span class="btn-content">Schedule a Call</span></a>
                     </div>
                 </div>
@@ -814,10 +814,9 @@
                                 <i class="fas fa-envelope fa-2x text-dark"></i>
                             </div>
                         </div>
-                        <h4 class="fw-bold text-uppercase mb-3">Contact Us Directly</h4>
-                        <p class="text-muted mb-4 flex-grow-1">Have questions about Todd's speaking, workshops, or courses? Our team typically responds within 24 hours and will help you find the perfect solution for your needs.</p>
-                        <a href="mailto:todd@toddpatkin.com" class="btn btn-warning w-100 contact-card-btn"><span
-                                class="btn-content">Contact Now</span></a>
+                        <h4 class="fw-bold text-uppercase mb-3 text-white">Contact Us Directly</h4>
+                        <p class="text-white mb-4 flex-grow-1">Have questions about Todd's speaking, workshops, or courses? Our team typically responds within 24 hours and will help you find the perfect solution for your needs.</p>
+                        <a href="#" class="btn btn-warning w-100 contact-card-btn" data-bs-toggle="modal" data-bs-target="#contactModal"><span class="btn-content">Contact Now</span></a>
                     </div>
                 </div>
             </div>
@@ -834,5 +833,70 @@
             </div>
         </div>
     </section>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content contact-modal-content">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="contact-modal-header mb-4">
+                        <h2 class="contact-modal-title">Contact Us</h2>
+                        <p class="contact-modal-subtitle">Lorem ipsum dolor sit amet consectetur. In</p>
+                    </div>
+                    <form class="contact-modal-form">
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label contact-form-label">First Name</label>
+                            <input type="text" class="form-control contact-form-input" id="firstName" placeholder="Please enter first name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label contact-form-label">Last Name</label>
+                            <input type="text" class="form-control contact-form-input" id="lastName" placeholder="Please enter last name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label contact-form-label">Email Address</label>
+                            <input type="email" class="form-control contact-form-input" id="email" placeholder="Please enter your email" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="reason" class="form-label contact-form-label">Reason for contacting</label>
+                            <input type="text" class="form-control contact-form-input contact-form-date" id="reason" placeholder="DD/MM/YYYY" required>
+                        </div>
+                        <button type="submit" class="btn btn-warning w-100 contact-modal-submit-btn">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content success-modal-content">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="success-modal-header text-center">
+                        <div class="success-modal-icon mb-4">
+                            <div class="success-checkmark-outer">
+                                <div class="success-checkmark-inner">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 class="success-modal-title mb-3">Successfull</h2>
+                        <p class="success-modal-message mb-4">Please purchase the book to get complete access to the book</p>
+                        <button type="button" class="btn btn-warning w-100 success-modal-close-btn" data-bs-dismiss="modal">
+                            Ok
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <?php get_footer(); ?>
