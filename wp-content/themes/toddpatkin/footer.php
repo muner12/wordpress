@@ -16,19 +16,16 @@
                 <div class="col-6 col-lg-4 mb-4 mb-lg-0 footer-services-column">
                     <h5 class="footer-title-yellow">SERVICES</h5>
                     <ul class="footer-list">
-                        <li><a href="<?php echo esc_url( home_url( '/about-author' ) ); ?>" class="footer-link">About Author</a></li>
                         <li><a href="<?php echo esc_url( home_url( '/expertise' ) ); ?>" class="footer-link">Expertise</a></li>
-                        <li><a href="#books" class="footer-link">Author Books</a></li>
                         <li><a href="<?php echo esc_url( home_url( '/course' ) ); ?>" class="footer-link">Courses</a></li>
                         <li><a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="footer-link">Blogs</a></li>
-                        <li><a href="#video" class="footer-link">Videos</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-4 mb-4 mb-lg-0 footer-company-column">
                     <h5 class="footer-title-yellow">COMPANY</h5>
                     <ul class="footer-list">
-                        <li><a href="#about" class="footer-link">About us</a></li>
-                        <li><a href="#" class="footer-link">Our Team</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/about-author' ) ); ?>" class="footer-link">About Author</a></li>
+                        <li><a href="#books" class="footer-link">Author Books</a></li>
                         <li><a href="#contact" class="footer-link">Contact</a></li>
                     </ul>
                 </div>
@@ -38,11 +35,11 @@
                 <div class="col-12 col-lg-6 mb-3 mb-lg-0 footer-copyright-wrapper">
                     <p class="footer-copyright">&copy; 2025 Todd Patkin. All rights reserved.</p>
                 </div>
-                <div class="col-12 col-lg-6 footer-bottom-links-wrapper">
+                <!-- <div class="col-12 col-lg-6 footer-bottom-links-wrapper">
                     <a href="#" class="footer-bottom-link">Privacy Policy</a>
                     <a href="#" class="footer-bottom-link">Terms of Service</a>
                     <a href="#" class="footer-bottom-link">Cookie Policy</a>
-                </div>
+                </div> -->
             </div>
         </div>
     </footer>

@@ -121,7 +121,7 @@ get_header();
                                             <span>Week 3</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Module 3: Living in the Present</h5>
+                                    <h5 class="course-episode-title">Module 3:Focus on Taking Charge of Your Mind</h5>
                                     <p class="course-episode-description">Stop dwelling on the past or worrying about the future. Learn presence practices that create immediate calm.</p>
                                 </div>
                                 <a href="<?php echo esc_url( home_url( '/course/module-3' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">
@@ -159,7 +159,7 @@ get_header();
                                             <span>Week 4</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Module 4: The Power of Self-Love</h5>
+                                    <h5 class="course-episode-title">Module 4:Focus on Living in the Present</h5>
                                     <p class="course-episode-description">Why loving yourself must come first—and how to do it even when it feels impossible.</p>
                                 </div>
                                 <a href="<?php echo esc_url( home_url( '/course/module-4' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">
@@ -193,7 +193,7 @@ get_header();
                                             <span>Week 5</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Module 5: Exercise as Medicine</h5>
+                                    <h5 class="course-episode-title">Module 5: Focus on Eliminating Stressors</h5>
                                     <p class="course-episode-description">The surprising science behind why movement is non-negotiable for mental health.</p>
                                 </div>
                                 <a href="<?php echo esc_url( home_url( '/course/module-5' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">
@@ -227,7 +227,7 @@ get_header();
                                             <span>Week 6</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Module 6: Connecting to Your Higher Power</h5>
+                                    <h5 class="course-episode-title">Module 6:Focus on Playing to Your Strengths</h5>
                                     <p class="course-episode-description">How spiritual connection (however you define it) shapes your experience of life.</p>
                                 </div>
                                 <a href="<?php echo esc_url( home_url( '/course/module-6' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">
@@ -265,7 +265,7 @@ get_header();
                                             <span>Week 7</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Module 7: The Relationship Factor</h5>
+                                    <h5 class="course-episode-title">Module 7:Spending More Time With Positive People</h5>
                                     <p class="course-episode-description">Why your marriage or primary relationship plays a crucial role in your happiness.</p>
                                 </div>
                                 <a href="<?php echo esc_url( home_url( '/course/module-7' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">
@@ -299,7 +299,7 @@ get_header();
                                             <span>Week 8</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Module 8: Handling Negative People</h5>
+                                    <h5 class="course-episode-title">Module 8:Focus on Strengthening Close Relationships</h5>
                                     <p class="course-episode-description">Strategies for managing difficult relationships and setting healthy boundaries.</p>
                                 </div>
                                 <a href="<?php echo esc_url( home_url( '/course/module-8' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">
@@ -333,7 +333,7 @@ get_header();
                                             <span>Week 9</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Module 9: The Gratitude Practice</h5>
+                                    <h5 class="course-episode-title">Module 9:Focus on Being Friendly</h5>
                                     <p class="course-episode-description">Moving beyond simple "thank you" to truly transformative gratitude.</p>
                                 </div>
                                 <a href="<?php echo esc_url( home_url( '/course/module-9' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">
@@ -371,7 +371,7 @@ get_header();
                                             <span>Week 10</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Module 10: The Service Secret</h5>
+                                    <h5 class="course-episode-title">Module 10:Focus on Helping Others</h5>
                                     <p class="course-episode-description">Why giving back is one of the most powerful tools for your own recovery.</p>
                                 </div>
                                 <a href="<?php echo esc_url( home_url( '/course/module-10' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">
@@ -405,7 +405,7 @@ get_header();
                                             <span>Week 11</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Module 11: Building Your Support System</h5>
+                                    <h5 class="course-episode-title">Module 11:Developing An Attitude of Gratitude</h5>
                                     <p class="course-episode-description">Creating and maintaining the network that will support your happiness journey.</p>
                                 </div>
                                 <a href="<?php echo esc_url( home_url( '/course/module-11' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">
@@ -439,7 +439,7 @@ get_header();
                                             <span>Week 12</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Module 12: Sustaining Your Practice</h5>
+                                    <h5 class="course-episode-title">Module 12:Focus on Your Higher Power</h5>
                                     <p class="course-episode-description">How to maintain momentum and continue growing long after the course ends.</p>
                                 </div>
                                 <a href="<?php echo esc_url( home_url( '/course/module-12' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">

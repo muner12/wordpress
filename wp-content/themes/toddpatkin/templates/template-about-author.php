@@ -32,7 +32,7 @@ get_header();
                 <div class="about-author-content">
                     <h3 class="about-author-name-title">TODD PATKIN</h3>
                     <h4 class="about-author-description-label">Description</h4>
-                    <div class="about-author-text-content">
+                    <div class="about-author-text-content" style="text-align: justify;">
                         <p class="about-author-paragraph">Hi, my name is Todd Patkin. I'm forty-seven years young, and I'm incredibly excited because I have so much more I want to learn and do with my life. Most importantly.</p>
 
                         <p class="about-author-paragraph">I hope to help as many people as possible to live much happier and much less burdened lives. My book, Finding Happiness, will tell you my life story and so much more... but I wanted to give you the proverbial "nickel tour" of my life right here. I was born into a family who loved me very much and gave me many opportunities. And yet, these privileges didn't translate to happiness. Throughout my growing- up years-and even in high school and college-l struggled with low self-esteem, being bullied, separation anxiety, and debilitating perfectionism. And just as my "perfect" childhood didn't bring me happiness.</p>

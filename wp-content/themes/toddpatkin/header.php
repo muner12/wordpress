@@ -105,7 +105,7 @@
                     <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/blog' ) ); ?>">Blog</a></li>
                 </ul>
                 <div class="d-flex align-items-center ms-auto">
-                    <a href="<?php echo esc_url( home_url( '/hire' ) ); ?>" class="btn btn-warning"><span class="btn-content">Hire Todd</span></a>
+                    <a href="<?php echo esc_url( home_url( '/hire-todd' ) ); ?>" class="btn btn-warning"><span class="btn-content">Hire Todd</span></a>
                 </div>
             </div>
         </div>

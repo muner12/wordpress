@@ -12,9 +12,8 @@
 /* About Book Hero Section (White background, 20px border-radius, padding 40px 150px 80px) */
 .about-book-hero-section {
     background: #FFFFFF;
-    padding: 40px 150px 80px;
     border-radius: 20px;
-    margin: 0 56px 58px;
+    margin-bottom: 0 !important;
 }
 
 .about-book-page-title {
@@ -331,7 +330,7 @@
 @media (max-width: 1400px) {
     .about-book-hero-section {
         margin: 0 30px 40px;
-        padding: 40px 80px 80px;
+        padding: 40px 80px 32px;
     }
 }
 

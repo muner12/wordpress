@@ -32,7 +32,9 @@ function toddpatkin_create_required_pages() {
         array( 'slug' => 'podcast/podcast-3', 'title' => 'Podcast 3: Happiness Isn\'t What You Think', 'template' => 'templates/template-podcast-3.php' ),
         array( 'slug' => 'blog', 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
         array( 'slug' => 'preview-book', 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
-        array( 'slug' => 'hire', 'title' => 'Hire Todd', 'template' => 'templates/template-hire.php' ),
+        array( 'slug' => 'preview-boot-camp', 'title' => 'Preview Boot Camp Book', 'template' => 'templates/template-preview-boot-camp.php' ),
+        array( 'slug' => 'boot-camp', 'title' => 'Boot Camp Book', 'template' => 'templates/template-boot-camp.php' ),
+        array( 'slug' => 'hire-todd', 'title' => 'Hire Todd', 'template' => 'templates/template-hire.php' ),
         // Course module pages
         array( 'slug' => 'course/module-1', 'title' => 'Module 1: Being Easier on Yourself', 'template' => 'templates/template-module-1.php' ),
         array( 'slug' => 'course/module-2', 'title' => 'Module 2: Taking Charge of Your Mind', 'template' => 'templates/template-module-2.php' ),
@@ -147,7 +149,7 @@ function toddpatkin_force_create_pages_on_load() {
         return;
     }
     
-    $required_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'hire' );
+    $required_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd' );
     $missing = false;
     
     foreach ( $required_slugs as $slug ) {
@@ -171,7 +173,7 @@ function toddpatkin_force_create_pages_on_load() {
 add_action( 'init', 'toddpatkin_ensure_pages_exist', 1 );
 function toddpatkin_ensure_pages_exist() {
     // Check if any required pages are missing
-    $required_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'hire' );
+    $required_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd' );
     $missing = false;
     
     foreach ( $required_slugs as $slug ) {
@@ -259,7 +261,9 @@ function toddpatkin_intercept_missing_pages( $wp ) {
         'podcast-3' => array( 'title' => 'Podcast 3: Happiness Isn\'t What You Think', 'template' => 'templates/template-podcast-3.php', 'parent' => 'podcast' ),
         'blog' => array( 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
         'preview-book' => array( 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
-        'hire' => array( 'title' => 'Hire Todd', 'template' => 'templates/template-hire.php' ),
+        'preview-boot-camp' => array( 'title' => 'Preview Boot Camp Book', 'template' => 'templates/template-preview-boot-camp.php' ),
+        'boot-camp' => array( 'title' => 'Boot Camp Book', 'template' => 'templates/template-boot-camp.php' ),
+        'hire-todd' => array( 'title' => 'Hire Todd', 'template' => 'templates/template-hire.php' ),
         // Course modules
         'module-1' => array( 'title' => 'Module 1: Being Easier on Yourself', 'template' => 'templates/template-module-1.php', 'parent' => 'course' ),
         'module-2' => array( 'title' => 'Module 2: Taking Charge of Your Mind', 'template' => 'templates/template-module-2.php', 'parent' => 'course' ),
@@ -419,7 +423,9 @@ function toddpatkin_handle_404_create_page() {
         'podcast-3' => array( 'title' => 'Podcast 3: Happiness Isn\'t What You Think', 'template' => 'templates/template-podcast-3.php', 'parent' => 'podcast' ),
         'blog' => array( 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
         'preview-book' => array( 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
-        'hire' => array( 'title' => 'Hire Todd', 'template' => 'templates/template-hire.php' ),
+        'preview-boot-camp' => array( 'title' => 'Preview Boot Camp Book', 'template' => 'templates/template-preview-boot-camp.php' ),
+        'boot-camp' => array( 'title' => 'Boot Camp Book', 'template' => 'templates/template-boot-camp.php' ),
+        'hire-todd' => array( 'title' => 'Hire Todd', 'template' => 'templates/template-hire.php' ),
         // Course modules
         'module-1' => array( 'title' => 'Module 1: Being Easier on Yourself', 'template' => 'templates/template-module-1.php', 'parent' => 'course' ),
         'module-2' => array( 'title' => 'Module 2: Taking Charge of Your Mind', 'template' => 'templates/template-module-2.php', 'parent' => 'course' ),
@@ -648,6 +654,8 @@ function toddpatkin_force_page_template( $template ) {
         'podcast-3' => 'templates/template-podcast-3.php',
         'blog' => 'templates/template-blog.php',
         'preview-book' => 'templates/template-preview-book.php',
+        'preview-boot-camp' => 'templates/template-preview-boot-camp.php',
+        'boot-camp' => 'templates/template-boot-camp.php',
         'module-1' => 'templates/template-module-1.php',
         'module-2' => 'templates/template-module-2.php',
         'module-3' => 'templates/template-module-3.php',
@@ -660,7 +668,7 @@ function toddpatkin_force_page_template( $template ) {
         'module-10' => 'templates/template-module-10.php',
         'module-11' => 'templates/template-module-11.php',
         'module-12' => 'templates/template-module-12.php',
-        'hire' => 'templates/template-hire.php',
+        'hire-todd' => 'templates/template-hire.php',
     );
     
     // Check if this page has a custom template
@@ -715,6 +723,8 @@ function toddpatkin_force_template_include( $template ) {
         'podcast-3' => 'templates/template-podcast-3.php',
         'blog' => 'templates/template-blog.php',
         'preview-book' => 'templates/template-preview-book.php',
+        'preview-boot-camp' => 'templates/template-preview-boot-camp.php',
+        'boot-camp' => 'templates/template-boot-camp.php',
         'module-1' => 'templates/template-module-1.php',
         'module-2' => 'templates/template-module-2.php',
         'module-3' => 'templates/template-module-3.php',
@@ -727,7 +737,7 @@ function toddpatkin_force_template_include( $template ) {
         'module-10' => 'templates/template-module-10.php',
         'module-11' => 'templates/template-module-11.php',
         'module-12' => 'templates/template-module-12.php',
-        'hire' => 'templates/template-hire.php',
+        'hire-todd' => 'templates/template-hire.php',
     );
     
     // Check if this page has a custom template
@@ -761,6 +771,8 @@ function toddpatkin_fix_page_templates() {
         'podcast-3' => 'templates/template-podcast-3.php',
         'blog' => 'templates/template-blog.php',
         'preview-book' => 'templates/template-preview-book.php',
+        'preview-boot-camp' => 'templates/template-preview-boot-camp.php',
+        'boot-camp' => 'templates/template-boot-camp.php',
         'module-1' => 'templates/template-module-1.php',
         'module-2' => 'templates/template-module-2.php',
         'module-3' => 'templates/template-module-3.php',
@@ -773,7 +785,7 @@ function toddpatkin_fix_page_templates() {
         'module-10' => 'templates/template-module-10.php',
         'module-11' => 'templates/template-module-11.php',
         'module-12' => 'templates/template-module-12.php',
-        'hire' => 'templates/template-hire.php',
+        'hire-todd' => 'templates/template-hire.php',
     );
     
     $fixed_count = 0;

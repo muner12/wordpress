@@ -23,7 +23,7 @@
                          <p class="hero-subtitle-secondary mb-4">Check out Todd's new video series</p>
                     <div class="hero-buttons-wrapper d-flex justify-content-center gap-3 flex-wrap mb-5">
                              <a href="https://www.youtube.com/watch?v=9BJm5MzxBQY" target="_blank" rel="noopener noreferrer" class="btn bg-warning hero-watch-video-btn"><span class="btn-content">Watch Videos</span></a>
-                             <a href="<?php echo esc_url( home_url( '/' ) ); ?>#contact" class="btn btn-outline-light hero-hire-btn"><span class="btn-content">Hire Todd</span></a>
+                             <a href="<?php echo esc_url( home_url( '/hire-todd' ) ); ?>" class="btn btn-outline-light hero-hire-btn"><span class="btn-content">Hire Todd</span></a>
                     </div>
                     <div class="hero-scroll-indicator">
                         <p class="hero-scroll-text mb-2">Scroll down</p>
