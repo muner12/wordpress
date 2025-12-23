@@ -31,6 +31,13 @@ function toddpatkin_create_required_pages() {
         array( 'slug' => 'podcast/podcast-2', 'title' => 'Podcast 2: Helping Others Helps You', 'template' => 'templates/template-podcast-2.php' ),
         array( 'slug' => 'podcast/podcast-3', 'title' => 'Podcast 3: Happiness Isn\'t What You Think', 'template' => 'templates/template-podcast-3.php' ),
         array( 'slug' => 'blog', 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
+        // Blog detail pages
+        array( 'slug' => 'blog/blog-1', 'title' => 'Money and Happiness: Why More Isn\'t Always Better', 'template' => 'templates/template-blog-1.php' ),
+        array( 'slug' => 'blog/blog-2', 'title' => 'The Quiet Time Revolution: Why Doing Nothing Changed Everything', 'template' => 'templates/template-blog-2.php' ),
+        array( 'slug' => 'blog/blog-3', 'title' => '5 Signs You\'re a High-Functioning Depressive (And What to Do About It)', 'template' => 'templates/template-blog-3.php' ),
+        array( 'slug' => 'blog/blog-4', 'title' => 'The Power of Gratitude: How Thankfulness Transforms Your Life', 'template' => 'templates/template-blog-4.php' ),
+        array( 'slug' => 'blog/blog-5', 'title' => 'Building Authentic Relationships: The Foundation of True Happiness', 'template' => 'templates/template-blog-5.php' ),
+        array( 'slug' => 'blog/blog-6', 'title' => 'Finding Your Purpose: A Journey from Success to Significance', 'template' => 'templates/template-blog-6.php' ),
         array( 'slug' => 'preview-book', 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
         array( 'slug' => 'preview-boot-camp', 'title' => 'Preview Boot Camp Book', 'template' => 'templates/template-preview-boot-camp.php' ),
         array( 'slug' => 'boot-camp', 'title' => 'Boot Camp Book', 'template' => 'templates/template-boot-camp.php' ),
@@ -210,11 +217,46 @@ function toddpatkin_intercept_missing_pages( $wp ) {
     // Remove .html extension if present
     $request_uri = rtrim( $request_uri, '/.html' );
     
-    // Check if it's a nested path (course/module-X or podcast/podcast-X)
+    // Skip if this is likely a blog post (check if it's a post, not a page)
+    // First, check if it matches any known page template slugs
+    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6' );
+    
+    $path_parts_temp = array_filter( explode( '/', $request_uri ) );
+    $last_slug_temp = end( $path_parts_temp );
+    $last_slug_temp = strtok( $last_slug_temp, '?' );
+    $last_slug_temp = rtrim( $last_slug_temp, '/.html' );
+    
+    // Check if it's a course module, podcast page, or blog page
+    $is_course_or_podcast = ( strpos( $request_uri, 'course/' ) !== false || strpos( $request_uri, 'podcast/' ) !== false || strpos( $request_uri, 'blog/' ) !== false );
+    
+    // Check if it's a blog detail page - prevent author archive routing
+    if ( preg_match( '#^blog/blog-([1-6])$#i', $request_uri ) ) {
+        // This is a blog detail page, not an author archive - let it continue to page creation/routing
+        $is_course_or_podcast = true; // Treat it like a known page path
+    }
+    
+    // If the last slug doesn't match any known page template and it's not a course/podcast/blog path, it's likely a blog post - skip
+    if ( ! in_array( $last_slug_temp, $known_page_slugs ) && ! $is_course_or_podcast ) {
+        // Check if it's actually a blog post by trying to find it
+        $post_check = get_page_by_path( $last_slug_temp, OBJECT, 'post' );
+        if ( $post_check && $post_check->post_type === 'post' ) {
+            return; // It's a blog post, let WordPress handle it normally
+        }
+        // If not found as a post, check if it exists as a page - if not, it's likely a blog post
+        $page_check = get_page_by_path( $last_slug_temp );
+        if ( ! $page_check ) {
+            // Not a page and not a known template - likely a blog post, skip
+            return;
+        }
+    }
+    
+    // Check if it's a nested path (course/module-X, podcast/podcast-X, or blog/blog-X)
     $is_course_module = false;
     $is_podcast_page = false;
+    $is_blog_page = false;
     $module_slug = '';
     $podcast_slug = '';
+    $blog_slug = '';
     
     // Check various patterns for course modules
     if ( preg_match( '#course[/-]module-(\d+)#i', $request_uri, $matches ) ) {
@@ -244,6 +286,20 @@ function toddpatkin_intercept_missing_pages( $wp ) {
         }
     }
     
+    // Check various patterns for blog pages
+    if ( preg_match( '#blog[/-]blog-(\d+)#i', $request_uri, $matches ) ) {
+        $blog_slug = 'blog-' . $matches[1];
+        $is_blog_page = true;
+    } elseif ( strpos( $request_uri, 'blog/' ) !== false ) {
+        $parts = explode( 'blog/', $request_uri );
+        if ( isset( $parts[1] ) ) {
+            $blog_slug = trim( $parts[1], '/' );
+            $blog_slug = strtok( $blog_slug, '?' );
+            $blog_slug = rtrim( $blog_slug, '/.html' );
+            $is_blog_page = true;
+        }
+    }
+    
     $path_parts = array_filter( explode( '/', $request_uri ) );
     $slug = end( $path_parts );
     $slug = strtok( $slug, '?' );
@@ -260,6 +316,13 @@ function toddpatkin_intercept_missing_pages( $wp ) {
         'podcast-2' => array( 'title' => 'Podcast 2: Helping Others Helps You', 'template' => 'templates/template-podcast-2.php', 'parent' => 'podcast' ),
         'podcast-3' => array( 'title' => 'Podcast 3: Happiness Isn\'t What You Think', 'template' => 'templates/template-podcast-3.php', 'parent' => 'podcast' ),
         'blog' => array( 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
+        // Blog detail pages
+        'blog-1' => array( 'title' => 'Money and Happiness: Why More Isn\'t Always Better', 'template' => 'templates/template-blog-1.php', 'parent' => 'blog' ),
+        'blog-2' => array( 'title' => 'The Quiet Time Revolution: Why Doing Nothing Changed Everything', 'template' => 'templates/template-blog-2.php', 'parent' => 'blog' ),
+        'blog-3' => array( 'title' => '5 Signs You\'re a High-Functioning Depressive (And What to Do About It)', 'template' => 'templates/template-blog-3.php', 'parent' => 'blog' ),
+        'blog-4' => array( 'title' => 'The Power of Gratitude: How Thankfulness Transforms Your Life', 'template' => 'templates/template-blog-4.php', 'parent' => 'blog' ),
+        'blog-5' => array( 'title' => 'Building Authentic Relationships: The Foundation of True Happiness', 'template' => 'templates/template-blog-5.php', 'parent' => 'blog' ),
+        'blog-6' => array( 'title' => 'Finding Your Purpose: A Journey from Success to Significance', 'template' => 'templates/template-blog-6.php', 'parent' => 'blog' ),
         'preview-book' => array( 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
         'preview-boot-camp' => array( 'title' => 'Preview Boot Camp Book', 'template' => 'templates/template-preview-boot-camp.php' ),
         'boot-camp' => array( 'title' => 'Boot Camp Book', 'template' => 'templates/template-boot-camp.php' ),
@@ -279,8 +342,8 @@ function toddpatkin_intercept_missing_pages( $wp ) {
         'module-12' => array( 'title' => 'Module 12: Sustaining Your Practice', 'template' => 'templates/template-module-12.php', 'parent' => 'course' ),
     );
     
-    // Use module slug if it's a course module, or podcast slug if it's a podcast page
-    $check_slug = $is_course_module ? $module_slug : ( $is_podcast_page ? $podcast_slug : $slug );
+    // Use module slug if it's a course module, podcast slug if it's a podcast page, or blog slug if it's a blog page
+    $check_slug = $is_course_module ? $module_slug : ( $is_podcast_page ? $podcast_slug : ( $is_blog_page ? $blog_slug : $slug ) );
     
     if ( ! empty( $check_slug ) && isset( $page_templates[ $check_slug ] ) ) {
         $page_template = $page_templates[ $check_slug ];
@@ -297,9 +360,10 @@ function toddpatkin_intercept_missing_pages( $wp ) {
                         'name' => $check_slug,
                         'post_type' => 'page',
                         'post_status' => 'publish',
+                        'post_parent' => $parent_page->ID,
                         'number' => 1
                     ) );
-                    if ( ! empty( $pages ) && $pages[0]->post_parent == $parent_page->ID ) {
+                    if ( ! empty( $pages ) ) {
                         $page = $pages[0];
                     }
                 }
@@ -372,16 +436,39 @@ function toddpatkin_handle_404_create_page() {
     // Remove .html extension if present
     $request_uri = rtrim( $request_uri, '/.html' );
     
+    // Skip if this is likely a blog post
+    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6' );
+    
     $path_parts = array_filter( explode( '/', $request_uri ) );
     $slug = end( $path_parts );
     $slug = strtok( $slug, '?' );
     $slug = rtrim( $slug, '/.html' );
     
-    // Check if it's a nested path (course/module-X or podcast/podcast-X) - improved detection
+    // Check if it's a course module, podcast page, or blog page
+    $is_course_or_podcast = ( strpos( $request_uri, 'course/' ) !== false || strpos( $request_uri, 'podcast/' ) !== false || strpos( $request_uri, 'blog/' ) !== false );
+    
+    // If the slug doesn't match any known page template and it's not a course/podcast/blog path, it's likely a blog post - skip
+    if ( ! in_array( $slug, $known_page_slugs ) && ! $is_course_or_podcast ) {
+        // Check if it's actually a blog post
+        $post_check = get_page_by_path( $slug, OBJECT, 'post' );
+        if ( $post_check && $post_check->post_type === 'post' ) {
+            return; // It's a blog post, let WordPress handle it normally
+        }
+        // If not found as a post, check if it exists as a page - if not, it's likely a blog post
+        $page_check = get_page_by_path( $slug );
+        if ( ! $page_check ) {
+            // Not a page and not a known template - likely a blog post, skip
+            return;
+        }
+    }
+    
+    // Check if it's a nested path (course/module-X, podcast/podcast-X, or blog/blog-X) - improved detection
     $is_course_module = false;
     $is_podcast_page = false;
+    $is_blog_page = false;
     $module_slug = '';
     $podcast_slug = '';
+    $blog_slug = '';
     
     // Check various patterns for course modules
     if ( preg_match( '#course[/-]module-(\d+)#i', $request_uri, $matches ) ) {
@@ -411,6 +498,20 @@ function toddpatkin_handle_404_create_page() {
         }
     }
     
+    // Check various patterns for blog pages
+    if ( preg_match( '#blog[/-]blog-(\d+)#i', $request_uri, $matches ) ) {
+        $blog_slug = 'blog-' . $matches[1];
+        $is_blog_page = true;
+    } elseif ( strpos( $request_uri, 'blog/' ) !== false ) {
+        $parts = explode( 'blog/', $request_uri );
+        if ( isset( $parts[1] ) ) {
+            $blog_slug = trim( $parts[1], '/' );
+            $blog_slug = strtok( $blog_slug, '?' );
+            $blog_slug = rtrim( $blog_slug, '/.html' );
+            $is_blog_page = true;
+        }
+    }
+    
     $page_templates = array(
         'expertise' => array( 'title' => 'Expertise', 'template' => 'templates/template-expertise.php' ),
         'about-book' => array( 'title' => 'About Book', 'template' => 'templates/template-about-book.php' ),
@@ -422,6 +523,13 @@ function toddpatkin_handle_404_create_page() {
         'podcast-2' => array( 'title' => 'Podcast 2: Helping Others Helps You', 'template' => 'templates/template-podcast-2.php', 'parent' => 'podcast' ),
         'podcast-3' => array( 'title' => 'Podcast 3: Happiness Isn\'t What You Think', 'template' => 'templates/template-podcast-3.php', 'parent' => 'podcast' ),
         'blog' => array( 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
+        // Blog detail pages
+        'blog-1' => array( 'title' => 'Money and Happiness: Why More Isn\'t Always Better', 'template' => 'templates/template-blog-1.php', 'parent' => 'blog' ),
+        'blog-2' => array( 'title' => 'The Quiet Time Revolution: Why Doing Nothing Changed Everything', 'template' => 'templates/template-blog-2.php', 'parent' => 'blog' ),
+        'blog-3' => array( 'title' => '5 Signs You\'re a High-Functioning Depressive (And What to Do About It)', 'template' => 'templates/template-blog-3.php', 'parent' => 'blog' ),
+        'blog-4' => array( 'title' => 'The Power of Gratitude: How Thankfulness Transforms Your Life', 'template' => 'templates/template-blog-4.php', 'parent' => 'blog' ),
+        'blog-5' => array( 'title' => 'Building Authentic Relationships: The Foundation of True Happiness', 'template' => 'templates/template-blog-5.php', 'parent' => 'blog' ),
+        'blog-6' => array( 'title' => 'Finding Your Purpose: A Journey from Success to Significance', 'template' => 'templates/template-blog-6.php', 'parent' => 'blog' ),
         'preview-book' => array( 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
         'preview-boot-camp' => array( 'title' => 'Preview Boot Camp Book', 'template' => 'templates/template-preview-boot-camp.php' ),
         'boot-camp' => array( 'title' => 'Boot Camp Book', 'template' => 'templates/template-boot-camp.php' ),
@@ -441,8 +549,8 @@ function toddpatkin_handle_404_create_page() {
         'module-12' => array( 'title' => 'Module 12: Sustaining Your Practice', 'template' => 'templates/template-module-12.php', 'parent' => 'course' ),
     );
     
-    // Use module slug if it's a course module, or podcast slug if it's a podcast page
-    $check_slug = $is_course_module ? $module_slug : ( $is_podcast_page ? $podcast_slug : $slug );
+    // Use module slug if it's a course module, podcast slug if it's a podcast page, or blog slug if it's a blog page
+    $check_slug = $is_course_module ? $module_slug : ( $is_podcast_page ? $podcast_slug : ( $is_blog_page ? $blog_slug : $slug ) );
     
     if ( ! empty( $check_slug ) && isset( $page_templates[ $check_slug ] ) ) {
         $page_template = $page_templates[ $check_slug ];
@@ -686,10 +794,135 @@ function toddpatkin_force_page_template( $template ) {
  * Alternative approach: Use template_include filter as backup
  * This runs later and can override if page_template didn't work
  */
+/**
+ * Ensure WordPress recognizes ?p=POST_ID as a single post
+ */
+// Ensure WordPress properly handles single post queries
+add_action( 'parse_query', 'toddpatkin_handle_single_post_query', 1 );
+function toddpatkin_handle_single_post_query( $query ) {
+    if ( ! is_admin() && $query->is_main_query() ) {
+        // Handle ?p= parameter for single posts
+        if ( isset( $_GET['p'] ) && ! empty( $_GET['p'] ) ) {
+            $post_id = intval( $_GET['p'] );
+            if ( $post_id > 0 ) {
+                $post = get_post( $post_id );
+                if ( $post && $post->post_type === 'post' && $post->post_status === 'publish' ) {
+                    // Set query parameters
+                    $query->set( 'p', $post_id );
+                    $query->set( 'post_type', 'post' );
+                    $query->set( 'posts_per_page', 1 );
+                    $query->set( 'name', '' ); // Clear name to avoid conflicts
+                    
+                    // Force WordPress to recognize this as a single post
+                    $query->is_single = true;
+                    $query->is_singular = true;
+                    $query->is_page = false;
+                    $query->is_home = false;
+                    $query->is_archive = false;
+                    $query->is_search = false;
+                    $query->is_404 = false;
+                }
+            }
+        }
+    }
+}
+
+// Additional hook to ensure post is properly set up before template loads
+add_action( 'wp', 'toddpatkin_setup_single_post', 1 );
+function toddpatkin_setup_single_post() {
+    if ( ! is_admin() && isset( $_GET['p'] ) && ! empty( $_GET['p'] ) ) {
+        $post_id = intval( $_GET['p'] );
+        if ( $post_id > 0 ) {
+            $post = get_post( $post_id );
+            if ( $post && $post->post_type === 'post' && $post->post_status === 'publish' ) {
+                global $wp_query;
+                // Ensure query is set up correctly
+                $wp_query->is_single = true;
+                $wp_query->is_singular = true;
+                $wp_query->is_page = false;
+                $wp_query->is_home = false;
+                $wp_query->is_404 = false;
+            }
+        }
+    }
+}
+
 add_filter( 'template_include', 'toddpatkin_force_template_include', 99 );
 function toddpatkin_force_template_include( $template ) {
-    // Only process if we're on a page
-    if ( ! is_page() ) {
+    global $wp_query, $post;
+    
+    // FIRST: Check if this is the front page - ensure front-page.php loads
+    if ( is_front_page() ) {
+        $front_page_template = get_template_directory() . '/front-page.php';
+        if ( file_exists( $front_page_template ) ) {
+            return $front_page_template;
+        }
+    }
+    
+    // Check if this is a blog detail page request (prevent author archive routing)
+    if ( isset( $_SERVER['REQUEST_URI'] ) ) {
+        $request_uri = trim( $_SERVER['REQUEST_URI'], '/' );
+        $request_uri = strtok( $request_uri, '?' );
+        $request_uri = rtrim( $request_uri, '/.html' );
+        
+        // Check if it's a blog detail page (blog/blog-1 through blog/blog-6)
+        if ( preg_match( '#^blog/blog-([1-6])$#i', $request_uri, $matches ) ) {
+            $blog_num = $matches[1];
+            $blog_template = get_template_directory() . '/templates/template-blog-' . $blog_num . '.php';
+            if ( file_exists( $blog_template ) ) {
+                // Prevent author archive routing
+                if ( is_author() ) {
+                    $wp_query->is_author = false;
+                }
+                return $blog_template;
+            }
+        }
+    }
+    
+    // SECOND: Check if we're dealing with a single blog post
+    $post_id = 0;
+    $is_single_post = false;
+    
+    // Check multiple ways to detect a single post
+    if ( isset( $_GET['p'] ) && ! empty( $_GET['p'] ) ) {
+        $post_id = intval( $_GET['p'] );
+        if ( $post_id > 0 ) {
+            $post_obj = get_post( $post_id );
+            if ( $post_obj && $post_obj->post_type === 'post' && $post_obj->post_status === 'publish' ) {
+                $is_single_post = true;
+            }
+        }
+    } elseif ( isset( $wp_query->query_vars['p'] ) && ! empty( $wp_query->query_vars['p'] ) ) {
+        $post_id = intval( $wp_query->query_vars['p'] );
+        if ( $post_id > 0 ) {
+            $post_obj = get_post( $post_id );
+            if ( $post_obj && $post_obj->post_type === 'post' && $post_obj->post_status === 'publish' ) {
+                $is_single_post = true;
+            }
+        }
+    } elseif ( is_single() && get_post_type() === 'post' ) {
+        $post_id = get_the_ID();
+        $is_single_post = true;
+    } elseif ( $post && isset( $post->ID ) && $post->post_type === 'post' ) {
+        $post_id = $post->ID;
+        $is_single_post = true;
+    }
+    
+    // If this is a single blog post, load single.php
+    if ( $is_single_post && $post_id > 0 ) {
+        $single_template = get_template_directory() . '/single.php';
+        if ( file_exists( $single_template ) ) {
+            // Ensure the post is set up correctly
+            if ( ! $post || $post->ID != $post_id ) {
+                $post = get_post( $post_id );
+                setup_postdata( $post );
+            }
+            return $single_template;
+        }
+    }
+    
+    // THIRD: Only process custom page templates if we're on a page (but not front page)
+    if ( ! is_page() || is_front_page() ) {
         return $template;
     }
     
@@ -810,4 +1043,29 @@ function toddpatkin_fix_page_templates() {
     }
     
     return $fixed_count;
+}
+
+/**
+ * Prevent author archive routing for blog detail pages
+ */
+add_action( 'pre_get_posts', 'toddpatkin_prevent_author_archive_for_blog_pages' );
+function toddpatkin_prevent_author_archive_for_blog_pages( $query ) {
+    // Only run on main query and frontend
+    if ( ! $query->is_main_query() || is_admin() ) {
+        return;
+    }
+    
+    // Check if this is an author archive request
+    if ( $query->is_author() && isset( $_SERVER['REQUEST_URI'] ) ) {
+        $request_uri = trim( $_SERVER['REQUEST_URI'], '/' );
+        $request_uri = strtok( $request_uri, '?' );
+        $request_uri = rtrim( $request_uri, '/.html' );
+        
+        // If it's a blog detail page (blog/blog-1 through blog/blog-6), prevent author archive
+        if ( preg_match( '#^blog/blog-([1-6])$#i', $request_uri ) ) {
+            $query->is_author = false;
+            $query->is_404 = false;
+            $query->is_page = true;
+        }
+    }
 }

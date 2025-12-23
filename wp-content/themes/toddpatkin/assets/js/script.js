@@ -41,6 +41,254 @@ const scrollObserver = new IntersectionObserver(function (entries) {
     });
 }, observerOptions);
 
+// Reviews Carousel - Handle mobile vs desktop behavior
+document.addEventListener('DOMContentLoaded', function () {
+    const reviewsCarousel = document.getElementById('reviewsCarousel');
+    if (reviewsCarousel) {
+        const carousel = new bootstrap.Carousel(reviewsCarousel, {
+            interval: false,
+            wrap: false // We'll handle wrapping manually
+        });
+        
+        // Function to get current slide index
+        function getCurrentSlideIndex() {
+            const activeSlide = reviewsCarousel.querySelector('.carousel-item.active');
+            const allSlides = Array.from(reviewsCarousel.querySelectorAll('.carousel-item'));
+            return allSlides.indexOf(activeSlide);
+        }
+        
+        // Function to check if a slide is visible on desktop
+        function isSlideVisibleOnDesktop(slideIndex) {
+            // On desktop, only slides 0 and 3 are visible
+            return slideIndex === 0 || slideIndex === 3;
+        }
+        
+        // Function to update indicators based on screen size
+        function updateIndicators(activeIndex) {
+            const isDesktop = window.innerWidth >= 768;
+            const desktopIndicators = reviewsCarousel.querySelectorAll('.carousel-indicators .d-none.d-md-inline-block');
+            const mobileIndicators = reviewsCarousel.querySelectorAll('.carousel-indicators .d-md-none');
+            
+            if (isDesktop) {
+                // Desktop: 2 indicators for 2 slides (slide 0 and slide 3)
+                desktopIndicators.forEach((indicator, index) => {
+                    if (index === 0 && activeIndex === 0) {
+                        // First slide (cards 1-3)
+                        indicator.classList.add('active');
+                        indicator.setAttribute('aria-current', 'true');
+                    } else if (index === 1 && activeIndex === 3) {
+                        // Second slide (cards 4-6)
+                        indicator.classList.add('active');
+                        indicator.setAttribute('aria-current', 'true');
+                    } else {
+                        indicator.classList.remove('active');
+                        indicator.removeAttribute('aria-current');
+                    }
+                });
+                
+                // Hide mobile indicators on desktop
+                mobileIndicators.forEach(indicator => {
+                    indicator.classList.remove('active');
+                    indicator.removeAttribute('aria-current');
+                });
+            } else {
+                // Mobile: 6 indicators for 6 individual slides
+                mobileIndicators.forEach((indicator, index) => {
+                    if (index === activeIndex) {
+                        indicator.classList.add('active');
+                        indicator.setAttribute('aria-current', 'true');
+                    } else {
+                        indicator.classList.remove('active');
+                        indicator.removeAttribute('aria-current');
+                    }
+                });
+                
+                // Hide desktop indicators on mobile
+                desktopIndicators.forEach(indicator => {
+                    indicator.classList.remove('active');
+                    indicator.removeAttribute('aria-current');
+                });
+            }
+        }
+        
+        // Intercept slide event BEFORE it happens to control navigation on desktop
+        reviewsCarousel.addEventListener('slide.bs.carousel', function (e) {
+            const isDesktop = window.innerWidth >= 768;
+            
+            if (isDesktop) {
+                // On desktop, only allow navigation to visible slides (0 and 3)
+                if (!isSlideVisibleOnDesktop(e.to)) {
+                    e.preventDefault();
+                    
+                    // Determine correct slide based on direction
+                    const currentIndex = getCurrentSlideIndex();
+                    let targetIndex;
+                    
+                    if (e.direction === 'left' || e.direction === 'next') {
+                        // Going forward
+                        targetIndex = currentIndex === 0 ? 3 : 0;
+                    } else {
+                        // Going backward
+                        targetIndex = currentIndex === 3 ? 0 : 3;
+                    }
+                    
+                    // Manually navigate to the correct slide
+                    setTimeout(function() {
+                        carousel.to(targetIndex);
+                    }, 10);
+                }
+            }
+        });
+        
+        // Function to hide/show carousel items on desktop
+        function updateCarouselVisibility() {
+            const isDesktop = window.innerWidth >= 768;
+            const allSlides = Array.from(reviewsCarousel.querySelectorAll('.carousel-item'));
+            
+            if (isDesktop) {
+                allSlides.forEach((slide, index) => {
+                    if (slide.classList.contains('active')) {
+                        slide.style.display = 'block';
+                        slide.style.opacity = '1';
+                        slide.style.visibility = 'visible';
+                    } else {
+                        // Hide mobile-only slides completely
+                        if (slide.classList.contains('d-md-none')) {
+                            slide.style.display = 'none';
+                            slide.style.opacity = '0';
+                            slide.style.visibility = 'hidden';
+                        } else {
+                            // Hide desktop slides that are not active
+                            slide.style.display = 'none';
+                            slide.style.opacity = '0';
+                            slide.style.visibility = 'hidden';
+                        }
+                    }
+                });
+            } else {
+                // Mobile: let Bootstrap handle visibility normally
+                allSlides.forEach((slide) => {
+                    slide.style.display = '';
+                    slide.style.opacity = '';
+                    slide.style.visibility = '';
+                });
+            }
+        }
+        
+        // Handle carousel slide events AFTER slide completes
+        reviewsCarousel.addEventListener('slid.bs.carousel', function (e) {
+            updateIndicators(e.to);
+            updateCarouselVisibility();
+        });
+        
+        // Also update visibility when slide starts (before transition)
+        reviewsCarousel.addEventListener('slide.bs.carousel', function (e) {
+            const isDesktop = window.innerWidth >= 768;
+            if (isDesktop) {
+                // Immediately hide current slide and show target slide
+                const allSlides = Array.from(reviewsCarousel.querySelectorAll('.carousel-item'));
+                allSlides.forEach((slide, index) => {
+                    if (index === e.to) {
+                        slide.style.display = 'block';
+                        slide.style.opacity = '1';
+                        slide.style.visibility = 'visible';
+                    } else {
+                        if (!slide.classList.contains('d-md-none')) {
+                            slide.style.display = 'none';
+                            slide.style.opacity = '0';
+                            slide.style.visibility = 'hidden';
+                        }
+                    }
+                });
+            }
+        });
+        
+        // Handle window resize to update indicators and fix slide position
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                updateCarouselVisibility();
+                const currentIndex = getCurrentSlideIndex();
+                const isDesktop = window.innerWidth >= 768;
+                
+                // If on desktop and currently on a hidden slide, move to nearest visible slide
+                if (isDesktop && !isSlideVisibleOnDesktop(currentIndex)) {
+                    const targetIndex = currentIndex < 3 ? 0 : 3;
+                    carousel.to(targetIndex);
+                } else {
+                    updateIndicators(currentIndex);
+                }
+            }, 250);
+        });
+        
+        // Initialize indicators and visibility on load
+        updateIndicators(0);
+        updateCarouselVisibility();
+        
+        // Handle indicator clicks
+        const indicators = reviewsCarousel.querySelectorAll('.carousel-indicators button');
+        indicators.forEach((indicator) => {
+            indicator.addEventListener('click', function(e) {
+                const slideTo = parseInt(this.getAttribute('data-bs-slide-to'));
+                const isDesktop = window.innerWidth >= 768;
+                
+                // On desktop, only allow clicking desktop indicators
+                if (isDesktop && this.classList.contains('d-md-none')) {
+                    e.preventDefault();
+                    return;
+                }
+                
+                // On mobile, only allow clicking mobile indicators
+                if (!isDesktop && this.classList.contains('d-none')) {
+                    e.preventDefault();
+                    return;
+                }
+                
+                carousel.to(slideTo);
+            });
+        });
+        
+        // Handle carousel control buttons (prev/next) to skip hidden slides on desktop
+        const prevButton = reviewsCarousel.querySelector('.carousel-control-prev');
+        const nextButton = reviewsCarousel.querySelector('.carousel-control-next');
+        
+        if (prevButton) {
+            prevButton.addEventListener('click', function(e) {
+                const isDesktop = window.innerWidth >= 768;
+                const currentIndex = getCurrentSlideIndex();
+                
+                if (isDesktop) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Desktop: only slides 0 and 3 are visible
+                    const targetIndex = currentIndex === 3 ? 0 : (currentIndex === 0 ? 3 : 0);
+                    carousel.to(targetIndex);
+                }
+                // On mobile, let Bootstrap handle it normally
+            });
+        }
+        
+        if (nextButton) {
+            nextButton.addEventListener('click', function(e) {
+                const isDesktop = window.innerWidth >= 768;
+                const currentIndex = getCurrentSlideIndex();
+                
+                if (isDesktop) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Desktop: only slides 0 and 3 are visible
+                    const targetIndex = currentIndex === 0 ? 3 : (currentIndex === 3 ? 0 : 3);
+                    carousel.to(targetIndex);
+                }
+                // On mobile, let Bootstrap handle it normally
+            });
+        }
+    }
+});
+
 // Initialize scroll animations on page load
 document.addEventListener('DOMContentLoaded', function () {
     // Sections - fade in from bottom (excluding hero section)

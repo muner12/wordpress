@@ -16,7 +16,7 @@ get_header();
                 <span class="courses-listing-title-blue">WITH TODD</span>
             </h1>
             <p class="courses-listing-subtitle">
-                Lorem ipsum dolor sit amet consectetur. Enim et consequat ultricies amet nisl eu. Interdum nullam turpis tellus felis.
+            Todd Patkin courageously pulls back the curtain on this disorder and uses his own life experience to help us understand its perils.
             </p>
         </div>
 
@@ -28,7 +28,7 @@ get_header();
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="course-episode-card">
                         <div class="course-episode-image-wrapper position-relative">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/week_1.png" class="course-episode-image" alt="Week 1">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/course_w_1.png" class="course-episode-image" alt="Week 1">
                             <div class="course-date-overlay">12 Oct</div>
                         </div>
                         <div class="course-episode-content">

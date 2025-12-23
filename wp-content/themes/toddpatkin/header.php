@@ -52,6 +52,48 @@
                 padding: 0 !important;
             }
         }
+        
+        /* Navigation spacing - equal spacing between brand, menu items, and button */
+        @media (min-width: 992px) {
+            .navbar .container {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+            }
+            
+            .navbar-brand {
+                flex: 0 0 auto;
+            }
+            
+            .navbar-collapse {
+                flex: 1;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+            }
+            
+            .navbar-nav {
+                flex: 1;
+                display: flex !important;
+                justify-content: center !important;
+                margin: 0 !important;
+            }
+            
+            .navbar-collapse .d-flex {
+                flex: 0 0 auto;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                margin-top: 1rem;
+            }
+            
+            .navbar-collapse .d-flex {
+                margin-top: 1rem;
+                justify-content: center !important;
+            }
+        }
     </style>
 </head>
 
@@ -81,14 +123,14 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
-            <a class="navbar-brand fw-bold text-uppercase d-flex align-items-center" href="#">
-                
+            <a style="font-size: 24px;" class="navbar-brand fw-bold text-warning text-uppercase d-flex align-items-center" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                Todd Patkin
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse  navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <?php
                     if(!is_front_page())
                     {
@@ -104,7 +146,7 @@
                     <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/podcast' ) ); ?>">Podcast</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/blog' ) ); ?>">Blog</a></li>
                 </ul>
-                <div class="d-flex align-items-center ms-auto">
+                <div class="d-flex align-items-center">
                     <a href="<?php echo esc_url( home_url( '/hire-todd' ) ); ?>" class="btn btn-warning"><span class="btn-content">Hire Todd</span></a>
                 </div>
             </div>

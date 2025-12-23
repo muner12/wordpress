@@ -1,4 +1,21 @@
-<?php get_header(); ?>
+<?php 
+/**
+ * Template for displaying single blog posts
+ */
+
+// Ensure we have a post
+global $post;
+if ( ! $post && isset( $_GET['p'] ) && ! empty( $_GET['p'] ) ) {
+    $post_id = intval( $_GET['p'] );
+    if ( $post_id > 0 ) {
+        $post = get_post( $post_id );
+        if ( $post ) {
+            setup_postdata( $post );
+        }
+    }
+}
+
+get_header(); ?>
 
 <section class="blog-details-page-section bg-white">
     <div class="container">
@@ -89,7 +106,22 @@
                                 <?php echo wp_trim_words(get_the_excerpt(), 18); ?>
                             </p>
 
-                            <a href="<?php the_permalink(); ?>" class="btn btn-warning btn-sm">
+                            <?php 
+                            // Get permalink with fallback
+                            $related_post_id = get_the_ID();
+                            $related_post_permalink = get_permalink($related_post_id);
+                            
+                            // Fallback if permalink is empty or false
+                            if (empty($related_post_permalink) || $related_post_permalink === false) {
+                                $related_post_permalink = home_url('/?p=' . $related_post_id);
+                            }
+                            
+                            // Ensure absolute URL
+                            if (strpos($related_post_permalink, 'http') !== 0) {
+                                $related_post_permalink = home_url($related_post_permalink);
+                            }
+                            ?>
+                            <a href="<?php echo esc_url($related_post_permalink); ?>" class="btn btn-warning btn-sm">
                                 Read More <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>

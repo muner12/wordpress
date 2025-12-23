@@ -43,11 +43,35 @@ get_header();
             <!-- Right Side: Course Details - Second on Mobile -->
             <div class="col-12 col-lg-6 courses-details-column order-2 order-lg-2">
                 <div class="courses-details-content">
-                    <h3 class="courses-details-title">Module 9: The Gratitude Practice</h3>
-                    <div class="courses-tag-badge">Masterclass Course</div>
-                    <h4 class="courses-description-label">Description</h4>
-                    <div class="courses-description-text">
-                        <p class="courses-description-paragraph">Think about it: How much more pleasant would the world be if we all smiled at and greeted one another instead of steadfastly ignoring fellow bus riders, coworkers, cashiers, etc.? When you make friendliness a habit, you’ll be surprised by the positive reactions you get…and by how good it makes you feel, too.</p>
+                    <!-- Enhanced Title Section -->
+                    <div class="courses-details-header mb-4">
+                        <h3 class="courses-details-title mb-3">Module 9: Focus on Being Friendly</h3>
+                        <div class="courses-tag-badge d-inline-flex align-items-center gap-2 px-3 py-2 mb-3" style="background: linear-gradient(135deg, #FAD30C 0%, #FFD54F 100%); border-radius: 8px; box-shadow: 0 2px 8px rgba(250, 211, 12, 0.3);">
+                            <i class="fas fa-graduation-cap" style="color: #1a1a1a; font-size: 14px;"></i>
+                            <span style="color: #1a1a1a; font-weight: 600; font-size: 13px; letter-spacing: 0.5px;">MASTERCLASS COURSE</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Enhanced Description Section -->
+                    <div class="courses-description-enhanced">
+                        <div class="courses-description-item mb-4" style="padding-left: 28px; border-left: 3px solid #FAD30C; position: relative;">
+                            <div class="courses-icon-badge" style="position: absolute; left: -14px; top: 0; width: 28px; height: 28px; background: #FAD30C; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(250, 211, 12, 0.4);">
+                                <i class="fas fa-smile" style="color: #1a1a1a; font-size: 14px;"></i>
+                            </div>
+                            <p class="courses-description-paragraph mb-0" style="font-size: 16px; line-height: 1.75; color: #2D2D2D; text-align: justify;">Think about it: How much more pleasant would the world be if we all smiled at and greeted one another instead of steadfastly ignoring fellow bus riders, coworkers, cashiers, etc.? When you make friendliness a habit, you'll be surprised by the positive reactions you get…and by how good it makes you feel, too.</p>
+                        </div>
+                        
+                        <!-- Highlight Box -->
+                        <div class="courses-highlight-box p-4 mb-4" style="background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); border: 2px solid #FAD30C; border-radius: 12px; box-shadow: 0 4px 12px rgba(250, 211, 12, 0.15); position: relative;">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="courses-quote-icon" style="flex-shrink: 0; width: 40px; height: 40px; background: #FAD30C; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-check-circle" style="color: #1a1a1a; font-size: 18px;"></i>
+                                </div>
+                                <div>
+                                    <p class="courses-description-paragraph mb-0" style="font-size: 15px; line-height: 1.7; color: #2D2D2D; font-style: italic;">Moving beyond simple "thank you" to truly transformative gratitude. <strong style="color: #275BA7; font-weight: 600;">Discover how small acts of friendliness can create a ripple effect of positivity in your life.</strong></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -71,7 +95,7 @@ get_header();
             <!-- Course Card 1 -->
             <div class="course-episode-card">
                 <div class="course-episode-image-wrapper position-relative">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/week_1.png" class="course-episode-image" alt="Week 1">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/course_w_1.png" class="course-episode-image" alt="Week 1">
                     <div class="course-date-overlay">12 Oct</div>
                 </div>
                 <div class="course-episode-content">

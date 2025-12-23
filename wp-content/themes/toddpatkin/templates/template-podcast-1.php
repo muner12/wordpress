@@ -79,9 +79,8 @@ get_header();
                                     <span class="podcast-episode-badge">EPISODE 412</span>
                                 </div>
                                 <!-- Bottom Content -->
-                                <div class="position-absolute bottom-0 start-0 p-4 text-white w-100 podcast-card-overlay">
-                                    <h5 class="fw-bold mb-2 podcast-card-title">CRACK THE HAPPINESS CODE</h5>
-                                    <p class="mb-0 podcast-card-description">Lorem ipsum dolor sit amet consectetur. Libero luctus augue suspendisse risus.</p>
+                                <div class="position-absolute bottom-0 start-0 p-2 text-white w-100 podcast-card-overlay">
+                                    <h5 class="fw-bold  podcast-card-title">HAPPINESS ISN'T WHAT YOU THINK</h5>
                                     <!-- Daily Helping Badge -->
                                     <div class="position-absolute bottom-0 end-0 p-3">
                                         <span class="podcast-daily-helping">DAILY HELPING</span>
@@ -106,7 +105,6 @@ get_header();
                                 <!-- Bottom Content -->
                                 <div class="position-absolute bottom-0 start-0 p-4 text-white w-100 podcast-card-overlay">
                                     <h5 class="fw-bold mb-2 podcast-card-title">CRACK THE HAPPINESS CODE</h5>
-                                    <p class="mb-0 podcast-card-description">Lorem ipsum dolor sit amet consectetur. Libero luctus augue suspendisse risus.</p>
                                     <!-- Greg Voisen Badge -->
                                     <div class="position-absolute bottom-0 end-0 p-3">
                                         <span class="podcast-guest-name">GREG VOISEN</span>
