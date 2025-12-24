@@ -880,27 +880,27 @@ function toddpatkin_force_template_include( $template ) {
     }
     
     // SECOND: Check if we're dealing with a single blog post
-    $post_id = 0;
+        $post_id = 0;
     $is_single_post = false;
     
     // Check multiple ways to detect a single post
-    if ( isset( $_GET['p'] ) && ! empty( $_GET['p'] ) ) {
-        $post_id = intval( $_GET['p'] );
+        if ( isset( $_GET['p'] ) && ! empty( $_GET['p'] ) ) {
+            $post_id = intval( $_GET['p'] );
         if ( $post_id > 0 ) {
             $post_obj = get_post( $post_id );
             if ( $post_obj && $post_obj->post_type === 'post' && $post_obj->post_status === 'publish' ) {
                 $is_single_post = true;
             }
         }
-    } elseif ( isset( $wp_query->query_vars['p'] ) && ! empty( $wp_query->query_vars['p'] ) ) {
-        $post_id = intval( $wp_query->query_vars['p'] );
+        } elseif ( isset( $wp_query->query_vars['p'] ) && ! empty( $wp_query->query_vars['p'] ) ) {
+            $post_id = intval( $wp_query->query_vars['p'] );
         if ( $post_id > 0 ) {
             $post_obj = get_post( $post_id );
             if ( $post_obj && $post_obj->post_type === 'post' && $post_obj->post_status === 'publish' ) {
                 $is_single_post = true;
+                }
             }
-        }
-    } elseif ( is_single() && get_post_type() === 'post' ) {
+        } elseif ( is_single() && get_post_type() === 'post' ) {
         $post_id = get_the_ID();
         $is_single_post = true;
     } elseif ( $post && isset( $post->ID ) && $post->post_type === 'post' ) {
@@ -910,14 +910,14 @@ function toddpatkin_force_template_include( $template ) {
     
     // If this is a single blog post, load single.php
     if ( $is_single_post && $post_id > 0 ) {
-        $single_template = get_template_directory() . '/single.php';
-        if ( file_exists( $single_template ) ) {
+            $single_template = get_template_directory() . '/single.php';
+            if ( file_exists( $single_template ) ) {
             // Ensure the post is set up correctly
             if ( ! $post || $post->ID != $post_id ) {
                 $post = get_post( $post_id );
                 setup_postdata( $post );
             }
-            return $single_template;
+                return $single_template;
         }
     }
     

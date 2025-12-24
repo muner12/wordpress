@@ -168,16 +168,16 @@ get_header();
             ?>
                 <div class="col-12 col-md-4">
                     <a href="<?php echo $first_blog_link; ?>" class="text-decoration-none" title="Money and Happiness: Why More Isn't Always Better">
-                        <div class="card shadow-sm h-100 blog-card">
-                            <img src="<?php echo esc_url($blog_images[0]); ?>"
-                                class="card-img-top blog-card-img"
-                                alt="Money and Happiness: Why More Isn't Always Better">
-                            <div class="card-body p-3">
-                                <div class="d-flex align-items-center mb-2">
-                                    <span class="badge bg-warning text-dark me-2">Blogs</span>
-                                </div>
-                                <h4 class="card-title fw-bold mb-2">Money and Happiness: Why More Isn't Always Better</h4>
-                                <p class="card-text text-muted mb-3">Despite achieving financial success beyond my wildest dreams, I discovered the hard way that wealth can't buy happiness. Here's what actually creates lasting contentment...</p>
+                    <div class="card shadow-sm h-100 blog-card">
+                        <img src="<?php echo esc_url($blog_images[0]); ?>"
+                            class="card-img-top blog-card-img"
+                            alt="Money and Happiness: Why More Isn't Always Better">
+                        <div class="card-body p-3">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-warning text-dark me-2">Blogs</span>
+                            </div>
+                            <h4 class="card-title fw-bold mb-2">Money and Happiness: Why More Isn't Always Better</h4>
+                            <p class="card-text text-muted mb-3">Despite achieving financial success beyond my wildest dreams, I discovered the hard way that wealth can't buy happiness. Here's what actually creates lasting contentment...</p>
                                 <span class="btn btn-warning btn-sm"><span class="btn-content">Read More</span></span>
                             </div>
                         </div>
@@ -199,29 +199,29 @@ get_header();
                     // For dynamic posts, link to blog listing or use a default
                     // Since we're using static blog pages, link dynamic posts to blog listing
                     $post_permalink = esc_url(home_url('/blog'));
-                    ?>
+                ?>
                     <div class="col-12 col-md-4">
                         <a href="<?php echo $post_permalink; ?>" class="text-decoration-none" title="<?php the_title_attribute(); ?>">
-                            <div class="card shadow-sm h-100 blog-card">
-                                <img src="<?php echo esc_url($blog_images[$image_index % count($blog_images)]); ?>"
-                                    class="card-img-top blog-card-img"
-                                    alt="<?php the_title_attribute(); ?>">
-                                <div class="card-body p-3">
-                                    <div class="d-flex align-items-center mb-2">
-                                        <span class="badge bg-warning text-dark me-2">
-                                            <?php
-                                            $category = get_the_category();
-                                            $category_name = $category ? esc_html($category[0]->name) : 'Blogs';
-                                            // Skip "Uncategorized" category
-                                            if (strtolower($category_name) === 'uncategorized') {
-                                                $category_name = 'Blogs';
-                                            }
-                                            echo $category_name;
-                                            ?>
-                                        </span>
-                                    </div>
-                                    <h4 class="card-title fw-bold mb-2"><?php the_title(); ?></h4>
-                                    <p class="card-text text-muted mb-3"><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
+                        <div class="card shadow-sm h-100 blog-card">
+                            <img src="<?php echo esc_url($blog_images[$image_index % count($blog_images)]); ?>"
+                                class="card-img-top blog-card-img"
+                                alt="<?php the_title_attribute(); ?>">
+                            <div class="card-body p-3">
+                                <div class="d-flex align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark me-2">
+                                        <?php
+                                        $category = get_the_category();
+                                        $category_name = $category ? esc_html($category[0]->name) : 'Blogs';
+                                        // Skip "Uncategorized" category
+                                        if (strtolower($category_name) === 'uncategorized') {
+                                            $category_name = 'Blogs';
+                                        }
+                                        echo $category_name;
+                                        ?>
+                                    </span>
+                                </div>
+                                <h4 class="card-title fw-bold mb-2"><?php the_title(); ?></h4>
+                                <p class="card-text text-muted mb-3"><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
                                     <span class="btn btn-warning btn-sm"><span class="btn-content">Read More</span></span>
                                 </div>
                             </div>
@@ -244,16 +244,16 @@ get_header();
             ?>
                 <div class="col-12 col-md-4">
                     <a href="<?php echo esc_url($blog['link']); ?>" class="text-decoration-none">
-                        <div class="card shadow-sm h-100 blog-card">
-                            <img src="<?php echo esc_url($blog['image']); ?>"
-                                class="card-img-top blog-card-img"
-                                alt="<?php echo esc_attr($blog['title']); ?>">
-                            <div class="card-body p-3">
-                                <div class="d-flex align-items-center mb-2">
-                                    <span class="badge bg-warning text-dark me-2">Blogs</span>
-                                </div>
-                                <h4 class="card-title fw-bold mb-2"><?php echo esc_html($blog['title']); ?></h4>
-                                <p class="card-text text-muted mb-3"><?php echo esc_html($blog['excerpt']); ?></p>
+                    <div class="card shadow-sm h-100 blog-card">
+                        <img src="<?php echo esc_url($blog['image']); ?>"
+                            class="card-img-top blog-card-img"
+                            alt="<?php echo esc_attr($blog['title']); ?>">
+                        <div class="card-body p-3">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-warning text-dark me-2">Blogs</span>
+                            </div>
+                            <h4 class="card-title fw-bold mb-2"><?php echo esc_html($blog['title']); ?></h4>
+                            <p class="card-text text-muted mb-3"><?php echo esc_html($blog['excerpt']); ?></p>
                                 <span class="btn btn-warning btn-sm"><span class="btn-content">Read More</span></span>
                             </div>
                         </div>

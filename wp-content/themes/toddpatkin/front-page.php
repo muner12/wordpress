@@ -736,8 +736,58 @@
             .course-video-play-overlay > div {
                 pointer-events: auto;
             }
+            
+            /* Mobile Fixes for Course Section */
+            @media (max-width: 768px) {
+                .course-section {
+                    background: linear-gradient(167deg, rgba(2, 8, 23, 1) 0%, rgba(17, 24, 39, 1) 62%, rgba(40, 44, 52, 1) 100%) !important;
+                    background-attachment: fixed !important;
+                    padding: 40px 16px !important;
+                    min-height: auto !important;
+                    overflow-x: hidden !important;
+                    position: relative !important;
+                    z-index: 1 !important;
+                }
+                
+                .course-section .container {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                    margin: 0 auto !important;
+                    position: relative !important;
+                    z-index: 2 !important;
+                }
+                
+                .course-section * {
+                    position: relative;
+                    z-index: inherit;
+                }
+                
+                .course-section .text-white,
+                .course-section h2,
+                .course-section p,
+                .course-section span {
+                    color: #FFFFFF !important;
+                }
+                
+                .course-section-title,
+                .course-section-title-white {
+                    color: #FFFFFF !important;
+                }
+                
+                .course-section-title .text-warning {
+                    color: #FAD30C !important;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .course-section {
+                    padding: 30px 12px !important;
+                }
+            }
         </style>
-        <div class=" ">
+        <div class="container">
             <!-- Section Header -->
             <div class="text-center mb-5">
                 <h2 class="course-section-title mb-2">HAPPINESS <span class="course-section-title-white">COURSE</span></h2>
@@ -1033,6 +1083,51 @@
 
     <!-- About Section -->
     <section id="about" class="about-section">
+        <style>
+            /* Mobile Responsive Styles for About Section Read More Button */
+            @media (max-width: 991px) {
+                .about-cta-wrapper {
+                    text-align: center !important;
+                    width: 100%;
+                    margin-top: 30px !important;
+                    margin-bottom: 20px;
+                }
+                
+                .about-read-more-btn-enhanced {
+                    padding: 10px 24px !important;
+                    font-size: 14px !important;
+                    width: auto;
+                    display: inline-flex !important;
+                    justify-content: center;
+                    align-items: center;
+                    min-width: 140px;
+                }
+                
+                .about-read-more-btn-enhanced .btn-text {
+                    font-size: 14px !important;
+                }
+                
+                .about-read-more-btn-enhanced .btn-icon {
+                    font-size: 14px !important;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .about-read-more-btn-enhanced {
+                    padding: 8px 20px !important;
+                    font-size: 13px !important;
+                    min-width: 120px;
+                }
+                
+                .about-read-more-btn-enhanced .btn-text {
+                    font-size: 13px !important;
+                }
+                
+                .about-read-more-btn-enhanced .btn-icon {
+                    font-size: 12px !important;
+                }
+            }
+        </style>
         <div class="about-section-background">
             <!-- Decorative Elements -->
             <div class="about-decorative-shape about-shape-1"></div>
@@ -1136,7 +1231,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="about-cta-wrapper mt-4">
+                        <div class="about-cta-wrapper mt-4 text-center text-lg-start">
                             <a href="<?php echo esc_url( home_url( '/about-author' ) ); ?>" class="btn course-view-more-button about-read-more-btn-enhanced">
                                 <span class="btn-text">READ MORE</span>
                                 <i class="fas fa-arrow-right btn-icon"></i>
@@ -1200,6 +1295,45 @@
 
     <!-- Blog Section -->
     <section id="blogs" class="blog-section bg-white">
+        <style>
+            /* Responsive Blog Badge Styles */
+            .blog-section .badge {
+                display: inline-flex !important;
+                align-items: center;
+                gap: 6px;
+            }
+            
+            .blog-section .badge img {
+                flex-shrink: 0;
+                object-fit: contain;
+            }
+            
+            @media (max-width: 768px) {
+                .blog-section .badge {
+                    font-size: 11px !important;
+                    padding: 3px 6px !important;
+                }
+                
+                .blog-section .badge img {
+                    width: 12px !important;
+                    height: 12px !important;
+                    margin-right: 4px !important;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .blog-section .badge {
+                    font-size: 10px !important;
+                    padding: 2px 5px !important;
+                }
+                
+                .blog-section .badge img {
+                    width: 11px !important;
+                    height: 11px !important;
+                    margin-right: 3px !important;
+                }
+            }
+        </style>
         <div class="container ">
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold text-primary-blue text-uppercase mb-2">Featured <span
@@ -1212,40 +1346,49 @@
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_1.png" class="card-img-top blog-card-img"
                             alt="Masks: The Other Side of the Coin">
                         <div class="card-body p-3">
-                            <div class="d-flex align-items-center mb-2">
-                                <span class="badge bg-warning text-dark me-2">Blogs</span>
+                            <div class="d-flex align-items-center mb-2 flex-wrap">
+                                <span class="badge d-flex align-items-center" style="padding: 4px 8px; font-size: 12px; white-space: nowrap;">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/css-line.png" alt="Blog Icon" style="width: 14px; height: 14px; margin-right: 6px; flex-shrink: 0;">
+                                    <span style="color: #275BA7; font-weight: 500;">Blog</span>
+                                </span>
                             </div>
-                            <h4 class="card-title fw-bold mb-2">Money and Happiness: Why More Isn't Always Better</h4>
+                            <h4 class="card-title fw-bold mb-2">Masks: The Other Side of the <br/> Coin</h4>
                             <p class="card-text text-muted mb-3">Despite achieving financial success beyond my wildest dreams, I discovered the hard way that wealth can't buy happiness. Here's what actually creates lasting contentment...</p>
-                            <a href="<?php echo esc_url(home_url('/blog/blog-1')); ?>" class="btn btn-warning btn-sm"><span class="btn-content">Read More</span></a>
+                            <a href="<?php echo esc_url(home_url('/blog/blog-1')); ?>" class="btn btn-sm" style="background-color: transparent; border: 2px solid #FAD30C; border-radius: 8px;"><span class="btn-content">Read More</span></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="card shadow-sm h-100 blog-card">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_2.png" class="card-img-top blog-card-img"
-                            alt="Season of Peace: The Importance of Quiet Time">
+                            alt="5 Things Your Employees Are Dying to Hear from You">
                         <div class="card-body p-3">
-                            <div class="d-flex align-items-center mb-2">
-                                <span class="badge bg-warning text-dark me-2">Blogs</span>
+                        <div class="d-flex align-items-center mb-2 flex-wrap">
+                                <span class="badge d-flex align-items-center" style="padding: 4px 8px; font-size: 12px; white-space: nowrap;">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/css-line.png" alt="Blog Icon" style="width: 14px; height: 14px; margin-right: 6px; flex-shrink: 0;">
+                                    <span style="color: #275BA7; font-weight: 500;">Blog</span>
+                                </span>
                             </div>
-                            <h4 class="card-title fw-bold mb-2">The Quiet Time Revolution: Why Doing Nothing Changed Everything</h4>
+                            <h4 class="card-title fw-bold mb-2">5 Things Your Employees Are Dying to Hear from You</h4>
                             <p class="card-text text-muted mb-3">As a chronic achiever and perfectionist, the concept of 'quiet time' seemed impossible—and unnecessary. But learning to be still became one of the most transformative...</p>
-                            <a href="<?php echo esc_url(home_url('/blog/blog-2')); ?>" class="btn btn-warning btn-sm"><span class="btn-content">Read More</span></a>
+                            <a href="<?php echo esc_url(home_url('/blog/blog-2')); ?>" class="btn btn-sm" style="background-color: transparent; border: 2px solid #FAD30C;  border-radius: 8px;"><span class="btn-content">Read More</span></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="card shadow-sm h-100 blog-card">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_3.png" class="card-img-top blog-card-img"
-                            alt="5 Things Your Employees Are Dying to Hear from You">
+                            alt="It's up to you..... your happiness that is!">
                         <div class="card-body p-3">
-                            <div class="d-flex align-items-center mb-2">
-                                <span class="badge bg-warning text-dark me-2">Blogs</span>
+                        <div class="d-flex align-items-center mb-2 flex-wrap">
+                                <span class="badge d-flex align-items-center" style="padding: 4px 8px; font-size: 12px; white-space: nowrap;">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/css-line.png" alt="Blog Icon" style="width: 14px; height: 14px; margin-right: 6px; flex-shrink: 0;">
+                                    <span style="color: #275BA7; font-weight: 500;">Blog</span>
+                                </span>
                             </div>
-                            <h4 class="card-title fw-bold mb-2">5 Signs You're a High-Functioning Depressive (And What to Do About It)</h4>
+                            <h4 class="card-title fw-bold mb-2">It's up to you..... your happiness that is!</h4>
                             <p class="card-text text-muted mb-3">You're successful, accomplished, and from the outside your life looks perfect. But inside, you're struggling. These are the warning signs I wish I'd recognized sooner...</p>
-                            <a href="<?php echo esc_url(home_url('/blog/blog-3')); ?>" class="btn btn-warning btn-sm"><span class="btn-content">Read More</span></a>
+                            <a href="<?php echo esc_url(home_url('/blog/blog-3')); ?>" class="btn btn-sm" style="background-color: transparent; border: 2px solid #FAD30C; border-radius: 8px;"><span class="btn-content">Read More</span></a>
                         </div>
                     </div>
                 </div>
