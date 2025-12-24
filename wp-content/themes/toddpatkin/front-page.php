@@ -765,9 +765,8 @@
                 }
                 
                 .course-section .text-white,
-                .course-section h2,
-                .course-section p,
-                .course-section span {
+                .course-section h2:not(.course-episode-title),
+                .course-section p:not(.course-episode-description) {
                     color: #FFFFFF !important;
                 }
                 
@@ -778,6 +777,45 @@
                 
                 .course-section-title .text-warning {
                     color: #FAD30C !important;
+                }
+                
+                /* Fix Episode Cards Text Color on Mobile - Override white text */
+                .course-episode-cards-container,
+                .course-episode-cards-container * {
+                    color: #333333 !important;
+                }
+                
+                .course-episode-card,
+                .course-episode-card * {
+                    color: #333333 !important;
+                }
+                
+                .course-episode-title {
+                    color: #333333 !important;
+                }
+                
+                .course-episode-description {
+                    color: #666666 !important;
+                }
+                
+                .course-episode-content span,
+                .course-episode-content .d-flex span,
+                .course-episode-content-info span {
+                    color: #333333 !important;
+                }
+                
+                .course-episode-content i,
+                .course-episode-content .fas,
+                .course-episode-content .far {
+                    color: #333333 !important;
+                }
+                
+                .course-episode-card {
+                    background-color: #FFFFFF !important;
+                }
+                
+                .course-episode-content {
+                    background-color: #FFFFFF !important;
                 }
             }
             
