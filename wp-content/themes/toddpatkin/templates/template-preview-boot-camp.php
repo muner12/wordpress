@@ -23,11 +23,11 @@ get_header();
                 <div class="book-pages-container">
                     <!-- Page 1 - No Overlay -->
                     <div class="book-page book-page-1">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/book-page-2-5d9968.png" alt="Book Page 1" class="book-page-image" onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/book-boot-camp-762c6a.png'">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/work_p_1.png" alt="Book Page 1" class="book-page-image" onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/book-boot-camp-762c6a.png'">
                     </div>
                     <!-- Page 2 - No Overlay -->
                     <div class="book-page book-page-2">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/book-page-2-5d9968.png" alt="Book Page 2" class="book-page-image" onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/book-boot-camp-762c6a.png'">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/work_p_2.png" alt="Book Page 2" class="book-page-image" onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/book-boot-camp-762c6a.png'">
                     </div>
                     <!-- Page 3 - With Overlay -->
                     <div class="book-page book-page-3">

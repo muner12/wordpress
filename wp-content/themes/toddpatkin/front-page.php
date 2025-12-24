@@ -718,6 +718,25 @@
 
     <!-- Course Section -->
     <section id="courses" class="course-section text-white">
+        <style>
+            /* Play Button Hover Effect */
+            .course-video-thumbnail:hover .course-video-play-overlay {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+            
+            .course-video-thumbnail:hover .course-video-play-overlay > div {
+                box-shadow: 0 6px 30px rgba(250, 211, 12, 0.7);
+            }
+            
+            /* Ensure play button is visible on thumbnail */
+            .course-video-play-overlay {
+                pointer-events: none;
+            }
+            
+            .course-video-play-overlay > div {
+                pointer-events: auto;
+            }
+        </style>
         <div class=" ">
             <!-- Section Header -->
             <div class="text-center mb-5">
@@ -731,12 +750,34 @@
                 <div class="col-12 col-lg-6 course-right-content order-1 order-lg-2 d-flex flex-column align-items-center">
                     <div style="width: 100%; ">
                     <!-- Video Container -->
-                        <div class="  mb-4 w-100" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#courseVideoModal">
-                            <div class="course-video-wrapper w-100">
-                                <div class="course-video-thumbnail w-100">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/week_1.png" alt="Course Preview"
-                                     class="img-fluid w-100"
-                                      >
+                        <div class="course-video-container mb-4 w-100" style="position: relative;">
+                            <div class="course-video-wrapper w-100" style="position: relative;">
+                                <!-- Thumbnail Image -->
+                                <div class="course-video-thumbnail w-100" id="courseVideoThumbnail" style="cursor: pointer; position: relative;">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/week_1.png" alt="Course Preview"
+                                         class="img-fluid w-100"
+                                          >
+                                    <!-- Play Icon Overlay -->
+                                    <div class="course-video-play-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; transition: all 0.3s ease;">
+                                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FAD30C 0%, #FFD54F 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(250, 211, 12, 0.5); cursor: pointer;">
+                                            <i class="fas fa-play" style="color: #1a1a1a; font-size: 32px; margin-left: 4px;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Video Iframe (Initially Hidden) -->
+                                <div class="course-video-iframe-wrapper w-100" id="courseVideoIframeWrapper" style="display: none;">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe 
+                                            id="courseVideoIframe"
+                                            src="" 
+                                            title="Course Preview"
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                            allowfullscreen
+                                            class="w-100"
+                                            style="border-radius: 12px;">
+                                        </iframe>
+                                    </div>
                                 </div>
                             </div>
                         </div>

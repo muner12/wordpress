@@ -616,21 +616,44 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Course Video Modal Handler
+// Course Video Inline Handler (Replaces thumbnail with video on click)
 document.addEventListener('DOMContentLoaded', function() {
-    const courseVideoModal = document.getElementById('courseVideoModal');
+    const courseVideoThumbnail = document.getElementById('courseVideoThumbnail');
+    const courseVideoIframeWrapper = document.getElementById('courseVideoIframeWrapper');
     const courseVideoIframe = document.getElementById('courseVideoIframe');
     const courseVideoUrl = 'https://www.youtube.com/embed/yCIQIpx_bx0?autoplay=1';
     
-    if (courseVideoModal && courseVideoIframe) {
-        // Load video when modal is shown
-        courseVideoModal.addEventListener('show.bs.modal', function () {
+    if (courseVideoThumbnail && courseVideoIframeWrapper && courseVideoIframe) {
+        // Handle thumbnail click
+        courseVideoThumbnail.addEventListener('click', function() {
+            // Hide thumbnail
+            courseVideoThumbnail.style.display = 'none';
+            
+            // Show iframe wrapper
+            courseVideoIframeWrapper.style.display = 'block';
+            
+            // Load video
             courseVideoIframe.src = courseVideoUrl;
+        });
+    }
+    
+    // Keep modal handler for other potential uses (if modal exists)
+    const courseVideoModal = document.getElementById('courseVideoModal');
+    if (courseVideoModal && courseVideoIframe) {
+        // Load video when modal is shown (if modal is used elsewhere)
+        courseVideoModal.addEventListener('show.bs.modal', function () {
+            // Only set src if iframe is in modal (check if wrapper is hidden)
+            if (courseVideoIframeWrapper && courseVideoIframeWrapper.style.display === 'none') {
+                courseVideoIframe.src = courseVideoUrl;
+            }
         });
         
         // Stop video when modal is closed
         courseVideoModal.addEventListener('hide.bs.modal', function () {
-            courseVideoIframe.src = '';
+            // Only clear src if iframe is in modal (check if wrapper is hidden)
+            if (courseVideoIframeWrapper && courseVideoIframeWrapper.style.display === 'none') {
+                courseVideoIframe.src = '';
+            }
         });
     }
 });
