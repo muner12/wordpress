@@ -110,75 +110,11 @@ get_header();
 
         <!-- Blog Cards Grid -->
         <?php
-        $default_image = get_template_directory_uri() . '/assets/images/default-blog.webp';
-
-        $paged = get_query_var('paged') ? get_query_var('paged') : get_query_var('page');
-        $paged = $paged ? $paged : 1;
-
-        $args = [
-            'post_type'      => 'post',
-            'posts_per_page' => 6,
-            'paged'          => $paged,
-            'post__not_in'   => get_option('sticky_posts'),
-            'meta_query'     => [
-                'relation' => 'OR',
-                [
-                    'key'     => '_exclude_from_blog',
-                    'value'   => '1',
-                    'compare' => '!='
-                ],
-                [
-                    'key'     => '_exclude_from_blog',
-                    'compare' => 'NOT EXISTS'
-                ]
-            ]
-        ];
-
-        $blog_query = new WP_Query($args);
+        // Removed WordPress post query - only showing custom blog pages (blog-1 through blog-7)
         ?>
 
         <?php
-        // Array of blog images to cycle through (first 3 cards)
-        $blog_images = [
-            get_template_directory_uri() . '/assets/images/blog_1.png',
-            get_template_directory_uri() . '/assets/images/blog_2.png',
-            get_template_directory_uri() . '/assets/images/blog_3.png',
-        ];
-        
-        // Featured blog images (last 3 cards)
-        $featured_blog_images = [
-            get_template_directory_uri() . '/assets/images/blog-featured-1-41dc6a.png',
-            get_template_directory_uri() . '/assets/images/blog-featured-2-41dc6a.png',
-            get_template_directory_uri() . '/assets/images/blog-featured-3-41dc6a.png',
-        ];
-        
-        // Static blog content (fallback or additional cards)
-        // Helper function to get blog detail page URL by title
-        function get_blog_permalink_by_title($title) {
-            // Map blog titles to their page slugs
-            $blog_map = [
-                'Masks: The Other Side of the Coin' => 'blog-1',
-                '5 Things Your Employees Are Dying to Hear from You' => 'blog-2',
-                'It\'s up to you..... your happiness that is!' => 'blog-3',
-                'It\'s Up to You…Your Happiness, That Is!' => 'blog-3',
-                'Season of Peace: The Importance of Quiet Time' => 'blog-4',
-                'How to boost your employee engagement.' => 'blog-5',
-                'Online While on Vacation? How (and Why) to Unplug' => 'blog-6',
-                'Yes, parents, the kids really are okay.' => 'blog-7'
-            ];
-            
-            if (isset($blog_map[$title])) {
-                $blog_slug = $blog_map[$title];
-                // Always use direct URL structure to avoid WordPress routing issues
-                // This ensures we go to the blog detail page, not author archives
-                return esc_url(home_url('/blog/' . $blog_slug));
-            }
-            
-            // Final fallback to blog listing URL
-            return esc_url(home_url('/blog'));
-        }
-        
-        // Static blogs for cards 4-9 - using actual content from blogs_content.txt
+        // Static blogs for cards 4-7 - using actual content from blogs_content.txt
         $static_blogs = [];
         
         // Blog 4: Season of Peace
@@ -225,15 +161,13 @@ get_header();
             ];
         }
         
-        $image_index = 0;
-        $post_count = 0;
+        // Removed $image_index and $post_count as we're only showing static blog cards
         ?>
         
         <div class="row g-4">
             <?php 
             // Always show first three cards with specific content from front-page
             // Card 1
-            if ($post_count == 0) : 
             ?>
                 <div class="col-12 col-md-4">
                     <div class="card shadow-sm h-100 blog-card">
@@ -257,12 +191,9 @@ get_header();
                         </div>
                     </div>
                 </div>
-                <?php $post_count++; ?>
-            <?php endif; ?>
             
             <?php 
             // Card 2
-            if ($post_count == 1) : 
             ?>
                 <div class="col-12 col-md-4">
                     <div class="card shadow-sm h-100 blog-card">
@@ -286,12 +217,9 @@ get_header();
                         </div>
                     </div>
                 </div>
-                <?php $post_count++; ?>
-            <?php endif; ?>
             
             <?php 
             // Card 3
-            if ($post_count == 2) : 
             ?>
                 <div class="col-12 col-md-4">
                     <div class="card shadow-sm h-100 blog-card">
@@ -315,64 +243,11 @@ get_header();
                         </div>
                     </div>
                 </div>
-                <?php $post_count++; ?>
-            <?php endif; ?>
-            
-            <?php if ($blog_query->have_posts()) : ?>
-                <?php while ($blog_query->have_posts() && $post_count < 9) : $blog_query->the_post(); 
-                    // Skip default "Hello World" post
-                    $post_title = get_the_title();
-                    $post_slug = get_post_field('post_name', get_the_ID());
-                    if (strtolower($post_title) === 'hello world!' || $post_slug === 'hello-world') {
-                        continue;
-                    }
-                ?>
-                    <?php 
-                    // For dynamic posts, link to blog listing or use a default
-                    // Since we're using static blog pages, link dynamic posts to blog listing
-                    $post_permalink = esc_url(home_url('/blog'));
-                ?>
-                    <div class="col-12 col-md-4">
-                        <a href="<?php echo $post_permalink; ?>" class="text-decoration-none" title="<?php the_title_attribute(); ?>">
-                        <div class="card shadow-sm h-100 blog-card">
-                            <img src="<?php echo esc_url($blog_images[$image_index % count($blog_images)]); ?>"
-                                class="card-img-top blog-card-img"
-                                alt="<?php the_title_attribute(); ?>">
-                            <div class="card-body p-3">
-                                <div class="d-flex align-items-center mb-2">
-                                    <span class="badge bg-warning text-dark me-2">
-                                        <?php
-                                        $category = get_the_category();
-                                        $category_name = $category ? esc_html($category[0]->name) : 'Blogs';
-                                        // Skip "Uncategorized" category
-                                        if (strtolower($category_name) === 'uncategorized') {
-                                            $category_name = 'Blogs';
-                                        }
-                                        echo $category_name;
-                                        ?>
-                                    </span>
-                                </div>
-                                <h4 class="card-title fw-bold mb-2"><?php the_title(); ?></h4>
-                                <p class="card-text text-muted mb-3"><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
-                                    <span class="btn btn-warning btn-sm"><span class="btn-content">Read More</span></span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <?php 
-                    $image_index++; 
-                    $post_count++;
-                    ?>
-                <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
-            <?php endif; ?>
             
             <?php 
-            // Fill remaining slots with static blog cards if we have less than 9 posts
-            $total_cards = 9;
-            $remaining = $total_cards - $post_count;
-            for ($i = 0; $i < $remaining && $i < count($static_blogs); $i++) : 
-                $blog = $static_blogs[$i];
+            // Display static blog cards (blog-4 through blog-7)
+            // Cards 1-3 are already displayed above
+            foreach ($static_blogs as $blog) :
             ?>
                 <div class="col-12 col-md-4">
                     <div class="card shadow-sm h-100 blog-card">
@@ -392,21 +267,8 @@ get_header();
                         </div>
                     </div>
                 </div>
-            <?php endfor; ?>
+            <?php endforeach; ?>
         </div>
-
-        <?php if ($blog_query->have_posts() && $blog_query->max_num_pages > 1) : ?>
-            <div class="blog-pagination text-center mt-5">
-                <?php
-                echo paginate_links([
-                    'current'   => max(1, $paged),
-                    'total'     => $blog_query->max_num_pages,
-                    'prev_text' => '&laquo; Prev',
-                    'next_text' => 'Next &raquo;',
-                ]);
-                ?>
-            </div>
-        <?php endif; ?>
     </div>
 </section>
 
