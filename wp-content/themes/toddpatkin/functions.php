@@ -1195,16 +1195,16 @@ function toddpatkin_format_blog_content($content) {
                 $formatted .= '<div class="blog-highlight-box p-4 mb-4" style="background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); border: 2px solid #275BA7; border-radius: 12px; box-shadow: 0 4px 12px rgba(39, 91, 167, 0.15); position: relative; margin: 30px 0;">' . "\n";
                 $formatted .= '<div class="d-flex align-items-start gap-3 mb-3">' . "\n";
                 $formatted .= '<div class="quote-icon" style="flex-shrink: 0; width: 40px; height: 40px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4);">' . "\n";
-                $formatted .= '<i class="fas fa-list-check" style="color: #FFC107; font-size: 18px;"></i>' . "\n";
+                $formatted .= '<i class="fas fa-list-ul" style="color: #FFC107; font-size: 18px;"></i>' . "\n";
                 $formatted .= '</div>' . "\n";
                 $formatted .= '<div style="flex: 1;">' . "\n";
                 $formatted .= '<ul class="blog-details-list" style="list-style: none; padding: 0; margin: 0;">' . "\n";
                 foreach ($list_items as $index => $item) {
-                    $formatted .= '<li style="padding: 12px 0 12px 35px; position: relative; line-height: 1.8; color: #2D2D2D; font-size: 16px; transition: all 0.3s ease;" class="blog-list-item">' . "\n";
-                    $formatted .= '<div style="position: absolute; left: 0; top: 12px; width: 20px; height: 20px; background: linear-gradient(135deg, #275BA7 0%, #1a4a8a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(39, 91, 167, 0.3);">' . "\n";
-                    $formatted .= '<span style="color: white; font-weight: bold; font-size: 12px;">✓</span>' . "\n";
+                    $formatted .= '<li style="padding: 12px 0 12px 40px; position: relative; line-height: 1.8; color: #2D2D2D; font-size: 16px; transition: all 0.3s ease; min-height: 24px;" class="blog-list-item">' . "\n";
+                    $formatted .= '<div style="position: absolute; left: 0; top: 12px; width: 24px; height: 24px; background: linear-gradient(135deg, #275BA7 0%, #1a4a8a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(39, 91, 167, 0.3); flex-shrink: 0;">' . "\n";
+                    $formatted .= '<span style="color: white; font-weight: bold; font-size: 14px; line-height: 1;">✓</span>' . "\n";
                     $formatted .= '</div>' . "\n";
-                    $formatted .= esc_html($item) . "\n";
+                    $formatted .= '<span style="display: block; padding-left: 0;">' . esc_html($item) . '</span>' . "\n";
                     $formatted .= '</li>' . "\n";
                 }
                 $formatted .= '</ul>' . "\n";
@@ -1227,16 +1227,16 @@ function toddpatkin_format_blog_content($content) {
                 $formatted .= '<div class="blog-highlight-box p-4 mb-4" style="background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); border: 2px solid #275BA7; border-radius: 12px; box-shadow: 0 4px 12px rgba(39, 91, 167, 0.15); position: relative; margin: 30px 0;">' . "\n";
                 $formatted .= '<div class="d-flex align-items-start gap-3 mb-3">' . "\n";
                 $formatted .= '<div class="quote-icon" style="flex-shrink: 0; width: 40px; height: 40px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4);">' . "\n";
-                $formatted .= '<i class="fas fa-list-check" style="color: #FFC107; font-size: 18px;"></i>' . "\n";
+                $formatted .= '<i class="fas fa-list-ul" style="color: #FFC107; font-size: 18px;"></i>' . "\n";
                 $formatted .= '</div>' . "\n";
                 $formatted .= '<div style="flex: 1;">' . "\n";
                 $formatted .= '<ul class="blog-details-list" style="list-style: none; padding: 0; margin: 0;">' . "\n";
                 foreach ($list_items as $item) {
-                    $formatted .= '<li style="padding: 12px 0 12px 35px; position: relative; line-height: 1.8; color: #2D2D2D; font-size: 16px; transition: all 0.3s ease;" class="blog-list-item">' . "\n";
-                    $formatted .= '<div style="position: absolute; left: 0; top: 12px; width: 20px; height: 20px; background: linear-gradient(135deg, #275BA7 0%, #1a4a8a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(39, 91, 167, 0.3);">' . "\n";
-                    $formatted .= '<span style="color: white; font-weight: bold; font-size: 12px;">✓</span>' . "\n";
+                    $formatted .= '<li style="padding: 12px 0 12px 40px; position: relative; line-height: 1.8; color: #2D2D2D; font-size: 16px; transition: all 0.3s ease; min-height: 24px;" class="blog-list-item">' . "\n";
+                    $formatted .= '<div style="position: absolute; left: 0; top: 12px; width: 24px; height: 24px; background: linear-gradient(135deg, #275BA7 0%, #1a4a8a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(39, 91, 167, 0.3); flex-shrink: 0;">' . "\n";
+                    $formatted .= '<span style="color: white; font-weight: bold; font-size: 14px; line-height: 1;">✓</span>' . "\n";
                     $formatted .= '</div>' . "\n";
-                    $formatted .= esc_html($item) . "\n";
+                    $formatted .= '<span style="display: block; padding-left: 0;">' . esc_html($item) . '</span>' . "\n";
                     $formatted .= '</li>' . "\n";
                 }
                 $formatted .= '</ul>' . "\n";
@@ -1329,11 +1329,11 @@ function toddpatkin_format_blog_content($content) {
         $formatted .= '<div style="flex: 1;">' . "\n";
         $formatted .= '<ul class="blog-details-list" style="list-style: none; padding: 0; margin: 0;">' . "\n";
         foreach ($list_items as $item) {
-            $formatted .= '<li style="padding: 12px 0 12px 35px; position: relative; line-height: 1.8; color: #2D2D2D; font-size: 16px; transition: all 0.3s ease;" class="blog-list-item">' . "\n";
-            $formatted .= '<div style="position: absolute; left: 0; top: 12px; width: 20px; height: 20px; background: linear-gradient(135deg, #275BA7 0%, #1a4a8a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(39, 91, 167, 0.3);">' . "\n";
-            $formatted .= '<span style="color: white; font-weight: bold; font-size: 12px;">✓</span>' . "\n";
+            $formatted .= '<li style="padding: 12px 0 12px 40px; position: relative; line-height: 1.8; color: #2D2D2D; font-size: 16px; transition: all 0.3s ease; min-height: 24px;" class="blog-list-item">' . "\n";
+            $formatted .= '<div style="position: absolute; left: 0; top: 12px; width: 24px; height: 24px; background: linear-gradient(135deg, #275BA7 0%, #1a4a8a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(39, 91, 167, 0.3); flex-shrink: 0;">' . "\n";
+            $formatted .= '<span style="color: white; font-weight: bold; font-size: 14px; line-height: 1;">✓</span>' . "\n";
             $formatted .= '</div>' . "\n";
-            $formatted .= esc_html($item) . "\n";
+            $formatted .= '<span style="display: block; padding-left: 0;">' . esc_html($item) . '</span>' . "\n";
             $formatted .= '</li>' . "\n";
         }
         $formatted .= '</ul>' . "\n";

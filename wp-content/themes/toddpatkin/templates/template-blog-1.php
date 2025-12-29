@@ -449,11 +449,22 @@ get_header();
     }
     
     /* Enhanced list items with icons */
+    .blog-details-list {
+        width: 100%;
+    }
+    
     .blog-details-list li {
         position: relative;
-        padding-left: 50px;
+        padding-left: 40px;
         margin-bottom: 12px;
         transition: all 0.3s ease;
+        display: block;
+        width: 100%;
+    }
+    
+    .blog-details-list li span {
+        display: block;
+        width: 100%;
     }
     
     .blog-details-list li:hover {
@@ -461,28 +472,9 @@ get_header();
         color: #275BA7;
     }
     
+    /* Remove the ::before pseudo-element since we're using inline divs */
     .blog-details-list li::before {
-        content: '✓';
-        position: absolute;
-        left: 15px;
-        top: 12px;
-        width: 24px;
-        height: 24px;
-        background: linear-gradient(135deg, #275BA7 0%, #1a4a8a 100%);
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 14px;
-        font-weight: bold;
-        box-shadow: 0 2px 6px rgba(39, 91, 167, 0.3);
-        transition: all 0.3s ease;
-    }
-    
-    .blog-details-list li:hover::before {
-        transform: scale(1.2);
-        box-shadow: 0 4px 12px rgba(39, 91, 167, 0.5);
+        display: none;
     }
     
     /* Enhanced quote styling */
