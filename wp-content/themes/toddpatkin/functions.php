@@ -38,6 +38,7 @@ function toddpatkin_create_required_pages() {
         array( 'slug' => 'blog/blog-4', 'title' => 'The Power of Gratitude: How Thankfulness Transforms Your Life', 'template' => 'templates/template-blog-4.php' ),
         array( 'slug' => 'blog/blog-5', 'title' => 'Building Authentic Relationships: The Foundation of True Happiness', 'template' => 'templates/template-blog-5.php' ),
         array( 'slug' => 'blog/blog-6', 'title' => 'Finding Your Purpose: A Journey from Success to Significance', 'template' => 'templates/template-blog-6.php' ),
+        array( 'slug' => 'blog/blog-7', 'title' => 'Yes, parents, the kids really are okay.', 'template' => 'templates/template-blog-7.php' ),
         array( 'slug' => 'preview-book', 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
         array( 'slug' => 'preview-boot-camp', 'title' => 'Preview Boot Camp Book', 'template' => 'templates/template-preview-boot-camp.php' ),
         array( 'slug' => 'boot-camp', 'title' => 'Boot Camp Book', 'template' => 'templates/template-boot-camp.php' ),
@@ -219,7 +220,7 @@ function toddpatkin_intercept_missing_pages( $wp ) {
     
     // Skip if this is likely a blog post (check if it's a post, not a page)
     // First, check if it matches any known page template slugs
-    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6' );
+    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7' );
     
     $path_parts_temp = array_filter( explode( '/', $request_uri ) );
     $last_slug_temp = end( $path_parts_temp );
@@ -230,7 +231,7 @@ function toddpatkin_intercept_missing_pages( $wp ) {
     $is_course_or_podcast = ( strpos( $request_uri, 'course/' ) !== false || strpos( $request_uri, 'podcast/' ) !== false || strpos( $request_uri, 'blog/' ) !== false );
     
     // Check if it's a blog detail page - prevent author archive routing
-    if ( preg_match( '#^blog/blog-([1-6])$#i', $request_uri ) ) {
+    if ( preg_match( '#^blog/blog-([1-7])$#i', $request_uri ) ) {
         // This is a blog detail page, not an author archive - let it continue to page creation/routing
         $is_course_or_podcast = true; // Treat it like a known page path
     }
@@ -323,6 +324,7 @@ function toddpatkin_intercept_missing_pages( $wp ) {
         'blog-4' => array( 'title' => 'The Power of Gratitude: How Thankfulness Transforms Your Life', 'template' => 'templates/template-blog-4.php', 'parent' => 'blog' ),
         'blog-5' => array( 'title' => 'Building Authentic Relationships: The Foundation of True Happiness', 'template' => 'templates/template-blog-5.php', 'parent' => 'blog' ),
         'blog-6' => array( 'title' => 'Finding Your Purpose: A Journey from Success to Significance', 'template' => 'templates/template-blog-6.php', 'parent' => 'blog' ),
+        'blog-7' => array( 'title' => 'Yes, parents, the kids really are okay.', 'template' => 'templates/template-blog-7.php', 'parent' => 'blog' ),
         'preview-book' => array( 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
         'preview-boot-camp' => array( 'title' => 'Preview Boot Camp Book', 'template' => 'templates/template-preview-boot-camp.php' ),
         'boot-camp' => array( 'title' => 'Boot Camp Book', 'template' => 'templates/template-boot-camp.php' ),
@@ -437,7 +439,7 @@ function toddpatkin_handle_404_create_page() {
     $request_uri = rtrim( $request_uri, '/.html' );
     
     // Skip if this is likely a blog post
-    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6' );
+    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7' );
     
     $path_parts = array_filter( explode( '/', $request_uri ) );
     $slug = end( $path_parts );
@@ -530,6 +532,7 @@ function toddpatkin_handle_404_create_page() {
         'blog-4' => array( 'title' => 'The Power of Gratitude: How Thankfulness Transforms Your Life', 'template' => 'templates/template-blog-4.php', 'parent' => 'blog' ),
         'blog-5' => array( 'title' => 'Building Authentic Relationships: The Foundation of True Happiness', 'template' => 'templates/template-blog-5.php', 'parent' => 'blog' ),
         'blog-6' => array( 'title' => 'Finding Your Purpose: A Journey from Success to Significance', 'template' => 'templates/template-blog-6.php', 'parent' => 'blog' ),
+        'blog-7' => array( 'title' => 'Yes, parents, the kids really are okay.', 'template' => 'templates/template-blog-7.php', 'parent' => 'blog' ),
         'preview-book' => array( 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
         'preview-boot-camp' => array( 'title' => 'Preview Boot Camp Book', 'template' => 'templates/template-preview-boot-camp.php' ),
         'boot-camp' => array( 'title' => 'Boot Camp Book', 'template' => 'templates/template-boot-camp.php' ),
@@ -865,8 +868,8 @@ function toddpatkin_force_template_include( $template ) {
         $request_uri = strtok( $request_uri, '?' );
         $request_uri = rtrim( $request_uri, '/.html' );
         
-        // Check if it's a blog detail page (blog/blog-1 through blog/blog-6)
-        if ( preg_match( '#^blog/blog-([1-6])$#i', $request_uri, $matches ) ) {
+        // Check if it's a blog detail page (blog/blog-1 through blog/blog-7)
+        if ( preg_match( '#^blog/blog-([1-7])$#i', $request_uri, $matches ) ) {
             $blog_num = $matches[1];
             $blog_template = get_template_directory() . '/templates/template-blog-' . $blog_num . '.php';
             if ( file_exists( $blog_template ) ) {
@@ -1061,11 +1064,283 @@ function toddpatkin_prevent_author_archive_for_blog_pages( $query ) {
         $request_uri = strtok( $request_uri, '?' );
         $request_uri = rtrim( $request_uri, '/.html' );
         
-        // If it's a blog detail page (blog/blog-1 through blog/blog-6), prevent author archive
-        if ( preg_match( '#^blog/blog-([1-6])$#i', $request_uri ) ) {
+        // If it's a blog detail page (blog/blog-1 through blog/blog-7), prevent author archive
+        if ( preg_match( '#^blog/blog-([1-7])$#i', $request_uri ) ) {
             $query->is_author = false;
             $query->is_404 = false;
             $query->is_page = true;
         }
     }
+}
+
+/**
+ * Parse blogs_content.txt and extract blog content by number
+ * 
+ * @param int $blog_number The blog number (1-7)
+ * @return array|false Returns array with 'title' and 'content' or false if not found
+ */
+function toddpatkin_get_blog_content($blog_number) {
+    static $blogs_cache = null;
+    
+    // Cache the parsed blogs to avoid reading file multiple times
+    if ($blogs_cache === null) {
+        $blogs_cache = array();
+        $content_file = get_template_directory() . '/blogs_content.txt';
+        
+        if (!file_exists($content_file)) {
+            return false;
+        }
+        
+        $content = file_get_contents($content_file);
+        $lines = explode("\n", $content);
+        
+        $current_blog = null;
+        $current_title = '';
+        $current_content = array();
+        
+        foreach ($lines as $line) {
+            // Check if line starts with a blog number (e.g., "1->", "2->", etc.)
+            if (preg_match('/^(\d+)->(.+)$/', $line, $matches)) {
+                // Save previous blog if exists
+                if ($current_blog !== null) {
+                    $blogs_cache[$current_blog] = array(
+                        'title' => $current_title,
+                        'content' => trim(implode("\n", $current_content))
+                    );
+                }
+                
+                // Start new blog
+                $current_blog = (int)$matches[1];
+                $current_title = trim($matches[2]);
+                $current_content = array();
+            } else {
+                // Add line to current blog content
+                if ($current_blog !== null) {
+                    $current_content[] = $line;
+                }
+            }
+        }
+        
+        // Save last blog
+        if ($current_blog !== null) {
+            $blogs_cache[$current_blog] = array(
+                'title' => $current_title,
+                'content' => trim(implode("\n", $current_content))
+            );
+        }
+    }
+    
+    return isset($blogs_cache[$blog_number]) ? $blogs_cache[$blog_number] : false;
+}
+
+/**
+ * Get blog excerpt from content
+ * 
+ * @param int $blog_number The blog number (1-7)
+ * @param int $word_count Number of words for excerpt (default: 25)
+ * @return string|false Returns excerpt or false if blog not found
+ */
+function toddpatkin_get_blog_excerpt($blog_number, $word_count = 25) {
+    $blog = toddpatkin_get_blog_content($blog_number);
+    
+    if (!$blog) {
+        return false;
+    }
+    
+    // Remove title from content for excerpt
+    $content = $blog['content'];
+    
+    // Clean up content - remove extra whitespace
+    $content = preg_replace('/\s+/', ' ', $content);
+    $content = trim($content);
+    
+    // Get excerpt
+    $words = explode(' ', $content);
+    if (count($words) > $word_count) {
+        $excerpt = implode(' ', array_slice($words, 0, $word_count));
+        return $excerpt . '...';
+    }
+    
+    return $content;
+}
+
+/**
+ * Format blog content for display in detail pages
+ * Converts plain text to formatted HTML paragraphs with enhanced styling
+ * 
+ * @param string $content The raw blog content
+ * @return string Formatted HTML content
+ */
+function toddpatkin_format_blog_content($content) {
+    if (empty($content)) {
+        return '';
+    }
+    
+    // Split content into lines
+    $lines = explode("\n", $content);
+    
+    $formatted = '';
+    $in_list = false;
+    $list_items = array();
+    $paragraph_count = 0;
+    $first_paragraph = true;
+    
+    foreach ($lines as $line) {
+        $line = trim($line);
+        
+        // Skip empty lines
+        if (empty($line)) {
+            if ($in_list && !empty($list_items)) {
+                // Close the list with book-section inspired styling
+                $formatted .= '<div class="blog-highlight-box p-4 mb-4" style="background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); border: 2px solid #275BA7; border-radius: 12px; box-shadow: 0 4px 12px rgba(39, 91, 167, 0.15); position: relative; margin: 30px 0;">' . "\n";
+                $formatted .= '<div class="d-flex align-items-start gap-3 mb-3">' . "\n";
+                $formatted .= '<div class="quote-icon" style="flex-shrink: 0; width: 40px; height: 40px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4);">' . "\n";
+                $formatted .= '<i class="fas fa-list-check" style="color: #FFC107; font-size: 18px;"></i>' . "\n";
+                $formatted .= '</div>' . "\n";
+                $formatted .= '<div style="flex: 1;">' . "\n";
+                $formatted .= '<ul class="blog-details-list" style="list-style: none; padding: 0; margin: 0;">' . "\n";
+                foreach ($list_items as $index => $item) {
+                    $formatted .= '<li style="padding: 12px 0 12px 35px; position: relative; line-height: 1.8; color: #2D2D2D; font-size: 16px; transition: all 0.3s ease;" class="blog-list-item">' . "\n";
+                    $formatted .= '<div style="position: absolute; left: 0; top: 12px; width: 20px; height: 20px; background: linear-gradient(135deg, #275BA7 0%, #1a4a8a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(39, 91, 167, 0.3);">' . "\n";
+                    $formatted .= '<span style="color: white; font-weight: bold; font-size: 12px;">✓</span>' . "\n";
+                    $formatted .= '</div>' . "\n";
+                    $formatted .= esc_html($item) . "\n";
+                    $formatted .= '</li>' . "\n";
+                }
+                $formatted .= '</ul>' . "\n";
+                $formatted .= '</div>' . "\n";
+                $formatted .= '</div>' . "\n";
+                $formatted .= '</div>' . "\n";
+                $list_items = array();
+                $in_list = false;
+            }
+            continue;
+        }
+        
+        // Check if it's a bullet point (starts with * or -)
+        if (preg_match('/^[\*\-\•]\s*(.+)$/', $line, $matches)) {
+            $in_list = true;
+            $list_items[] = trim($matches[1]);
+        } else {
+            // If we were in a list, close it first
+            if ($in_list && !empty($list_items)) {
+                $formatted .= '<div class="blog-highlight-box p-4 mb-4" style="background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); border: 2px solid #275BA7; border-radius: 12px; box-shadow: 0 4px 12px rgba(39, 91, 167, 0.15); position: relative; margin: 30px 0;">' . "\n";
+                $formatted .= '<div class="d-flex align-items-start gap-3 mb-3">' . "\n";
+                $formatted .= '<div class="quote-icon" style="flex-shrink: 0; width: 40px; height: 40px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4);">' . "\n";
+                $formatted .= '<i class="fas fa-list-check" style="color: #FFC107; font-size: 18px;"></i>' . "\n";
+                $formatted .= '</div>' . "\n";
+                $formatted .= '<div style="flex: 1;">' . "\n";
+                $formatted .= '<ul class="blog-details-list" style="list-style: none; padding: 0; margin: 0;">' . "\n";
+                foreach ($list_items as $item) {
+                    $formatted .= '<li style="padding: 12px 0 12px 35px; position: relative; line-height: 1.8; color: #2D2D2D; font-size: 16px; transition: all 0.3s ease;" class="blog-list-item">' . "\n";
+                    $formatted .= '<div style="position: absolute; left: 0; top: 12px; width: 20px; height: 20px; background: linear-gradient(135deg, #275BA7 0%, #1a4a8a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(39, 91, 167, 0.3);">' . "\n";
+                    $formatted .= '<span style="color: white; font-weight: bold; font-size: 12px;">✓</span>' . "\n";
+                    $formatted .= '</div>' . "\n";
+                    $formatted .= esc_html($item) . "\n";
+                    $formatted .= '</li>' . "\n";
+                }
+                $formatted .= '</ul>' . "\n";
+                $formatted .= '</div>' . "\n";
+                $formatted .= '</div>' . "\n";
+                $formatted .= '</div>' . "\n";
+                $list_items = array();
+                $in_list = false;
+            }
+            
+            // Check for quotes or emphasized text
+            $is_quote = false;
+            $is_important = false;
+            
+            // Detect quotes (lines that start with quotes or contain quote-like patterns)
+            if (preg_match('/^["\']|["\']$/', $line) || strlen($line) < 150 && preg_match('/^[A-Z][^.!?]*[.!?]$/', $line)) {
+                // Check if it looks like a quote
+                if (preg_match('/^["\']/', $line) || (strlen($line) < 200 && preg_match('/\b(remember|think|believe|know|realize|understand)\b/i', $line))) {
+                    $is_quote = true;
+                }
+            }
+            
+            // Detect important statements (short, impactful sentences)
+            if (strlen($line) < 200 && preg_match('/\b(important|key|essential|crucial|vital|remember|note|tip)\b/i', $line)) {
+                $is_important = true;
+            }
+            
+            // Format paragraph with enhanced styling inspired by book section
+            $paragraph_count++;
+            $paragraph_class = 'blog-details-paragraph';
+            
+            // First paragraph gets special treatment - styled like book intro
+            if ($first_paragraph) {
+                $formatted .= '<div class="blog-description-item mb-4" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative; margin-bottom: 30px;">' . "\n";
+                $formatted .= '<div class="blog-icon-badge" style="position: absolute; left: -12px; top: 0; width: 24px; height: 24px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 2;">' . "\n";
+                $formatted .= '<i class="fas fa-lightbulb" style="color: #275BA7; font-size: 12px;"></i>' . "\n";
+                $formatted .= '</div>' . "\n";
+                $formatted .= '<p class="blog-description-text mb-0" style="font-size: 18px; line-height: 1.8; color: #2D2D2D; font-weight: 500;">' . esc_html($line) . '</p>' . "\n";
+                $formatted .= '</div>' . "\n";
+                $first_paragraph = false;
+            }
+            // Quote styling - styled like book highlight box
+            else if ($is_quote) {
+                $formatted .= '<div class="blog-highlight-box p-4 mb-4" style="background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); border: 2px solid #FFC107; border-radius: 12px; box-shadow: 0 4px 12px rgba(255, 193, 7, 0.15); position: relative; margin: 30px 0;">' . "\n";
+                $formatted .= '<div class="d-flex align-items-start gap-3">' . "\n";
+                $formatted .= '<div class="quote-icon" style="flex-shrink: 0; width: 40px; height: 40px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4);">' . "\n";
+                $formatted .= '<i class="fas fa-quote-left" style="color: #275BA7; font-size: 18px;"></i>' . "\n";
+                $formatted .= '</div>' . "\n";
+                $formatted .= '<div>' . "\n";
+                $formatted .= '<p class="blog-description-text blog-description-italic mb-0" style="font-size: 17px; line-height: 1.8; color: #2D2D2D; font-style: italic; margin: 0;">' . esc_html($line) . '</p>' . "\n";
+                $formatted .= '</div>' . "\n";
+                $formatted .= '</div>' . "\n";
+                $formatted .= '</div>' . "\n";
+            } 
+            // Important statement styling - styled like book CTA box
+            else if ($is_important) {
+                $formatted .= '<div class="blog-cta-text mb-4" style="padding: 16px 20px; background: linear-gradient(135deg, #275BA7 0%, #1E4A7A 100%); border-radius: 8px; box-shadow: 0 4px 8px rgba(39, 91, 167, 0.2); margin: 25px 0;">' . "\n";
+                $formatted .= '<div class="d-flex align-items-center gap-2 mb-2">' . "\n";
+                $formatted .= '<i class="fas fa-check-circle" style="color: #FFC107; font-size: 18px;"></i>' . "\n";
+                $formatted .= '<span style="color: #FFFFFF; font-weight: 600; font-size: 15px; letter-spacing: 0.5px;">KEY INSIGHT</span>' . "\n";
+                $formatted .= '</div>' . "\n";
+                $formatted .= '<p class="blog-description-text mb-0" style="font-size: 16px; line-height: 1.7; color: #FFFFFF; margin: 0;">' . esc_html($line) . '</p>' . "\n";
+                $formatted .= '</div>' . "\n";
+            }
+            // Regular paragraphs - styled like book description items with alternating colors
+            else {
+                // Alternate between yellow and blue borders
+                $border_color = ($paragraph_count % 2 == 0) ? '#275BA7' : '#FFC107';
+                $icon_bg = ($paragraph_count % 2 == 0) ? '#275BA7' : '#FFC107';
+                $icon_color = ($paragraph_count % 2 == 0) ? '#FFC107' : '#275BA7';
+                $icon_type = ($paragraph_count % 2 == 0) ? 'fa-heart' : 'fa-lightbulb';
+                
+                $formatted .= '<div class="blog-description-item mb-4 blog-paragraph-interactive" style="padding-left: 24px; border-left: 3px solid ' . $border_color . '; position: relative; transition: all 0.3s ease;">' . "\n";
+                $formatted .= '<div class="blog-icon-badge" style="position: absolute; left: -12px; top: 0; width: 24px; height: 24px; background: ' . $icon_bg . '; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(' . ($paragraph_count % 2 == 0 ? '39, 91, 167' : '255, 193, 7') . ', 0.4); z-index: 2; transition: all 0.3s ease;">' . "\n";
+                $formatted .= '<i class="fas ' . $icon_type . '" style="color: ' . $icon_color . '; font-size: 12px;"></i>' . "\n";
+                $formatted .= '</div>' . "\n";
+                $formatted .= '<p class="blog-description-text mb-0" style="font-size: 16px; line-height: 1.8; color: #2D2D2D; margin: 0;">' . esc_html($line) . '</p>' . "\n";
+                $formatted .= '</div>' . "\n";
+            }
+        }
+    }
+    
+    // Close any remaining list
+    if ($in_list && !empty($list_items)) {
+        $formatted .= '<div class="blog-highlight-box p-4 mb-4" style="background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); border: 2px solid #275BA7; border-radius: 12px; box-shadow: 0 4px 12px rgba(39, 91, 167, 0.15); position: relative; margin: 30px 0;">' . "\n";
+        $formatted .= '<div class="d-flex align-items-start gap-3 mb-3">' . "\n";
+        $formatted .= '<div class="quote-icon" style="flex-shrink: 0; width: 40px; height: 40px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4);">' . "\n";
+        $formatted .= '<i class="fas fa-list-check" style="color: #FFC107; font-size: 18px;"></i>' . "\n";
+        $formatted .= '</div>' . "\n";
+        $formatted .= '<div style="flex: 1;">' . "\n";
+        $formatted .= '<ul class="blog-details-list" style="list-style: none; padding: 0; margin: 0;">' . "\n";
+        foreach ($list_items as $item) {
+            $formatted .= '<li style="padding: 12px 0 12px 35px; position: relative; line-height: 1.8; color: #2D2D2D; font-size: 16px; transition: all 0.3s ease;" class="blog-list-item">' . "\n";
+            $formatted .= '<div style="position: absolute; left: 0; top: 12px; width: 20px; height: 20px; background: linear-gradient(135deg, #275BA7 0%, #1a4a8a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(39, 91, 167, 0.3);">' . "\n";
+            $formatted .= '<span style="color: white; font-weight: bold; font-size: 12px;">✓</span>' . "\n";
+            $formatted .= '</div>' . "\n";
+            $formatted .= esc_html($item) . "\n";
+            $formatted .= '</li>' . "\n";
+        }
+        $formatted .= '</ul>' . "\n";
+        $formatted .= '</div>' . "\n";
+        $formatted .= '</div>' . "\n";
+        $formatted .= '</div>' . "\n";
+    }
+    
+    return $formatted;
 }

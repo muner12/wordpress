@@ -38,6 +38,66 @@ get_header();
     .blog-section a.text-decoration-none .blog-card * {
         cursor: pointer;
     }
+    
+    /* Responsive Blog Badge Styles */
+    .blog-section .badge {
+        display: inline-flex !important;
+        align-items: center;
+        gap: 6px;
+    }
+    
+    .blog-section .badge img {
+        flex-shrink: 0;
+        object-fit: contain;
+    }
+    
+    @media (max-width: 768px) {
+        .blog-section .badge {
+            font-size: 11px !important;
+            padding: 3px 6px !important;
+        }
+        
+        .blog-section .badge img {
+            width: 12px !important;
+            height: 12px !important;
+            margin-right: 4px !important;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .blog-section .badge {
+            font-size: 10px !important;
+            padding: 2px 5px !important;
+        }
+        
+        .blog-section .badge img {
+            width: 11px !important;
+            height: 11px !important;
+            margin-right: 3px !important;
+        }
+    }
+    
+    /* Align Read More button to bottom of all cards */
+    .blog-section .blog-card {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .blog-section .blog-card .card-body {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    
+    .blog-section .blog-card .card-body .card-text {
+        flex-grow: 1;
+    }
+    
+    .blog-section .blog-card .card-body .btn,
+    .blog-section .blog-card .card-body a.btn {
+        margin-top: auto;
+        align-self: flex-start;
+    }
 </style>
 <!-- Blog Section -->
 <section id="blogs" class="blog-section bg-white">
@@ -97,12 +157,14 @@ get_header();
         function get_blog_permalink_by_title($title) {
             // Map blog titles to their page slugs
             $blog_map = [
-                'Money and Happiness: Why More Isn\'t Always Better' => 'blog-1',
-                'The Quiet Time Revolution: Why Doing Nothing Changed Everything' => 'blog-2',
-                '5 Signs You\'re a High-Functioning Depressive (And What to Do About It)' => 'blog-3',
-                'The Power of Gratitude: How Thankfulness Transforms Your Life' => 'blog-4',
-                'Building Authentic Relationships: The Foundation of True Happiness' => 'blog-5',
-                'Finding Your Purpose: A Journey from Success to Significance' => 'blog-6'
+                'Masks: The Other Side of the Coin' => 'blog-1',
+                '5 Things Your Employees Are Dying to Hear from You' => 'blog-2',
+                'It\'s up to you..... your happiness that is!' => 'blog-3',
+                'It\'s Up to You…Your Happiness, That Is!' => 'blog-3',
+                'Season of Peace: The Importance of Quiet Time' => 'blog-4',
+                'How to boost your employee engagement.' => 'blog-5',
+                'Online While on Vacation? How (and Why) to Unplug' => 'blog-6',
+                'Yes, parents, the kids really are okay.' => 'blog-7'
             ];
             
             if (isset($blog_map[$title])) {
@@ -116,44 +178,52 @@ get_header();
             return esc_url(home_url('/blog'));
         }
         
-        $static_blogs = [
-            [
-                'image' => $blog_images[0],
-                'title' => 'Money and Happiness: Why More Isn\'t Always Better',
-                'excerpt' => 'Despite achieving financial success beyond my wildest dreams, I discovered the hard way that wealth can\'t buy happiness. Here\'s what actually creates lasting contentment...',
-                'link' => get_blog_permalink_by_title('Money and Happiness: Why More Isn\'t Always Better')
-            ],
-            [
-                'image' => $blog_images[1],
-                'title' => 'The Quiet Time Revolution: Why Doing Nothing Changed Everything',
-                'excerpt' => 'As a chronic achiever and perfectionist, the concept of \'quiet time\' seemed impossible—and unnecessary. But learning to be still became one of the most transformative...',
-                'link' => get_blog_permalink_by_title('The Quiet Time Revolution: Why Doing Nothing Changed Everything')
-            ],
-            [
-                'image' => $blog_images[2],
-                'title' => '5 Signs You\'re a High-Functioning Depressive (And What to Do About It)',
-                'excerpt' => 'You\'re successful, accomplished, and from the outside your life looks perfect. But inside, you\'re struggling. These are the warning signs I wish I\'d recognized sooner...',
-                'link' => get_blog_permalink_by_title('5 Signs You\'re a High-Functioning Depressive (And What to Do About It)')
-            ],
-            [
-                'image' => $featured_blog_images[0],
-                'title' => 'Money and Happiness: Why More Isn\'t Always Better',
-                'excerpt' => 'Despite achieving financial success beyond my wildest dreams, I discovered the hard way that wealth can\'t buy happiness. Here\'s what actually creates lasting contentment...',
-                'link' => get_blog_permalink_by_title('Money and Happiness: Why More Isn\'t Always Better')
-            ],
-            [
-                'image' => $featured_blog_images[1],
-                'title' => 'The Quiet Time Revolution: Why Doing Nothing Changed Everything',
-                'excerpt' => 'As a chronic achiever and perfectionist, the concept of \'quiet time\' seemed impossible—and unnecessary. But learning to be still became one of the most transformative...',
-                'link' => get_blog_permalink_by_title('The Quiet Time Revolution: Why Doing Nothing Changed Everything')
-            ],
-            [
-                'image' => $featured_blog_images[2],
-                'title' => '5 Signs You\'re a High-Functioning Depressive (And What to Do About It)',
-                'excerpt' => 'You\'re successful, accomplished, and from the outside your life looks perfect. But inside, you\'re struggling. These are the warning signs I wish I\'d recognized sooner...',
-                'link' => get_blog_permalink_by_title('5 Signs You\'re a High-Functioning Depressive (And What to Do About It)')
-            ],
-        ];
+        // Static blogs for cards 4-9 - using actual content from blogs_content.txt
+        $static_blogs = [];
+        
+        // Blog 4: Season of Peace
+        $blog4 = toddpatkin_get_blog_content(4);
+        if ($blog4) {
+            $static_blogs[] = [
+                'image' => get_template_directory_uri() . '/assets/images/blog_4.png',
+                'title' => $blog4['title'],
+                'excerpt' => toddpatkin_get_blog_excerpt(4, 30),
+                'link' => esc_url(home_url('/blog/blog-4'))
+            ];
+        }
+        
+        // Blog 5: How to boost your employee engagement
+        $blog5 = toddpatkin_get_blog_content(5);
+        if ($blog5) {
+            $static_blogs[] = [
+                'image' => get_template_directory_uri() . '/assets/images/blog_5.png',
+                'title' => $blog5['title'],
+                'excerpt' => toddpatkin_get_blog_excerpt(5, 30),
+                'link' => esc_url(home_url('/blog/blog-5'))
+            ];
+        }
+        
+        // Blog 6: Online While on Vacation
+        $blog6 = toddpatkin_get_blog_content(6);
+        if ($blog6) {
+            $static_blogs[] = [
+                'image' => get_template_directory_uri() . '/assets/images/blog_6.png',
+                'title' => $blog6['title'],
+                'excerpt' => toddpatkin_get_blog_excerpt(6, 30),
+                'link' => esc_url(home_url('/blog/blog-6'))
+            ];
+        }
+        
+        // Blog 7: Yes, parents, the kids really are okay
+        $blog7 = toddpatkin_get_blog_content(7);
+        if ($blog7) {
+            $static_blogs[] = [
+                'image' => get_template_directory_uri() . '/assets/images/blog_7.png',
+                'title' => $blog7['title'],
+                'excerpt' => toddpatkin_get_blog_excerpt(7, 30),
+                'link' => esc_url(home_url('/blog/blog-7'))
+            ];
+        }
         
         $image_index = 0;
         $post_count = 0;
@@ -161,33 +231,95 @@ get_header();
         
         <div class="row g-4">
             <?php 
-            // Always show first card with specific content
+            // Always show first three cards with specific content from front-page
+            // Card 1
             if ($post_count == 0) : 
-                // Always use direct URL structure to avoid routing issues
-                $first_blog_link = esc_url(home_url('/blog/blog-1'));
             ?>
                 <div class="col-12 col-md-4">
-                    <a href="<?php echo $first_blog_link; ?>" class="text-decoration-none" title="Money and Happiness: Why More Isn't Always Better">
                     <div class="card shadow-sm h-100 blog-card">
-                        <img src="<?php echo esc_url($blog_images[0]); ?>"
-                            class="card-img-top blog-card-img"
-                            alt="Money and Happiness: Why More Isn't Always Better">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_1.png" class="card-img-top blog-card-img"
+                            alt="Masks: The Other Side of the Coin">
                         <div class="card-body p-3">
-                            <div class="d-flex align-items-center mb-2">
-                                <span class="badge bg-warning text-dark me-2">Blogs</span>
+                            <div class="d-flex align-items-center mb-2 flex-wrap">
+                                <span class="badge d-flex align-items-center" style="padding: 4px 8px; font-size: 12px; white-space: nowrap;">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/css-line.png" alt="Blog Icon" style="width: 14px; height: 14px; margin-right: 6px; flex-shrink: 0;">
+                                    <span style="color: #275BA7; font-weight: 500;">Blog</span>
+                                </span>
                             </div>
-                            <h4 class="card-title fw-bold mb-2">Money and Happiness: Why More Isn't Always Better</h4>
-                            <p class="card-text text-muted mb-3">Despite achieving financial success beyond my wildest dreams, I discovered the hard way that wealth can't buy happiness. Here's what actually creates lasting contentment...</p>
-                                <span class="btn btn-warning btn-sm"><span class="btn-content">Read More</span></span>
-                            </div>
+                            <h4 class="card-title fw-bold mb-2">Masks: The Other Side of the <br/> Coin</h4>
+                            <p class="card-text text-muted mb-3">
+                            <?php 
+                            $blog1_excerpt = toddpatkin_get_blog_excerpt(1, 30);
+                            echo $blog1_excerpt ? esc_html($blog1_excerpt) : 'Two weeks ago I wrote about the "masks" we so often wear in our daily lives—an appropriate topic to post about on the day before Halloween, I thought! Here\'s an excerpt of what I wrote: As many people go through life...';
+                            ?>
+                            </p>
+                            <a href="<?php echo esc_url(home_url('/blog/blog-1')); ?>" class="btn btn-sm" style="background-color: transparent; border: 2px solid #FAD30C; border-radius: 8px;"><span class="btn-content">Read More</span></a>
                         </div>
-                    </a>
+                    </div>
+                </div>
+                <?php $post_count++; ?>
+            <?php endif; ?>
+            
+            <?php 
+            // Card 2
+            if ($post_count == 1) : 
+            ?>
+                <div class="col-12 col-md-4">
+                    <div class="card shadow-sm h-100 blog-card">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_2.png" class="card-img-top blog-card-img"
+                            alt="5 Things Your Employees Are Dying to Hear from You">
+                        <div class="card-body p-3">
+                        <div class="d-flex align-items-center mb-2 flex-wrap">
+                                <span class="badge d-flex align-items-center" style="padding: 4px 8px; font-size: 12px; white-space: nowrap;">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/css-line.png" alt="Blog Icon" style="width: 14px; height: 14px; margin-right: 6px; flex-shrink: 0;">
+                                    <span style="color: #275BA7; font-weight: 500;">Blog</span>
+                                </span>
+                            </div>
+                            <h4 class="card-title fw-bold mb-2">5 Things Your Employees Are Dying to Hear from You</h4>
+                            <p class="card-text text-muted mb-3">
+                            <?php 
+                            $blog2_excerpt = toddpatkin_get_blog_excerpt(2, 30);
+                            echo $blog2_excerpt ? esc_html($blog2_excerpt) : 'Business leaders and owners: What were your last 10 or 15 employee conversations like? Chances are, they included phrases like, "I need you to finish that projection by the end of the day," or, "I\'m putting you on the Brown...';
+                            ?>
+                            </p>
+                            <a href="<?php echo esc_url(home_url('/blog/blog-2')); ?>" class="btn btn-sm" style="background-color: transparent; border: 2px solid #FAD30C;  border-radius: 8px;"><span class="btn-content">Read More</span></a>
+                        </div>
+                    </div>
+                </div>
+                <?php $post_count++; ?>
+            <?php endif; ?>
+            
+            <?php 
+            // Card 3
+            if ($post_count == 2) : 
+            ?>
+                <div class="col-12 col-md-4">
+                    <div class="card shadow-sm h-100 blog-card">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_3.png" class="card-img-top blog-card-img"
+                            alt="It's up to you..... your happiness that is!">
+                        <div class="card-body p-3">
+                        <div class="d-flex align-items-center mb-2 flex-wrap">
+                                <span class="badge d-flex align-items-center" style="padding: 4px 8px; font-size: 12px; white-space: nowrap;">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/css-line.png" alt="Blog Icon" style="width: 14px; height: 14px; margin-right: 6px; flex-shrink: 0;">
+                                    <span style="color: #275BA7; font-weight: 500;">Blog</span>
+                                </span>
+                            </div>
+                            <h4 class="card-title fw-bold mb-2">It's Up to You…Your Happiness, That Is!</h4>
+                            <p class="card-text text-muted mb-3">
+                            <?php 
+                            $blog3_excerpt = toddpatkin_get_blog_excerpt(3, 30);
+                            echo $blog3_excerpt ? esc_html($blog3_excerpt) : 'The phrase "happiness is a choice" is something we\'ve all heard before. But have you ever really stopped to think about what it means? If you\'re like me, your first reaction was probably something like, Yeah, right...';
+                            ?>
+                            </p>
+                            <a href="<?php echo esc_url(home_url('/blog/blog-3')); ?>" class="btn btn-sm" style="background-color: transparent; border: 2px solid #FAD30C; border-radius: 8px;"><span class="btn-content">Read More</span></a>
+                        </div>
+                    </div>
                 </div>
                 <?php $post_count++; ?>
             <?php endif; ?>
             
             <?php if ($blog_query->have_posts()) : ?>
-                <?php while ($blog_query->have_posts() && $post_count < 6) : $blog_query->the_post(); 
+                <?php while ($blog_query->have_posts() && $post_count < 9) : $blog_query->the_post(); 
                     // Skip default "Hello World" post
                     $post_title = get_the_title();
                     $post_slug = get_post_field('post_name', get_the_ID());
@@ -236,28 +368,29 @@ get_header();
             <?php endif; ?>
             
             <?php 
-            // Fill remaining slots with static blog cards if we have less than 6 posts
-            $total_cards = 6;
+            // Fill remaining slots with static blog cards if we have less than 9 posts
+            $total_cards = 9;
             $remaining = $total_cards - $post_count;
             for ($i = 0; $i < $remaining && $i < count($static_blogs); $i++) : 
-                $blog = $static_blogs[($post_count + $i) % count($static_blogs)];
+                $blog = $static_blogs[$i];
             ?>
                 <div class="col-12 col-md-4">
-                    <a href="<?php echo esc_url($blog['link']); ?>" class="text-decoration-none">
                     <div class="card shadow-sm h-100 blog-card">
                         <img src="<?php echo esc_url($blog['image']); ?>"
                             class="card-img-top blog-card-img"
                             alt="<?php echo esc_attr($blog['title']); ?>">
                         <div class="card-body p-3">
-                            <div class="d-flex align-items-center mb-2">
-                                <span class="badge bg-warning text-dark me-2">Blogs</span>
+                            <div class="d-flex align-items-center mb-2 flex-wrap">
+                                <span class="badge d-flex align-items-center" style="padding: 4px 8px; font-size: 12px; white-space: nowrap;">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/css-line.png" alt="Blog Icon" style="width: 14px; height: 14px; margin-right: 6px; flex-shrink: 0;">
+                                    <span style="color: #275BA7; font-weight: 500;">Blog</span>
+                                </span>
                             </div>
                             <h4 class="card-title fw-bold mb-2"><?php echo esc_html($blog['title']); ?></h4>
                             <p class="card-text text-muted mb-3"><?php echo esc_html($blog['excerpt']); ?></p>
-                                <span class="btn btn-warning btn-sm"><span class="btn-content">Read More</span></span>
-                            </div>
+                            <a href="<?php echo esc_url($blog['link']); ?>" class="btn btn-sm" style="background-color: transparent; border: 2px solid #FAD30C; border-radius: 8px;"><span class="btn-content">Read More</span></a>
                         </div>
-                    </a>
+                    </div>
                 </div>
             <?php endfor; ?>
         </div>

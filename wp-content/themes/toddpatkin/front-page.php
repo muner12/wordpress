@@ -1391,7 +1391,9 @@
                                 </span>
                             </div>
                             <h4 class="card-title fw-bold mb-2">Masks: The Other Side of the <br/> Coin</h4>
-                            <p class="card-text text-muted mb-3">Despite achieving financial success beyond my wildest dreams, I discovered the hard way that wealth can't buy happiness. Here's what actually creates lasting contentment...</p>
+                            <p class="card-text text-muted mb-3">
+                            Two weeks ago I wrote about the “masks” we so often wear in our daily lives—an appropriate topic to post about on the day before Halloween, I thought! Here’s an excerpt of what I wrote: As many people go through life...
+                            </p>
                             <a href="<?php echo esc_url(home_url('/blog/blog-1')); ?>" class="btn btn-sm" style="background-color: transparent; border: 2px solid #FAD30C; border-radius: 8px;"><span class="btn-content">Read More</span></a>
                         </div>
                     </div>
@@ -1407,8 +1409,9 @@
                                     <span style="color: #275BA7; font-weight: 500;">Blog</span>
                                 </span>
                             </div>
-                            <h4 class="card-title fw-bold mb-2">5 Things Your Employees Are Dying to Hear from You</h4>
-                            <p class="card-text text-muted mb-3">As a chronic achiever and perfectionist, the concept of 'quiet time' seemed impossible—and unnecessary. But learning to be still became one of the most transformative...</p>
+                            <h4 class="card-title fw-bold mb-2">10 Things Your Employees Are Dying to Hear from You</h4>
+                            <p class="card-text text-muted mb-3">
+                            Business leaders and owners: What were your last 10 or 15 employee conversations like? Chances are, they included phrases like, “I need you to finish that projection by the end of the day,” or, “I’m putting you on the Brown...</p>
                             <a href="<?php echo esc_url(home_url('/blog/blog-2')); ?>" class="btn btn-sm" style="background-color: transparent; border: 2px solid #FAD30C;  border-radius: 8px;"><span class="btn-content">Read More</span></a>
                         </div>
                     </div>
@@ -1424,8 +1427,10 @@
                                     <span style="color: #275BA7; font-weight: 500;">Blog</span>
                                 </span>
                             </div>
-                            <h4 class="card-title fw-bold mb-2">It's up to you..... your happiness that is!</h4>
-                            <p class="card-text text-muted mb-3">You're successful, accomplished, and from the outside your life looks perfect. But inside, you're struggling. These are the warning signs I wish I'd recognized sooner...</p>
+                            <h4 class="card-title fw-bold mb-2">It’s Up to You…Your Happiness, That Is!</h4>
+                            <p class="card-text text-muted mb-3">
+                            The phrase “happiness is a choice” is something we’ve all heard before. But have you ever really stopped to think about what it means? If you’re like me, your first reaction was probably something like, Yeah, right...
+                                </p>
                             <a href="<?php echo esc_url(home_url('/blog/blog-3')); ?>" class="btn btn-sm" style="background-color: transparent; border: 2px solid #FAD30C; border-radius: 8px;"><span class="btn-content">Read More</span></a>
                         </div>
                     </div>

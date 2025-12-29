@@ -236,7 +236,341 @@ get_header();
             padding: 30px 20px;
         }
     }
+    
+    /* Enhanced Interactive Blog Content Styles */
+    .blog-details-body {
+        animation: fadeInUp 0.6s ease-out;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .blog-details-paragraph {
+        position: relative;
+        transition: all 0.3s ease;
+        padding-left: 0;
+    }
+    
+    /* Book-section inspired hover effects */
+    .blog-description-item {
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .blog-description-item:hover {
+        transform: translateX(8px);
+        background-color: rgba(248, 249, 250, 0.5);
+        border-radius: 8px;
+        padding-right: 15px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .blog-description-item:hover .blog-icon-badge {
+        transform: scale(1.15);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+    }
+    
+    .blog-paragraph-interactive {
+        position: relative;
+        padding-left: 0;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .blog-paragraph-interactive::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 0;
+        background-color: #275BA7;
+        transition: width 0.3s ease;
+        border-radius: 0 4px 4px 0;
+    }
+    
+    .blog-paragraph-interactive:hover {
+        background-color: #F8F9FA;
+        transform: translateX(8px);
+        padding-left: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .blog-paragraph-interactive:hover::before {
+        width: 4px;
+    }
+    
+    .blog-details-paragraph:hover {
+        transform: translateX(5px);
+    }
+    
+    .blog-highlight-box {
+        transition: all 0.3s ease;
+    }
+    
+    .blog-highlight-box:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important;
+    }
+    
+    .blog-highlight-box:hover .quote-icon {
+        transform: scale(1.1) rotate(5deg);
+    }
+    
+    .blog-cta-text {
+        transition: all 0.3s ease;
+    }
+    
+    .blog-cta-text:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(39, 91, 167, 0.3) !important;
+    }
+    
+    .blog-details-list {
+        animation: slideInLeft 0.5s ease-out;
+    }
+    
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    .blog-list-item {
+        cursor: pointer;
+    }
+    
+    .blog-quote-wrapper {
+        animation: fadeIn 0.6s ease-out;
+        transition: all 0.3s ease;
+    }
+    
+    .blog-quote-wrapper:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important;
+    }
+    
+    .blog-important-note {
+        animation: pulse 2s ease-in-out infinite;
+        transition: all 0.3s ease;
+    }
+    
+    .blog-important-note:hover {
+        transform: scale(1.02);
+        box-shadow: 0 6px 18px rgba(250, 211, 12, 0.25) !important;
+    }
+    
+    @keyframes pulse {
+        0%, 100% {
+            box-shadow: 0 4px 12px rgba(250, 211, 12, 0.15);
+        }
+        50% {
+            box-shadow: 0 6px 18px rgba(250, 211, 12, 0.25);
+        }
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    /* Smooth scroll behavior */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* Text selection styling */
+    .blog-details-body ::selection {
+        background-color: #275BA7;
+        color: white;
+    }
+    
+    .blog-details-body ::-moz-selection {
+        background-color: #275BA7;
+        color: white;
+    }
+    
+    /* Reading progress indicator */
+    .blog-reading-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 4px;
+        background: linear-gradient(90deg, #275BA7 0%, #FAD30C 100%);
+        z-index: 9999;
+        transition: width 0.1s ease;
+        box-shadow: 0 2px 4px rgba(39, 91, 167, 0.3);
+    }
+    
+    /* Enhanced visual elements */
+    .blog-details-body {
+        position: relative;
+    }
+    
+    .blog-details-body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: 
+            linear-gradient(90deg, transparent 0%, rgba(39, 91, 167, 0.02) 50%, transparent 100%),
+            radial-gradient(circle at 20% 50%, rgba(250, 211, 12, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(39, 91, 167, 0.03) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: 0;
+    }
+    
+    .blog-details-body > * {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .blog-details-list li {
+        position: relative;
+        padding-left: 50px;
+        margin-bottom: 12px;
+        transition: all 0.3s ease;
+    }
+    
+    .blog-details-list li:hover {
+        transform: translateX(5px);
+        color: #275BA7;
+    }
+    
+    .blog-details-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 15px;
+        top: 12px;
+        width: 24px;
+        height: 24px;
+        background: linear-gradient(135deg, #275BA7 0%, #1a4a8a 100%);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: bold;
+        box-shadow: 0 2px 6px rgba(39, 91, 167, 0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .blog-details-list li:hover::before {
+        transform: scale(1.2);
+        box-shadow: 0 4px 12px rgba(39, 91, 167, 0.5);
+    }
+    
+    .blog-quote-wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .blog-quote-wrapper::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(39, 91, 167, 0.05) 0%, transparent 70%);
+        pointer-events: none;
+    }
+    
+    .blog-paragraph-interactive:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    
+    .blog-details-paragraph:first-of-type {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .blog-details-paragraph:first-of-type::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent 0%, #275BA7 50%, transparent 100%);
+        opacity: 0.3;
+    }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Reading progress indicator
+    const progressBar = document.createElement('div');
+    progressBar.className = 'blog-reading-progress';
+    document.body.appendChild(progressBar);
+    
+    function updateProgress() {
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+        progressBar.style.width = scrollPercent + '%';
+    }
+    
+    window.addEventListener('scroll', updateProgress);
+    updateProgress();
+    
+    // Add smooth reveal animation to paragraphs
+    const paragraphs = document.querySelectorAll('.blog-details-paragraph');
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    paragraphs.forEach((para, index) => {
+        para.style.opacity = '0';
+        para.style.transform = 'translateY(20px)';
+        para.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        observer.observe(para);
+    });
+    
+    // Add click-to-highlight feature for important notes
+    const importantNotes = document.querySelectorAll('.blog-important-note');
+    importantNotes.forEach(note => {
+        note.addEventListener('click', function() {
+            this.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 200);
+        });
+    });
+});
+</script>
 
 <section class="blog-details-page-section bg-white">
     <div class="container">
@@ -277,59 +611,35 @@ get_header();
 
                 <!-- Title -->
                 <h1 class="blog-details-title">
-                    The Quiet Time Revolution: Why Doing Nothing Changed Everything
+                    <?php 
+                    $blog2 = toddpatkin_get_blog_content(2);
+                    echo $blog2 ? esc_html($blog2['title']) : '5 Things Your Employees Are Dying to Hear from You';
+                    ?>
                 </h1>
             </div>
 
             <!-- Featured Image -->
             <div class="blog-details-featured-image mb-5">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_2.png"
-                    alt="The Quiet Time Revolution: Why Doing Nothing Changed Everything"
+                    alt="<?php 
+                    $blog2 = toddpatkin_get_blog_content(2);
+                    echo $blog2 ? esc_attr($blog2['title']) : '5 Things Your Employees Are Dying to Hear from You';
+                    ?>"
                     class="img-fluid w-100"
                     style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
             </div>
 
             <!-- Body Content -->
             <div class="blog-details-body">
-                <p class="blog-details-paragraph" style="font-size: 20px; font-weight: 500; color: #2D2D2D; margin-bottom: 25px;">
-                    As a chronic achiever and perfectionist, the concept of 'quiet time' seemed impossible—and unnecessary. But learning to be still became one of the most transformative practices of my life.
-                </p>
-                
-                <p class="blog-details-paragraph">
-                    For most of my adult life, I was constantly on the go. I filled every moment with activity, work, and achievement. The idea of sitting still, doing nothing, felt like a waste of time. I thought productivity was the key to success and happiness.
-                </p>
-                
-                <p class="blog-details-paragraph">
-                    But then I hit a wall. Despite all my achievements, I felt empty, anxious, and disconnected. That's when I discovered the power of quiet time—moments of stillness where I could just be, without doing anything.
-                </p>
-
-                <!-- Key Points Section -->
-                <div class="blog-key-points">
-                    <h3>Key Takeaways</h3>
-                    <ul>
-                        <li>Quiet time allows your mind to rest and recharge</li>
-                        <li>Stillness connects you to your inner voice and intuition</li>
-                        <li>Reduces stress and anxiety by activating relaxation response</li>
-                        <li>Enhances creativity when your mind is free to wander</li>
-                        <li>Improves decision-making through reflection</li>
-                    </ul>
-                </div>
-
-                <!-- Enhanced Blockquote -->
-                <blockquote class="blog-details-blockquote">
-                    <p class="blog-details-quote-text">
-                        In the silence, we find ourselves. In the stillness, we discover clarity. In the quiet, we reconnect with what truly matters.
-                    </p>
-                    <footer class="blog-details-quote-author">— Todd Patkin</footer>
-                </blockquote>
-                
-                <p class="blog-details-paragraph">
-                    Here's what I learned about the transformative power of quiet time: It allows your mind to rest and recharge, connects you to your inner voice and intuition, reduces stress and anxiety by activating your body's relaxation response, enhances creativity when your mind is free to wander, and improves decision-making through reflection and thoughtful choices.
-                </p>
-                
-                <p class="blog-details-paragraph">
-                    Start small—just 5-10 minutes a day of sitting quietly, without distractions. You might be surprised at how this simple practice can transform your life.
-                </p>
+                <?php 
+                $blog2 = toddpatkin_get_blog_content(2);
+                if ($blog2 && !empty($blog2['content'])) {
+                    echo toddpatkin_format_blog_content($blog2['content']);
+                } else {
+                    // Fallback content
+                    echo '<p class="blog-details-paragraph">Content not available.</p>';
+                }
+                ?>
             </div>
 
             <!-- Author Card -->

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Blog 3 - High-Functioning Depressive
+ * Template Name: Blog 7 - Yes, parents, the kids really are okay.
  */
 get_header();
 ?>
@@ -546,7 +546,10 @@ document.addEventListener('DOMContentLoaded', function() {
             <span>/</span>
             <a href="<?php echo esc_url(home_url('/blog')); ?>">Blog</a>
             <span>/</span>
-            <span>High-Functioning Depressive</span>
+            <span><?php 
+            $blog7 = toddpatkin_get_blog_content(7);
+            echo $blog7 ? esc_html($blog7['title']) : 'Yes, parents, the kids really are okay.';
+            ?></span>
         </nav>
 
         <!-- Blog Post Content -->
@@ -566,27 +569,30 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div class="blog-meta-item">
                         <i class="far fa-clock"></i>
-                        <span>7 min read</span>
+                        <span>6 min read</span>
                     </div>
                     <div class="blog-meta-item">
                         <i class="fas fa-tag"></i>
-                        <span>Mental Health</span>
+                        <span>Parenting</span>
                     </div>
                 </div>
 
                 <!-- Title -->
                 <h1 class="blog-details-title">
                     <?php 
-                    $blog3 = toddpatkin_get_blog_content(3);
-                    echo $blog3 ? esc_html($blog3['title']) : 'It\'s up to you..... your happiness that is!';
+                    $blog7 = toddpatkin_get_blog_content(7);
+                    echo $blog7 ? esc_html($blog7['title']) : 'Yes, parents, the kids really are okay.';
                     ?>
                 </h1>
             </div>
 
             <!-- Featured Image -->
             <div class="blog-details-featured-image mb-5">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_3.png"
-                    alt="5 Signs You're a High-Functioning Depressive"
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_7.png"
+                    alt="<?php 
+                    $blog7 = toddpatkin_get_blog_content(7);
+                    echo $blog7 ? esc_attr($blog7['title']) : 'Yes, parents, the kids really are okay.';
+                    ?>"
                     class="img-fluid w-100"
                     style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
             </div>
@@ -594,9 +600,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- Body Content -->
             <div class="blog-details-body">
                 <?php 
-                $blog3 = toddpatkin_get_blog_content(3);
-                if ($blog3 && !empty($blog3['content'])) {
-                    echo toddpatkin_format_blog_content($blog3['content']);
+                $blog7 = toddpatkin_get_blog_content(7);
+                if ($blog7 && !empty($blog7['content'])) {
+                    echo toddpatkin_format_blog_content($blog7['content']);
                 } else {
                     // Fallback content
                     echo '<p class="blog-details-paragraph">Content not available.</p>';
@@ -658,16 +664,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="card shadow-sm h-100 blog-card">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_1.png"
                                 class="card-img-top blog-card-img"
-                                alt="Money and Happiness">
+                                alt="Masks: The Other Side of the Coin">
                             <div class="card-body p-3">
                                 <div class="d-flex align-items-center mb-2">
                                     <span class="badge">Blogs</span>
                                 </div>
                                 <h4 class="card-title fw-bold mb-2">
-                                    Money and Happiness: Why More Isn't Always Better
+                                    Masks: The Other Side of the Coin
                                 </h4>
                                 <p class="card-text text-muted mb-3">
-                                    Despite achieving financial success beyond my wildest dreams, I discovered the hard way that wealth can't buy happiness. Here's what actually creates lasting contentment...
+                                    <?php echo esc_html(toddpatkin_get_blog_excerpt(1, 20)); ?>
                                 </p>
                                 <span class="btn btn-warning btn-sm"><span class="btn-content">Read More</span></span>
                             </div>
@@ -681,16 +687,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="card shadow-sm h-100 blog-card">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_2.png"
                                 class="card-img-top blog-card-img"
-                                alt="The Quiet Time Revolution">
+                                alt="5 Things Your Employees Are Dying to Hear from You">
                             <div class="card-body p-3">
                                 <div class="d-flex align-items-center mb-2">
                                     <span class="badge">Blogs</span>
                                 </div>
                                 <h4 class="card-title fw-bold mb-2">
-                                    The Quiet Time Revolution: Why Doing Nothing Changed Everything
+                                    5 Things Your Employees Are Dying to Hear from You
                                 </h4>
                                 <p class="card-text text-muted mb-3">
-                                    As a chronic achiever and perfectionist, the concept of 'quiet time' seemed impossible—and unnecessary. But learning to be still became one of the most transformative...
+                                    <?php echo esc_html(toddpatkin_get_blog_excerpt(2, 20)); ?>
                                 </p>
                                 <span class="btn btn-warning btn-sm"><span class="btn-content">Read More</span></span>
                             </div>
@@ -704,16 +710,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="card shadow-sm h-100 blog-card">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_3.png"
                                 class="card-img-top blog-card-img"
-                                alt="5 Signs You're a High-Functioning Depressive">
+                                alt="It's up to you..... your happiness that is!">
                             <div class="card-body p-3">
                                 <div class="d-flex align-items-center mb-2">
                                     <span class="badge">Blogs</span>
                                 </div>
                                 <h4 class="card-title fw-bold mb-2">
-                                    5 Signs You're a High-Functioning Depressive (And What to Do About It)
+                                    It's Up to You…Your Happiness, That Is!
                                 </h4>
                                 <p class="card-text text-muted mb-3">
-                                    You're successful, accomplished, and from the outside your life looks perfect. But inside, you're struggling. These are the warning signs I wish I'd recognized sooner...
+                                    <?php echo esc_html(toddpatkin_get_blog_excerpt(3, 20)); ?>
                                 </p>
                                 <span class="btn btn-warning btn-sm"><span class="btn-content">Read More</span></span>
                             </div>
@@ -726,3 +732,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <?php get_footer(); ?>
+
