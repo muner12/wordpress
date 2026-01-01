@@ -238,7 +238,7 @@ get_header();
                             $blog3_excerpt = toddpatkin_get_blog_excerpt(3, 30);
                             echo $blog3_excerpt ? esc_html($blog3_excerpt) : 'The phrase "happiness is a choice" is something we\'ve all heard before. But have you ever really stopped to think about what it means? If you\'re like me, your first reaction was probably something like, Yeah, right...';
                             ?>
-                            </p>
+                                </p>
                             <a href="<?php echo esc_url(home_url('/blog/blog-3')); ?>" class="btn btn-sm" style="background-color: transparent; border: 2px solid #FAD30C; border-radius: 8px;"><span class="btn-content">Read More</span></a>
                         </div>
                     </div>

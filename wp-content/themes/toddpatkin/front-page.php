@@ -22,7 +22,7 @@
                          <p class="hero-subtitle mb-2">Finding Happiness with Todd</p>
                          <p class="hero-subtitle-secondary mb-4">Check out Todd's new video series</p>
                     <div class="hero-buttons-wrapper d-flex justify-content-center gap-3 flex-wrap mb-5">
-                             <a href="https://www.youtube.com/watch?v=9BJm5MzxBQY" target="_blank" rel="noopener noreferrer" class="btn bg-warning hero-watch-video-btn"><span class="btn-content">Watch Videos</span></a>
+                             <a href="https://www.youtube.com/watch?v=9BJm5MzxBQY" target="_blank" rel="noopener noreferrer" class="btn bg-warning hero-watch-video-btn"><span class="btn-content">Watch Video</span></a>
                              <a href="<?php echo esc_url( home_url( '/hire-todd' ) ); ?>" class="btn btn-outline-light hero-hire-btn"><span class="btn-content">Hire Todd</span></a>
                     </div>
                     <div class="hero-scroll-indicator">
@@ -75,7 +75,7 @@
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/increase-accountability-5368cb.png" alt="Increase Accountability"
                                 class="img-fluid">
                         </div>
-                        <p class="feature-text mb-0">Create a workplace culture where employees feel valued, supported, and empowered to bring their best selves to work every day—resulting in higher engagement and retention.</p>
+                        <p class="feature-text mb-0">Create a workplace culture where employees feel valued, supported, and empowered to bring their best selves to work every day,resulting in higher engagement and retention.</p>
                     </div>
                 </div>
                 <div class="col-4 col-md-6 col-lg-4">
@@ -104,7 +104,7 @@
             <div class="row  g-2 g-lg-2">
                 <!-- Mobile: Inner heading first -->
                 <div class="col-12 d-lg-none order-1">
-                    <h2 class="video-inner-title text-center mb-2">TODD PATKIN AT <span class="text-danger">TEDx</span></h2>
+                    <h2 class="video-inner-title text-center mb-2">TODD PATKIN AT <span class="text-danger">TED<span style="text-transform: lowercase;">x</span></span></h2>
                 </div>
                 <!-- Video -->
                 <div class="col-12 col-lg-6  order-3 order-lg-1 d-flex justify-content-end px-5">
@@ -117,7 +117,7 @@
                 <!-- Desktop text block -->
                 <div class="col-12 col-lg-6 order-2 order-lg-2 d-none d-lg-block">
                     <div class="d-flex flex-column justify-content-center">
-                        <h2 class="video-inner-title">TODD PATKIN AT <span class="text-danger">TEDx</span></h2>
+                        <h2 class="video-inner-title">TODD PATKIN AT <span class="text-danger">TED<span style="text-transform: lowercase;">x</span></span></h2>
                         <p class="video-text-content mb-0">In this impactful TEDx talk, Todd shares his honest journey from being a high-achieving businessman to experiencing a complete personal breakdown. Through vulnerable storytelling, he challenges the common belief that success and a "perfect" life automatically lead to happiness. Todd explains how external achievements often mask internal struggles and emotional burnout. He highlights the disconnect between societal definitions of success and genuine well-being. By reflecting on his experiences, he uncovers what truly contributes to lasting happiness. His insights emphasize self-awareness, emotional health, and purposeful living. The talk encourages viewers to reassess their priorities beyond material success. Ultimately, it delivers a powerful reminder that true happiness comes from inner balance, not outward perfection.</p>
                     </div>
                 </div>
@@ -842,7 +842,7 @@
                             <div class="course-video-wrapper w-100" style="position: relative;">
                                 <!-- Thumbnail Image -->
                                 <div class="course-video-thumbnail w-100" id="courseVideoThumbnail" style="cursor: pointer; position: relative;">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/week_1.png" alt="Course Preview"
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/preview_thumnail.png" alt="Course Preview"
                                          class="img-fluid w-100"
                                           >
                                     <!-- Play Icon Overlay -->
@@ -956,10 +956,10 @@
                 <!-- Episode 1 -->
                 <div class="course-episode-card">
                         <div class="course-episode-image-wrapper ">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/week_2.png" class="course-episode-image" alt="Week 2">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/week_1.png" class="course-episode-image" alt="Week 2">
                         </div>
                         <div class="course-episode-content">
-                            <div class="d-flex align-items-center gap-2 mb-0">
+                        <div class="course-episode-badge d-flex align-items-center gap-2 mb-3">
                                 <i class="fas fa-code"></i>
                                 <span>Course</span>
                             </div>
@@ -973,7 +973,7 @@
                                         <span class="course-meta-divider"></span>
                                         <div class="d-flex align-items-center gap-1">
                                             <i class="far fa-clock"></i>
-                                            <span>Week 2</span>
+                                            <span>Preview Course</span>
                                         </div>
                                     </div>
                                     <h5 class="course-episode-title">Week 2: Focus on: Movement</h5>
@@ -986,10 +986,10 @@
                     <!-- Episode 2 -->
                     <div class="course-episode-card">
                         <div class="course-episode-image-wrapper">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/week_3.png" class="course-episode-image" alt="Week 3">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/week_2.png" class="course-episode-image" alt="Week 3">
                         </div>
                         <div class="course-episode-content">
-                            <div class="d-flex align-items-center gap-2 mb-0">
+                        <div class="course-episode-badge d-flex align-items-center gap-2 mb-3">
                                 <i class="fas fa-code"></i>
                                 <span>Course</span>
                             </div>
@@ -1003,7 +1003,7 @@
                                         <span class="course-meta-divider bg-muted"></span>
                                         <div class="course-meta-item">
                                             <i class="far fa-clock"></i>
-                                <span>Week 3</span>
+                                            <span>Preview Course</span>
                                         </div>
                                     </div>
                                     <h5 class="course-episode-title">Week 3: Focus on Taking Change of Your Mind</h5>
@@ -1016,10 +1016,10 @@
                     <!-- Episode 3 -->
                     <div class="course-episode-card">
                         <div class="course-episode-image-wrapper">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/week_4.png" class="course-episode-image" alt="Week 4">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/week_3.png" class="course-episode-image" alt="Week 4">
                         </div>
                         <div class="course-episode-content">
-                            <div class="d-flex align-items-center gap-2 mb-0">
+                        <div class="course-episode-badge d-flex align-items-center gap-2 mb-3">
                                 <i class="fas fa-code"></i>
                                 <span>Course</span>
                             </div>
@@ -1033,7 +1033,7 @@
                                         <span class="course-meta-divider"></span>
                                         <div class="course-meta-item">
                                             <i class="far fa-clock"></i>
-                                <span>Week 4</span>
+                                            <span>Preview Course</span>
                                         </div>
                                     </div>
                                     <h5 class="course-episode-title">Week 4: Focus on Living in the Present</h5>
@@ -1177,13 +1177,7 @@
                     <div class="about-text-content">
                         <!-- Enhanced Title Section -->
                         <div class="about-section-title-wrapper d-none d-lg-block">
-                            <div class="about-title-decoration mb-3">
-                                <div class="about-title-line"></div>
-                                <div class="about-title-icon">
-                                    <i class="fas fa-user-tie"></i>
-                                </div>
-                                <div class="about-title-line"></div>
-                            </div>
+                            
                             <h2 class="about-section-title">
                                 <span class="about-title-blue">ABOUT</span>
                                 <span class="about-title-yellow">TODD PATKIN</span>
@@ -1213,6 +1207,13 @@
                                 <div class="about-image-frame">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-todd-1eb55f.png" alt="Todd Patkin" class="about-image">
                                     <div class="about-image-overlay"></div>
+                                </div>
+                            </div>
+                            <!-- Passions Highlight Box - Moved under image for mobile -->
+                            <div class="about-passions-box d-block d-lg-none mt-4">
+                                <div class="d-flex align-items-start gap-2">
+                                    <i class="fas fa-heart" style="color: #FAD30C; font-size: 18px; margin-top: 3px; flex-shrink: 0;"></i>
+                                    <p class="about-paragraph mb-0" style="font-style: italic;">Since the sale of the family business to Advance Auto Parts in 2005, Todd has devoted himself to his true passions: philanthropy, giving back, spending time with family and friends, and helping people discover genuine happiness.</p>
                                 </div>
                             </div>
                         </div>
@@ -1261,13 +1262,6 @@
                                 <p class="about-paragraph mb-0">Todd transformed his insights into a comprehensive system that's helped thousands build sustainable happiness. His vulnerability in sharing his story—including the painful and embarrassing moments—has opened doors for others to acknowledge their own struggles and seek the help they deserve.</p>
                             </div>
                             
-                            <!-- Passions Highlight Box -->
-                            <div class="about-passions-box">
-                                <div class="d-flex align-items-start gap-2">
-                                    <i class="fas fa-heart" style="color: #FAD30C; font-size: 18px; margin-top: 3px; flex-shrink: 0;"></i>
-                                    <p class="about-paragraph mb-0" style="font-style: italic;">Since the sale of the family business to Advance Auto Parts in 2005, Todd has devoted himself to his true passions: philanthropy, giving back, spending time with family and friends, and helping people discover genuine happiness.</p>
-                                </div>
-                            </div>
                         </div>
                         <div class="about-cta-wrapper mt-4 text-center text-lg-start">
                             <a href="<?php echo esc_url( home_url( '/about-author' ) ); ?>" class="btn course-view-more-button about-read-more-btn-enhanced">
@@ -1297,6 +1291,13 @@
                                     <div class="about-stat-number">1000+</div>
                                     <div class="about-stat-label">Lives Changed</div>
                                 </div>
+                            </div>
+                        </div>
+                        <!-- Passions Highlight Box - Moved under image for desktop -->
+                        <div class="about-passions-box d-none d-lg-block mt-4">
+                            <div class="d-flex align-items-start gap-2">
+                                <i class="fas fa-heart" style="color: #FAD30C; font-size: 18px; margin-top: 3px; flex-shrink: 0;"></i>
+                                <p class="about-paragraph mb-0" style="font-style: italic;">Since the sale of the family business to Advance Auto Parts in 2005, Todd has devoted himself to his true passions: philanthropy, giving back, spending time with family and friends, and helping people discover genuine happiness.</p>
                             </div>
                         </div>
                     </div>

@@ -1772,7 +1772,6 @@ h5 {
     line-height: 1.2;
     font-family: 'Oswald', sans-serif;
     font-weight: 600;
-    text-transform: uppercase;
     margin-bottom: 12px;
 }
 
@@ -5312,16 +5311,18 @@ section .text-muted {
 
 .course-episode-badge {
     padding: 8px 12px;
-    background-color: #275BA7;
-    border: none;
+    border-color: #275BA7;
+    border-style: solid;
+    border-width: 2px;
     border-radius: 20px;
+    color: #275BA7;
     width: fit-content;
 }
 
 .course-episode-badge i {
     width: 13.5px;
     height: 13.5px;
-    color: #FFFFFF;
+    
     font-size: 13.5px;
 }
 
@@ -5331,7 +5332,7 @@ section .text-muted {
     font-size: 14px;
     line-height: 1.2;
     letter-spacing: -1%;
-    color: #FFFFFF;
+   
 }
 
 /* Course episode meta and meta item now use Bootstrap flex utilities */
@@ -6332,6 +6333,8 @@ section .text-muted {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 .about-image-wrapper {
@@ -6341,12 +6344,36 @@ section .text-muted {
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 /* About text content */
 
 .about-section-title-wrapper {
     margin-bottom: 27px;
+    margin-top: 0;
+    padding-top: 0;
+    align-self: flex-start;
+}
+
+/* Align title decoration with top of image frame */
+@media (min-width: 992px) {
+    /* Remove any top margin from title decoration to align with image frame top */
+    .about-section-title-wrapper .about-title-decoration {
+        margin-top: 0;
+    }
+    
+    /* Ensure image frame top aligns with title decoration top */
+    .about-image-frame {
+        margin-top: 0;
+    }
+    
+    /* Both containers should start at the same vertical position */
+    .about-image-wrapper,
+    .about-text-content {
+        align-items: flex-start;
+    }
 }
 
 .about-section-title-wrapper-mobile {
@@ -6432,6 +6459,7 @@ section .text-muted {
     justify-content: center;
     gap: 15px;
     margin-bottom: 15px;
+    margin-top: 0;
 }
 
 .about-title-line {
@@ -6498,6 +6526,8 @@ section .text-muted {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 .about-image-container-mobile {
@@ -6515,6 +6545,7 @@ section .text-muted {
     transition: all 0.4s ease;
     background: #FFFFFF;
     padding: 15px;
+    margin-top: 0;
 }
 
 .about-image-container:hover .about-image-frame {

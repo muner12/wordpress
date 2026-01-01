@@ -20,6 +20,18 @@ get_header();
                 <div class="book-image-wrapper position-relative">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/book-boot-camp-762c6a.png" alt="Boot Camp Book" class="img-fluid book-cover">
                 </div>
+                
+                <!-- Book Highlight Box - Moved below image -->
+                <div class="book-highlight-box p-4 mt-4" style="background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); border: 2px solid #275BA7; border-radius: 12px; box-shadow: 0 4px 12px rgba(39, 91, 167, 0.15); position: relative;">
+                    <div class="d-flex align-items-start gap-3">
+                        <div class="quote-icon" style="flex-shrink: 0; width: 40px; height: 40px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-calendar-check" style="color: #FFC107; font-size: 18px;"></i>
+                        </div>
+                        <div>
+                            <p class="book-description-text book-description-italic mb-0" style="font-size: 16px; line-height: 1.7; color: #2D2D2D; font-style: italic;">At the end of twelve weeks, you'll find that you're more firmly in the driver's seat of your own life. <strong style="color: #275BA7; font-weight: 600;">Your attitude, outlook, moods, and relationships will have improved, and you'll be in better control of your thoughts and habits.</strong></p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Book Details Column - Right Side -->
@@ -59,17 +71,6 @@ get_header();
                             <i class="fas fa-target" style="color: #FFC107; font-size: 12px;"></i>
                         </div>
                         <p class="book-description-text book-description-secondary mb-0" style="font-size: 16px; line-height: 1.7; color: #2D2D2D;">Every week for twelve weeks, you'll be given a new task or lifestyle change to focus on (while keeping up the habits you've begun in previous weeks). Each week's focal point is an important building block of an overall happy lifestyle.</p>
-                    </div>
-                    
-                    <div class="book-highlight-box p-4 mb-4" style="background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); border: 2px solid #275BA7; border-radius: 12px; box-shadow: 0 4px 12px rgba(39, 91, 167, 0.15); position: relative;">
-                        <div class="d-flex align-items-start gap-3">
-                            <div class="quote-icon" style="flex-shrink: 0; width: 40px; height: 40px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-calendar-check" style="color: #FFC107; font-size: 18px;"></i>
-                            </div>
-                            <div>
-                                <p class="book-description-text book-description-italic mb-0" style="font-size: 16px; line-height: 1.7; color: #2D2D2D; font-style: italic;">At the end of twelve weeks, you'll find that you're more firmly in the driver's seat of your own life. <strong style="color: #275BA7; font-weight: 600;">Your attitude, outlook, moods, and relationships will have improved, and you'll be in better control of your thoughts and habits.</strong></p>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 

@@ -20,6 +20,18 @@ get_header();
                 <div class="book-image-wrapper position-relative">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/book-cover-main-75c4c5.png" alt="Finding Happiness Book" class="img-fluid book-cover">
                 </div>
+                
+                <!-- Book Highlight Box - Moved below image -->
+                <div class="book-highlight-box p-4 mt-4" style="background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); border: 2px solid #FFC107; border-radius: 12px; box-shadow: 0 4px 12px rgba(255, 193, 7, 0.15); position: relative;">
+                    <div class="d-flex align-items-start gap-3">
+                        <div class="quote-icon" style="flex-shrink: 0; width: 40px; height: 40px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-quote-left" style="color: #275BA7; font-size: 18px;"></i>
+                        </div>
+                        <div>
+                            <p class="book-description-text book-description-italic mb-0" style="font-size: 16px; line-height: 1.7; color: #2D2D2D; font-style: italic;">That said, there are occasional footnotes to scholarly work, but that comes from our respect and recognition for those people who actually did the research as well as from a desire to provide you with an opportunity to follow up with other relevant sources if you so wish.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Book Details Column - Same structure as index.html -->
@@ -59,17 +71,6 @@ get_header();
                             <i class="fas fa-heart" style="color: #FFC107; font-size: 12px;"></i>
                         </div>
                         <p class="book-description-text book-description-secondary mb-0" style="font-size: 16px; line-height: 1.7; color: #2D2D2D;">It took me a while to learn Todd's voice and repress my own style, which led to some entertaining discussions about vocabulary and seemingly endless comma wars, but I hope that for you, the reader, the narrative flows seamlessly. Our goal was to keep this a living story, not a textbook.</p>
-                    </div>
-                    
-                    <div class="book-highlight-box p-4 mb-4" style="background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); border: 2px solid #FFC107; border-radius: 12px; box-shadow: 0 4px 12px rgba(255, 193, 7, 0.15); position: relative;">
-                        <div class="d-flex align-items-start gap-3">
-                            <div class="quote-icon" style="flex-shrink: 0; width: 40px; height: 40px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-quote-left" style="color: #275BA7; font-size: 18px;"></i>
-                            </div>
-                            <div>
-                                <p class="book-description-text book-description-italic mb-0" style="font-size: 16px; line-height: 1.7; color: #2D2D2D; font-style: italic;">That said, there are occasional footnotes to scholarly work, but that comes from our respect and recognition for those people who actually did the research as well as from a desire to provide you with an opportunity to follow up with other relevant sources if you so wish.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
