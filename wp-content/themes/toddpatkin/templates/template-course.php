@@ -23,7 +23,7 @@ get_header();
         <!-- Course Banner Section -->
         <section class="course-banner-section mb-5">
             <div class="course-banner-wrapper">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/courses_banner.png" alt="Course Banner" class="course-banner-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/course_banner.png" alt="Course Banner" class="course-banner-image">
                 <div class="course-banner-content">
                     <div class="course-banner-featuring">FEATURING</div>
                     <h2 class="course-banner-title">
