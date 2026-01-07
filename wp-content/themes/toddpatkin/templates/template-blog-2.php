@@ -239,24 +239,91 @@ get_header();
     
     /* Enhanced Interactive Blog Content Styles */
     .blog-details-body {
-        animation: fadeInUp 0.6s ease-out;
-    }
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        animation: none !important;
+        visibility: visible !important;
     }
     
     .blog-details-paragraph {
         position: relative;
         transition: all 0.3s ease;
         padding-left: 0;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        visibility: visible !important;
+        margin-bottom: 20px !important;
+        font-size: 14px !important;
+    }
+    
+    /* Remove all fade animations that hide content */
+    .blog-details-body,
+    .blog-details-body *,
+    .blog-details-body p,
+    .blog-details-body div,
+    .blog-details-body span,
+    .blog-details-body h1,
+    .blog-details-body h2,
+    .blog-details-body h3,
+    .blog-details-body h4,
+    .blog-details-body h5,
+    .blog-details-body h6,
+    .blog-details-body ul,
+    .blog-details-body li,
+    .blog-phrase-list-container,
+    .blog-phrase-list-container *,
+    .blog-phrase-item,
+    .blog-phrase-item * {
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+    }
+    
+    .blog-phrase-item {
+        display: block !important;
+    }
+    
+    .blog-phrase-list {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    /* Styled phrase list for blog-2 */
+    .blog-phrase-list-container {
+        margin: 40px 0 !important;
+    }
+    
+    .blog-phrase-item {
+        transition: all 0.3s ease;
+    }
+    
+    .blog-phrase-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 12px rgba(39, 91, 167, 0.15) !important;
+        border-left-color: #FAD30C !important;
+    }
+    
+    /* Better paragraph spacing */
+    .blog-description-item {
+        margin-bottom: 25px !important;
+    }
+    
+    .blog-description-text {
+        margin-bottom: 20px !important;
+        font-size: 14px !important;
+    }
+    
+    /* Reduce font sizes for all blog content */
+    .blog-phrase-item p {
+        font-size: 14px !important;
+    }
+    
+    .blog-phrase-item p:first-child {
+        font-size: 15px !important;
+    }
+    
+    .blog-description-item p {
+        font-size: 14px !important;
     }
     
     /* Book-section inspired hover effects */
@@ -354,7 +421,9 @@ get_header();
     }
     
     .blog-quote-wrapper {
-        animation: fadeIn 0.6s ease-out;
+        animation: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
         transition: all 0.3s ease;
     }
     
@@ -382,14 +451,7 @@ get_header();
         }
     }
     
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
+    /* Removed fadeIn animation - content should be visible by default */
     
     /* Smooth scroll behavior */
     html {
@@ -443,6 +505,8 @@ get_header();
     .blog-details-body > * {
         position: relative;
         z-index: 1;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     
     .blog-details-list li {
@@ -519,6 +583,39 @@ get_header();
 </style>
 
 <script>
+// Force content visibility immediately - run before DOMContentLoaded
+(function() {
+    function forceVisibility() {
+        const body = document.querySelector('.blog-details-body');
+        if (body) {
+            body.style.cssText += 'opacity: 1 !important; visibility: visible !important; display: block !important;';
+            const allElements = body.querySelectorAll('*');
+            allElements.forEach(el => {
+                el.style.cssText += 'opacity: 1 !important; visibility: visible !important;';
+            });
+        }
+        
+        // Also force phrase list visibility
+        const phraseContainers = document.querySelectorAll('.blog-phrase-list-container, .blog-phrase-item');
+        phraseContainers.forEach(el => {
+            el.style.cssText += 'opacity: 1 !important; visibility: visible !important; display: block !important;';
+        });
+    }
+    
+    // Run immediately
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', forceVisibility);
+    } else {
+        forceVisibility();
+    }
+    
+    // Run multiple times to catch late-loading content
+    setTimeout(forceVisibility, 0);
+    setTimeout(forceVisibility, 100);
+    setTimeout(forceVisibility, 500);
+    setTimeout(forceVisibility, 1000);
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
     // Reading progress indicator
     const progressBar = document.createElement('div');
@@ -536,28 +633,44 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateProgress);
     updateProgress();
     
-    // Add smooth reveal animation to paragraphs
-    const paragraphs = document.querySelectorAll('.blog-details-paragraph');
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
+    // Force visibility again after DOM is loaded and continuously monitor
+    function forceAllVisibility() {
+        const body = document.querySelector('.blog-details-body');
+        if (body) {
+            body.style.setProperty('opacity', '1', 'important');
+            body.style.setProperty('visibility', 'visible', 'important');
+            body.style.setProperty('display', 'block', 'important');
+            
+            const allElements = body.querySelectorAll('*');
+            allElements.forEach(el => {
+                el.style.setProperty('opacity', '1', 'important');
+                el.style.setProperty('visibility', 'visible', 'important');
+            });
+        }
+        
+        // Force phrase list visibility
+        document.querySelectorAll('.blog-phrase-list-container, .blog-phrase-item, .blog-phrase-list').forEach(el => {
+            el.style.setProperty('opacity', '1', 'important');
+            el.style.setProperty('visibility', 'visible', 'important');
+            el.style.setProperty('display', 'block', 'important');
         });
-    }, observerOptions);
+    }
     
-    paragraphs.forEach((para, index) => {
-        para.style.opacity = '0';
-        para.style.transform = 'translateY(20px)';
-        para.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-        observer.observe(para);
-    });
+    // Run multiple times
+    setTimeout(forceAllVisibility, 100);
+    setTimeout(forceAllVisibility, 500);
+    setTimeout(forceAllVisibility, 1000);
+    setTimeout(forceAllVisibility, 2000);
+    
+    // Continuously monitor and fix (runs every 500ms for first 5 seconds)
+    let monitorCount = 0;
+    const monitorInterval = setInterval(function() {
+        forceAllVisibility();
+        monitorCount++;
+        if (monitorCount >= 10) { // Stop after 5 seconds (10 * 500ms)
+            clearInterval(monitorInterval);
+        }
+    }, 500);
     
     // Add click-to-highlight feature for important notes
     const importantNotes = document.querySelectorAll('.blog-important-note');

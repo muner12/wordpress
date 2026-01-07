@@ -66,7 +66,7 @@
                         <div class="feature-icon mb-4">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/break-barriers-56586a.png" alt="Break Barriers" class="img-fluid">
                         </div>
-                        <p class="feature-text mb-0">Help your team members overcome perfectionism, manage stress, and develop the resilience needed to thrive during organizational transitions and personal challenges.</p>
+                        <p class="feature-text mb-0">Guide your team to overcome perfectionism, handle stress better, and build resilience for thriving through workplace transitions and life's challenges.</p>
                     </div>
                 </div>
                 <div class="col-4 col-md-6 col-lg-4">
@@ -97,36 +97,78 @@
     <!-- Video Section -->
     <section id="video" class="video-section ">
         <div class="container">
-            <div class="text-center mb-3">
-                <h2 class="video-section-title mb-2">Watch <span class="text-warning">todd</span> Speak</h2>
-                <p class="video-section-subtitle mb-0">See why audiences call Todd's message 'life-changing'</p>
+            <div class="text-center mb-4">
+                <h2 class="video-section-title mb-3">Watch <span class="text-warning">todd</span> Speak</h2>
+                <p class="book-section-subtitle mb-0">See why audiences call Todd's message 'life-changing'</p>
             </div>
             <div class="row  g-2 g-lg-2">
                 <!-- Mobile: Inner heading first -->
-                <div class="col-12 d-lg-none order-1">
-                    <h2 class="video-inner-title text-center mb-2">TODD PATKIN AT <span class="text-danger">TED<span style="text-transform: lowercase;">x</span></span></h2>
+                <div class="col-12 d-lg-none order-1 mb-3">
+                    <h2 class="video-inner-title text-center mb-3">TODD PATKIN AT <span class="text-danger">TED<span style="text-transform: lowercase;">x</span></span></h2>
                 </div>
                 <!-- Video -->
-                <div class="col-12 col-lg-6  order-3 order-lg-1 d-flex justify-content-end px-5">
-                    <div class="video-wrapper" style="cursor: pointer; display: inline-block;" data-bs-toggle="modal" data-bs-target="#videoModal">
+                <div class="col-12 col-lg-6  order-3 order-lg-1 d-flex justify-content-end px-5 py-3">
+                    <div class="video-wrapper" style="cursor: pointer; display: inline-block; position: relative;" data-bs-toggle="modal" data-bs-target="#videoModal">
                         <div class="video-thumbnail position-relative">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/todd_at_tdx.png" alt="Todd Speaking at TEDx" class="img-fluid" style="border-radius: 20px; object-fit: contain; max-height: 300px; width: auto; max-width: 100%;">
+                            <!-- Play Icon Overlay -->
+                            <div class="video-play-overlay position-absolute top-50 start-50 translate-middle" style="width: 80px; height: 80px; background: linear-gradient(135deg, #FFC107 0%, #FFD700 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(255, 193, 7, 0.5); transition: all 0.3s ease; z-index: 10;">
+                                <i class="fas fa-play" style="color: #275BA7; font-size: 32px; margin-left: 4px;"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- Desktop text block -->
-                <div class="col-12 col-lg-6 order-2 order-lg-2 d-none d-lg-block">
+                <div class="col-12 col-lg-6 order-2 order-lg-2 d-none d-lg-block py-3">
                     <div class="d-flex flex-column justify-content-center">
-                        <h2 class="video-inner-title">TODD PATKIN AT <span class="text-danger">TED<span style="text-transform: lowercase;">x</span></span></h2>
-                        <p class="video-text-content mb-0">In this impactful TEDx talk, Todd shares his honest journey from being a high-achieving businessman to experiencing a complete personal breakdown. Through vulnerable storytelling, he challenges the common belief that success and a "perfect" life automatically lead to happiness. Todd explains how external achievements often mask internal struggles and emotional burnout. He highlights the disconnect between societal definitions of success and genuine well-being. By reflecting on his experiences, he uncovers what truly contributes to lasting happiness. His insights emphasize self-awareness, emotional health, and purposeful living. The talk encourages viewers to reassess their priorities beyond material success. Ultimately, it delivers a powerful reminder that true happiness comes from inner balance, not outward perfection.</p>
+                        <h2 class="video-inner-title mb-4">TODD PATKIN AT <span class="text-danger">TED<span style="text-transform: lowercase;">x</span></span></h2>
+                        <div class="video-text-content pl-2" style="max-height: 280px; overflow-y: auto; overflow-x: hidden;">
+                            <div class="video-text-item mb-3" style="padding-left: 20px; border-left: 3px solid #FFC107; position: relative; overflow: hidden;">
+                                <div style="position: absolute; left: -6px; top: 0; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4);">
+                                    <i class="fas fa-quote-left" style="color: #275BA7; font-size: 9px;"></i>
+                                </div>
+                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">In this impactful TEDx talk, Todd shares his honest journey from being a high-achieving businessman to experiencing a complete personal breakdown. Through vulnerable storytelling, he challenges the common belief that success and a "perfect" life automatically lead to happiness.</p>
+                            </div>
+                            <div class="video-text-item mb-3" style="padding-left: 20px; border-left: 3px solid #275BA7; position: relative; overflow: hidden;">
+                                <div style="position: absolute; left: -6px; top: 0; width: 20px; height: 20px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4);">
+                                    <i class="fas fa-lightbulb" style="color: #FFC107; font-size: 9px;"></i>
+                                </div>
+                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">Todd explains how external achievements often mask internal struggles and emotional burnout. He highlights the disconnect between societal definitions of success and genuine well-being, uncovering what truly contributes to lasting happiness.</p>
+                            </div>
+                            <div class="video-text-item mb-0" style="padding-left: 20px; border-left: 3px solid #FFC107; position: relative; overflow: hidden;">
+                                <div style="position: absolute; left: -6px; top: 0; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4);">
+                                    <i class="fas fa-heart" style="color: #275BA7; font-size: 9px;"></i>
+                                </div>
+                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">His insights emphasize self-awareness, emotional health, and purposeful living. The talk encourages viewers to reassess their priorities beyond material success, delivering a powerful reminder that true happiness comes from inner balance, not outward perfection.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Mobile description after video -->
-                <div class="col-12 d-lg-none order-4">
-                    <p class="video-text-content mb-0">In this impactful TEDx talk, Todd shares his honest journey from being a high-achieving businessman to experiencing a complete personal breakdown. Through vulnerable storytelling, he challenges the common belief that success and a "perfect" life automatically lead to happiness. Todd explains how external achievements often mask internal struggles and emotional burnout. He highlights the disconnect between societal definitions of success and genuine well-being. By reflecting on his experiences, he uncovers what truly contributes to lasting happiness. His insights emphasize self-awareness, emotional health, and purposeful living. The talk encourages viewers to reassess their priorities beyond material success. Ultimately, it delivers a powerful reminder that true happiness comes from inner balance, not outward perfection.</p>
+                <div class="col-12 d-lg-none order-4 mt-3">
+                    <div class="video-text-content" style="overflow-x: hidden;">
+                        <div class="video-text-item mb-3" style="padding-left: 20px; border-left: 3px solid #FFC107; position: relative; overflow: hidden;">
+                            <div style="position: absolute; left: -6px; top: 0; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4);">
+                                <i class="fas fa-quote-left" style="color: #275BA7; font-size: 9px;"></i>
+                            </div>
+                            <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">In this impactful TEDx talk, Todd shares his honest journey from being a high-achieving businessman to experiencing a complete personal breakdown. Through vulnerable storytelling, he challenges the common belief that success and a "perfect" life automatically lead to happiness.</p>
+                        </div>
+                        <div class="video-text-item mb-3" style="padding-left: 20px; border-left: 3px solid #275BA7; position: relative; overflow: hidden;">
+                            <div style="position: absolute; left: -6px; top: 0; width: 20px; height: 20px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4);">
+                                <i class="fas fa-lightbulb" style="color: #FFC107; font-size: 9px;"></i>
+                            </div>
+                            <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">Todd explains how external achievements often mask internal struggles and emotional burnout. He highlights the disconnect between societal definitions of success and genuine well-being, uncovering what truly contributes to lasting happiness.</p>
+                        </div>
+                        <div class="video-text-item mb-0" style="padding-left: 20px; border-left: 3px solid #FFC107; position: relative; overflow: hidden;">
+                            <div style="position: absolute; left: -6px; top: 0; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4);">
+                                <i class="fas fa-heart" style="color: #275BA7; font-size: 9px;"></i>
+                            </div>
+                            <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">His insights emphasize self-awareness, emotional health, and purposeful living. The talk encourages viewers to reassess their priorities beyond material success, delivering a powerful reminder that true happiness comes from inner balance, not outward perfection.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="w-100  text-center py-2 mt-3">
+            <div class="w-100  text-center py-2 mt-5 mb-5">
                 <a href="#" class="btn btn-warning video-section-btn"><span class="btn-content">View More Featuring
                         Todd</span></a>
             </div>
@@ -135,7 +177,7 @@
 
  <!-- Book Section - Books Carousel Section -->
      
-    <section id="books" class="book-section  ">
+    <section id="books" class="book-section   ">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="book-section-header-title mb-2"><span class="text-warning">AUTHOR</span> <span
@@ -324,7 +366,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="d-flex gap-3 flex-nowrap mb-4 mt-4">
+                                <div class="d-flex gap-3 flex-nowrap  mt-4">
                                     <a href="<?php echo esc_url( home_url( '/preview-boot-camp' ) ); ?>" class="btn btn-warning btn-lg book-preview-btn" style="box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4); transition: all 0.3s ease;"><span
                                             class="btn-content">PREVIEW BOOK</span></a>
                                     <a href="<?php echo esc_url( home_url( '/boot-camp' ) ); ?>" class="btn btn-outline-dark btn-lg book-purchase-btn" style="box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;"><span
@@ -532,9 +574,8 @@
                                         <p class="review-text">"Helping others—and not just yourself—is a key component of cultivating happiness. I know. I have a small optometry practice in a close-knit Massachusetts town. I like to think that my job enables me to make people's lives better—and I am continually amazed by how much joy that brings me."</p>
                                         <hr class="review-divider">
                                         <div class="d-flex align-items-center gap-3">
-                                            <div class="review-author-image rounded-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background: #275BA7; color: #FFC107; font-weight: bold; font-size: 20px;">
-                                                FG
-                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Dr. Fatima Garcia-Fedorowicz.jfif" alt="Dr. Fatima Garcia-Fedorowicz"
+                                                class="review-author-image rounded-3">
                                             <div class="review-author-info">
                                                 <h5 class="review-author-name">Dr. Fatima Garcia-Fedorowicz</h5>
                                                 <small class="review-author-role">Optometrist</small>
@@ -561,9 +602,8 @@
                                         <p class="review-text">"I have known Todd Patkin for many years. When I read Finding Happiness, I was pleased to see his forthright honesty on subjects that most people shy away from. I deeply admire him for exposing his life so that others can learn what the components of happiness truly are."</p>
                                         <hr class="review-divider">
                                         <div class="d-flex align-items-center gap-3">
-                                            <div class="review-author-image rounded-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background: #275BA7; color: #FFC107; font-weight: bold; font-size: 20px;">
-                                                BF
-                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brian fox.webp" alt="Brian Fox"
+                                                class="review-author-image rounded-3">
                                             <div class="review-author-info">
                                                 <h5 class="review-author-name">Brian Fox</h5>
                                                 <small class="review-author-role">Creative Fine Artist</small>
@@ -590,9 +630,8 @@
                                         <p class="review-text">"Whether you read one page or one hundred pages of Todd Patkin's book, you will find hope and inspiration in his words. He offers practical steps that will help all of us build happier lives. As Todd reminds us, happiness is a journey, not a destination."</p>
                                         <hr class="review-divider">
                                         <div class="d-flex align-items-center gap-3">
-                                            <div class="review-author-image rounded-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background: #275BA7; color: #FFC107; font-weight: bold; font-size: 20px;">
-                                                RK
-                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Renée Kwok.jfif" alt="Renée Kwok"
+                                                class="review-author-image rounded-3">
                                             <div class="review-author-info">
                                                 <h5 class="review-author-name">Renée Kwok</h5>
                                                 <small class="review-author-role">President, TFC Financial Management</small>
@@ -623,9 +662,8 @@
                                         <p class="review-text">"I have known Todd Patkin for many years. When I read Finding Happiness, I was pleased to see his forthright honesty on subjects that most people shy away from. I deeply admire him for exposing his life so that others can learn what the components of happiness truly are."</p>
                                         <hr class="review-divider">
                                         <div class="d-flex align-items-center gap-3">
-                                            <div class="review-author-image rounded-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background: #275BA7; color: #FFC107; font-weight: bold; font-size: 20px;">
-                                                BF
-                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brian fox.webp" alt="Brian Fox"
+                                                class="review-author-image rounded-3">
                                             <div class="review-author-info">
                                                 <h5 class="review-author-name">Brian Fox</h5>
                                                 <small class="review-author-role">Creative Fine Artist</small>
@@ -653,15 +691,220 @@
                                                 <span class="review-rating-number">5.0</span>
                                             </div>
                                         </div>
-                                        <p class="review-text">"Whether you read one page or one hundred pages of Todd Patkin's book, you will find hope and inspiration in his words. He offers practical steps that will help all of us build happier lives. As Todd reminds us, happiness is a journey, not a destination."</p>
+                                        <p class="review-text">"Whether you read one page or one hundred pages of Todd Patkin's book, you will find hope
+                                             and inspiration in his words.
+                                             He offers practical steps that will help all of us build happier lives. As Todd reminds us, 
+                                             happiness is a journey, not a destination."</p>
                                         <hr class="review-divider">
                                         <div class="d-flex align-items-center gap-3">
-                                            <div class="review-author-image rounded-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background: #275BA7; color: #FFC107; font-weight: bold; font-size: 20px;">
-                                                RK
-                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Renée Kwok.jfif" alt="Renée Kwok"
+                                                class="review-author-image rounded-3">
                                             <div class="review-author-info">
                                                 <h5 class="review-author-name">Renée Kwok</h5>
                                                 <small class="review-author-role">President, TFC Financial Management</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Desktop: Slide 3 (Cards 7, 8, 9) | Mobile: Individual slides -->
+
+                        <!-- Review Card 7 -->
+                        <div class="carousel-item">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-12 col-md-4">
+                                    <div class="review-card h-100 d-flex flex-column">
+                                        <div class="review-card-header d-flex align-items-center justify-content-between mb-3">
+                                            <i class="fas fa-quote-left review-quote-icon"></i>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="review-stars d-flex gap-1">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="review-rating-number">5.0</span>
+                                            </div>
+                                        </div>
+                                        <p class="review-text">"This book tells one man's compelling story—but it's also
+                                             a powerful call to action. It's time for us to change what we prioritize,
+                                              how we live our lives, and how we measure success. We can choose to 
+                                              pursue our present course of being overstressed, overworked, and 
+                                              fundamentally dissatisfied, or we can choose to take Todd Patkin's
+                                               message of healing and hope to heart."</p>
+                                        <hr class="review-divider">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Salman Ahmad.jfif" alt="Salman Ahmad"
+                                                class="review-author-image rounded-3">
+                                            <div class="review-author-info">
+                                                <h5 class="review-author-name">Salman Ahmad</h5>
+                                                <small class="review-author-role">UN Goodwill Ambassador</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Review Card 8 - Desktop only (part of slide 3) -->
+                                <div class="col-12 col-md-4 d-none d-md-block">
+                                    <div class="review-card h-100 d-flex flex-column">
+                                        <div class="review-card-header d-flex align-items-center justify-content-between mb-3">
+                                            <i class="fas fa-quote-left review-quote-icon"></i>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="review-stars d-flex gap-1">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="review-rating-number">5.0</span>
+                                            </div>
+                                        </div>
+                                        <p class="review-text">"There are plenty of people in the world who have enjoyed financial success... but very few who have done with that success what Todd Patkin has. He has given back to the world in so many ways and with so many
+                                             different causes and personal relationships. Finding Happiness is yet another gift to a world Todd's already done so much for."</p>
+                                        <hr class="review-divider">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Gary Marino.jfif" alt="Gary Marino"
+                                                class="review-author-image rounded-3">
+                                            <div class="review-author-info">
+                                                <h5 class="review-author-name">Gary Marino</h5>
+                                                <small class="review-author-role">Executive Director of Generation Excell</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Review Card 9 - Desktop only (part of slide 3) -->
+                                <div class="col-12 col-md-4 d-none d-md-block">
+                                    <div class="review-card h-100 d-flex flex-column">
+                                        <div class="review-card-header d-flex align-items-center justify-content-between mb-3">
+                                            <i class="fas fa-quote-left review-quote-icon"></i>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="review-stars d-flex gap-1">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="review-rating-number">5.0</span>
+                                            </div>
+                                        </div>
+                                        <p class="review-text">"Reading this book is like having a conversation with Todd Patkin.
+                                             It's frank, funny, and disarming. As one who has seen depression, I was
+                                              grateful for this tour through the mind of someone who suffered from the 
+                                              condition and got out."</p>
+                                        <hr class="review-divider">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Charity Sunshine Tillemann Dick.jfif" alt="Charity Sunshine Tillemann Dick"
+                                                class="review-author-image rounded-3">
+                                            <div class="review-author-info">
+                                                <h5 class="review-author-name">Charity Sunshine Tillemann Dick</h5>
+                                                <small class="review-author-role">Soprano</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review Card 7 - Mobile only -->
+                        <div class="carousel-item d-md-none">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-12">
+                                    <div class="review-card h-100 d-flex flex-column">
+                                        <div class="review-card-header d-flex align-items-center justify-content-between mb-3">
+                                            <i class="fas fa-quote-left review-quote-icon"></i>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="review-stars d-flex gap-1">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="review-rating-number">5.0</span>
+                                            </div>
+                                        </div>
+                                        <p class="review-text">"
+                                        This book tells one man's compelling story—but it's also
+                                             a powerful call to action. It's time for us to change what we prioritize,
+                                              how we live our lives, and how we measure success. We can choose to 
+                                              pursue our present course of being overstressed, overworked, and 
+                                              fundamentally dissatisfied, or we can choose to take Todd Patkin's
+                                               message of healing and hope to heart."</p>
+                                        <hr class="review-divider">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Salman Ahmad.jfif" alt="Salman Ahmad"
+                                                class="review-author-image rounded-3">
+                                            <div class="review-author-info">
+                                                <h5 class="review-author-name">Salman Ahmad</h5>
+                                                <small class="review-author-role">UN Goodwill Ambassador</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review Card 8 - Mobile only -->
+                        <div class="carousel-item d-md-none">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-12">
+                                    <div class="review-card h-100 d-flex flex-column">
+                                        <div class="review-card-header d-flex align-items-center justify-content-between mb-3">
+                                            <i class="fas fa-quote-left review-quote-icon"></i>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="review-stars d-flex gap-1">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="review-rating-number">5.0</span>
+                                            </div>
+                                        </div>
+                                        <p class="review-text">"There are plenty of people in the world who have enjoyed financial success... but very few who have done with that success what
+                                             Todd Patkin has. He has given back to the world in so many ways and with so many different causes 
+                                             and personal relationships. Finding Happiness is yet another gift to a world Todd's already done so much for."</p>
+                                        <hr class="review-divider">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Gary Marino.jfif" alt="Gary Marino"
+                                                class="review-author-image rounded-3">
+                                            <div class="review-author-info">
+                                                <h5 class="review-author-name">Gary Marino</h5>
+                                                <small class="review-author-role">Executive Director of Generation Excell</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review Card 9 - Mobile only -->
+                        <div class="carousel-item d-md-none">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-12">
+                                    <div class="review-card h-100 d-flex flex-column">
+                                        <div class="review-card-header d-flex align-items-center justify-content-between mb-3">
+                                            <i class="fas fa-quote-left review-quote-icon"></i>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="review-stars d-flex gap-1">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="review-rating-number">5.0</span>
+                                            </div>
+                                        </div>
+                                        <p class="review-text">"Reading this book is like having a conversation with Todd Patkin. It's frank, funny, and disarming. As one who has seen depression, I was grateful for this tour through the mind of someone who suffered from the condition and got out. Finding Happiness is a useful guidebook for anyone who is looking to break out of a rut as well as for those who would like to help another person through to the sunshine on the other side of sadness."</p>
+                                        <hr class="review-divider">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Charity Sunshine Tillemann Dick.jfif" alt="Charity Sunshine Tillemann Dick"
+                                                class="review-author-image rounded-3">
+                                            <div class="review-author-info">
+                                                <h5 class="review-author-name">Charity Sunshine Tillemann Dick</h5>
+                                                <small class="review-author-role">Soprano</small>
                                             </div>
                                         </div>
                                     </div>
@@ -680,16 +923,20 @@
                     </button>
                     <!-- Carousel Indicators -->
                     <div class="carousel-indicators reviews-carousel-indicators mt-4">
-                        <!-- Desktop: 2 indicators (for 2 slides with 3 cards each) -->
+                        <!-- Desktop: 3 indicators (for 3 slides with 3 cards each) -->
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" class="active d-none d-md-inline-block" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="3" class="d-none d-md-inline-block" aria-label="Slide 2"></button>
-                        <!-- Mobile: 6 indicators (for 6 individual card slides) -->
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="6" class="d-none d-md-inline-block" aria-label="Slide 3"></button>
+                        <!-- Mobile: 9 indicators (for 9 individual card slides) -->
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" class="active d-md-none" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="1" class="d-md-none" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="2" class="d-md-none" aria-label="Slide 3"></button>
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="3" class="d-md-none" aria-label="Slide 4"></button>
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="4" class="d-md-none" aria-label="Slide 5"></button>
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="5" class="d-md-none" aria-label="Slide 6"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="6" class="d-md-none" aria-label="Slide 7"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="7" class="d-md-none" aria-label="Slide 8"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="8" class="d-md-none" aria-label="Slide 9"></button>
                     </div>
                 </div>
             </div>
@@ -942,7 +1189,7 @@
                         <div class="text-center">
                             <p class="course-cta-text-line1">Purchase the MasterClass and receive a FREE signed copy of</p>
                             
-                            <p class="course-cta-text-line2">Congrats! You've Been Promoted</p>
+                            <p class="course-cta-text-line2">Finding Happiness</p>
                         </div>
                         <div class="text-center mt-3">
                             <a href="#" class="btn course-cta-button">Buy Now ($29.99)</a>
@@ -976,10 +1223,10 @@
                                             <span>Preview Course</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Week 2: Focus on: Movement</h5>
+                                    <h5 class="course-episode-title">Week 1: Focus on: Movement</h5>
                                     <p class="course-episode-description">Congratulations, graduates! (And parents of graduates, too.) As you gaze with pride on your diplomas, I'm sure you're also thinking about what comes next. No</p>
                                 </div>
-                                <a href="#" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Purchase Now <i class="fas fa-arrow-right text-white"></i></a>
+                                <a href="<?php echo esc_url( home_url( '/course/module-1' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Purchase Now <i class="fas fa-arrow-right text-white"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1006,10 +1253,10 @@
                                             <span>Preview Course</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Week 3: Focus on Taking Change of Your Mind</h5>
+                                    <h5 class="course-episode-title">Week 2: Focus on Taking Change of Your Mind</h5>
                                     <p class="course-episode-description">Congratulations, graduates! (And parents of graduates, too.) As you gaze with pride on your diplomas, I'm sure you're also thinking about what comes next. No</p>
                                 </div>
-                                <a href="#" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Purchase Now <i class="fas fa-arrow-right"></i></a>
+                                <a href="<?php echo esc_url( home_url( '/course/module-2' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Purchase Now <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1036,10 +1283,10 @@
                                             <span>Preview Course</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Week 4: Focus on Living in the Present</h5>
+                                    <h5 class="course-episode-title">Week 3: Focus on Living in the Present</h5>
                                     <p class="course-episode-description">Congratulations, graduates! (And parents of graduates, too.) As you gaze with pride on your diplomas, I'm sure you're also thinking about what comes next. No</p>
                                 </div>
-                                <a href="#" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Purchase Now <i class="fas fa-arrow-right"></i></a>
+                                <a href="<?php echo esc_url( home_url( '/course/module-3' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Purchase Now <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>

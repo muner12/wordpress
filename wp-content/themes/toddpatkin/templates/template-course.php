@@ -20,6 +20,22 @@ get_header();
             </p>
         </div>
 
+        <!-- Course Banner Section -->
+        <section class="course-banner-section mb-5">
+            <div class="course-banner-wrapper">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/courses_banner.png" alt="Course Banner" class="course-banner-image">
+                <div class="course-banner-content">
+                    <div class="course-banner-featuring">FEATURING</div>
+                    <h2 class="course-banner-title">
+                        <span class="course-banner-title-white">TODD</span>
+                        <span class="course-banner-title-yellow">PATKIN</span>
+                    </h2>
+                    <p class="course-banner-subtitle">Motivational Speaker | Author | Happiness Coach</p>
+                </div>
+            </div>
+        </section>
+        
+        
         <!-- Course Cards Grid -->
         <div class="courses-listing-grid">
             <!-- Row 1: Three Cards -->

@@ -239,18 +239,25 @@ get_header();
     
     /* Enhanced Interactive Blog Content Styles */
     .blog-details-body {
-        animation: fadeInUp 0.6s ease-out;
-    }
-    
-    @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        animation: none !important;
+        visibility: visible !important;
     }
     
     .blog-details-paragraph {
         position: relative;
         transition: all 0.3s ease;
         padding-left: 0;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        visibility: visible !important;
+    }
+    
+    /* Remove all fade animations that hide content */
+    .blog-details-body * {
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     
     .blog-description-item {
@@ -508,24 +515,8 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateProgress);
     updateProgress();
     
-    const paragraphs = document.querySelectorAll('.blog-details-paragraph');
-    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    paragraphs.forEach((para, index) => {
-        para.style.opacity = '0';
-        para.style.transform = 'translateY(20px)';
-        para.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-        observer.observe(para);
-    });
+    // REMOVED: All animation code that was hiding content
+    // Content is now visible by default via CSS !important rules
     
     const importantNotes = document.querySelectorAll('.blog-important-note');
     importantNotes.forEach(note => {

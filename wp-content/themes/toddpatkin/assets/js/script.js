@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
         
         // Function to check if a slide is visible on desktop
         function isSlideVisibleOnDesktop(slideIndex) {
-            // On desktop, only slides 0 and 3 are visible
-            return slideIndex === 0 || slideIndex === 3;
+            // On desktop, slides 0, 3, and 6 are visible
+            return slideIndex === 0 || slideIndex === 3 || slideIndex === 6;
         }
         
         // Function to update indicators based on screen size
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const mobileIndicators = reviewsCarousel.querySelectorAll('.carousel-indicators .d-md-none');
             
             if (isDesktop) {
-                // Desktop: 2 indicators for 2 slides (slide 0 and slide 3)
+                // Desktop: 3 indicators for 3 slides (slide 0, slide 3, and slide 6)
                 desktopIndicators.forEach((indicator, index) => {
                     if (index === 0 && activeIndex === 0) {
                         // First slide (cards 1-3)
@@ -78,6 +78,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         indicator.setAttribute('aria-current', 'true');
                     } else if (index === 1 && activeIndex === 3) {
                         // Second slide (cards 4-6)
+                        indicator.classList.add('active');
+                        indicator.setAttribute('aria-current', 'true');
+                    } else if (index === 2 && activeIndex === 6) {
+                        // Third slide (cards 7-9)
                         indicator.classList.add('active');
                         indicator.setAttribute('aria-current', 'true');
                     } else {
@@ -92,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     indicator.removeAttribute('aria-current');
                 });
             } else {
-                // Mobile: 6 indicators for 6 individual slides
+                // Mobile: 9 indicators for 9 individual slides
                 mobileIndicators.forEach((indicator, index) => {
                     if (index === activeIndex) {
                         indicator.classList.add('active');
@@ -116,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const isDesktop = window.innerWidth >= 768;
             
             if (isDesktop) {
-                // On desktop, only allow navigation to visible slides (0 and 3)
+                // On desktop, only allow navigation to visible slides (0, 3, and 6)
                 if (!isSlideVisibleOnDesktop(e.to)) {
                     e.preventDefault();
                     
@@ -125,11 +129,23 @@ document.addEventListener('DOMContentLoaded', function () {
                     let targetIndex;
                     
                     if (e.direction === 'left' || e.direction === 'next') {
-                        // Going forward
-                        targetIndex = currentIndex === 0 ? 3 : 0;
+                        // Going forward: 0 -> 3 -> 6 -> 0
+                        if (currentIndex === 0) {
+                            targetIndex = 3;
+                        } else if (currentIndex === 3) {
+                            targetIndex = 6;
+                        } else {
+                            targetIndex = 0;
+                        }
                     } else {
-                        // Going backward
-                        targetIndex = currentIndex === 3 ? 0 : 3;
+                        // Going backward: 0 -> 6 -> 3 -> 0
+                        if (currentIndex === 0) {
+                            targetIndex = 6;
+                        } else if (currentIndex === 3) {
+                            targetIndex = 0;
+                        } else {
+                            targetIndex = 3;
+                        }
                     }
                     
                     // Manually navigate to the correct slide
@@ -262,8 +278,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     e.preventDefault();
                     e.stopPropagation();
                     
-                    // Desktop: only slides 0 and 3 are visible
-                    const targetIndex = currentIndex === 3 ? 0 : (currentIndex === 0 ? 3 : 0);
+                    // Desktop: slides 0, 3, and 6 are visible - go backward: 0 -> 6 -> 3 -> 0
+                    let targetIndex;
+                    if (currentIndex === 0) {
+                        targetIndex = 6;
+                    } else if (currentIndex === 3) {
+                        targetIndex = 0;
+                    } else if (currentIndex === 6) {
+                        targetIndex = 3;
+                    } else {
+                        targetIndex = 0;
+                    }
                     carousel.to(targetIndex);
                 }
                 // On mobile, let Bootstrap handle it normally
@@ -279,8 +304,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     e.preventDefault();
                     e.stopPropagation();
                     
-                    // Desktop: only slides 0 and 3 are visible
-                    const targetIndex = currentIndex === 0 ? 3 : (currentIndex === 3 ? 0 : 3);
+                    // Desktop: slides 0, 3, and 6 are visible - go forward: 0 -> 3 -> 6 -> 0
+                    let targetIndex;
+                    if (currentIndex === 0) {
+                        targetIndex = 3;
+                    } else if (currentIndex === 3) {
+                        targetIndex = 6;
+                    } else if (currentIndex === 6) {
+                        targetIndex = 0;
+                    } else {
+                        targetIndex = 3;
+                    }
                     carousel.to(targetIndex);
                 }
                 // On mobile, let Bootstrap handle it normally
@@ -621,7 +655,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const courseVideoThumbnail = document.getElementById('courseVideoThumbnail');
     const courseVideoIframeWrapper = document.getElementById('courseVideoIframeWrapper');
     const courseVideoIframe = document.getElementById('courseVideoIframe');
-    const courseVideoUrl = 'https://www.youtube.com/embed/yCIQIpx_bx0?autoplay=1';
+    const courseVideoUrl = 'https://www.veed.io/embed/6612ef59-46f4-4f09-955d-e3d14eca05e9?watermark=0&color=default&sharing=0&title=0';
     
     if (courseVideoThumbnail && courseVideoIframeWrapper && courseVideoIframe) {
         // Handle thumbnail click

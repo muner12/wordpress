@@ -123,7 +123,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
-            <a style="font-size: 24px; margin-left:25px;" class="navbar-brand fw-bold text-warning text-uppercase d-flex align-items-center" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <a style="font-size: 24px; margin-left:80px;" class="navbar-brand fw-bold text-warning text-uppercase d-flex align-items-center" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                 Todd Patkin
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

@@ -47,7 +47,7 @@ get_header();
                 <div class="podcast-player-main position-relative" style="width: 100%; margin: 0; background: transparent !important; min-height: 0 !important; padding: 0;">
                     <div class="podcast-video-wrapper position-relative" style="width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000;">
                         <iframe 
-                            src="https://www.youtube.com/embed/9BJm5MzxBQY" 
+                            src="https://www.youtube.com/embed/yCIQIpx_bx0" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen
@@ -76,14 +76,14 @@ get_header();
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast-2.png" class="img-fluid w-100 podcast-card-image" alt="Helping others helps you">
                                 <!-- Episode Badge Overlay -->
                                 <div class="position-absolute top-0 end-0 p-3">
-                                    <span class="podcast-episode-badge">EPISODE 412</span>
+                                    <!-- <span class="podcast-episode-badge">EPISODE 412</span> -->
                                 </div>
                                 <!-- Bottom Content -->
                                 <div class="position-absolute bottom-0 start-0 p-2 text-white w-100 podcast-card-overlay">
-                                    <h5 class="fw-bold  podcast-card-title">HAPPINESS ISN'T WHAT YOU THINK</h5>
+                                    <!-- <h5 class="fw-bold  podcast-card-title">HAPPINESS ISN'T WHAT YOU THINK</h5> -->
                                     <!-- Daily Helping Badge -->
                                     <div class="position-absolute bottom-0 end-0 p-3">
-                                        <span class="podcast-daily-helping">DAILY HELPING</span>
+                                        <!-- <span class="podcast-daily-helping">DAILY HELPING</span> -->
                                     </div>
                                 </div>
                             </div>
@@ -96,18 +96,18 @@ get_header();
                             <div class="card border-0 shadow-sm overflow-hidden position-relative podcast-card">
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast-3.png" class="img-fluid w-100 podcast-card-image" alt="Happiness isn't what you think">
                                 <!-- Title Overlay -->
-                                <div class="position-absolute top-0 start-0 p-4 text-white w-100">
+                                <!-- <div class="position-absolute top-0 start-0 p-4 text-white w-100">
                                     <h5 class="fw-bold mb-1 podcast-card-title-overlay">
                                         <span class="text-white">HAPPINESS ISN'T</span><br>
                                         <span class="podcast-title-orange">WHAT YOU THINK</span>
                                     </h5>
-                                </div>
+                                </div> -->
                                 <!-- Bottom Content -->
                                 <div class="position-absolute bottom-0 start-0 p-4 text-white w-100 podcast-card-overlay">
-                                    <h5 class="fw-bold mb-2 podcast-card-title">CRACK THE HAPPINESS CODE</h5>
+                                    <!-- <h5 class="fw-bold mb-2 podcast-card-title">CRACK THE HAPPINESS CODE</h5> -->
                                     <!-- Greg Voisen Badge -->
                                     <div class="position-absolute bottom-0 end-0 p-3">
-                                        <span class="podcast-guest-name">GREG VOISEN</span>
+                                        <!-- <span class="podcast-guest-name">GREG VOISEN</span> -->
                                     </div>
                                 </div>
                             </div>

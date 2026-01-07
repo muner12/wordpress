@@ -29,13 +29,17 @@ get_header();
                     <div class="courses-video-container w-100">
                         <div class="courses-video-wrapper w-100 position-relative" style="padding-bottom: 56.25%; height: 0; overflow: hidden;">
                             <iframe 
-                                src="https://www.youtube.com/embed/LL6OgELaYqc" 
-                                frameborder="0" 
+                            src="https://www.veed.io/embed/6612ef59-46f4-4f09-955d-e3d14eca05e9?watermark=0&color=default&sharing=0&title=0" 
+                            frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen
                                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
                                 class="courses-video-iframe">
                             </iframe>
+                            <!-- Lock Icon Overlay -->
+                            <div class="course-video-lock-overlay position-absolute top-50 start-50 translate-middle" style="width: 80px; height: 80px; background: rgba(0, 0, 0, 0.7); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; transition: all 0.3s ease;" data-bs-toggle="modal" data-bs-target="#coursePurchaseModal">
+                                <i class="fas fa-lock" style="color: #FFC107; font-size: 36px;"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -196,6 +200,45 @@ get_header();
         </div>
     </div>
 </section>
+
+<!-- Purchase Modal -->
+<div class="modal fade" id="coursePurchaseModal" tabindex="-1" aria-labelledby="coursePurchaseModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="border-radius: 16px; border: none; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
+            <div class="modal-header" style="border-bottom: 2px solid #F0F0F0; padding: 24px 30px;">
+                <h5 class="modal-title" id="coursePurchaseModalLabel" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; color: #275BA7; text-transform: uppercase;">Unlock Module 11</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="padding: 30px;">
+                <div class="text-center mb-4">
+                    <div class="mb-3" style="width: 80px; height: 80px; background: linear-gradient(135deg, #FFC107 0%, #FFD700 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);">
+                        <i class="fas fa-lock-open" style="color: #275BA7; font-size: 36px;"></i>
+                    </div>
+                    <h4 style="font-family: 'Oswald', sans-serif; font-weight: 600; color: #2D2D2D; margin-bottom: 12px;">Module 11: Building Your Support System</h4>
+                    <p style="color: #666; font-size: 15px; line-height: 1.6; margin-bottom: 0;">Purchase this module to access the full course content and unlock all features.</p>
+                </div>
+            </div>
+            <div class="modal-footer" style="border-top: 2px solid #F0F0F0; padding: 20px 30px; justify-content: center;">
+                <a href="<?php echo esc_url( home_url( '/course/module-11' ) ); ?>" class="btn btn-warning btn-lg" style="padding: 14px 40px; font-weight: 600; font-size: 16px; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4); transition: all 0.3s ease;">
+                    Purchase Now <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.course-video-lock-overlay:hover {
+    background: rgba(0, 0, 0, 0.85) !important;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.course-video-lock-overlay:hover i {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+</style>
+
 <?php
 get_footer();
 ?>

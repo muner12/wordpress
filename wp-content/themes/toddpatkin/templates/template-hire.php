@@ -123,7 +123,7 @@ get_header();
             <h2 class="display-4 fw-bold text-uppercase mb-3">
                 <span class="text-primary-blue">HIRE</span> <span class="text-warning">TODD PATKIN</span>
             </h2>
-            <p class="text-muted lead mb-0">Lorem ipsum dolor sit amet consectetur. Mattis eu quisque nulla</p>
+            <p class="text-muted lead mb-0">A journey from anxiety to self-acceptance and true happiness.</p>
         </div>
 
         <!-- Main Content Container -->
