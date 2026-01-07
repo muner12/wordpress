@@ -101,15 +101,15 @@
                 <h2 class="video-section-title mb-3">Watch <span class="text-warning">todd</span> Speak</h2>
                 <p class="book-section-subtitle mb-0">See why audiences call Todd's message 'life-changing'</p>
             </div>
-            <div class="row  g-2 g-lg-2">
+            <div class="row g-2 g-lg-3">
                 <!-- Mobile: Inner heading first -->
                 <div class="col-12 d-lg-none order-1 mb-3">
                     <h2 class="video-inner-title text-center mb-3">TODD PATKIN AT <span class="text-danger">TED<span style="text-transform: lowercase;">x</span></span></h2>
                 </div>
                 <!-- Video -->
-                <div class="col-12 col-lg-6  order-3 order-lg-1 d-flex justify-content-end px-5 py-3">
-                    <div class="video-wrapper" style="cursor: pointer; display: inline-block; position: relative;" data-bs-toggle="modal" data-bs-target="#videoModal">
-                        <div class="video-thumbnail position-relative">
+                <div class="col-12 col-lg-6 order-3 order-lg-1 d-flex justify-content-center justify-content-lg-end align-items-center py-3 px-3 px-lg-5">
+                    <div class="video-wrapper" style="cursor: pointer; display: inline-block; position: relative; width: 100%; max-width: 100%;" data-bs-toggle="modal" data-bs-target="#videoModal">
+                        <div class="video-thumbnail position-relative d-flex justify-content-center">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/todd_at_tdx.png" alt="Todd Speaking at TEDx" class="img-fluid" style="border-radius: 20px; object-fit: contain; max-height: 300px; width: auto; max-width: 100%;">
                             <!-- Play Icon Overlay -->
                             <div class="video-play-overlay position-absolute top-50 start-50 translate-middle" style="width: 80px; height: 80px; background: linear-gradient(135deg, #FFC107 0%, #FFD700 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(255, 193, 7, 0.5); transition: all 0.3s ease; z-index: 10;">
@@ -119,24 +119,24 @@
                     </div>
                 </div>
                 <!-- Desktop text block -->
-                <div class="col-12 col-lg-6 order-2 order-lg-2 d-none d-lg-block py-3">
-                    <div class="d-flex flex-column justify-content-center">
+                <div class="col-12 col-lg-6 order-2 order-lg-2 d-none d-lg-flex align-items-center py-3">
+                    <div class="d-flex flex-column justify-content-center w-100">
                         <h2 class="video-inner-title mb-4">TODD PATKIN AT <span class="text-danger">TED<span style="text-transform: lowercase;">x</span></span></h2>
-                        <div class="video-text-content pl-2" style="max-height: 280px; overflow-y: auto; overflow-x: hidden;">
-                            <div class="video-text-item mb-3" style="padding-left: 20px; border-left: 3px solid #FFC107; position: relative; overflow: hidden;">
-                                <div style="position: absolute; left: -6px; top: 0; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4);">
+                        <div class="video-text-content" style="max-height: 280px; overflow-y: auto; overflow-x: visible; padding-left: 15px; padding-right: 8px;">
+                            <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
+                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
                                     <i class="fas fa-quote-left" style="color: #275BA7; font-size: 9px;"></i>
                                 </div>
                                 <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">In this impactful TEDx talk, Todd shares his honest journey from being a high-achieving businessman to experiencing a complete personal breakdown. Through vulnerable storytelling, he challenges the common belief that success and a "perfect" life automatically lead to happiness.</p>
                             </div>
-                            <div class="video-text-item mb-3" style="padding-left: 20px; border-left: 3px solid #275BA7; position: relative; overflow: hidden;">
-                                <div style="position: absolute; left: -6px; top: 0; width: 20px; height: 20px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4);">
+                            <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #275BA7; position: relative;">
+                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4); z-index: 1;">
                                     <i class="fas fa-lightbulb" style="color: #FFC107; font-size: 9px;"></i>
                                 </div>
                                 <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">Todd explains how external achievements often mask internal struggles and emotional burnout. He highlights the disconnect between societal definitions of success and genuine well-being, uncovering what truly contributes to lasting happiness.</p>
                             </div>
-                            <div class="video-text-item mb-0" style="padding-left: 20px; border-left: 3px solid #FFC107; position: relative; overflow: hidden;">
-                                <div style="position: absolute; left: -6px; top: 0; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4);">
+                            <div class="video-text-item mb-0" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
+                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
                                     <i class="fas fa-heart" style="color: #275BA7; font-size: 9px;"></i>
                                 </div>
                                 <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">His insights emphasize self-awareness, emotional health, and purposeful living. The talk encourages viewers to reassess their priorities beyond material success, delivering a powerful reminder that true happiness comes from inner balance, not outward perfection.</p>
@@ -146,21 +146,21 @@
                 </div>
                 <!-- Mobile description after video -->
                 <div class="col-12 d-lg-none order-4 mt-3">
-                    <div class="video-text-content" style="overflow-x: hidden;">
-                        <div class="video-text-item mb-3" style="padding-left: 20px; border-left: 3px solid #FFC107; position: relative; overflow: hidden;">
-                            <div style="position: absolute; left: -6px; top: 0; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4);">
+                    <div class="video-text-content" style="overflow-x: visible; padding-left: 15px; padding-right: 8px;">
+                        <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
+                            <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
                                 <i class="fas fa-quote-left" style="color: #275BA7; font-size: 9px;"></i>
                             </div>
                             <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">In this impactful TEDx talk, Todd shares his honest journey from being a high-achieving businessman to experiencing a complete personal breakdown. Through vulnerable storytelling, he challenges the common belief that success and a "perfect" life automatically lead to happiness.</p>
                         </div>
-                        <div class="video-text-item mb-3" style="padding-left: 20px; border-left: 3px solid #275BA7; position: relative; overflow: hidden;">
-                            <div style="position: absolute; left: -6px; top: 0; width: 20px; height: 20px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4);">
+                        <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #275BA7; position: relative;">
+                            <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4); z-index: 1;">
                                 <i class="fas fa-lightbulb" style="color: #FFC107; font-size: 9px;"></i>
                             </div>
                             <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">Todd explains how external achievements often mask internal struggles and emotional burnout. He highlights the disconnect between societal definitions of success and genuine well-being, uncovering what truly contributes to lasting happiness.</p>
                         </div>
-                        <div class="video-text-item mb-0" style="padding-left: 20px; border-left: 3px solid #FFC107; position: relative; overflow: hidden;">
-                            <div style="position: absolute; left: -6px; top: 0; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4);">
+                        <div class="video-text-item mb-0" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
+                            <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
                                 <i class="fas fa-heart" style="color: #275BA7; font-size: 9px;"></i>
                             </div>
                             <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">His insights emphasize self-awareness, emotional health, and purposeful living. The talk encourages viewers to reassess their priorities beyond material success, delivering a powerful reminder that true happiness comes from inner balance, not outward perfection.</p>

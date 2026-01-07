@@ -70,6 +70,46 @@ get_header();
             object-fit: contain;
         }
     }
+    
+    /* Specific styling for podcast-4 image */
+    .podcast-page-section .podcast-card img[src*="podcast_4.webp"],
+    .podcast-page-section .podcast-card img[alt*="12 Steps to Happiness"] {
+        height: 350px !important;
+        object-fit: contain !important;
+        object-position: center;
+        width: 100%;
+        display: block;
+    }
+    
+    /* Add padding to the card container for podcast-4 */
+    .podcast-page-section .podcast-card[style*="padding"] {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    @media (max-width: 768px) {
+        .podcast-page-section .podcast-card img[src*="podcast_4.webp"],
+        .podcast-page-section .podcast-card img[alt*="12 Steps to Happiness"] {
+            height: 300px !important;
+        }
+        
+        .podcast-page-section .podcast-card[style*="padding"] {
+            padding-left: 12px !important;
+            padding-right: 12px !important;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .podcast-page-section .podcast-card img[src*="podcast_4.webp"],
+        .podcast-page-section .podcast-card img[alt*="12 Steps to Happiness"] {
+            height: 250px !important;
+        }
+        
+        .podcast-page-section .podcast-card[style*="padding"] {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+    }
 </style>
 <!-- Podcast Section -->
 <section class="podcast-page-section bg-light">
@@ -151,9 +191,11 @@ get_header();
                 <!-- Podcast Card 4 -->
                 <div class="col-12 col-md-6">
                     <a href="<?php echo esc_url( home_url( '/podcast/podcast-4' ) ); ?>" class="text-decoration-none">
-                        <div class="card border-0 shadow-sm overflow-hidden position-relative podcast-card">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast_4.webp" class="img-fluid w-100 podcast-card-image" alt="12 Steps to Happiness">
-                            <div class="position-absolute bottom-0 start-0 p-4 text-white w-100 podcast-card-overlay">
+                        <div class="card border-0 shadow-sm position-relative podcast-card" style="overflow: visible; padding: 0 15px;">
+                            <div style="overflow: hidden; border-radius: 8px; margin: 0 -15px;">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast_4.webp" class="img-fluid w-100 podcast-card-image" alt="12 Steps to Happiness" style="padding: 0 15px; box-sizing: border-box;">
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 p-4 text-white w-100 podcast-card-overlay" style="left: 15px; right: 15px; width: calc(100% - 30px);">
                                 <!-- <h5 class="fw-bold mb-2 podcast-card-title">12 STEPS TO HAPPINESS</h5> -->
                             </div>
                         </div>

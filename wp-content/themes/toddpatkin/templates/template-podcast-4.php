@@ -36,13 +36,36 @@ get_header();
         max-width: 660px;
         margin: 0 auto;
         padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     .podcast-apple-iframe-wrapper iframe {
-        width: 100%;
+        width: 100% !important;
         max-width: 660px;
+        min-height: 175px;
         border-radius: 10px;
         overflow: hidden;
+        border: none;
+        display: block;
+    }
+    
+    /* Responsive iframe */
+    @media (max-width: 768px) {
+        .podcast-apple-iframe-wrapper {
+            padding: 15px;
+        }
+        
+        .podcast-apple-iframe-wrapper iframe {
+            height: 175px !important;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .podcast-apple-iframe-wrapper {
+            padding: 10px;
+        }
     }
 </style>
     <!-- Podcast Details Section -->
@@ -65,9 +88,11 @@ get_header();
                             allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" 
                             frameborder="0" 
                             height="175" 
-                            style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" 
-                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" 
-                            src="https://embed.podcasts.apple.com/us/podcast/12-steps-to-happiness-with-todd-patkin/id1545990607?i=1000587632053">
+                            width="100%"
+                            style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;border:none;" 
+                            src="https://embed.podcasts.apple.com/us/podcast/12-steps-to-happiness-with-todd-patkin/id1545990607?i=1000587632053"
+                            loading="lazy"
+                            title="12 Steps to Happiness with Todd Patkin">
                         </iframe>
                     </div>
                 </div>
