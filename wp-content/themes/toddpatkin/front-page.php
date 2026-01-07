@@ -477,7 +477,7 @@
                                         <p class="review-text">Todd radiates positive energy and love, in person and throughout the pages of his book. His success in overcoming life's obstacles is truly inspirational and will further his lifelong goal to help others find their own path to happiness.</p>
                             <hr class="review-divider">
                             <div class="d-flex align-items-center gap-3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/review-author-3.png" alt="Dr. Mary Ann McDonnell"
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/review-author-3.jfif" alt="Dr. Mary Ann McDonnell"
                                     class="review-author-image rounded-3">
                                 <div class="review-author-info">
                                     <h5 class="review-author-name">Dr. Mary Ann McDonnell</h5>
