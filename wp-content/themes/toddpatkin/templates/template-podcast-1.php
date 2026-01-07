@@ -114,6 +114,20 @@ get_header();
                         </a>
                     </div>
                 </div>
+                
+                <div class="row g-4">
+                    <!-- Podcast Card 4 -->
+                    <div class="col-12 col-md-6">
+                        <a href="<?php echo esc_url( home_url( '/podcast/podcast-4' ) ); ?>" class="text-decoration-none">
+                            <div class="card border-0 shadow-sm overflow-hidden position-relative podcast-card">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast_4.webp" class="img-fluid w-100 podcast-card-image" alt="12 Steps to Happiness">
+                                <div class="position-absolute bottom-0 start-0 p-4 text-white w-100 podcast-card-overlay">
+                                    <!-- <h5 class="fw-bold mb-2 podcast-card-title">12 STEPS TO HAPPINESS</h5> -->
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- View More Button -->

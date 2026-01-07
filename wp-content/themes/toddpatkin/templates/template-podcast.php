@@ -33,6 +33,43 @@ get_header();
     .podcast-page-section .overflow-hidden {
         overflow: hidden !important;
     }
+    
+    /* Responsive styles for podcast images */
+    @media (max-width: 992px) {
+        .podcast-page-section .podcast-card-image {
+            max-height: 400px;
+            object-fit: contain;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .podcast-page-section .podcast-card-image {
+            max-height: 350px;
+            object-fit: contain;
+        }
+        
+        .podcast-page-section .podcast-card-overlay {
+            padding: 15px !important;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .podcast-page-section .podcast-card-image {
+            max-height: 300px;
+            object-fit: contain;
+        }
+        
+        .podcast-page-section .podcast-card-overlay {
+            padding: 12px !important;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .podcast-page-section .podcast-card-image {
+            max-height: 250px;
+            object-fit: contain;
+        }
+    }
 </style>
 <!-- Podcast Section -->
 <section class="podcast-page-section bg-light">
@@ -86,7 +123,7 @@ get_header();
                 </div>
             </div>
 
-            <!-- Row 2: One Card (aligned with left card) -->
+            <!-- Row 2: Two Cards -->
             <div class="row g-4">
                 <div class="col-12 col-md-6">
                     <a href="<?php echo esc_url( home_url( '/podcast/podcast-3' ) ); ?>" class="text-decoration-none">
@@ -106,6 +143,18 @@ get_header();
                                 <div class="position-absolute bottom-0 end-0 p-3">
                                     <!-- <span class="podcast-guest-name">GREG VOISEN</span> -->
                                 </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Podcast Card 4 -->
+                <div class="col-12 col-md-6">
+                    <a href="<?php echo esc_url( home_url( '/podcast/podcast-4' ) ); ?>" class="text-decoration-none">
+                        <div class="card border-0 shadow-sm overflow-hidden position-relative podcast-card">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast_4.webp" class="img-fluid w-100 podcast-card-image" alt="12 Steps to Happiness">
+                            <div class="position-absolute bottom-0 start-0 p-4 text-white w-100 podcast-card-overlay">
+                                <!-- <h5 class="fw-bold mb-2 podcast-card-title">12 STEPS TO HAPPINESS</h5> -->
                             </div>
                         </div>
                     </a>

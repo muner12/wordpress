@@ -30,6 +30,7 @@ function toddpatkin_create_required_pages() {
         array( 'slug' => 'podcast/podcast-1', 'title' => 'Podcast 1: Crack the Happiness Code', 'template' => 'templates/template-podcast-1.php' ),
         array( 'slug' => 'podcast/podcast-2', 'title' => 'Podcast 2: Helping Others Helps You', 'template' => 'templates/template-podcast-2.php' ),
         array( 'slug' => 'podcast/podcast-3', 'title' => 'Podcast 3: Happiness Isn\'t What You Think', 'template' => 'templates/template-podcast-3.php' ),
+        array( 'slug' => 'podcast/podcast-4', 'title' => 'Podcast 4: 12 Steps to Happiness', 'template' => 'templates/template-podcast-4.php' ),
         array( 'slug' => 'blog', 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
         // Blog detail pages
         array( 'slug' => 'blog/blog-1', 'title' => 'Money and Happiness: Why More Isn\'t Always Better', 'template' => 'templates/template-blog-1.php' ),
@@ -220,7 +221,7 @@ function toddpatkin_intercept_missing_pages( $wp ) {
     
     // Skip if this is likely a blog post (check if it's a post, not a page)
     // First, check if it matches any known page template slugs
-    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7' );
+    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'podcast-4', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7' );
     
     $path_parts_temp = array_filter( explode( '/', $request_uri ) );
     $last_slug_temp = end( $path_parts_temp );
@@ -316,6 +317,7 @@ function toddpatkin_intercept_missing_pages( $wp ) {
         'podcast-1' => array( 'title' => 'Podcast 1: Crack the Happiness Code', 'template' => 'templates/template-podcast-1.php', 'parent' => 'podcast' ),
         'podcast-2' => array( 'title' => 'Podcast 2: Helping Others Helps You', 'template' => 'templates/template-podcast-2.php', 'parent' => 'podcast' ),
         'podcast-3' => array( 'title' => 'Podcast 3: Happiness Isn\'t What You Think', 'template' => 'templates/template-podcast-3.php', 'parent' => 'podcast' ),
+        'podcast-4' => array( 'title' => 'Podcast 4: 12 Steps to Happiness', 'template' => 'templates/template-podcast-4.php', 'parent' => 'podcast' ),
         'blog' => array( 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
         // Blog detail pages
         'blog-1' => array( 'title' => 'Money and Happiness: Why More Isn\'t Always Better', 'template' => 'templates/template-blog-1.php', 'parent' => 'blog' ),
@@ -439,7 +441,7 @@ function toddpatkin_handle_404_create_page() {
     $request_uri = rtrim( $request_uri, '/.html' );
     
     // Skip if this is likely a blog post
-    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7' );
+    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'podcast-4', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7' );
     
     $path_parts = array_filter( explode( '/', $request_uri ) );
     $slug = end( $path_parts );
@@ -524,6 +526,7 @@ function toddpatkin_handle_404_create_page() {
         'podcast-1' => array( 'title' => 'Podcast 1: Crack the Happiness Code', 'template' => 'templates/template-podcast-1.php', 'parent' => 'podcast' ),
         'podcast-2' => array( 'title' => 'Podcast 2: Helping Others Helps You', 'template' => 'templates/template-podcast-2.php', 'parent' => 'podcast' ),
         'podcast-3' => array( 'title' => 'Podcast 3: Happiness Isn\'t What You Think', 'template' => 'templates/template-podcast-3.php', 'parent' => 'podcast' ),
+        'podcast-4' => array( 'title' => 'Podcast 4: 12 Steps to Happiness', 'template' => 'templates/template-podcast-4.php', 'parent' => 'podcast' ),
         'blog' => array( 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
         // Blog detail pages
         'blog-1' => array( 'title' => 'Money and Happiness: Why More Isn\'t Always Better', 'template' => 'templates/template-blog-1.php', 'parent' => 'blog' ),
@@ -763,6 +766,7 @@ function toddpatkin_force_page_template( $template ) {
         'podcast-1' => 'templates/template-podcast-1.php',
         'podcast-2' => 'templates/template-podcast-2.php',
         'podcast-3' => 'templates/template-podcast-3.php',
+        'podcast-4' => 'templates/template-podcast-4.php',
         'blog' => 'templates/template-blog.php',
         'preview-book' => 'templates/template-preview-book.php',
         'preview-boot-camp' => 'templates/template-preview-boot-camp.php',
@@ -957,6 +961,7 @@ function toddpatkin_force_template_include( $template ) {
         'podcast-1' => 'templates/template-podcast-1.php',
         'podcast-2' => 'templates/template-podcast-2.php',
         'podcast-3' => 'templates/template-podcast-3.php',
+        'podcast-4' => 'templates/template-podcast-4.php',
         'blog' => 'templates/template-blog.php',
         'preview-book' => 'templates/template-preview-book.php',
         'preview-boot-camp' => 'templates/template-preview-boot-camp.php',
@@ -1005,6 +1010,7 @@ function toddpatkin_fix_page_templates() {
         'podcast-1' => 'templates/template-podcast-1.php',
         'podcast-2' => 'templates/template-podcast-2.php',
         'podcast-3' => 'templates/template-podcast-3.php',
+        'podcast-4' => 'templates/template-podcast-4.php',
         'blog' => 'templates/template-blog.php',
         'preview-book' => 'templates/template-preview-book.php',
         'preview-boot-camp' => 'templates/template-preview-boot-camp.php',
@@ -1193,7 +1199,7 @@ function toddpatkin_format_blog_content($content) {
             if ($in_list && !empty($list_items)) {
                 // Close the list - output as regular paragraphs without blue border box
                 foreach ($list_items as $item) {
-                    $formatted .= '<p class="blog-details-paragraph mb-3" style="font-size: 14px; line-height: 1.7; color: #2D2D2D; margin: 0;">' . esc_html($item) . '</p>' . "\n";
+                    $formatted .= '<p class="blog-details-paragraph mb-3" style="font-size: 13px; line-height: 1.6; color: #2D2D2D; margin: 0;">' . esc_html($item) . '</p>' . "\n";
                 }
                 $list_items = array();
                 $in_list = false;
@@ -1221,8 +1227,8 @@ function toddpatkin_format_blog_content($content) {
                 if ($is_phrase_list && count($list_items) > 3) {
                     // Format as styled phrase list with better presentation
                     $formatted .= '<div class="blog-phrase-list-container mb-5" style="margin: 40px 0; padding: 30px; background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">' . "\n";
-                    $formatted .= '<h3 style="color: #275BA7; font-size: 24px; font-weight: 600; margin-bottom: 25px; font-family: \'Oswald\', sans-serif;">10 Phrases That Will Transform Your Team</h3>' . "\n";
-                    $formatted .= '<div class="blog-phrase-list" style="display: flex; flex-direction: column; gap: 20px;">' . "\n";
+                    $formatted .= '<h3 style="color: #275BA7; font-size: 20px; font-weight: 600; margin-bottom: 20px; font-family: \'Oswald\', sans-serif;">10 Phrases That Will Transform Your Team</h3>' . "\n";
+                    $formatted .= '<div class="blog-phrase-list" style="display: flex; flex-direction: column; gap: 15px;">' . "\n";
                     
                     foreach ($list_items as $index => $item) {
                         $phrase = '';
@@ -1245,13 +1251,13 @@ function toddpatkin_format_blog_content($content) {
                             $phrase = trim($item);
                         }
                         
-                        $formatted .= '<div class="blog-phrase-item" style="padding: 20px; background: #FFFFFF; border-left: 4px solid #275BA7; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: all 0.3s ease;">' . "\n";
-                        $formatted .= '<div style="display: flex; align-items: flex-start; gap: 15px;">' . "\n";
-                        $formatted .= '<div style="flex-shrink: 0; width: 36px; height: 36px; background: linear-gradient(135deg, #275BA7 0%, #1a4a8a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-weight: bold; font-size: 16px; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.3);">' . ($index + 1) . '</div>' . "\n";
+                        $formatted .= '<div class="blog-phrase-item" style="padding: 15px; background: #FFFFFF; border-left: 4px solid #275BA7; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: all 0.3s ease;">' . "\n";
+                        $formatted .= '<div style="display: flex; align-items: flex-start; gap: 12px;">' . "\n";
+                        $formatted .= '<div style="flex-shrink: 0; width: 32px; height: 32px; background: linear-gradient(135deg, #275BA7 0%, #1a4a8a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-weight: bold; font-size: 14px; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.3);">' . ($index + 1) . '</div>' . "\n";
                         $formatted .= '<div style="flex: 1;">' . "\n";
-                        $formatted .= '<p style="font-size: 16px; font-weight: 600; color: #275BA7; margin: 0 0 10px 0; line-height: 1.4;">' . esc_html($phrase) . '</p>' . "\n";
+                        $formatted .= '<p style="font-size: 13px; font-weight: 600; color: #275BA7; margin: 0 0 6px 0; line-height: 1.4;">' . esc_html($phrase) . '</p>' . "\n";
                         if (!empty($description)) {
-                            $formatted .= '<p style="font-size: 14px; line-height: 1.7; color: #2D2D2D; margin: 0;">' . esc_html($description) . '</p>' . "\n";
+                            $formatted .= '<p style="font-size: 11px; line-height: 1.5; color: #2D2D2D; margin: 0;">' . esc_html($description) . '</p>' . "\n";
                         }
                         $formatted .= '</div>' . "\n";
                         $formatted .= '</div>' . "\n";
@@ -1263,7 +1269,7 @@ function toddpatkin_format_blog_content($content) {
                 } else {
                     // Regular list - format as styled paragraphs
                     foreach ($list_items as $item) {
-                        $formatted .= '<p class="blog-details-paragraph mb-3" style="font-size: 14px; line-height: 1.7; color: #2D2D2D; margin: 0 0 15px 0; padding-left: 20px; position: relative;">' . "\n";
+                        $formatted .= '<p class="blog-details-paragraph mb-3" style="font-size: 13px; line-height: 1.6; color: #2D2D2D; margin: 0 0 12px 0; padding-left: 20px; position: relative;">' . "\n";
                         $formatted .= '<span style="position: absolute; left: 0; top: 0; color: #275BA7; font-weight: bold; font-size: 18px;">•</span>' . "\n";
                         $formatted .= esc_html($item) . "\n";
                         $formatted .= '</p>' . "\n";
@@ -1300,7 +1306,7 @@ function toddpatkin_format_blog_content($content) {
                 $formatted .= '<div class="blog-icon-badge" style="position: absolute; left: -12px; top: 0; width: 24px; height: 24px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 2;">' . "\n";
                 $formatted .= '<i class="fas fa-lightbulb" style="color: #275BA7; font-size: 12px;"></i>' . "\n";
                 $formatted .= '</div>' . "\n";
-                $formatted .= '<p class="blog-description-text mb-0" style="font-size: 15px; line-height: 1.7; color: #2D2D2D; font-weight: 500;">' . esc_html($line) . '</p>' . "\n";
+                $formatted .= '<p class="blog-description-text mb-0" style="font-size: 13px; line-height: 1.6; color: #2D2D2D; font-weight: 500;">' . esc_html($line) . '</p>' . "\n";
                 $formatted .= '</div>' . "\n";
                 $first_paragraph = false;
             }
@@ -1312,7 +1318,7 @@ function toddpatkin_format_blog_content($content) {
                 $formatted .= '<i class="fas fa-quote-left" style="color: #275BA7; font-size: 18px;"></i>' . "\n";
                 $formatted .= '</div>' . "\n";
                 $formatted .= '<div>' . "\n";
-                $formatted .= '<p class="blog-description-text blog-description-italic mb-0" style="font-size: 15px; line-height: 1.7; color: #2D2D2D; font-style: italic; margin: 0;">' . esc_html($line) . '</p>' . "\n";
+                $formatted .= '<p class="blog-description-text blog-description-italic mb-0" style="font-size: 13px; line-height: 1.6; color: #2D2D2D; font-style: italic; margin: 0;">' . esc_html($line) . '</p>' . "\n";
                 $formatted .= '</div>' . "\n";
                 $formatted .= '</div>' . "\n";
                 $formatted .= '</div>' . "\n";
@@ -1324,7 +1330,7 @@ function toddpatkin_format_blog_content($content) {
                 $formatted .= '<i class="fas fa-check-circle" style="color: #FFC107; font-size: 18px;"></i>' . "\n";
                 $formatted .= '<span style="color: #FFFFFF; font-weight: 600; font-size: 15px; letter-spacing: 0.5px;">KEY INSIGHT</span>' . "\n";
                 $formatted .= '</div>' . "\n";
-                $formatted .= '<p class="blog-description-text mb-0" style="font-size: 14px; line-height: 1.6; color: #FFFFFF; margin: 0;">' . esc_html($line) . '</p>' . "\n";
+                $formatted .= '<p class="blog-description-text mb-0" style="font-size: 12px; line-height: 1.5; color: #FFFFFF; margin: 0;">' . esc_html($line) . '</p>' . "\n";
                 $formatted .= '</div>' . "\n";
             }
             // Regular paragraphs - styled like book description items with alternating colors
@@ -1339,7 +1345,7 @@ function toddpatkin_format_blog_content($content) {
                 $formatted .= '<div class="blog-icon-badge" style="position: absolute; left: -12px; top: 0; width: 24px; height: 24px; background: ' . $icon_bg . '; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(' . ($paragraph_count % 2 == 0 ? '39, 91, 167' : '255, 193, 7') . ', 0.4); z-index: 2; transition: all 0.3s ease;">' . "\n";
                 $formatted .= '<i class="fas ' . $icon_type . '" style="color: ' . $icon_color . '; font-size: 12px;"></i>' . "\n";
                 $formatted .= '</div>' . "\n";
-                $formatted .= '<p class="blog-description-text mb-0" style="font-size: 14px; line-height: 1.7; color: #2D2D2D; margin: 0;">' . esc_html($line) . '</p>' . "\n";
+                $formatted .= '<p class="blog-description-text mb-0" style="font-size: 13px; line-height: 1.6; color: #2D2D2D; margin: 0;">' . esc_html($line) . '</p>' . "\n";
                 $formatted .= '</div>' . "\n";
             }
         }
@@ -1381,13 +1387,13 @@ function toddpatkin_format_blog_content($content) {
                     $phrase = trim($item);
                 }
                 
-                $formatted .= '<div class="blog-phrase-item" style="padding: 20px; background: #FFFFFF; border-left: 4px solid #275BA7; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">' . "\n";
-                $formatted .= '<div style="display: flex; align-items: flex-start; gap: 15px;">' . "\n";
-                $formatted .= '<div style="flex-shrink: 0; width: 36px; height: 36px; background: linear-gradient(135deg, #275BA7 0%, #1a4a8a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-weight: bold; font-size: 16px;">' . ($index + 1) . '</div>' . "\n";
+                $formatted .= '<div class="blog-phrase-item" style="padding: 15px; background: #FFFFFF; border-left: 4px solid #275BA7; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">' . "\n";
+                $formatted .= '<div style="display: flex; align-items: flex-start; gap: 12px;">' . "\n";
+                $formatted .= '<div style="flex-shrink: 0; width: 32px; height: 32px; background: linear-gradient(135deg, #275BA7 0%, #1a4a8a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-weight: bold; font-size: 14px;">' . ($index + 1) . '</div>' . "\n";
                 $formatted .= '<div style="flex: 1;">' . "\n";
-                $formatted .= '<p style="font-size: 15px; font-weight: 600; color: #275BA7; margin: 0 0 10px 0;">' . esc_html($phrase) . '</p>' . "\n";
+                $formatted .= '<p style="font-size: 13px; font-weight: 600; color: #275BA7; margin: 0 0 6px 0;">' . esc_html($phrase) . '</p>' . "\n";
                 if (!empty($description)) {
-                    $formatted .= '<p style="font-size: 14px; line-height: 1.7; color: #2D2D2D; margin: 0;">' . esc_html($description) . '</p>' . "\n";
+                    $formatted .= '<p style="font-size: 11px; line-height: 1.5; color: #2D2D2D; margin: 0;">' . esc_html($description) . '</p>' . "\n";
                 }
                 $formatted .= '</div>' . "\n";
                 $formatted .= '</div>' . "\n";

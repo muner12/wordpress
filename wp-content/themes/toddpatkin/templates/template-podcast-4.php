@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Podcast 2
+ * Template Name: Podcast 4
  */
 get_header();
 ?>
@@ -29,8 +29,23 @@ get_header();
     .podcast-details-page-section .h-100 {
         height: auto !important;
     }
+    
+    /* Apple Podcast iframe styling */
+    .podcast-apple-iframe-wrapper {
+        width: 100%;
+        max-width: 660px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .podcast-apple-iframe-wrapper iframe {
+        width: 100%;
+        max-width: 660px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
 </style>
- <!-- Podcast Details Section -->
+    <!-- Podcast Details Section -->
     <section class="podcast-details-page-section bg-light">
         <div class="container">
             <!-- Section Header -->
@@ -43,16 +58,16 @@ get_header();
 
             <!-- Main Podcast Player Card -->
             <div class="podcast-player-card mb-5" style="padding: 0; overflow: hidden;">
-                <!-- YouTube Video Player -->
+                <!-- Apple Podcast Player -->
                 <div class="podcast-player-main position-relative" style="width: 100%; margin: 0; background: transparent !important; min-height: 0 !important; padding: 0;">
-                    <div class="podcast-video-wrapper position-relative" style="width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000;">
+                    <div class="podcast-apple-iframe-wrapper">
                         <iframe 
-                            src="https://www.youtube.com/embed/IYVtaOhi7HE" 
+                            allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" 
                             frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-                            class="podcast-video-iframe">
+                            height="175" 
+                            style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" 
+                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" 
+                            src="https://embed.podcasts.apple.com/us/podcast/12-steps-to-happiness-with-todd-patkin/id1545990607?i=1000587632053">
                         </iframe>
                     </div>
                 </div>
@@ -83,22 +98,19 @@ get_header();
 
                     <!-- Podcast Card 2 -->
                     <div class="col-12 col-md-6">
-                        <a href="<?php echo esc_url( home_url( '/podcast/podcast-3' ) ); ?>" class="text-decoration-none">
+                        <a href="<?php echo esc_url( home_url( '/podcast/podcast-2' ) ); ?>" class="text-decoration-none">
                             <div class="card border-0 shadow-sm overflow-hidden position-relative podcast-card">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast-3.png" class="img-fluid w-100 podcast-card-image" alt="Happiness isn't what you think">
-                                <!-- Title Overlay -->
-                                <div class="position-absolute top-0 start-0 p-4 text-white w-100">
-                                    <h5 class="fw-bold mb-1 podcast-card-title-overlay">
-                                        <!-- <span class="text-white">HAPPINESS ISN'T</span><br> -->
-                                        <!-- <span class="podcast-title-orange">WHAT YOU THINK</span> -->
-                                    </h5>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast-2.png" class="img-fluid w-100 podcast-card-image" alt="Helping others helps you">
+                                <!-- Episode Badge Overlay -->
+                                <div class="position-absolute top-0 end-0 p-3">
+                                    <!-- <span class="podcast-episode-badge">EPISODE 412</span> -->
                                 </div>
                                 <!-- Bottom Content -->
-                                <div class="position-absolute bottom-0 start-0 p-4 text-white w-100 podcast-card-overlay">
-                                    <!-- <h5 class="fw-bold mb-2 podcast-card-title">CRACK THE HAPPINESS CODE</h5> -->
-                                    <!-- Greg Voisen Badge -->
+                                <div class="position-absolute bottom-0 start-0 p-2 text-white w-100 podcast-card-overlay">
+                                    <!-- <h5 class="fw-bold  podcast-card-title">HAPPINESS ISN'T WHAT YOU THINK</h5> -->
+                                    <!-- Daily Helping Badge -->
                                     <div class="position-absolute bottom-0 end-0 p-3">
-                                        <!-- <span class="podcast-guest-name">GREG VOISEN</span> -->
+                                        <!-- <span class="podcast-daily-helping">DAILY HELPING</span> -->
                                     </div>
                                 </div>
                             </div>
@@ -107,13 +119,25 @@ get_header();
                 </div>
                 
                 <div class="row g-4">
-                    <!-- Podcast Card 4 -->
+                    <!-- Podcast Card 3 -->
                     <div class="col-12 col-md-6">
-                        <a href="<?php echo esc_url( home_url( '/podcast/podcast-4' ) ); ?>" class="text-decoration-none">
+                        <a href="<?php echo esc_url( home_url( '/podcast/podcast-3' ) ); ?>" class="text-decoration-none">
                             <div class="card border-0 shadow-sm overflow-hidden position-relative podcast-card">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast_4.webp" class="img-fluid w-100 podcast-card-image" alt="12 Steps to Happiness">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast-3.png" class="img-fluid w-100 podcast-card-image" alt="Happiness isn't what you think">
+                                <!-- Title Overlay -->
+                                <!-- <div class="position-absolute top-0 start-0 p-4 text-white w-100">
+                                    <h5 class="fw-bold mb-1 podcast-card-title-overlay">
+                                        <span class="text-white">HAPPINESS ISN'T</span><br>
+                                        <span class="podcast-title-orange">WHAT YOU THINK</span>
+                                    </h5>
+                                </div> -->
+                                <!-- Bottom Content -->
                                 <div class="position-absolute bottom-0 start-0 p-4 text-white w-100 podcast-card-overlay">
-                                    <!-- <h5 class="fw-bold mb-2 podcast-card-title">12 STEPS TO HAPPINESS</h5> -->
+                                    <!-- <h5 class="fw-bold mb-2 podcast-card-title">CRACK THE HAPPINESS CODE</h5> -->
+                                    <!-- Greg Voisen Badge -->
+                                    <div class="position-absolute bottom-0 end-0 p-3">
+                                        <!-- <span class="podcast-guest-name">GREG VOISEN</span> -->
+                                    </div>
                                 </div>
                             </div>
                         </a>
@@ -130,3 +154,4 @@ get_header();
 <?php
 get_footer();
 ?>
+

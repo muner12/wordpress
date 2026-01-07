@@ -252,8 +252,9 @@ get_header();
         opacity: 1 !important;
         transform: translateY(0) !important;
         visibility: visible !important;
-        margin-bottom: 20px !important;
-        font-size: 14px !important;
+        margin-bottom: 15px !important;
+        font-size: 13px !important;
+        line-height: 1.6 !important;
     }
     
     /* Remove all fade animations that hide content */
@@ -309,21 +310,25 @@ get_header();
     }
     
     .blog-description-text {
-        margin-bottom: 20px !important;
-        font-size: 14px !important;
+        margin-bottom: 15px !important;
+        font-size: 13px !important;
     }
     
     /* Reduce font sizes for all blog content */
     .blog-phrase-item p {
-        font-size: 14px !important;
+        font-size: 12px !important;
     }
     
     .blog-phrase-item p:first-child {
-        font-size: 15px !important;
+        font-size: 14px !important;
     }
     
     .blog-description-item p {
-        font-size: 14px !important;
+        font-size: 13px !important;
+    }
+    
+    .blog-phrase-list-container h3 {
+        font-size: 20px !important;
     }
     
     /* Book-section inspired hover effects */
@@ -588,17 +593,43 @@ get_header();
     function forceVisibility() {
         const body = document.querySelector('.blog-details-body');
         if (body) {
-            body.style.cssText += 'opacity: 1 !important; visibility: visible !important; display: block !important;';
+            body.style.setProperty('opacity', '1', 'important');
+            body.style.setProperty('visibility', 'visible', 'important');
+            body.style.setProperty('display', 'block', 'important');
+            body.style.setProperty('animation', 'none', 'important');
+            body.style.setProperty('transform', 'translateY(0)', 'important');
+            
             const allElements = body.querySelectorAll('*');
             allElements.forEach(el => {
-                el.style.cssText += 'opacity: 1 !important; visibility: visible !important;';
+                el.style.setProperty('opacity', '1', 'important');
+                el.style.setProperty('visibility', 'visible', 'important');
+                el.style.setProperty('animation', 'none', 'important');
+                el.style.setProperty('transform', 'translateY(0)', 'important');
             });
         }
         
         // Also force phrase list visibility
-        const phraseContainers = document.querySelectorAll('.blog-phrase-list-container, .blog-phrase-item');
+        const phraseContainers = document.querySelectorAll('.blog-phrase-list-container, .blog-phrase-item, .blog-phrase-list');
         phraseContainers.forEach(el => {
-            el.style.cssText += 'opacity: 1 !important; visibility: visible !important; display: block !important;';
+            el.style.setProperty('opacity', '1', 'important');
+            el.style.setProperty('visibility', 'visible', 'important');
+            el.style.setProperty('display', 'block', 'important');
+            el.style.setProperty('animation', 'none', 'important');
+            el.style.setProperty('transform', 'translateY(0)', 'important');
+            
+            // Also force all children
+            const children = el.querySelectorAll('*');
+            children.forEach(child => {
+                child.style.setProperty('opacity', '1', 'important');
+                child.style.setProperty('visibility', 'visible', 'important');
+            });
+        });
+        
+        // Force all paragraphs
+        document.querySelectorAll('.blog-details-paragraph, .blog-description-text, .blog-description-item').forEach(el => {
+            el.style.setProperty('opacity', '1', 'important');
+            el.style.setProperty('visibility', 'visible', 'important');
+            el.style.setProperty('display', 'block', 'important');
         });
     }
     
@@ -614,6 +645,17 @@ get_header();
     setTimeout(forceVisibility, 100);
     setTimeout(forceVisibility, 500);
     setTimeout(forceVisibility, 1000);
+    setTimeout(forceVisibility, 2000);
+    
+    // Continuous monitoring - run every 200ms for 15 seconds
+    let continuousCount = 0;
+    const continuousInterval = setInterval(function() {
+        forceVisibility();
+        continuousCount++;
+        if (continuousCount >= 75) { // 15 seconds (75 * 200ms)
+            clearInterval(continuousInterval);
+        }
+    }, 200);
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -645,14 +687,25 @@ document.addEventListener('DOMContentLoaded', function() {
             allElements.forEach(el => {
                 el.style.setProperty('opacity', '1', 'important');
                 el.style.setProperty('visibility', 'visible', 'important');
+                // Prevent any script from hiding it
+                if (el.style.opacity === '0' || el.style.visibility === 'hidden') {
+                    el.style.setProperty('opacity', '1', 'important');
+                    el.style.setProperty('visibility', 'visible', 'important');
+                }
             });
         }
         
         // Force phrase list visibility
-        document.querySelectorAll('.blog-phrase-list-container, .blog-phrase-item, .blog-phrase-list').forEach(el => {
+        document.querySelectorAll('.blog-phrase-list-container, .blog-phrase-item, .blog-phrase-list, .blog-phrase-item *').forEach(el => {
             el.style.setProperty('opacity', '1', 'important');
             el.style.setProperty('visibility', 'visible', 'important');
             el.style.setProperty('display', 'block', 'important');
+        });
+        
+        // Force all paragraphs visible
+        document.querySelectorAll('.blog-details-paragraph, .blog-description-item, .blog-description-text').forEach(el => {
+            el.style.setProperty('opacity', '1', 'important');
+            el.style.setProperty('visibility', 'visible', 'important');
         });
     }
     
@@ -661,16 +714,50 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(forceAllVisibility, 500);
     setTimeout(forceAllVisibility, 1000);
     setTimeout(forceAllVisibility, 2000);
+    setTimeout(forceAllVisibility, 3000);
+    setTimeout(forceAllVisibility, 5000);
     
-    // Continuously monitor and fix (runs every 500ms for first 5 seconds)
+    // Continuously monitor and fix (runs every 500ms for first 10 seconds)
     let monitorCount = 0;
     const monitorInterval = setInterval(function() {
         forceAllVisibility();
         monitorCount++;
-        if (monitorCount >= 10) { // Stop after 5 seconds (10 * 500ms)
+        if (monitorCount >= 20) { // Stop after 10 seconds (20 * 500ms)
             clearInterval(monitorInterval);
         }
     }, 500);
+    
+    // Use MutationObserver to watch for any changes that might hide content
+    if ('MutationObserver' in window) {
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'attributes' && (mutation.attributeName === 'style' || mutation.attributeName === 'class')) {
+                    const target = mutation.target;
+                    if (target.classList && (target.classList.contains('blog-details-body') || 
+                        target.classList.contains('blog-details-paragraph') ||
+                        target.closest('.blog-details-body'))) {
+                        // Check if opacity or visibility was changed
+                        const computedStyle = window.getComputedStyle(target);
+                        if (computedStyle.opacity === '0' || computedStyle.visibility === 'hidden') {
+                            target.style.setProperty('opacity', '1', 'important');
+                            target.style.setProperty('visibility', 'visible', 'important');
+                        }
+                    }
+                }
+            });
+        });
+        
+        // Observe the blog-details-body and all its children
+        const body = document.querySelector('.blog-details-body');
+        if (body) {
+            observer.observe(body, {
+                attributes: true,
+                attributeFilter: ['style', 'class'],
+                subtree: true,
+                childList: true
+            });
+        }
+    }
     
     // Add click-to-highlight feature for important notes
     const importantNotes = document.querySelectorAll('.blog-important-note');

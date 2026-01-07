@@ -8156,11 +8156,28 @@ section .text-muted {
     opacity: 1 !important;
     visibility: visible !important;
     display: block !important;
+    animation: none !important;
+    transform: translateY(0) !important;
 }
 
 .blog-details-body * {
     opacity: 1 !important;
     visibility: visible !important;
+    animation: none !important;
+    transform: translateY(0) !important;
+}
+
+.blog-details-paragraph,
+.blog-description-text,
+.blog-phrase-item,
+.blog-phrase-list-container,
+.blog-phrase-list-container *,
+.blog-phrase-item * {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    animation: none !important;
+    transform: translateY(0) !important;
 }
 
 .blog-details-paragraph {
