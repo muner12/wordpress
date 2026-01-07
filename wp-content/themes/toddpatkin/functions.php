@@ -1199,7 +1199,7 @@ function toddpatkin_format_blog_content($content) {
             if ($in_list && !empty($list_items)) {
                 // Close the list - output as regular paragraphs without blue border box
                 foreach ($list_items as $item) {
-                    $formatted .= '<p class="blog-details-paragraph mb-3" style="font-size: 13px; line-height: 1.6; color: #2D2D2D; margin: 0;">' . esc_html($item) . '</p>' . "\n";
+                    $formatted .= '<p class="blog-details-paragraph mb-3" style="font-size: 14px; line-height: 1.6; color: #2D2D2D; margin: 0;">' . esc_html($item) . '</p>' . "\n";
                 }
                 $list_items = array();
                 $in_list = false;
@@ -1255,7 +1255,7 @@ function toddpatkin_format_blog_content($content) {
                         $formatted .= '<div style="display: flex; align-items: flex-start; gap: 12px;">' . "\n";
                         $formatted .= '<div style="flex-shrink: 0; width: 32px; height: 32px; background: linear-gradient(135deg, #275BA7 0%, #1a4a8a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-weight: bold; font-size: 14px; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.3);">' . ($index + 1) . '</div>' . "\n";
                         $formatted .= '<div style="flex: 1;">' . "\n";
-                        $formatted .= '<p style="font-size: 13px; font-weight: 600; color: #275BA7; margin: 0 0 6px 0; line-height: 1.4;">' . esc_html($phrase) . '</p>' . "\n";
+                        $formatted .= '<p style="font-size: 14px; font-weight: 600; color: #275BA7; margin: 0 0 6px 0; line-height: 1.4;">' . esc_html($phrase) . '</p>' . "\n";
                         if (!empty($description)) {
                             $formatted .= '<p style="font-size: 11px; line-height: 1.5; color: #2D2D2D; margin: 0;">' . esc_html($description) . '</p>' . "\n";
                         }
@@ -1269,7 +1269,7 @@ function toddpatkin_format_blog_content($content) {
                 } else {
                     // Regular list - format as styled paragraphs
                     foreach ($list_items as $item) {
-                        $formatted .= '<p class="blog-details-paragraph mb-3" style="font-size: 13px; line-height: 1.6; color: #2D2D2D; margin: 0 0 12px 0; padding-left: 20px; position: relative;">' . "\n";
+                        $formatted .= '<p class="blog-details-paragraph mb-3" style="font-size: 14px; line-height: 1.6; color: #2D2D2D; margin: 0 0 12px 0; padding-left: 20px; position: relative;">' . "\n";
                         $formatted .= '<span style="position: absolute; left: 0; top: 0; color: #275BA7; font-weight: bold; font-size: 18px;">•</span>' . "\n";
                         $formatted .= esc_html($item) . "\n";
                         $formatted .= '</p>' . "\n";
@@ -1303,10 +1303,10 @@ function toddpatkin_format_blog_content($content) {
             // First paragraph gets special treatment - styled like book intro
             if ($first_paragraph) {
                 $formatted .= '<div class="blog-description-item mb-4" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative; margin-bottom: 30px;">' . "\n";
-                $formatted .= '<div class="blog-icon-badge" style="position: absolute; left: -12px; top: 0; width: 24px; height: 24px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 2;">' . "\n";
-                $formatted .= '<i class="fas fa-lightbulb" style="color: #275BA7; font-size: 12px;"></i>' . "\n";
+                $formatted .= '<div class="blog-icon-badge" style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 2; line-height: 1;">' . "\n";
+                $formatted .= '<i class="fas fa-lightbulb" style="color: #275BA7; font-size: 9px; display: flex; align-items: center; justify-content: center; line-height: 1; margin: 0; padding: 0;"></i>' . "\n";
                 $formatted .= '</div>' . "\n";
-                $formatted .= '<p class="blog-description-text mb-0" style="font-size: 13px; line-height: 1.6; color: #2D2D2D; font-weight: 500;">' . esc_html($line) . '</p>' . "\n";
+                $formatted .= '<p class="blog-description-text mb-0" style="font-size: 14px; line-height: 1.6; color: #2D2D2D;">' . esc_html($line) . '</p>' . "\n";
                 $formatted .= '</div>' . "\n";
                 $first_paragraph = false;
             }
@@ -1318,7 +1318,7 @@ function toddpatkin_format_blog_content($content) {
                 $formatted .= '<i class="fas fa-quote-left" style="color: #275BA7; font-size: 18px;"></i>' . "\n";
                 $formatted .= '</div>' . "\n";
                 $formatted .= '<div>' . "\n";
-                $formatted .= '<p class="blog-description-text blog-description-italic mb-0" style="font-size: 13px; line-height: 1.6; color: #2D2D2D; font-style: italic; margin: 0;">' . esc_html($line) . '</p>' . "\n";
+                $formatted .= '<p class="blog-description-text blog-description-italic mb-0" style="font-size: 14px; line-height: 1.6; color: #2D2D2D; font-style: italic; margin: 0;">' . esc_html($line) . '</p>' . "\n";
                 $formatted .= '</div>' . "\n";
                 $formatted .= '</div>' . "\n";
                 $formatted .= '</div>' . "\n";
@@ -1342,10 +1342,10 @@ function toddpatkin_format_blog_content($content) {
                 $icon_type = ($paragraph_count % 2 == 0) ? 'fa-heart' : 'fa-lightbulb';
                 
                 $formatted .= '<div class="blog-description-item mb-4 blog-paragraph-interactive" style="padding-left: 24px; border-left: 3px solid ' . $border_color . '; position: relative; transition: all 0.3s ease;">' . "\n";
-                $formatted .= '<div class="blog-icon-badge" style="position: absolute; left: -12px; top: 0; width: 24px; height: 24px; background: ' . $icon_bg . '; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(' . ($paragraph_count % 2 == 0 ? '39, 91, 167' : '255, 193, 7') . ', 0.4); z-index: 2; transition: all 0.3s ease;">' . "\n";
-                $formatted .= '<i class="fas ' . $icon_type . '" style="color: ' . $icon_color . '; font-size: 12px;"></i>' . "\n";
+                $formatted .= '<div class="blog-icon-badge" style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: ' . $icon_bg . '; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(' . ($paragraph_count % 2 == 0 ? '39, 91, 167' : '255, 193, 7') . ', 0.4); z-index: 2; transition: all 0.3s ease; line-height: 1;">' . "\n";
+                $formatted .= '<i class="fas ' . $icon_type . '" style="color: ' . $icon_color . '; font-size: 9px; display: flex; align-items: center; justify-content: center; line-height: 1; margin: 0; padding: 0;"></i>' . "\n";
                 $formatted .= '</div>' . "\n";
-                $formatted .= '<p class="blog-description-text mb-0" style="font-size: 13px; line-height: 1.6; color: #2D2D2D; margin: 0;">' . esc_html($line) . '</p>' . "\n";
+                $formatted .= '<p class="blog-description-text mb-0" style="font-size: 14px; line-height: 1.6; color: #2D2D2D; margin: 0;">' . esc_html($line) . '</p>' . "\n";
                 $formatted .= '</div>' . "\n";
             }
         }
@@ -1391,7 +1391,7 @@ function toddpatkin_format_blog_content($content) {
                 $formatted .= '<div style="display: flex; align-items: flex-start; gap: 12px;">' . "\n";
                 $formatted .= '<div style="flex-shrink: 0; width: 32px; height: 32px; background: linear-gradient(135deg, #275BA7 0%, #1a4a8a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-weight: bold; font-size: 14px;">' . ($index + 1) . '</div>' . "\n";
                 $formatted .= '<div style="flex: 1;">' . "\n";
-                $formatted .= '<p style="font-size: 13px; font-weight: 600; color: #275BA7; margin: 0 0 6px 0;">' . esc_html($phrase) . '</p>' . "\n";
+                $formatted .= '<p style="font-size: 14px; font-weight: 600; color: #275BA7; margin: 0 0 6px 0;">' . esc_html($phrase) . '</p>' . "\n";
                 if (!empty($description)) {
                     $formatted .= '<p style="font-size: 11px; line-height: 1.5; color: #2D2D2D; margin: 0;">' . esc_html($description) . '</p>' . "\n";
                 }

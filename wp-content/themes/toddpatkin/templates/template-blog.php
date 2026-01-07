@@ -198,7 +198,7 @@ get_header();
                 <div class="col-12 col-md-4">
                     <div class="card shadow-sm h-100 blog-card">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_2.png" class="card-img-top blog-card-img"
-                            alt="5 Things Your Employees Are Dying to Hear from You">
+                            alt="Making Mother's Day Meaningful">
                         <div class="card-body p-3">
                         <div class="d-flex align-items-center mb-2 flex-wrap">
                                 <span class="badge d-flex align-items-center" style="padding: 4px 8px; font-size: 12px; white-space: nowrap;">
@@ -206,11 +206,11 @@ get_header();
                                     <span style="color: #275BA7; font-weight: 500;">Blog</span>
                                 </span>
                             </div>
-                            <h4 class="card-title fw-bold mb-2">5 Things Your Employees Are Dying to Hear from You</h4>
+                            <h4 class="card-title fw-bold mb-2">Making Mother's Day Meaningful</h4>
                             <p class="card-text text-muted mb-3">
                             <?php 
                             $blog2_excerpt = toddpatkin_get_blog_excerpt(2, 30);
-                            echo $blog2_excerpt ? esc_html($blog2_excerpt) : 'Business leaders and owners: What were your last 10 or 15 employee conversations like? Chances are, they included phrases like, "I need you to finish that projection by the end of the day," or, "I\'m putting you on the Brown...';
+                            echo $blog2_excerpt ? esc_html($blog2_excerpt) : 'In case you haven\'t checked your calendar recently, Mother\'s Day is coming up: Sunday, May 12th, to be exact. What are your plans? Are you going to send some flowers or a card, chat with your mom on the phone...';
                             ?>
                             </p>
                             <a href="<?php echo esc_url(home_url('/blog/blog-2')); ?>" class="btn btn-sm" style="background-color: transparent; border: 2px solid #FAD30C;  border-radius: 8px;"><span class="btn-content">Read More</span></a>

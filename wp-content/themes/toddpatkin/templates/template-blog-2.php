@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Blog 2 - The Quiet Time Revolution
+ * Template Name: Blog 2 - Making Mother's Day Meaningful
  */
 get_header();
 ?>
@@ -243,6 +243,9 @@ get_header();
         transform: translateY(0) !important;
         animation: none !important;
         visibility: visible !important;
+        padding-left: 15px !important;
+        padding-right: 8px !important;
+        overflow-x: visible !important;
     }
     
     .blog-details-paragraph {
@@ -253,7 +256,7 @@ get_header();
         transform: translateY(0) !important;
         visibility: visible !important;
         margin-bottom: 15px !important;
-        font-size: 13px !important;
+        font-size: 14px !important;
         line-height: 1.6 !important;
     }
     
@@ -307,16 +310,51 @@ get_header();
     /* Better paragraph spacing */
     .blog-description-item {
         margin-bottom: 25px !important;
+        padding-left: 24px !important;
+        border-left: 3px solid #FFC107 !important;
+        position: relative !important;
     }
     
     .blog-description-text {
         margin-bottom: 15px !important;
-        font-size: 13px !important;
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        color: #2D2D2D !important;
     }
     
-    /* Reduce font sizes for all blog content */
+    /* Icon badge alignment - center on border */
+    .blog-icon-badge {
+        position: absolute !important;
+        left: -9.5px !important;
+        top: -1px !important;
+        width: 20px !important;
+        height: 20px !important;
+        background: #FFC107 !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4) !important;
+        z-index: 2 !important;
+        line-height: 1 !important;
+    }
+    
+    .blog-icon-badge i {
+        color: #275BA7 !important;
+        font-size: 9px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    /* Font sizes for all blog content */
     .blog-phrase-item p {
-        font-size: 12px !important;
+        font-size: 14px !important;
     }
     
     .blog-phrase-item p:first-child {
@@ -324,7 +362,16 @@ get_header();
     }
     
     .blog-description-item p {
-        font-size: 13px !important;
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+    }
+    
+    /* Standard paragraph styling */
+    .blog-details-paragraph {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        color: #2D2D2D !important;
+        margin-bottom: 15px !important;
     }
     
     .blog-phrase-list-container h3 {
@@ -781,7 +828,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <span>/</span>
             <a href="<?php echo esc_url(home_url('/blog')); ?>">Blog</a>
             <span>/</span>
-            <span>The Quiet Time Revolution</span>
+            <span>Making Mother's Day Meaningful</span>
         </nav>
 
         <!-- Blog Post Content -->
@@ -942,16 +989,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="card shadow-sm h-100 blog-card">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_2.png"
                                 class="card-img-top blog-card-img"
-                                alt="The Quiet Time Revolution">
+                                alt="Making Mother's Day Meaningful">
                             <div class="card-body p-3">
                                 <div class="d-flex align-items-center mb-2">
                                     <span class="badge">Blogs</span>
                                 </div>
                                 <h4 class="card-title fw-bold mb-2">
-                                    The Quiet Time Revolution: Why Doing Nothing Changed Everything
+                                    Making Mother's Day Meaningful
                                 </h4>
                                 <p class="card-text text-muted mb-3">
-                                    As a chronic achiever and perfectionist, the concept of 'quiet time' seemed impossible—and unnecessary. But learning to be still became one of the most transformative...
+                                    In case you haven't checked your calendar recently, Mother's Day is coming up: Sunday, May 12th, to be exact. What are your plans? Are you going to send some flowers or a card, chat with your mom on the phone...
                                 </p>
                                 <span class="btn btn-warning btn-sm"><span class="btn-content">Read More</span></span>
                             </div>

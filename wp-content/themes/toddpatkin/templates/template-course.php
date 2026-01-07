@@ -5,6 +5,49 @@
  */
 get_header();
 ?>
+<style>
+    /* Override course banner section for video iframe */
+    .course-banner-section {
+        height: auto !important;
+        overflow: visible !important;
+        min-height: auto !important;
+    }
+    
+    .course-video-wrapper {
+        overflow: visible !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+    }
+    
+    .course-video-wrapper > div {
+        max-height: 500px !important;
+    }
+    
+    .course-video-wrapper iframe {
+        display: block !important;
+        max-height: 500px !important;
+    }
+    
+    @media (max-width: 768px) {
+        .course-video-wrapper > div {
+            max-height: 400px !important;
+        }
+        
+        .course-video-wrapper iframe {
+            max-height: 400px !important;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .course-video-wrapper > div {
+            max-height: 300px !important;
+        }
+        
+        .course-video-wrapper iframe {
+            max-height: 300px !important;
+        }
+    }
+</style>
 <!-- Courses Listing Section -->
 <section class="courses-listing-section py-5">
     <div class="container">
@@ -21,9 +64,20 @@ get_header();
         </div>
 
         <!-- Course Banner Section -->
-        <section class="course-banner-section mb-5">
-            <div class="">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Banner.webp" alt="Course Banner" class="course-banner-image">
+        <section class="course-banner-section mb-5" style="height: auto; overflow: visible;">
+            <div class="" style="display: flex; justify-content: center; align-items: center;">
+                <div class="course-video-wrapper" style="position: relative; width: 100%; max-width: 1200px; margin: 0 auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); overflow: visible;">
+                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; max-height: 500px; height: 0;">
+                        <iframe 
+                            id="courseVideoIframe"
+                            src="https://www.veed.io/embed/6612ef59-46f4-4f09-955d-e3d14eca05e9?watermark=0&color=default&sharing=0&title=0"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; max-height: 500px; border: none; border-radius: 12px; display: block;"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
                 <!-- <div class="course-banner-content">
                     <div class="course-banner-featuring">FEATURING</div>
                     <h2 class="course-banner-title">
