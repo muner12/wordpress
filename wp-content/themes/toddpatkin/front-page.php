@@ -169,7 +169,7 @@
                 </div>
             </div>
             <div class="w-100  text-center py-2 mt-5 mb-5">
-                <a href="#" class="btn btn-warning video-section-btn"><span class="btn-content">View More Featuring
+                <a href="<?php echo esc_url( home_url( '/podcast' ) ); ?>" class="btn btn-warning video-section-btn"><span class="btn-content">View More Featuring
                         Todd</span></a>
             </div>
         </div>
