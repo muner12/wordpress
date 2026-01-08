@@ -74,11 +74,36 @@ get_header();
     /* Specific styling for podcast-4 image */
     .podcast-page-section .podcast-card img[src*="podcast_4.webp"],
     .podcast-page-section .podcast-card img[alt*="12 Steps to Happiness"] {
-        height: 350px !important;
+        height: 320px !important;
         object-fit: contain !important;
         object-position: center;
-        width: 100%;
-        display: block;
+        display: block !important;
+        border-radius: 12px !important;
+        -webkit-border-radius: 12px !important;
+        -moz-border-radius: 12px !important;
+    }
+    
+    /* Ensure the container clips the image properly */
+    .podcast-page-section .podcast-card > div[style*="overflow: hidden"] {
+        border-radius: 12px !important;
+        -webkit-border-radius: 12px !important;
+        -moz-border-radius: 12px !important;
+    }
+    
+    /* Force image to respect container border-radius */
+    .podcast-page-section .podcast-card > div[style*="overflow: hidden"] {
+        border-radius: 12px !important;
+        -webkit-border-radius: 12px !important;
+        -moz-border-radius: 12px !important;
+    }
+    
+    .podcast-page-section .podcast-card > div[style*="overflow: hidden"] img {
+        border-radius: 12px !important;
+        -webkit-border-radius: 12px !important;
+        -moz-border-radius: 12px !important;
+        overflow: hidden !important;
+        clip-path: inset(0 round 12px) !important;
+        -webkit-clip-path: inset(0 round 12px) !important;
     }
     
     /* Add padding to the card container for podcast-4 */
@@ -165,6 +190,7 @@ get_header();
 
             <!-- Row 2: Two Cards -->
             <div class="row g-4">
+                <!-- Podcast Card 3 -->
                 <div class="col-12 col-md-6">
                     <a href="<?php echo esc_url( home_url( '/podcast/podcast-3' ) ); ?>" class="text-decoration-none">
                         <div class="card border-0 shadow-sm overflow-hidden position-relative podcast-card">
@@ -191,12 +217,24 @@ get_header();
                 <!-- Podcast Card 4 -->
                 <div class="col-12 col-md-6">
                     <a href="<?php echo esc_url( home_url( '/podcast/podcast-4' ) ); ?>" class="text-decoration-none">
-                        <div class="card border-0 shadow-sm position-relative podcast-card" style="overflow: visible; padding: 0 15px;">
-                            <div style="overflow: hidden; border-radius: 8px; margin: 0 -15px;">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast_4.webp" class="img-fluid w-100 podcast-card-image" alt="12 Steps to Happiness" style="padding: 0 15px; box-sizing: border-box;">
-                            </div>
-                            <div class="position-absolute bottom-0 start-0 p-4 text-white w-100 podcast-card-overlay" style="left: 15px; right: 15px; width: calc(100% - 30px);">
-                                <!-- <h5 class="fw-bold mb-2 podcast-card-title">12 STEPS TO HAPPINESS</h5> -->
+                        <div class="card border-0 shadow-sm overflow-hidden position-relative podcast-card">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast_4.webp" 
+                            class="" alt="Happiness isn't what you think">
+                            
+                            <!-- Title Overlay -->
+                            <!-- <div class="position-absolute top-0 start-0 p-4 text-white w-100">
+                                <h5 class="fw-bold mb-1 podcast-card-title-overlay">
+                                    <span class="text-white">HAPPINESS ISN'T</span><br>
+                                    <span class="podcast-title-orange">WHAT YOU THINK</span>
+                                </h5>
+                            </div> -->
+                            <!-- Bottom Content -->
+                            <div class="position-absolute bottom-0 start-0 p-4 text-white w-100 podcast-card-overlay">
+                                <!-- <h5 class="fw-bold mb-2 podcast-card-title">CRACK THE HAPPINESS CODE</h5> -->
+                                <!-- Greg Voisen Badge -->
+                                <div class="position-absolute bottom-0 end-0 p-3">
+                                    <!-- <span class="podcast-guest-name">GREG VOISEN</span> -->
+                                </div>
                             </div>
                         </div>
                     </a>

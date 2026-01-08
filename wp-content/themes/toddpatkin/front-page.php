@@ -109,7 +109,7 @@
                 <!-- Video -->
                 <div class="col-12 col-lg-6  order-3 order-lg-1 d-flex justify-content-end  justify-content-lg-end align-items-end py-3 px-3 ">
                     <div class="" style="cursor: pointer; display: inline-block; position: relative; width: 100%; max-width: 100%;" data-bs-toggle="modal" data-bs-target="#videoModal">
-                        <div class="video-thumbnail position-relative d-flex justify-content-end">
+                        <div class="video-thumbnail position-relative d-flex justify-content-center">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/todd_at_tdx.png" alt="Todd Speaking at TEDx" class="img-fluid" style="border-radius: 20px; object-fit: contain; max-height: 300px; margin-left: 30px; width: auto; max-width: 100%;">
                             <!-- Play Icon Overlay -->
                             <div class="video-play-overlay position-absolute top-50 start-50 translate-middle" style="width: 80px; height: 80px; background: linear-gradient(135deg, #FFC107 0%, #FFD700 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(255, 193, 7, 0.5); transition: all 0.3s ease; z-index: 10;">
