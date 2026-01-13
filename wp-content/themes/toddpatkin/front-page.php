@@ -1330,10 +1330,14 @@
                                         <iframe 
                                             id="courseVideoIframe"
                                             src="" 
-                                            title="Course Preview"
-                                            frameborder="0" 
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                            width="744"
+                                            height="504"
+                                            frameborder="0"
+                                            title="Ateeb Elahi's Video - Jan 12, 2026"
+                                            webkitallowfullscreen
+                                            mozallowfullscreen
                                             allowfullscreen
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                             class="w-100"
                                             style="border-radius: 12px;">
                                         </iframe>

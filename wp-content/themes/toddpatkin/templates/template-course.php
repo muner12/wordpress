@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Course video thumbnail click handler
     const courseVideoThumbnail = document.getElementById('courseVideoThumbnail');
     const courseVideoIframe = document.getElementById('courseVideoIframe');
-    const courseVideoUrl = 'https://www.veed.io/embed/08363b7e-a955-45c0-accf-5469d90516f5';
+    const courseVideoUrl = 'https://www.veed.io/embed/08363b7e-a955-45c0-accf-5469d90516f5?watermark=0&color=&sharing=0&title=0';
     
     function playCourseVideo(e) {
         if (e) {
@@ -361,9 +361,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     <iframe 
                         id="courseVideoIframe"
                         src=""
+                        width="744"
+                        height="504"
+                        frameborder="0"
+                        title="Ateeb Elahi's Video - Jan 12, 2026"
+                        webkitallowfullscreen
+                        mozallowfullscreen
+                        allowfullscreen
                         style="display: none; visibility: hidden; width: 0; height: 0; border: none; margin: 0; padding: 0; position: absolute; top: -9999px; left: -9999px; opacity: 0; pointer-events: none;"
                         allow="autoplay; fullscreen; picture-in-picture"
-                        allowfullscreen
                         loading="lazy">
                     </iframe>
                 </div>
