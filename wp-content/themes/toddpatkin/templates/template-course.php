@@ -378,6 +378,48 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </section>
 
+        <!-- Course Text Content Section -->
+        <section class="mb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="course-text-content">
+                            <!-- Introduction Badge -->
+                            <div class="course-intro-badge d-inline-flex align-items-center gap-2 px-3 py-2 mb-4" style="background: linear-gradient(135deg, #FAD30C 0%, #FFD54F 100%); border-radius: 8px; box-shadow: 0 2px 8px rgba(250, 211, 12, 0.3);">
+                                <i class="fas fa-graduation-cap" style="color: #1a1a1a; font-size: 16px;"></i>
+                                <span style="color: #1a1a1a; font-weight: 600; font-size: 14px; letter-spacing: 0.5px;">12-WEEK MASTERCLASS PROGRAM</span>
+                            </div>
+                            
+                            <!-- Main Description with Icon -->
+                            <div class="course-description-item mb-4" style="padding-left: 28px; border-left: 3px solid #FAD30C; position: relative;">
+                                <div class="course-icon-badge" style="position: absolute; left: -14px; top: 0; width: 28px; height: 28px; background: #FAD30C; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(250, 211, 12, 0.4);">
+                                    <i class="fas fa-play-circle" style="color: #1a1a1a; font-size: 14px;"></i>
+                                </div>
+                                <p class="course-description-text mb-0" style="font-size: 16px; line-height: 1.75; color: #000000 !important; text-align: justify;">Transform your relationship with stress, anxiety, and negative thinking through Todd's comprehensive 12-week video course. Based on the proven program that helped him recover from complete breakdown and refined through years of helping others, this MasterClass takes you step-by-step through practical strategies for building sustainable happiness.</p>
+                            </div>
+                            
+                            <!-- Description with Icon - Same styling as main description -->
+                            <div class="course-description-item mb-4" style="padding-left: 28px; border-left: 3px solid #FAD30C; position: relative;">
+                                <div class="course-icon-badge" style="position: absolute; left: -14px; top: 0; width: 28px; height: 28px; background: #FAD30C; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(250, 211, 12, 0.4);">
+                                    <i class="fas fa-chart-line" style="color: #1a1a1a; font-size: 14px;"></i>
+                                </div>
+                                <p class="course-description-text mb-0" style="font-size: 16px; line-height: 1.75; color: #000000 !important; text-align: justify;">Each week builds on the last, creating sustainable change rather than quick fixes. You'll discover how to identify and break free from the patterns that keep you stuck in cycles of worry and self-doubt. Through Todd's personal stories and evidence-based techniques, you'll learn to reframe your thoughts, manage overwhelming emotions, and develop <strong style="color: #FAD30C; font-weight: 600;">resilience that lasts</strong>.</p>
+                            </div>
+                            
+                            <!-- Final CTA Text -->
+                            <div class="course-cta-text-box p-3 mb-0" style="background: linear-gradient(135deg, rgba(250, 211, 12, 0.15) 0%, rgba(250, 211, 12, 0.05) 100%); border-left: 4px solid #FAD30C; border-radius: 8px;">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="fas fa-rocket" style="color: #FAD30C; font-size: 18px;"></i>
+                                    <span style="color: #FAD30C; font-weight: 600; font-size: 15px; letter-spacing: 0.5px;">YOUR JOURNEY TO HAPPINESS STARTS HERE</span>
+                                </div>
+                                <p class="course-description-text mb-0" style="font-size: 15px; line-height: 1.7; color: #000000 !important; margin: 0; text-align: justify;">You'll explore practical exercises designed to help you implement these strategies in your daily life, making real progress week by week.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         
         <!-- Course Cards Grid -->
         <div class="courses-listing-grid">

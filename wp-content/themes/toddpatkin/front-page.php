@@ -152,7 +152,7 @@
                                     </div>
                                     <!-- Desktop text block -->
                                     <div class="d-none d-lg-block">
-                                        <div class="video-text-content" style="max-height: 280px; overflow-y: auto; overflow-x: visible; padding-left: 15px; padding-right: 8px;">
+                                        <div class="video-text-content" style="max-height: 280px; overflow-y: auto; overflow-x: visible; padding-left: 15px; padding-right: 70px;">
                                             <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
                                                 <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
                                                     <i class="fas fa-quote-left" style="color: #275BA7; font-size: 9px;"></i>
@@ -248,7 +248,7 @@
                                     </div>
                                     <!-- Desktop text block -->
                                     <div class="d-none d-lg-block">
-                                        <div class="video-text-content" style="max-height: 280px; overflow-y: auto; overflow-x: visible; padding-left: 15px; padding-right: 8px;">
+                                        <div class="video-text-content" style="max-height: 280px; overflow-y: auto; overflow-x: visible; padding-left: 15px; padding-right: 70px;">
                                             <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
                                                 <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
                                                     <i class="fas fa-quote-left" style="color: #275BA7; font-size: 9px;"></i>
@@ -344,7 +344,7 @@
                                     </div>
                                     <!-- Desktop text block -->
                                     <div class="d-none d-lg-block">
-                                        <div class="video-text-content" style="max-height: 280px; overflow-y: auto; overflow-x: visible; padding-left: 15px; padding-right: 8px;">
+                                        <div class="video-text-content" style="max-height: 280px; overflow-y: auto; overflow-x: visible; padding-left: 15px; padding-right: 70px;">
                                             <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
                                                 <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
                                                     <i class="fas fa-quote-left" style="color: #275BA7; font-size: 9px;"></i>
@@ -1451,7 +1451,7 @@
                                     <h5 class="course-episode-title">Week 1: Focus on: Movement</h5>
                                     <p class="course-episode-description">Congratulations, graduates! (And parents of graduates, too.) As you gaze with pride on your diplomas, I'm sure you're also thinking about what comes next. No</p>
                                 </div>
-                                <a href="<?php echo esc_url( home_url( '/course/module-1' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Purchase Now <i class="fas fa-arrow-right text-white"></i></a>
+                                <a href="<?php echo esc_url( home_url( '/course/module-1' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Purchase Now <i class="fas fa-arrow-right text-black"></i></a>
                             </div>
                         </div>
                     </div>
