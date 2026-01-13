@@ -764,20 +764,40 @@ document.addEventListener('DOMContentLoaded', function() {
     const courseVideoThumbnail = document.getElementById('courseVideoThumbnail');
     const courseVideoIframeWrapper = document.getElementById('courseVideoIframeWrapper');
     const courseVideoIframe = document.getElementById('courseVideoIframe');
-    const courseVideoUrl = 'https://www.veed.io/embed/08363b7e-a955-45c0-accf-5469d90516f5?watermark=0&color=&sharing=0&title=0';
+    const courseVideoPlayOverlay = document.querySelector('.course-video-play-overlay');
+    const courseVideoUrl = 'https://www.veed.io/embed/08363b7e-a955-45c0-accf-5469d90516f5?watermark=0&color=&sharing=0&title=0&autoplay=1';
     
-    if (courseVideoThumbnail && courseVideoIframeWrapper && courseVideoIframe) {
-        // Handle thumbnail click
-        courseVideoThumbnail.addEventListener('click', function() {
-            // Hide thumbnail
-            courseVideoThumbnail.style.display = 'none';
-            
-            // Show iframe wrapper
-            courseVideoIframeWrapper.style.display = 'block';
-            
-            // Load video
-            courseVideoIframe.src = courseVideoUrl;
-        });
+    function playCourseVideo(e) {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
+        if (!courseVideoThumbnail || !courseVideoIframeWrapper || !courseVideoIframe) {
+            return;
+        }
+        
+        // Hide thumbnail
+        courseVideoThumbnail.style.display = 'none';
+        
+        // Show iframe wrapper
+        courseVideoIframeWrapper.style.display = 'block';
+        
+        // Set autoplay permissions
+        courseVideoIframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        
+        // Load video with autoplay
+        courseVideoIframe.src = courseVideoUrl;
+    }
+    
+    // Handle thumbnail click
+    if (courseVideoThumbnail) {
+        courseVideoThumbnail.addEventListener('click', playCourseVideo);
+    }
+    
+    // Handle play icon overlay click (in case it's separate)
+    if (courseVideoPlayOverlay) {
+        courseVideoPlayOverlay.addEventListener('click', playCourseVideo);
     }
     
     // Keep modal handler for other potential uses (if modal exists)

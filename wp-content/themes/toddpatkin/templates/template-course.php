@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Course video thumbnail click handler
     const courseVideoThumbnail = document.getElementById('courseVideoThumbnail');
     const courseVideoIframe = document.getElementById('courseVideoIframe');
-    const courseVideoUrl = 'https://www.veed.io/embed/08363b7e-a955-45c0-accf-5469d90516f5?watermark=0&color=&sharing=0&title=0';
+    const courseVideoUrl = 'https://www.veed.io/embed/08363b7e-a955-45c0-accf-5469d90516f5?watermark=0&color=&sharing=0&title=0&autoplay=1';
     
     function playCourseVideo(e) {
         if (e) {
@@ -309,11 +309,11 @@ document.addEventListener('DOMContentLoaded', function() {
             courseVideoIframe.style.setProperty('opacity', '1', 'important');
             courseVideoIframe.style.setProperty('pointer-events', 'auto', 'important');
             
+            // Set autoplay permissions
+            courseVideoIframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+            
             // Set src to load video with autoplay
             courseVideoIframe.src = courseVideoUrl;
-            
-            // Force iframe to load and play automatically
-            courseVideoIframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
             
             console.log('Iframe src set to:', courseVideoUrl);
             console.log('Iframe display:', courseVideoIframe.style.display);
@@ -369,7 +369,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         mozallowfullscreen
                         allowfullscreen
                         style="display: none; visibility: hidden; width: 0; height: 0; border: none; margin: 0; padding: 0; position: absolute; top: -9999px; left: -9999px; opacity: 0; pointer-events: none;"
-                        allow="autoplay; fullscreen; picture-in-picture"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         loading="lazy">
                     </iframe>
                 </div>
