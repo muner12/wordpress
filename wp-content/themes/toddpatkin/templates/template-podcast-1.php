@@ -73,7 +73,7 @@ get_header();
                     <div class="col-12 col-md-6">
                         <a href="<?php echo esc_url( home_url( '/podcast/podcast-2' ) ); ?>" class="text-decoration-none">
                             <div class="card border-0 shadow-sm overflow-hidden position-relative podcast-card">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast-2.png" class="img-fluid w-100 podcast-card-image" alt="Helping others helps you">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast_2.png" class="img-fluid w-100 podcast-card-image" alt="Helping others helps you">
                                 <!-- Episode Badge Overlay -->
                                 <div class="position-absolute top-0 end-0 p-3">
                                     <!-- <span class="podcast-episode-badge">EPISODE 412</span> -->
@@ -94,7 +94,7 @@ get_header();
                     <div class="col-12 col-md-6">
                         <a href="<?php echo esc_url( home_url( '/podcast/podcast-3' ) ); ?>" class="text-decoration-none">
                             <div class="card border-0 shadow-sm overflow-hidden position-relative podcast-card">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast-3.png" class="img-fluid w-100 podcast-card-image" alt="Happiness isn't what you think">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast_3.png" class="img-fluid w-100 podcast-card-image" alt="Happiness isn't what you think">
                                 <!-- Title Overlay -->
                                 <!-- <div class="position-absolute top-0 start-0 p-4 text-white w-100">
                                     <h5 class="fw-bold mb-1 podcast-card-title-overlay">
@@ -120,7 +120,7 @@ get_header();
                     <div class="col-12 col-md-6">
                         <a href="<?php echo esc_url( home_url( '/podcast/podcast-4' ) ); ?>" class="text-decoration-none">
                             <div class="card border-0 shadow-sm overflow-hidden position-relative podcast-card">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast_4.webp" class="img-fluid w-100 podcast-card-image" alt="12 Steps to Happiness">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/podcast_4.png" class="img-fluid w-100 podcast-card-image" alt="12 Steps to Happiness">
                                 <div class="position-absolute bottom-0 start-0 p-4 text-white w-100 podcast-card-overlay">
                                     <!-- <h5 class="fw-bold mb-2 podcast-card-title">12 STEPS TO HAPPINESS</h5> -->
                                 </div>

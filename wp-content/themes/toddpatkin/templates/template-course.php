@@ -15,36 +15,321 @@ get_header();
     
     .course-video-wrapper {
         overflow: hidden !important;
+        width: 100% !important;
         max-width: 1200px !important;
         margin: 0 auto !important;
         line-height: 0 !important;
         height: auto !important;
+        min-height: 500px !important;
+        position: relative !important;
     }
     
+    /* Ensure thumbnail and iframe have same width as container */
+    .course-video-wrapper .course-video-thumbnail,
     .course-video-wrapper iframe {
-        display: block !important;
         width: 100% !important;
-        height: 500px !important;
-        max-height: 500px !important;
+        max-width: 100% !important;
+        display: block !important;
         margin: 0 !important;
         padding: 0 !important;
+    }
+    
+    /* Thumbnail specific styles */
+    .course-video-wrapper .course-video-thumbnail {
+        height: 500px !important;
+        max-height: 500px !important;
+        object-fit: contain !important;
+        object-position: center !important;
+        background-color: #000 !important;
+    }
+    
+    /* Iframe specific styles */
+    .course-video-wrapper iframe {
+        height: 500px !important;
+        max-height: 500px !important;
         border: none !important;
     }
     
+    /* Hide iframe completely when it has no src or is empty - takes no space */
+    #courseVideoIframe:not([src]),
+    #courseVideoIframe[src=""] {
+        display: none !important;
+        visibility: hidden !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        height: 0 !important;
+        max-height: 0 !important;
+        width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* When iframe has src and is visible - JavaScript will control via setProperty */
+    /* CSS rule removed to allow JavaScript to fully control visibility */
+    
     @media (max-width: 768px) {
-        .course-video-wrapper iframe {
+        .course-video-wrapper {
+            min-height: 400px !important;
+        }
+        .course-video-wrapper iframe,
+        .course-video-wrapper .course-video-thumbnail {
             height: 400px !important;
             max-height: 400px !important;
         }
     }
     
     @media (max-width: 576px) {
-        .course-video-wrapper iframe {
+        .course-video-wrapper {
+            min-height: 300px !important;
+        }
+        .course-video-wrapper iframe,
+        .course-video-wrapper .course-video-thumbnail {
             height: 300px !important;
             max-height: 300px !important;
         }
     }
+    
+    /* Video wrapper positioning */
+    .course-video-wrapper {
+        position: relative !important;
+    }
+    
+    /* Container maintains consistent width for both thumbnail and iframe */
+    .course-video-wrapper {
+        min-height: 500px !important;
+    }
+    
+    @media (max-width: 768px) {
+        .course-video-wrapper {
+            min-height: 400px !important;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .course-video-wrapper {
+            min-height: 300px !important;
+        }
+    }
+    
+    /* Force course cards to be visible immediately - override ALL animation classes */
+    .courses-listing-section,
+    .courses-listing-section *,
+    .courses-listing-grid,
+    .courses-listing-grid *,
+    .course-episode-card,
+    .course-episode-card *,
+    .course-episode-image-wrapper,
+    .course-episode-content,
+    .course-episode-title,
+    .course-episode-description,
+    .course-episode-button {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    /* Override all scroll animation classes for course section */
+    .courses-listing-section .scroll-fade-in,
+    .courses-listing-section .scroll-scale-in,
+    .courses-listing-section .scroll-slide-left,
+    .courses-listing-section .scroll-slide-right,
+    .course-episode-card.scroll-fade-in,
+    .course-episode-card.scroll-scale-in,
+    .course-episode-card.scroll-slide-left,
+    .course-episode-card.scroll-slide-right {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    /* Ensure row maintains Bootstrap flex display */
+    .courses-listing-section .row {
+        display: flex !important;
+    }
 </style>
+
+<script>
+// Force course cards visibility immediately - run before DOMContentLoaded
+(function() {
+    function forceCourseCardVisibility() {
+        const courseCards = document.querySelectorAll('.course-episode-card');
+        courseCards.forEach(card => {
+            card.style.setProperty('opacity', '1', 'important');
+            card.style.setProperty('visibility', 'visible', 'important');
+            card.style.setProperty('transform', 'none', 'important');
+            card.style.setProperty('animation', 'none', 'important');
+            card.style.setProperty('transition', 'none', 'important');
+            card.classList.remove('scroll-fade-in');
+            card.classList.remove('scroll-scale-in');
+            card.classList.remove('scroll-slide-left');
+            card.classList.remove('scroll-slide-right');
+            card.classList.remove('animated');
+            // Also force children
+            card.querySelectorAll('*').forEach(child => {
+                child.style.setProperty('opacity', '1', 'important');
+                child.style.setProperty('visibility', 'visible', 'important');
+                child.style.setProperty('transform', 'none', 'important');
+                child.style.setProperty('animation', 'none', 'important');
+                child.style.setProperty('transition', 'none', 'important');
+            });
+        });
+    }
+    
+    // Run immediately
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', forceCourseCardVisibility);
+    } else {
+        forceCourseCardVisibility();
+    }
+    
+    // Run multiple times to catch late-loading content
+    setTimeout(forceCourseCardVisibility, 0);
+    setTimeout(forceCourseCardVisibility, 50);
+    setTimeout(forceCourseCardVisibility, 100);
+    setTimeout(forceCourseCardVisibility, 200);
+    setTimeout(forceCourseCardVisibility, 500);
+    setTimeout(forceCourseCardVisibility, 1000);
+    
+    // Continuous monitoring - run every 200ms for 10 seconds
+    let continuousCount = 0;
+    const continuousInterval = setInterval(function() {
+        forceCourseCardVisibility();
+        continuousCount++;
+        if (continuousCount >= 50) { // 10 seconds (50 * 200ms)
+            clearInterval(continuousInterval);
+        }
+    }, 200);
+    
+    // Use MutationObserver to catch any dynamic changes
+    document.addEventListener('DOMContentLoaded', function() {
+        const courseSection = document.querySelector('.courses-listing-section');
+        if (courseSection && 'MutationObserver' in window) {
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && (mutation.attributeName === 'style' || mutation.attributeName === 'class')) {
+                        const target = mutation.target;
+                        if (target.closest('.courses-listing-section')) {
+                            const computedStyle = window.getComputedStyle(target);
+                            if (computedStyle.opacity === '0' || computedStyle.visibility === 'hidden' || 
+                                target.classList.contains('scroll-fade-in') || 
+                                target.classList.contains('scroll-scale-in')) {
+                                target.style.setProperty('opacity', '1', 'important');
+                                target.style.setProperty('visibility', 'visible', 'important');
+                                target.style.setProperty('transform', 'none', 'important');
+                                target.style.setProperty('animation', 'none', 'important');
+                                target.style.setProperty('transition', 'none', 'important');
+                                target.classList.remove('scroll-fade-in', 'scroll-scale-in', 'scroll-slide-left', 'scroll-slide-right');
+                                target.classList.remove('animated');
+                            }
+                        }
+                    }
+                });
+            });
+            
+            observer.observe(courseSection, {
+                attributes: true,
+                attributeFilter: ['style', 'class'],
+                subtree: true,
+                childList: true
+            });
+        }
+    });
+})();
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Force visibility again after DOM is loaded
+    function forceAllCourseVisibility() {
+        const courseSection = document.querySelector('.courses-listing-section');
+        if (courseSection) {
+            const allCards = courseSection.querySelectorAll('.course-episode-card');
+            allCards.forEach(card => {
+                card.style.setProperty('opacity', '1', 'important');
+                card.style.setProperty('visibility', 'visible', 'important');
+                card.style.setProperty('transform', 'none', 'important');
+                card.style.setProperty('animation', 'none', 'important');
+                card.style.setProperty('transition', 'none', 'important');
+                card.classList.remove('scroll-fade-in', 'scroll-scale-in', 'scroll-slide-left', 'scroll-slide-right');
+                card.classList.add('animated'); // Ensure animated state for visibility
+                
+                // Unobserve from scrollObserver if it exists
+                if (window.scrollObserver) {
+                    window.scrollObserver.unobserve(card);
+                }
+            });
+        }
+    }
+    
+    // Run multiple times
+    setTimeout(forceAllCourseVisibility, 50);
+    setTimeout(forceAllCourseVisibility, 100);
+    setTimeout(forceAllCourseVisibility, 200);
+    setTimeout(forceAllCourseVisibility, 500);
+    setTimeout(forceAllCourseVisibility, 1000);
+    setTimeout(forceAllCourseVisibility, 2000);
+    
+    // Course video thumbnail click handler
+    const courseVideoThumbnail = document.getElementById('courseVideoThumbnail');
+    const courseVideoIframe = document.getElementById('courseVideoIframe');
+    const courseVideoUrl = 'https://www.veed.io/embed/6612ef59-46f4-4f09-955d-e3d14eca05e9?watermark=0&color=default&sharing=0&title=0&autoplay=1';
+    
+    function playCourseVideo(e) {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
+        console.log('playCourseVideo called');
+        console.log('Thumbnail:', courseVideoThumbnail);
+        console.log('Iframe:', courseVideoIframe);
+        
+        if (courseVideoThumbnail && courseVideoIframe) {
+            console.log('All elements found, hiding thumbnail and showing iframe');
+            
+            // Hide thumbnail completely
+            courseVideoThumbnail.style.setProperty('display', 'none', 'important');
+            courseVideoThumbnail.style.setProperty('visibility', 'hidden', 'important');
+            
+            // Show and load iframe - use setProperty with important to override inline styles
+            courseVideoIframe.style.setProperty('display', 'block', 'important');
+            courseVideoIframe.style.setProperty('visibility', 'visible', 'important');
+            courseVideoIframe.style.setProperty('position', 'relative', 'important');
+            courseVideoIframe.style.setProperty('top', '0', 'important');
+            courseVideoIframe.style.setProperty('left', '0', 'important');
+            courseVideoIframe.style.setProperty('width', '100%', 'important');
+            courseVideoIframe.style.setProperty('height', '500px', 'important');
+            courseVideoIframe.style.setProperty('max-height', '500px', 'important');
+            courseVideoIframe.style.setProperty('max-width', '100%', 'important');
+            courseVideoIframe.style.setProperty('opacity', '1', 'important');
+            courseVideoIframe.style.setProperty('pointer-events', 'auto', 'important');
+            
+            // Set src to load video with autoplay
+            courseVideoIframe.src = courseVideoUrl;
+            
+            // Force iframe to load and play automatically
+            courseVideoIframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+            
+            console.log('Iframe src set to:', courseVideoUrl);
+            console.log('Iframe display:', courseVideoIframe.style.display);
+            console.log('Iframe computed display:', window.getComputedStyle(courseVideoIframe).display);
+        } else {
+            console.error('One or more elements not found!');
+        }
+    }
+    
+    // Add click handlers
+    if (courseVideoThumbnail) {
+        courseVideoThumbnail.addEventListener('click', playCourseVideo);
+    }
+    
+});
+</script>
 <!-- Courses Listing Section -->
 <section class="courses-listing-section py-5">
     <div class="container">
@@ -63,11 +348,20 @@ get_header();
         <!-- Course Banner Section -->
         <section class=" mb-5" style="height: auto; overflow: visible;">
             <div class="" style="display: flex; justify-content: center; align-items: center;">
-                <div class="course-video-wrapper border" style="position: relative; width: 100%; max-width: 1200px; margin: 0 auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); overflow: hidden; line-height: 0;">
+                <div class=" border" style="position: relative; width: 100%; max-width: 1200px; margin: 0 auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); overflow: hidden; line-height: 0;">
+                    <!-- Thumbnail Image (shown initially) -->
+                    <img 
+                        id="courseVideoThumbnail"
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/course_t.png" 
+                        alt="Course Preview"
+                        style="width: 100%; max-width: 100%; object-fit:contain; object-position: center; display: block; margin: 0; padding: 0; cursor: pointer;"
+                        class="">
+                    
+                    <!-- Video Iframe (hidden initially - completely removed from layout, takes no space) -->
                     <iframe 
                         id="courseVideoIframe"
-                        src="https://www.veed.io/embed/6612ef59-46f4-4f09-955d-e3d14eca05e9?watermark=0&color=default&sharing=0&title=0"
-                        style="width: 100%; height: 500px; max-height: 500px; border: none; border-radius: 12px; display: block; margin: 0; padding: 0;"
+                        src=""
+                        style="display: none; visibility: hidden; width: 0; height: 0; border: none; margin: 0; padding: 0; position: absolute; top: -9999px; left: -9999px; opacity: 0; pointer-events: none;"
                         allow="autoplay; fullscreen; picture-in-picture"
                         allowfullscreen
                         loading="lazy">
@@ -83,7 +377,7 @@ get_header();
                 </div> -->
             </div>
         </section>
-        
+
         
         <!-- Course Cards Grid -->
         <div class="courses-listing-grid">
@@ -199,7 +493,7 @@ get_header();
             </div>
 
             <!-- Row 2: One Card (aligned with left card) -->
-            <div class="row g-4">
+            <div class="row g-4 mb-4">
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="course-episode-card">
                         <div class="course-episode-image-wrapper position-relative">
@@ -305,7 +599,7 @@ get_header();
             </div>
 
             <!-- Row 3: One Card (aligned with left card) -->
-            <div class="row g-4">
+            <div class="row g-4 mb-4">
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="course-episode-card">
                         <div class="course-episode-image-wrapper position-relative">
@@ -411,7 +705,7 @@ get_header();
             </div>
 
             <!-- Row 4: One Card (aligned with left card) -->
-            <div class="row g-4">
+            <div class="row g-4 mb-4">
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="course-episode-card">
                         <div class="course-episode-image-wrapper position-relative">

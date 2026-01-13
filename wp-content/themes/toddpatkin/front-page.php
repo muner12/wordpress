@@ -18,7 +18,7 @@
                  <div class="row justify-content-center ">
                 <div class="col-lg-10">
                          <p class="hero-tagline">TWELVE WEEKS TO LIVING A HAPPIER LIFE</p>
-                    <h1 class="hero-main-heading mb-4">Discover the power <br class="d-none d-md-block">of <span class="text-warning">positive mind</span></h1>
+                    <h1 class="hero-main-heading mb-4">Discover the power <br class="d-none d-md-block">of <span class="text-warning">happy mind</span></h1>
                          <p class="hero-subtitle mb-2">Finding Happiness with Todd</p>
                          <p class="hero-subtitle-secondary mb-4">Check out Todd's new video series</p>
                     <div class="hero-buttons-wrapper d-flex justify-content-center gap-3 flex-wrap mb-5">
@@ -101,72 +101,297 @@
                 <h2 class="video-section-title mb-3">Watch <span class="text-warning">todd</span> Speak</h2>
                 <p class="book-section-subtitle mb-0">See why audiences call Todd's message 'life-changing'</p>
             </div>
-            <div class="row g-2 g-lg-3">
-                <!-- Mobile: Inner heading first -->
-                <div class="col-12 d-lg-none order-1 mb-3">
-                    <h2 class="video-inner-title text-center mb-3">TODD PATKIN AT <span class="text-danger">TED<span style="text-transform: lowercase;">x</span></span></h2>
-                </div>
-                <!-- Video -->
-                <div class="col-12 col-lg-6  order-3 order-lg-1 d-flex justify-content-end  justify-content-lg-end align-items-end py-3 px-3 ">
-                    <div class="" style="cursor: pointer; display: inline-block; position: relative; width: 100%; max-width: 100%;" data-bs-toggle="modal" data-bs-target="#videoModal">
-                        <div class="video-thumbnail position-relative d-flex justify-content-center">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/todd_at_tdx.png" alt="Todd Speaking at TEDx" class="img-fluid" style="border-radius: 20px; object-fit: contain; max-height: 300px; margin-left: 30px; width: auto; max-width: 100%;">
-                            <!-- Play Icon Overlay -->
-                            <div class="video-play-overlay position-absolute top-50 start-50 translate-middle" style="width: 80px; height: 80px; background: linear-gradient(135deg, #FFC107 0%, #FFD700 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(255, 193, 7, 0.5); transition: all 0.3s ease; z-index: 10;">
-                                <i class="fas fa-play" style="color: #275BA7; font-size: 32px; margin-left: 4px;"></i>
+            <!-- Video Carousel - Entire Video Section -->
+            <div id="videoCarousel" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
+                <div class="carousel-inner">
+                    <!-- Video Item 1 - TEDx -->
+                    <div class="carousel-item active">
+                        <div class="row align-items-start g-0">
+                            <div class="col-12 col-lg-6 order-1 order-lg-1 mb-4 mb-lg-0 px-2 px-lg-3">
+                                <div class="video-image-wrapper position-relative">
+                                    <!-- Mobile Carousel Controls - inside image wrapper -->
+                                    <button class="carousel-control-prev video-carousel-control-mobile d-lg-none" type="button" data-bs-target="#videoCarousel"
+                                        data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next video-carousel-control-mobile d-lg-none" type="button" data-bs-target="#videoCarousel"
+                                        data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                    <div class="" style="cursor: pointer; display: inline-block; position: relative; width: 100%; max-width: 100%;" data-bs-toggle="modal" data-bs-target="#videoModal">
+                                        <div class="video-thumbnail position-relative d-flex justify-content-center">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/todd_at_tdx.png" alt="Todd Speaking at TEDx" class="img-fluid" style="border-radius: 20px; object-fit: contain; max-height: 300px; margin-left: 30px; width: auto; max-width: 100%;">
+                                            <!-- Play Icon Overlay -->
+                                            <div class="video-play-overlay position-absolute top-50 start-50 translate-middle" style="width: 80px; height: 80px; background: linear-gradient(135deg, #FFC107 0%, #FFD700 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(255, 193, 7, 0.5); transition: all 0.3s ease; z-index: 10;">
+                                                <i class="fas fa-play" style="color: #275BA7; font-size: 32px; margin-left: 4px;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Carousel Indicators - Desktop below image, Mobile below image -->
+                                <div class="carousel-indicators video-carousel-indicators mt-3">
+                                    <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="0" class="active"
+                                        aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="1"
+                                        aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="2"
+                                        aria-label="Slide 3"></button>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 order-2 order-lg-2 video-content-wrapper">
+                                <div class="d-flex flex-column justify-content-center w-100">
+                                    <!-- Mobile: Inner heading first -->
+                                    <div class="d-lg-none mb-3">
+                                        <h2 class="video-inner-title text-center mb-3">TODD PATKIN AT <span class="text-danger">TED<span style="text-transform: lowercase;">x</span></span></h2>
+                                    </div>
+                                    <!-- Desktop heading -->
+                                    <div class="d-none d-lg-block mb-4">
+                                        <h2 class="video-inner-title mb-4">TODD PATKIN AT <span class="text-danger">TED<span style="text-transform: lowercase;">x</span></span></h2>
+                                    </div>
+                                    <!-- Desktop text block -->
+                                    <div class="d-none d-lg-block">
+                                        <div class="video-text-content" style="max-height: 280px; overflow-y: auto; overflow-x: visible; padding-left: 15px; padding-right: 8px;">
+                                            <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
+                                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
+                                                    <i class="fas fa-quote-left" style="color: #275BA7; font-size: 9px;"></i>
+                                                </div>
+                                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">In this impactful TEDx talk, Todd shares his honest journey from being a high-achieving businessman to experiencing a complete personal breakdown. Through vulnerable storytelling, he challenges the common belief that success and a "perfect" life automatically lead to happiness.</p>
+                                            </div>
+                                            <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #275BA7; position: relative;">
+                                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4); z-index: 1;">
+                                                    <i class="fas fa-lightbulb" style="color: #FFC107; font-size: 9px;"></i>
+                                                </div>
+                                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">Todd explains how external achievements often mask internal struggles and emotional burnout. He highlights the disconnect between societal definitions of success and genuine well-being, uncovering what truly contributes to lasting happiness.</p>
+                                            </div>
+                                            <div class="video-text-item mb-0" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
+                                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
+                                                    <i class="fas fa-heart" style="color: #275BA7; font-size: 9px;"></i>
+                                                </div>
+                                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">His insights emphasize self-awareness, emotional health, and purposeful living. The talk encourages viewers to reassess their priorities beyond material success, delivering a powerful reminder that true happiness comes from inner balance, not outward perfection.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Mobile description after video -->
+                                    <div class="d-lg-none mt-3">
+                                        <div class="video-text-content" style="overflow-x: visible; padding-left: 15px; padding-right: 8px;">
+                                            <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
+                                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
+                                                    <i class="fas fa-quote-left" style="color: #275BA7; font-size: 9px;"></i>
+                                                </div>
+                                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">In this impactful TEDx talk, Todd shares his honest journey from being a high-achieving businessman to experiencing a complete personal breakdown. Through vulnerable storytelling, he challenges the common belief that success and a "perfect" life automatically lead to happiness.</p>
+                                            </div>
+                                            <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #275BA7; position: relative;">
+                                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4); z-index: 1;">
+                                                    <i class="fas fa-lightbulb" style="color: #FFC107; font-size: 9px;"></i>
+                                                </div>
+                                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">Todd explains how external achievements often mask internal struggles and emotional burnout. He highlights the disconnect between societal definitions of success and genuine well-being, uncovering what truly contributes to lasting happiness.</p>
+                                            </div>
+                                            <div class="video-text-item mb-0" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
+                                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
+                                                    <i class="fas fa-heart" style="color: #275BA7; font-size: 9px;"></i>
+                                                </div>
+                                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">His insights emphasize self-awareness, emotional health, and purposeful living. The talk encourages viewers to reassess their priorities beyond material success, delivering a powerful reminder that true happiness comes from inner balance, not outward perfection.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video Item 2 - Fox News Health -->
+                    <div class="carousel-item">
+                        <div class="row align-items-start g-0">
+                            <div class="col-12 col-lg-6 order-1 order-lg-1 mb-4 mb-lg-0 px-2 px-lg-3">
+                                <div class="video-image-wrapper position-relative">
+                                    <!-- Mobile Carousel Controls - inside image wrapper -->
+                                    <button class="carousel-control-prev video-carousel-control-mobile d-lg-none" type="button" data-bs-target="#videoCarousel"
+                                        data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next video-carousel-control-mobile d-lg-none" type="button" data-bs-target="#videoCarousel"
+                                        data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                    <div class="" style="cursor: pointer; display: inline-block; position: relative; width: 100%; max-width: 100%;" data-bs-toggle="modal" data-bs-target="#foxNewsVideoModal">
+                                        <div class="video-thumbnail position-relative d-flex justify-content-center">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tod_at_fox.png" alt="Todd on Fox News Health" class="img-fluid" style="border-radius: 20px; object-fit: contain; max-height: 300px; margin-left: 30px; width: auto; max-width: 100%;">
+                                            <!-- Play Icon Overlay -->
+                                            <div class="video-play-overlay position-absolute top-50 start-50 translate-middle" style="width: 80px; height: 80px; background: linear-gradient(135deg, #FFC107 0%, #FFD700 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(255, 193, 7, 0.5); transition: all 0.3s ease; z-index: 10;">
+                                                <i class="fas fa-play" style="color: #275BA7; font-size: 32px; margin-left: 4px;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Carousel Indicators - Desktop below image, Mobile below image -->
+                                <div class="carousel-indicators video-carousel-indicators mt-3">
+                                    <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="0"
+                                        aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="1" class="active"
+                                        aria-current="true" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="2"
+                                        aria-label="Slide 3"></button>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 order-2 order-lg-2 video-content-wrapper px-2 px-lg-3">
+                                <div class="d-flex flex-column justify-content-center w-100">
+                                    <!-- Mobile: Inner heading first -->
+                                    <div class="d-lg-none mb-3">
+                                        <h2 class="video-inner-title text-center mb-3">WATCH TODD ON <span class="text-danger">FOX NEWS HEALTH</span></h2>
+                                    </div>
+                                    <!-- Desktop heading -->
+                                    <div class="d-none d-lg-block mb-4">
+                                        <h2 class="video-inner-title mb-4">WATCH TODD ON <span class="text-danger">FOX NEWS HEALTH</span></h2>
+                                    </div>
+                                    <!-- Desktop text block -->
+                                    <div class="d-none d-lg-block">
+                                        <div class="video-text-content" style="max-height: 280px; overflow-y: auto; overflow-x: visible; padding-left: 15px; padding-right: 8px;">
+                                            <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
+                                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
+                                                    <i class="fas fa-quote-left" style="color: #275BA7; font-size: 9px;"></i>
+                                                </div>
+                                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">In this impactful talk, Todd shares his honest journey from being a high-achieving individual to experiencing a profound personal breakdown. Through vulnerable storytelling, he challenges the common belief that success and a "perfect" life automatically lead to happiness.</p>
+                                            </div>
+                                            <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #275BA7; position: relative;">
+                                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4); z-index: 1;">
+                                                    <i class="fas fa-lightbulb" style="color: #FFC107; font-size: 9px;"></i>
+                                                </div>
+                                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">Todd explains how external accomplishments often hide internal struggles and emotional burnout. He highlights the gap between societal definitions of success and genuine well-being, uncovering what truly contributes to lasting happiness.</p>
+                                            </div>
+                                            <div class="video-text-item mb-0" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
+                                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
+                                                    <i class="fas fa-heart" style="color: #275BA7; font-size: 9px;"></i>
+                                                </div>
+                                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">His insights emphasize self-awareness, emotional health, and purposeful living. The talk encourages viewers to reassess their priorities beyond material success, delivering a powerful reminder that true happiness comes from inner balance, not outward perfection.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Mobile description after video -->
+                                    <div class="d-lg-none mt-3">
+                                        <div class="video-text-content" style="overflow-x: visible; padding-left: 15px; padding-right: 8px;">
+                                            <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
+                                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
+                                                    <i class="fas fa-quote-left" style="color: #275BA7; font-size: 9px;"></i>
+                                                </div>
+                                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">In this impactful talk, Todd shares his honest journey from being a high-achieving individual to experiencing a profound personal breakdown. Through vulnerable storytelling, he challenges the common belief that success and a "perfect" life automatically lead to happiness.</p>
+                                            </div>
+                                            <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #275BA7; position: relative;">
+                                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4); z-index: 1;">
+                                                    <i class="fas fa-lightbulb" style="color: #FFC107; font-size: 9px;"></i>
+                                                </div>
+                                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">Todd explains how external accomplishments often hide internal struggles and emotional burnout. He highlights the gap between societal definitions of success and genuine well-being, uncovering what truly contributes to lasting happiness.</p>
+                                            </div>
+                                            <div class="video-text-item mb-0" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
+                                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
+                                                    <i class="fas fa-heart" style="color: #275BA7; font-size: 9px;"></i>
+                                                </div>
+                                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">His insights emphasize self-awareness, emotional health, and purposeful living. The talk encourages viewers to reassess their priorities beyond material success, delivering a powerful reminder that true happiness comes from inner balance, not outward perfection.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video Item 3 - Stand Up To Bullying -->
+                    <div class="carousel-item">
+                        <div class="row align-items-start g-0">
+                            <div class="col-12 col-lg-6 order-1 order-lg-1 mb-4 mb-lg-0 px-2 px-lg-3">
+                                <div class="video-image-wrapper position-relative">
+                                    <!-- Mobile Carousel Controls - inside image wrapper -->
+                                    <button class="carousel-control-prev video-carousel-control-mobile d-lg-none" type="button" data-bs-target="#videoCarousel"
+                                        data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next video-carousel-control-mobile d-lg-none" type="button" data-bs-target="#videoCarousel"
+                                        data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                    <div class="" style="cursor: pointer; display: inline-block; position: relative; width: 100%; max-width: 100%;" data-bs-toggle="modal" data-bs-target="#bullyingVideoModal">
+                                        <div class="video-thumbnail position-relative d-flex justify-content-center">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tod_at_bullying.png" alt="Watch Stand Up To Bullying" class="img-fluid" style="border-radius: 20px; object-fit: contain; max-height: 300px; margin-left: 30px; width: auto; max-width: 100%;">
+                                            <!-- Play Icon Overlay -->
+                                            <div class="video-play-overlay position-absolute top-50 start-50 translate-middle" style="width: 80px; height: 80px; background: linear-gradient(135deg, #FFC107 0%, #FFD700 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(255, 193, 7, 0.5); transition: all 0.3s ease; z-index: 10;">
+                                                <i class="fas fa-play" style="color: #275BA7; font-size: 32px; margin-left: 4px;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Carousel Indicators - Desktop below image, Mobile below image -->
+                                <div class="carousel-indicators video-carousel-indicators mt-3">
+                                    <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="0"
+                                        aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="1"
+                                        aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="2" class="active"
+                                        aria-current="true" aria-label="Slide 3"></button>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 order-2 order-lg-2 video-content-wrapper px-2 px-lg-3">
+                                <div class="d-flex flex-column justify-content-center w-100">
+                                    <!-- Mobile: Inner heading first -->
+                                    <div class="d-lg-none mb-3">
+                                        <h2 class="video-inner-title text-center mb-3">WATCH <span class="text-warning">STAND UP TO BULLYING</span></h2>
+                                    </div>
+                                    <!-- Desktop heading -->
+                                    <div class="d-none d-lg-block mb-4">
+                                        <h2 class="video-inner-title mb-4">WATCH <span class="text-warning">STAND UP TO BULLYING</span></h2>
+                                    </div>
+                                    <!-- Desktop text block -->
+                                    <div class="d-none d-lg-block">
+                                        <div class="video-text-content" style="max-height: 280px; overflow-y: auto; overflow-x: visible; padding-left: 15px; padding-right: 8px;">
+                                            <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
+                                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
+                                                    <i class="fas fa-quote-left" style="color: #275BA7; font-size: 9px;"></i>
+                                                </div>
+                                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">In this engaging stand-up talk, Todd Patkin uses humor and personal insight to explore life's everyday challenges and deeper truths. Through relatable storytelling, he shows how laughter can open the door to self-reflection and emotional clarity.</p>
+                                            </div>
+                                            <div class="video-text-item mb-0" style="padding-left: 24px; border-left: 3px solid #275BA7; position: relative;">
+                                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4); z-index: 1;">
+                                                    <i class="fas fa-lightbulb" style="color: #FFC107; font-size: 9px;"></i>
+                                                </div>
+                                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">The talk reminds viewers that humor, authenticity, and perspective play a powerful role in finding meaning and happiness beyond traditional measures of success.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Mobile description after video -->
+                                    <div class="d-lg-none mt-3">
+                                        <div class="video-text-content" style="overflow-x: visible; padding-left: 15px; padding-right: 8px;">
+                                            <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
+                                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
+                                                    <i class="fas fa-quote-left" style="color: #275BA7; font-size: 9px;"></i>
+                                                </div>
+                                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">In this engaging stand-up talk, Todd Patkin uses humor and personal insight to explore life's everyday challenges and deeper truths. Through relatable storytelling, he shows how laughter can open the door to self-reflection and emotional clarity.</p>
+                                            </div>
+                                            <div class="video-text-item mb-0" style="padding-left: 24px; border-left: 3px solid #275BA7; position: relative;">
+                                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4); z-index: 1;">
+                                                    <i class="fas fa-lightbulb" style="color: #FFC107; font-size: 9px;"></i>
+                                                </div>
+                                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">The talk reminds viewers that humor, authenticity, and perspective play a powerful role in finding meaning and happiness beyond traditional measures of success.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Desktop text block -->
-                <div class="col-12 col-lg-6 order-2 order-lg-2 d-none d-lg-flex align-items-center py-3">
-                    <div class="d-flex flex-column justify-content-center w-100">
-                        <h2 class="video-inner-title mb-4">TODD PATKIN AT <span class="text-danger">TED<span style="text-transform: lowercase;">x</span></span></h2>
-                        <div class="video-text-content" style="max-height: 280px; overflow-y: auto; overflow-x: visible; padding-left: 15px; padding-right: 8px;">
-                            <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
-                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
-                                    <i class="fas fa-quote-left" style="color: #275BA7; font-size: 9px;"></i>
-                                </div>
-                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">In this impactful TEDx talk, Todd shares his honest journey from being a high-achieving businessman to experiencing a complete personal breakdown. Through vulnerable storytelling, he challenges the common belief that success and a "perfect" life automatically lead to happiness.</p>
-                            </div>
-                            <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #275BA7; position: relative;">
-                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4); z-index: 1;">
-                                    <i class="fas fa-lightbulb" style="color: #FFC107; font-size: 9px;"></i>
-                                </div>
-                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">Todd explains how external achievements often mask internal struggles and emotional burnout. He highlights the disconnect between societal definitions of success and genuine well-being, uncovering what truly contributes to lasting happiness.</p>
-                            </div>
-                            <div class="video-text-item mb-0" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
-                                <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
-                                    <i class="fas fa-heart" style="color: #275BA7; font-size: 9px;"></i>
-                                </div>
-                                <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">His insights emphasize self-awareness, emotional health, and purposeful living. The talk encourages viewers to reassess their priorities beyond material success, delivering a powerful reminder that true happiness comes from inner balance, not outward perfection.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Mobile description after video -->
-                <div class="col-12 d-lg-none order-4 mt-3">
-                    <div class="video-text-content" style="overflow-x: visible; padding-left: 15px; padding-right: 8px;">
-                        <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
-                            <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
-                                <i class="fas fa-quote-left" style="color: #275BA7; font-size: 9px;"></i>
-                            </div>
-                            <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">In this impactful TEDx talk, Todd shares his honest journey from being a high-achieving businessman to experiencing a complete personal breakdown. Through vulnerable storytelling, he challenges the common belief that success and a "perfect" life automatically lead to happiness.</p>
-                        </div>
-                        <div class="video-text-item mb-3" style="padding-left: 24px; border-left: 3px solid #275BA7; position: relative;">
-                            <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4); z-index: 1;">
-                                <i class="fas fa-lightbulb" style="color: #FFC107; font-size: 9px;"></i>
-                            </div>
-                            <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">Todd explains how external achievements often mask internal struggles and emotional burnout. He highlights the disconnect between societal definitions of success and genuine well-being, uncovering what truly contributes to lasting happiness.</p>
-                        </div>
-                        <div class="video-text-item mb-0" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
-                            <div style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 1;">
-                                <i class="fas fa-heart" style="color: #275BA7; font-size: 9px;"></i>
-                            </div>
-                            <p class="mb-0" style="font-size: 13px; line-height: 1.6; color: #4E4E4E; text-align: justify;">His insights emphasize self-awareness, emotional health, and purposeful living. The talk encourages viewers to reassess their priorities beyond material success, delivering a powerful reminder that true happiness comes from inner balance, not outward perfection.</p>
-                        </div>
-                    </div>
-                </div>
+                <!-- Desktop Carousel Controls - shown only on desktop -->
+                <button class="carousel-control-prev video-carousel-control d-none d-lg-flex" type="button" data-bs-target="#videoCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next video-carousel-control d-none d-lg-flex" type="button" data-bs-target="#videoCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
             <div class="w-100  text-center py-2 mt-5 mb-5">
                 <a href="<?php echo esc_url( home_url( '/podcast' ) ); ?>" class="btn btn-warning video-section-btn"><span class="btn-content">View More Featuring
@@ -182,7 +407,7 @@
             <div class="text-center mb-5">
                 <h2 class="book-section-header-title mb-2"><span class="text-warning">AUTHOR</span> <span
                         class="text-primary-blue">BOOKS</span></h2>
-                <p class="book-section-subtitle mb-0">Discover the story that's changing lives</p>
+                <p class="book-section-subtitle mb-0">Discover the story that is changing lives</p>
             </div>
             <!-- Book Carousel - Entire Book Section -->
             <div id="bookCarousel" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
@@ -421,7 +646,7 @@
                                         <p class="review-text">Todd is a gifted storyteller whose powerful, uplifting stories motivate and inspire us to strive for the stars. He provides a true-life path that can take any one of us from despair to hope, from anguish to joy, transforming lives through his authentic journey.</p>
                             <hr class="review-divider">
                             <div class="d-flex align-items-center gap-3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Dr. Richard Levin.jpeg" alt="Dr. Richard Levin"
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Dr. Richard Levin.webp" alt="Dr. Richard Levin"
                                     class="review-author-image rounded-3">
                                 <div class="review-author-info">
                                     <h5 class="review-author-name">Dr. Richard Levin</h5>
@@ -477,7 +702,7 @@
                                         <p class="review-text">Todd radiates positive energy and love, in person and throughout the pages of his book. His success in overcoming life's obstacles is truly inspirational and will further his lifelong goal to help others find their own path to happiness.</p>
                             <hr class="review-divider">
                             <div class="d-flex align-items-center gap-3">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/review-author-3.jfif" alt="Dr. Mary Ann McDonnell"
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/review-author-3.webp" alt="Dr. Mary Ann McDonnell"
                                     class="review-author-image rounded-3">
                                 <div class="review-author-info">
                                     <h5 class="review-author-name">Dr. Mary Ann McDonnell</h5>
@@ -541,7 +766,7 @@
                                         <p class="review-text">Todd radiates positive energy and love, in person and throughout the pages of his book. His success in overcoming life's obstacles is truly inspirational and will further his lifelong goal to help others find their own path to happiness.</p>
                                         <hr class="review-divider">
                                         <div class="d-flex align-items-center gap-3">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/review-author-3.png" alt="Dr. Mary Ann McDonnell"
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/review-author-3.webp" alt="Dr. Mary Ann McDonnell"
                                                 class="review-author-image rounded-3">
                                             <div class="review-author-info">
                                                 <h5 class="review-author-name">Dr. Mary Ann McDonnell</h5>
@@ -602,7 +827,7 @@
                                         <p class="review-text">"I have known Todd Patkin for many years. When I read Finding Happiness, I was pleased to see his forthright honesty on subjects that most people shy away from. I deeply admire him for exposing his life so that others can learn what the components of happiness truly are."</p>
                                         <hr class="review-divider">
                                         <div class="d-flex align-items-center gap-3">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brian fox.webp" alt="Brian Fox"
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brian fox.jpeg" alt="Brian Fox"
                                                 class="review-author-image rounded-3">
                                             <div class="review-author-info">
                                                 <h5 class="review-author-name">Brian Fox</h5>
@@ -662,7 +887,7 @@
                                         <p class="review-text">"I have known Todd Patkin for many years. When I read Finding Happiness, I was pleased to see his forthright honesty on subjects that most people shy away from. I deeply admire him for exposing his life so that others can learn what the components of happiness truly are."</p>
                                         <hr class="review-divider">
                                         <div class="d-flex align-items-center gap-3">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brian fox.webp" alt="Brian Fox"
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brian fox.jpeg" alt="Brian Fox"
                                                 class="review-author-image rounded-3">
                                             <div class="review-author-info">
                                                 <h5 class="review-author-name">Brian Fox</h5>
@@ -765,7 +990,7 @@
                                              different causes and personal relationships. Finding Happiness is yet another gift to a world Todd's already done so much for."</p>
                                         <hr class="review-divider">
                                         <div class="d-flex align-items-center gap-3">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Gary Marino.jfif" alt="Gary Marino"
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Gary Marino.jpeg" alt="Gary Marino"
                                                 class="review-author-image rounded-3">
                                             <div class="review-author-info">
                                                 <h5 class="review-author-name">Gary Marino</h5>
@@ -868,7 +1093,7 @@
                                              and personal relationships. Finding Happiness is yet another gift to a world Todd's already done so much for."</p>
                                         <hr class="review-divider">
                                         <div class="d-flex align-items-center gap-3">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Gary Marino.jfif" alt="Gary Marino"
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Gary Marino.jpeg" alt="Gary Marino"
                                                 class="review-author-image rounded-3">
                                             <div class="review-author-info">
                                                 <h5 class="review-author-name">Gary Marino</h5>
@@ -1192,7 +1417,7 @@
                             <p class="course-cta-text-line2">Finding Happiness</p>
                         </div>
                         <div class="text-center mt-3">
-                            <a href="#" class="btn course-cta-button">Buy Now ($29.99)</a>
+                            <a href="#" class="btn course-cta-button">Buy Now ($27.99)</a>
                         </div>
                     </div>
                 </div>

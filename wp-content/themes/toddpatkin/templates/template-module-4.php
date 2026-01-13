@@ -27,15 +27,12 @@ get_header();
             <!-- Left Side: Video Player - First on Mobile -->
                 <div class="col-12 col-lg-6 courses-video-column order-1 order-lg-1">
                     <div class="courses-video-container w-100">
-                        <div class="courses-video-wrapper w-100 position-relative" style="padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                            <iframe 
-                            src="https://www.veed.io/embed/6612ef59-46f4-4f09-955d-e3d14eca05e9?watermark=0&color=default&sharing=0&title=0" 
-                            frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen
-                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                                class="courses-video-iframe">
-                            </iframe>
+                        <div class="courses-video-wrapper w-100 position-relative">
+                            <img 
+                                src="<?php echo get_template_directory_uri(); ?>/assets/images/week_4.png" 
+                                alt="Module 4: The Power of Self-Love"
+                                class="img-fluid w-100"
+                                style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
                             <!-- Lock Icon Overlay -->
                             <div class="course-video-lock-overlay position-absolute top-50 start-50 translate-middle" style="width: 80px; height: 80px; background: rgba(0, 0, 0, 0.7); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; transition: all 0.3s ease;" data-bs-toggle="modal" data-bs-target="#coursePurchaseModal">
                                 <i class="fas fa-lock" style="color: #FFC107; font-size: 36px;"></i>

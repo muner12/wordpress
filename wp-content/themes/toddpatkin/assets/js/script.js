@@ -325,9 +325,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Initialize scroll animations on page load
 document.addEventListener('DOMContentLoaded', function () {
-    // Sections - fade in from bottom (excluding hero section)
-    const sections = document.querySelectorAll('section:not(.hero-section)');
+    // Sections - fade in from bottom (excluding hero section, blog section, and blog detail pages)
+    const sections = document.querySelectorAll('section:not(.hero-section):not(.blog-section):not(.blog-details-page-section):not(.courses-listing-section)');
     sections.forEach((section, index) => {
+        // Double check - don't apply to blog detail pages or course pages
+        if (section.closest('.blog-details-page-section') || section.classList.contains('blog-details-page-section') ||
+            section.closest('.courses-listing-section') || section.classList.contains('courses-listing-section')) {
+            return;
+        }
         section.classList.add('scroll-fade-in');
         if (index > 0) {
             section.classList.add(`delay-${(index % 4) + 1}`);
@@ -359,21 +364,23 @@ document.addEventListener('DOMContentLoaded', function () {
         scrollObserver.observe(card);
     });
 
-    // Course episode cards - fade in
-    const episodeCards = document.querySelectorAll('.course-episode-card');
-    episodeCards.forEach((card, index) => {
-        card.classList.add('scroll-fade-in');
-        card.classList.add(`delay-${(index % 3) + 1}`);
-        scrollObserver.observe(card);
-    });
+    // Course episode cards - fade in (DISABLED - course cards should be visible immediately)
+    // Removed scroll-fade-in animation for course listing page
+    // const episodeCards = document.querySelectorAll('.course-episode-card');
+    // episodeCards.forEach((card, index) => {
+    //     card.classList.add('scroll-fade-in');
+    //     card.classList.add(`delay-${(index % 3) + 1}`);
+    //     scrollObserver.observe(card);
+    // });
 
-    // Blog cards - fade in
-    const blogCards = document.querySelectorAll('.blog-section .card');
-    blogCards.forEach((card, index) => {
-        card.classList.add('scroll-fade-in');
-        card.classList.add(`delay-${(index % 3) + 1}`);
-        scrollObserver.observe(card);
-    });
+    // Blog cards - fade in (DISABLED - blog cards should be visible immediately)
+    // Removed scroll-fade-in animation for blog listing page
+    // const blogCards = document.querySelectorAll('.blog-section .card');
+    // blogCards.forEach((card, index) => {
+    //     card.classList.add('scroll-fade-in');
+    //     card.classList.add(`delay-${(index % 3) + 1}`);
+    //     scrollObserver.observe(card);
+    // });
 
     // Podcast cards - fade in
     const podcastCards = document.querySelectorAll('.podcast-section .card');
@@ -383,9 +390,13 @@ document.addEventListener('DOMContentLoaded', function () {
         scrollObserver.observe(card);
     });
 
-    // Images - scale in
+    // Images - scale in (excluding blog section images, blog detail page images, and course section images)
     const images = document.querySelectorAll('img:not(.hero-decorative-img):not(.bright-layer-top)');
     images.forEach((img, index) => {
+        // Skip images inside blog section, blog detail pages, or course section
+        if (img.closest('.blog-section') || img.closest('.blog-details-page-section') || img.closest('.courses-listing-section')) {
+            return;
+        }
         if (img.offsetParent !== null) { // Only visible images
             img.classList.add('scroll-scale-in');
             img.classList.add(`delay-${(index % 4) + 1}`);
@@ -393,17 +404,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Headings - slide up
+    // Headings - slide up (excluding blog section headings, blog detail page headings, and course section headings)
     const headings = document.querySelectorAll('h1, h2, h3');
     headings.forEach((heading, index) => {
+        // Skip headings inside blog section, blog detail pages, or course section
+        if (heading.closest('.blog-section') || heading.closest('.blog-details-page-section') || heading.closest('.courses-listing-section')) {
+            return;
+        }
         heading.classList.add('scroll-fade-in');
         heading.classList.add(`delay-${(index % 3) + 1}`);
         scrollObserver.observe(heading);
     });
 
-    // Buttons - fade in
+    // Buttons - fade in (excluding blog section buttons, blog detail page buttons, and course section buttons)
     const buttons = document.querySelectorAll('.btn:not(.hero-watch-video-btn):not(.hero-hire-btn)');
     buttons.forEach((btn, index) => {
+        // Skip buttons inside blog section, blog detail pages, or course section
+        if (btn.closest('.blog-section') || btn.closest('.blog-details-page-section') || btn.closest('.courses-listing-section')) {
+            return;
+        }
         btn.classList.add('scroll-fade-in');
         btn.classList.add(`delay-${(index % 3) + 1}`);
         scrollObserver.observe(btn);
@@ -416,9 +435,13 @@ document.addEventListener('DOMContentLoaded', function () {
         scrollObserver.observe(bookCover);
     }
 
-    // Video wrapper - fade in
-    const videoWrappers = document.querySelectorAll('.video-wrapper, .course-video-wrapper');
+    // Video wrapper - fade in (excluding course video wrapper)
+    const videoWrappers = document.querySelectorAll('.video-wrapper');
     videoWrappers.forEach((wrapper, index) => {
+        // Skip course video wrapper - it should be visible immediately
+        if (wrapper.closest('.courses-listing-section') || wrapper.classList.contains('course-video-wrapper')) {
+            return;
+        }
         wrapper.classList.add('scroll-fade-in');
         wrapper.classList.add(`delay-${(index % 2) + 1}`);
         scrollObserver.observe(wrapper);
@@ -430,6 +453,58 @@ document.addEventListener('DOMContentLoaded', function () {
         ctaBox.classList.add('scroll-scale-in');
         ctaBox.classList.add('delay-2');
         scrollObserver.observe(ctaBox);
+    }
+    
+    // CRITICAL: Prevent scrollObserver from affecting blog detail pages
+    // Unobserve all elements inside blog detail pages and remove animation classes
+    const blogDetailPage = document.querySelector('.blog-details-page-section');
+    if (blogDetailPage) {
+        // Remove all scroll animation classes from blog detail page
+        const allDetailElements = blogDetailPage.querySelectorAll('*');
+        allDetailElements.forEach(el => {
+            el.classList.remove('scroll-fade-in', 'scroll-scale-in', 'scroll-slide-left', 'scroll-slide-right');
+            el.classList.add('animated'); // Force animated state
+            scrollObserver.unobserve(el);
+        });
+        
+        // Also remove from the section itself
+        blogDetailPage.classList.remove('scroll-fade-in', 'scroll-scale-in', 'scroll-slide-left', 'scroll-slide-right');
+        blogDetailPage.classList.add('animated');
+        scrollObserver.unobserve(blogDetailPage);
+        
+        // Force visibility immediately
+        blogDetailPage.style.setProperty('opacity', '1', 'important');
+        blogDetailPage.style.setProperty('visibility', 'visible', 'important');
+        allDetailElements.forEach(el => {
+            el.style.setProperty('opacity', '1', 'important');
+            el.style.setProperty('visibility', 'visible', 'important');
+        });
+    }
+    
+    // CRITICAL: Prevent scrollObserver from affecting course listing pages
+    // Unobserve all elements inside course listing section and remove animation classes
+    const courseListingSection = document.querySelector('.courses-listing-section');
+    if (courseListingSection) {
+        // Remove all scroll animation classes from course listing section
+        const allCourseElements = courseListingSection.querySelectorAll('*');
+        allCourseElements.forEach(el => {
+            el.classList.remove('scroll-fade-in', 'scroll-scale-in', 'scroll-slide-left', 'scroll-slide-right');
+            el.classList.add('animated'); // Force animated state
+            scrollObserver.unobserve(el);
+        });
+        
+        // Also remove from the section itself
+        courseListingSection.classList.remove('scroll-fade-in', 'scroll-scale-in', 'scroll-slide-left', 'scroll-slide-right');
+        courseListingSection.classList.add('animated');
+        scrollObserver.unobserve(courseListingSection);
+        
+        // Force visibility immediately
+        courseListingSection.style.setProperty('opacity', '1', 'important');
+        courseListingSection.style.setProperty('visibility', 'visible', 'important');
+        allCourseElements.forEach(el => {
+            el.style.setProperty('opacity', '1', 'important');
+            el.style.setProperty('visibility', 'visible', 'important');
+        });
     }
 });
 
@@ -646,6 +721,40 @@ document.addEventListener('DOMContentLoaded', function() {
         // Stop video when modal is closed
         videoModal.addEventListener('hide.bs.modal', function () {
             videoIframe.src = '';
+        });
+    }
+
+    // Fox News Video Modal Handler
+    const foxNewsVideoModal = document.getElementById('foxNewsVideoModal');
+    const foxNewsVideoIframe = document.getElementById('foxNewsVideoIframe');
+    const foxNewsVideoUrl = 'https://www.youtube.com/embed/MqaTF_E2_9s?autoplay=1';
+    
+    if (foxNewsVideoModal && foxNewsVideoIframe) {
+        // Load video when modal is shown
+        foxNewsVideoModal.addEventListener('show.bs.modal', function () {
+            foxNewsVideoIframe.src = foxNewsVideoUrl;
+        });
+        
+        // Stop video when modal is closed
+        foxNewsVideoModal.addEventListener('hide.bs.modal', function () {
+            foxNewsVideoIframe.src = '';
+        });
+    }
+
+    // Stand Up To Bullying Video Modal Handler
+    const bullyingVideoModal = document.getElementById('bullyingVideoModal');
+    const bullyingVideoIframe = document.getElementById('bullyingVideoIframe');
+    const bullyingVideoUrl = 'https://www.youtube.com/embed/X0oGv7ebSkw?autoplay=1';
+    
+    if (bullyingVideoModal && bullyingVideoIframe) {
+        // Load video when modal is shown
+        bullyingVideoModal.addEventListener('show.bs.modal', function () {
+            bullyingVideoIframe.src = bullyingVideoUrl;
+        });
+        
+        // Stop video when modal is closed
+        bullyingVideoModal.addEventListener('hide.bs.modal', function () {
+            bullyingVideoIframe.src = '';
         });
     }
 });

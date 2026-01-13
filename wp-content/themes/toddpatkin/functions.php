@@ -40,6 +40,17 @@ function toddpatkin_create_required_pages() {
         array( 'slug' => 'blog/blog-5', 'title' => 'Building Authentic Relationships: The Foundation of True Happiness', 'template' => 'templates/template-blog-5.php' ),
         array( 'slug' => 'blog/blog-6', 'title' => 'Finding Your Purpose: A Journey from Success to Significance', 'template' => 'templates/template-blog-6.php' ),
         array( 'slug' => 'blog/blog-7', 'title' => 'Yes, parents, the kids really are okay.', 'template' => 'templates/template-blog-7.php' ),
+        // New 2025 blog pages
+        array( 'slug' => 'blog/blog-8', 'title' => 'Beyond Burnout: 14 Micro-Practices to Transform Your Workday in 2025', 'template' => 'templates/template-blog-8.php' ),
+        array( 'slug' => 'blog/blog-9', 'title' => '10 Phrases That Will Transform Your Team', 'template' => 'templates/template-blog-9.php' ),
+        array( 'slug' => 'blog/blog-10', 'title' => 'Stop Beating Yourself Up: The Science and Practice of Self-Compassion', 'template' => 'templates/template-blog-10.php' ),
+        array( 'slug' => 'blog/blog-11', 'title' => 'Breaking the Silence: Mental Health in the Modern Workplace', 'template' => 'templates/template-blog-11.php' ),
+        array( 'slug' => 'blog/blog-12', 'title' => 'How to Unplug (Even When It Feels Impossible)', 'template' => 'templates/template-blog-12.php' ),
+        array( 'slug' => 'blog/blog-13', 'title' => 'The Stress Reset: Practical Strategies to Reclaim Calm in Chaotic Times', 'template' => 'templates/template-blog-13.php' ),
+        array( 'slug' => 'blog/blog-14', 'title' => 'Stop Beating Yourself Up: The Science and Practice of Self-Compassion', 'template' => 'templates/template-blog-14.php' ),
+        array( 'slug' => 'blog/blog-15', 'title' => 'Finding Your Purpose: How to Build a Life That Matters', 'template' => 'templates/template-blog-15.php' ),
+        array( 'slug' => 'blog/blog-16', 'title' => 'Beyond Small Talk: The Art of Meaningful Conversation in a Digital Age', 'template' => 'templates/template-blog-16.php' ),
+        array( 'slug' => 'blog/blog-17', 'title' => 'Raising Happy Kids in an Achievement-Obsessed Culture: A Parent\'s Guide', 'template' => 'templates/template-blog-17.php' ),
         array( 'slug' => 'preview-book', 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
         array( 'slug' => 'preview-boot-camp', 'title' => 'Preview Boot Camp Book', 'template' => 'templates/template-preview-boot-camp.php' ),
         array( 'slug' => 'boot-camp', 'title' => 'Boot Camp Book', 'template' => 'templates/template-boot-camp.php' ),
@@ -221,7 +232,7 @@ function toddpatkin_intercept_missing_pages( $wp ) {
     
     // Skip if this is likely a blog post (check if it's a post, not a page)
     // First, check if it matches any known page template slugs
-    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'podcast-4', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7' );
+    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'podcast-4', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7', 'blog-8', 'blog-9', 'blog-10', 'blog-11', 'blog-12', 'blog-13', 'blog-14', 'blog-15', 'blog-16', 'blog-17' );
     
     $path_parts_temp = array_filter( explode( '/', $request_uri ) );
     $last_slug_temp = end( $path_parts_temp );
@@ -327,6 +338,17 @@ function toddpatkin_intercept_missing_pages( $wp ) {
         'blog-5' => array( 'title' => 'Building Authentic Relationships: The Foundation of True Happiness', 'template' => 'templates/template-blog-5.php', 'parent' => 'blog' ),
         'blog-6' => array( 'title' => 'Finding Your Purpose: A Journey from Success to Significance', 'template' => 'templates/template-blog-6.php', 'parent' => 'blog' ),
         'blog-7' => array( 'title' => 'Yes, parents, the kids really are okay.', 'template' => 'templates/template-blog-7.php', 'parent' => 'blog' ),
+        // New 2025 blog pages
+        'blog-8' => array( 'title' => 'Beyond Burnout: 14 Micro-Practices to Transform Your Workday in 2025', 'template' => 'templates/template-blog-8.php', 'parent' => 'blog' ),
+        'blog-9' => array( 'title' => '10 Phrases That Will Transform Your Team', 'template' => 'templates/template-blog-9.php', 'parent' => 'blog' ),
+        'blog-10' => array( 'title' => 'Stop Beating Yourself Up: The Science and Practice of Self-Compassion', 'template' => 'templates/template-blog-10.php', 'parent' => 'blog' ),
+        'blog-11' => array( 'title' => 'Breaking the Silence: Mental Health in the Modern Workplace', 'template' => 'templates/template-blog-11.php', 'parent' => 'blog' ),
+        'blog-12' => array( 'title' => 'How to Unplug (Even When It Feels Impossible)', 'template' => 'templates/template-blog-12.php', 'parent' => 'blog' ),
+        'blog-13' => array( 'title' => 'The Stress Reset: Practical Strategies to Reclaim Calm in Chaotic Times', 'template' => 'templates/template-blog-13.php', 'parent' => 'blog' ),
+        'blog-14' => array( 'title' => 'Stop Beating Yourself Up: The Science and Practice of Self-Compassion', 'template' => 'templates/template-blog-14.php', 'parent' => 'blog' ),
+        'blog-15' => array( 'title' => 'Finding Your Purpose: How to Build a Life That Matters', 'template' => 'templates/template-blog-15.php', 'parent' => 'blog' ),
+        'blog-16' => array( 'title' => 'Beyond Small Talk: The Art of Meaningful Conversation in a Digital Age', 'template' => 'templates/template-blog-16.php', 'parent' => 'blog' ),
+        'blog-17' => array( 'title' => 'Raising Happy Kids in an Achievement-Obsessed Culture: A Parent\'s Guide', 'template' => 'templates/template-blog-17.php', 'parent' => 'blog' ),
         'preview-book' => array( 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
         'preview-boot-camp' => array( 'title' => 'Preview Boot Camp Book', 'template' => 'templates/template-preview-boot-camp.php' ),
         'boot-camp' => array( 'title' => 'Boot Camp Book', 'template' => 'templates/template-boot-camp.php' ),
@@ -441,7 +463,7 @@ function toddpatkin_handle_404_create_page() {
     $request_uri = rtrim( $request_uri, '/.html' );
     
     // Skip if this is likely a blog post
-    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'podcast-4', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7' );
+    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'podcast-4', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7', 'blog-8', 'blog-9', 'blog-10', 'blog-11', 'blog-12', 'blog-13', 'blog-14', 'blog-15', 'blog-16', 'blog-17' );
     
     $path_parts = array_filter( explode( '/', $request_uri ) );
     $slug = end( $path_parts );
@@ -536,6 +558,17 @@ function toddpatkin_handle_404_create_page() {
         'blog-5' => array( 'title' => 'Building Authentic Relationships: The Foundation of True Happiness', 'template' => 'templates/template-blog-5.php', 'parent' => 'blog' ),
         'blog-6' => array( 'title' => 'Finding Your Purpose: A Journey from Success to Significance', 'template' => 'templates/template-blog-6.php', 'parent' => 'blog' ),
         'blog-7' => array( 'title' => 'Yes, parents, the kids really are okay.', 'template' => 'templates/template-blog-7.php', 'parent' => 'blog' ),
+        // New 2025 blog pages
+        'blog-8' => array( 'title' => 'Beyond Burnout: 14 Micro-Practices to Transform Your Workday in 2025', 'template' => 'templates/template-blog-8.php', 'parent' => 'blog' ),
+        'blog-9' => array( 'title' => '10 Phrases That Will Transform Your Team', 'template' => 'templates/template-blog-9.php', 'parent' => 'blog' ),
+        'blog-10' => array( 'title' => 'Stop Beating Yourself Up: The Science and Practice of Self-Compassion', 'template' => 'templates/template-blog-10.php', 'parent' => 'blog' ),
+        'blog-11' => array( 'title' => 'Breaking the Silence: Mental Health in the Modern Workplace', 'template' => 'templates/template-blog-11.php', 'parent' => 'blog' ),
+        'blog-12' => array( 'title' => 'How to Unplug (Even When It Feels Impossible)', 'template' => 'templates/template-blog-12.php', 'parent' => 'blog' ),
+        'blog-13' => array( 'title' => 'The Stress Reset: Practical Strategies to Reclaim Calm in Chaotic Times', 'template' => 'templates/template-blog-13.php', 'parent' => 'blog' ),
+        'blog-14' => array( 'title' => 'Stop Beating Yourself Up: The Science and Practice of Self-Compassion', 'template' => 'templates/template-blog-14.php', 'parent' => 'blog' ),
+        'blog-15' => array( 'title' => 'Finding Your Purpose: How to Build a Life That Matters', 'template' => 'templates/template-blog-15.php', 'parent' => 'blog' ),
+        'blog-16' => array( 'title' => 'Beyond Small Talk: The Art of Meaningful Conversation in a Digital Age', 'template' => 'templates/template-blog-16.php', 'parent' => 'blog' ),
+        'blog-17' => array( 'title' => 'Raising Happy Kids in an Achievement-Obsessed Culture: A Parent\'s Guide', 'template' => 'templates/template-blog-17.php', 'parent' => 'blog' ),
         'preview-book' => array( 'title' => 'Preview Book', 'template' => 'templates/template-preview-book.php' ),
         'preview-boot-camp' => array( 'title' => 'Preview Boot Camp Book', 'template' => 'templates/template-preview-boot-camp.php' ),
         'boot-camp' => array( 'title' => 'Boot Camp Book', 'template' => 'templates/template-boot-camp.php' ),
@@ -872,8 +905,8 @@ function toddpatkin_force_template_include( $template ) {
         $request_uri = strtok( $request_uri, '?' );
         $request_uri = rtrim( $request_uri, '/.html' );
         
-        // Check if it's a blog detail page (blog/blog-1 through blog/blog-7)
-        if ( preg_match( '#^blog/blog-([1-7])$#i', $request_uri, $matches ) ) {
+        // Check if it's a blog detail page (blog/blog-1 through blog/blog-17)
+        if ( preg_match( '#^blog/blog-([1-9]|1[0-7])$#i', $request_uri, $matches ) ) {
             $blog_num = $matches[1];
             $blog_template = get_template_directory() . '/templates/template-blog-' . $blog_num . '.php';
             if ( file_exists( $blog_template ) ) {
@@ -1070,8 +1103,8 @@ function toddpatkin_prevent_author_archive_for_blog_pages( $query ) {
         $request_uri = strtok( $request_uri, '?' );
         $request_uri = rtrim( $request_uri, '/.html' );
         
-        // If it's a blog detail page (blog/blog-1 through blog/blog-7), prevent author archive
-        if ( preg_match( '#^blog/blog-([1-7])$#i', $request_uri ) ) {
+        // If it's a blog detail page (blog/blog-1 through blog/blog-17), prevent author archive
+        if ( preg_match( '#^blog/blog-([1-9]|1[0-7])$#i', $request_uri ) ) {
             $query->is_author = false;
             $query->is_404 = false;
             $query->is_page = true;
@@ -1259,9 +1292,9 @@ function toddpatkin_format_blog_content($content) {
                         if (!empty($description)) {
                             $formatted .= '<p style="font-size: 11px; line-height: 1.5; color: #2D2D2D; margin: 0;">' . esc_html($description) . '</p>' . "\n";
                         }
-                        $formatted .= '</div>' . "\n";
-                        $formatted .= '</div>' . "\n";
-                        $formatted .= '</div>' . "\n";
+                $formatted .= '</div>' . "\n";
+                $formatted .= '</div>' . "\n";
+                $formatted .= '</div>' . "\n";
                     }
                     
                     $formatted .= '</div>' . "\n";
@@ -1303,8 +1336,8 @@ function toddpatkin_format_blog_content($content) {
             // First paragraph gets special treatment - styled like book intro
             if ($first_paragraph) {
                 $formatted .= '<div class="blog-description-item mb-4" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative; margin-bottom: 30px;">' . "\n";
-                $formatted .= '<div class="blog-icon-badge" style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 2; line-height: 1;">' . "\n";
-                $formatted .= '<i class="fas fa-lightbulb" style="color: #275BA7; font-size: 9px; display: flex; align-items: center; justify-content: center; line-height: 1; margin: 0; padding: 0;"></i>' . "\n";
+                $formatted .= '<div class="blog-icon-badge" style="position: absolute; left: -10px; top: -1px; width: 20px; height: 20px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 2; margin: 0; padding: 0;">' . "\n";
+                $formatted .= '<i class="fas fa-lightbulb" style="color: #275BA7; font-size: 10px; margin: 0; padding: 0; line-height: 20px; display: block; width: 100%; height: 100%; text-align: center;"></i>' . "\n";
                 $formatted .= '</div>' . "\n";
                 $formatted .= '<p class="blog-description-text mb-0" style="font-size: 14px; line-height: 1.6; color: #2D2D2D;">' . esc_html($line) . '</p>' . "\n";
                 $formatted .= '</div>' . "\n";
@@ -1342,8 +1375,8 @@ function toddpatkin_format_blog_content($content) {
                 $icon_type = ($paragraph_count % 2 == 0) ? 'fa-heart' : 'fa-lightbulb';
                 
                 $formatted .= '<div class="blog-description-item mb-4 blog-paragraph-interactive" style="padding-left: 24px; border-left: 3px solid ' . $border_color . '; position: relative; transition: all 0.3s ease;">' . "\n";
-                $formatted .= '<div class="blog-icon-badge" style="position: absolute; left: -9.5px; top: -1px; width: 20px; height: 20px; background: ' . $icon_bg . '; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(' . ($paragraph_count % 2 == 0 ? '39, 91, 167' : '255, 193, 7') . ', 0.4); z-index: 2; transition: all 0.3s ease; line-height: 1;">' . "\n";
-                $formatted .= '<i class="fas ' . $icon_type . '" style="color: ' . $icon_color . '; font-size: 9px; display: flex; align-items: center; justify-content: center; line-height: 1; margin: 0; padding: 0;"></i>' . "\n";
+                $formatted .= '<div class="blog-icon-badge" style="position: absolute; left: -10px; top: -1px; width: 20px; height: 20px; background: ' . $icon_bg . '; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(' . ($paragraph_count % 2 == 0 ? '39, 91, 167' : '255, 193, 7') . ', 0.4); z-index: 2; transition: all 0.3s ease; margin: 0; padding: 0;">' . "\n";
+                $formatted .= '<i class="fas ' . $icon_type . '" style="color: ' . $icon_color . '; font-size: 10px; margin: 0; padding: 0; line-height: 20px; display: block; width: 100%; height: 100%; text-align: center;"></i>' . "\n";
                 $formatted .= '</div>' . "\n";
                 $formatted .= '<p class="blog-description-text mb-0" style="font-size: 14px; line-height: 1.6; color: #2D2D2D; margin: 0;">' . esc_html($line) . '</p>' . "\n";
                 $formatted .= '</div>' . "\n";
@@ -1395,9 +1428,9 @@ function toddpatkin_format_blog_content($content) {
                 if (!empty($description)) {
                     $formatted .= '<p style="font-size: 11px; line-height: 1.5; color: #2D2D2D; margin: 0;">' . esc_html($description) . '</p>' . "\n";
                 }
-                $formatted .= '</div>' . "\n";
-                $formatted .= '</div>' . "\n";
-                $formatted .= '</div>' . "\n";
+        $formatted .= '</div>' . "\n";
+        $formatted .= '</div>' . "\n";
+        $formatted .= '</div>' . "\n";
             }
             
             $formatted .= '</div>' . "\n";
