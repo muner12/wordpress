@@ -764,7 +764,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const courseVideoThumbnail = document.getElementById('courseVideoThumbnail');
     const courseVideoIframeWrapper = document.getElementById('courseVideoIframeWrapper');
     const courseVideoIframe = document.getElementById('courseVideoIframe');
-    const courseVideoUrl = 'https://www.veed.io/embed/6612ef59-46f4-4f09-955d-e3d14eca05e9?watermark=0&color=default&sharing=0&title=0';
+    const courseVideoUrl = 'https://www.veed.io/embed/08363b7e-a955-45c0-accf-5469d90516f5';
     
     if (courseVideoThumbnail && courseVideoIframeWrapper && courseVideoIframe) {
         // Handle thumbnail click
