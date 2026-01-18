@@ -30,7 +30,8 @@ function toddpatkin_create_required_pages() {
         array( 'slug' => 'podcast/podcast-1', 'title' => 'Podcast 1: Crack the Happiness Code', 'template' => 'templates/template-podcast-1.php' ),
         array( 'slug' => 'podcast/podcast-2', 'title' => 'Podcast 2: Helping Others Helps You', 'template' => 'templates/template-podcast-2.php' ),
         array( 'slug' => 'podcast/podcast-3', 'title' => 'Podcast 3: Happiness Isn\'t What You Think', 'template' => 'templates/template-podcast-3.php' ),
-        array( 'slug' => 'podcast/podcast-4', 'title' => 'Podcast 4: 12 Steps to Happiness', 'template' => 'templates/template-podcast-4.php' ),
+        array( 'slug' => 'podcast/podcast-4', 'title' => 'Podcast 4: 12 Steps to Happiness', 'template' => 'templates/template-podcast-4.php'),
+        array( 'slug' => 'podcast/podcast-5', 'title' => 'Podcast 5: The Happiness Code', 'template' => 'templates/template-podcast-5.php'),
         array( 'slug' => 'blog', 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
         // Blog detail pages
         array( 'slug' => 'blog/blog-1', 'title' => 'Money and Happiness: Why More Isn\'t Always Better', 'template' => 'templates/template-blog-1.php' ),
@@ -232,7 +233,7 @@ function toddpatkin_intercept_missing_pages( $wp ) {
     
     // Skip if this is likely a blog post (check if it's a post, not a page)
     // First, check if it matches any known page template slugs
-    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'podcast-4', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7', 'blog-8', 'blog-9', 'blog-10', 'blog-11', 'blog-12', 'blog-13', 'blog-14', 'blog-15', 'blog-16', 'blog-17' );
+    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'podcast-4', 'podcast-5', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7', 'blog-8', 'blog-9', 'blog-10', 'blog-11', 'blog-12', 'blog-13', 'blog-14', 'blog-15', 'blog-16', 'blog-17' );
     
     $path_parts_temp = array_filter( explode( '/', $request_uri ) );
     $last_slug_temp = end( $path_parts_temp );
@@ -329,6 +330,7 @@ function toddpatkin_intercept_missing_pages( $wp ) {
         'podcast-2' => array( 'title' => 'Podcast 2: Helping Others Helps You', 'template' => 'templates/template-podcast-2.php', 'parent' => 'podcast' ),
         'podcast-3' => array( 'title' => 'Podcast 3: Happiness Isn\'t What You Think', 'template' => 'templates/template-podcast-3.php', 'parent' => 'podcast' ),
         'podcast-4' => array( 'title' => 'Podcast 4: 12 Steps to Happiness', 'template' => 'templates/template-podcast-4.php', 'parent' => 'podcast' ),
+        'podcast-5' => array( 'title' => 'Podcast 5: The Happiness Code', 'template' => 'templates/template-podcast-5.php', 'parent' => 'podcast' ),
         'blog' => array( 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
         // Blog detail pages
         'blog-1' => array( 'title' => 'Money and Happiness: Why More Isn\'t Always Better', 'template' => 'templates/template-blog-1.php', 'parent' => 'blog' ),
@@ -463,7 +465,7 @@ function toddpatkin_handle_404_create_page() {
     $request_uri = rtrim( $request_uri, '/.html' );
     
     // Skip if this is likely a blog post
-    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'podcast-4', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7', 'blog-8', 'blog-9', 'blog-10', 'blog-11', 'blog-12', 'blog-13', 'blog-14', 'blog-15', 'blog-16', 'blog-17' );
+    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'podcast-4', 'podcast-5', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7', 'blog-8', 'blog-9', 'blog-10', 'blog-11', 'blog-12', 'blog-13', 'blog-14', 'blog-15', 'blog-16', 'blog-17' );
     
     $path_parts = array_filter( explode( '/', $request_uri ) );
     $slug = end( $path_parts );
@@ -549,6 +551,7 @@ function toddpatkin_handle_404_create_page() {
         'podcast-2' => array( 'title' => 'Podcast 2: Helping Others Helps You', 'template' => 'templates/template-podcast-2.php', 'parent' => 'podcast' ),
         'podcast-3' => array( 'title' => 'Podcast 3: Happiness Isn\'t What You Think', 'template' => 'templates/template-podcast-3.php', 'parent' => 'podcast' ),
         'podcast-4' => array( 'title' => 'Podcast 4: 12 Steps to Happiness', 'template' => 'templates/template-podcast-4.php', 'parent' => 'podcast' ),
+        'podcast-5' => array( 'title' => 'Podcast 5: The Happiness Code', 'template' => 'templates/template-podcast-5.php', 'parent' => 'podcast' ),
         'blog' => array( 'title' => 'Blog', 'template' => 'templates/template-blog.php' ),
         // Blog detail pages
         'blog-1' => array( 'title' => 'Money and Happiness: Why More Isn\'t Always Better', 'template' => 'templates/template-blog-1.php', 'parent' => 'blog' ),
@@ -800,6 +803,7 @@ function toddpatkin_force_page_template( $template ) {
         'podcast-2' => 'templates/template-podcast-2.php',
         'podcast-3' => 'templates/template-podcast-3.php',
         'podcast-4' => 'templates/template-podcast-4.php',
+        'podcast-5' => 'templates/template-podcast-5.php',
         'blog' => 'templates/template-blog.php',
         'preview-book' => 'templates/template-preview-book.php',
         'preview-boot-camp' => 'templates/template-preview-boot-camp.php',
@@ -995,6 +999,7 @@ function toddpatkin_force_template_include( $template ) {
         'podcast-2' => 'templates/template-podcast-2.php',
         'podcast-3' => 'templates/template-podcast-3.php',
         'podcast-4' => 'templates/template-podcast-4.php',
+        'podcast-5' => 'templates/template-podcast-5.php',
         'blog' => 'templates/template-blog.php',
         'preview-book' => 'templates/template-preview-book.php',
         'preview-boot-camp' => 'templates/template-preview-boot-camp.php',
@@ -1044,6 +1049,7 @@ function toddpatkin_fix_page_templates() {
         'podcast-2' => 'templates/template-podcast-2.php',
         'podcast-3' => 'templates/template-podcast-3.php',
         'podcast-4' => 'templates/template-podcast-4.php',
+        'podcast-5' => 'templates/template-podcast-5.php',
         'blog' => 'templates/template-blog.php',
         'preview-book' => 'templates/template-preview-book.php',
         'preview-boot-camp' => 'templates/template-preview-boot-camp.php',
