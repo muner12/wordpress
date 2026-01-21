@@ -141,6 +141,7 @@
                     ?>
                     <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/expertise' ) ); ?>">Expertise</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/about-book' ) ); ?>">About Book</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/speaker-reel' ) ); ?>">Speaker Reel</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/about-author' ) ); ?>">About Author</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/course' ) ); ?>">Course</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/podcast' ) ); ?>">Podcast</a></li>

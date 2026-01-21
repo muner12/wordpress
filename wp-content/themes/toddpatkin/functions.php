@@ -23,6 +23,7 @@ function toddpatkin_create_required_pages() {
     $pages = array(
         array( 'slug' => 'expertise', 'title' => 'Expertise', 'template' => 'templates/template-expertise.php' ),
         array( 'slug' => 'about-book', 'title' => 'About Book', 'template' => 'templates/template-about-book.php' ),
+        array( 'slug' => 'speaker-reel', 'title' => 'Speaker Reel', 'template' => 'templates/template-speaker-reel.php' ),
         array( 'slug' => 'about-author', 'title' => 'About Author', 'template' => 'templates/template-about-author.php' ),
         array( 'slug' => 'course', 'title' => 'Course', 'template' => 'templates/template-course.php' ),
         array( 'slug' => 'podcast', 'title' => 'Podcast', 'template' => 'templates/template-podcast.php' ),
@@ -194,7 +195,7 @@ function toddpatkin_force_create_pages_on_load() {
 add_action( 'init', 'toddpatkin_ensure_pages_exist', 1 );
 function toddpatkin_ensure_pages_exist() {
     // Check if any required pages are missing
-    $required_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd' );
+    $required_slugs = array( 'expertise', 'about-book', 'speaker-reel', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd' );
     $missing = false;
     
     foreach ( $required_slugs as $slug ) {
@@ -233,7 +234,7 @@ function toddpatkin_intercept_missing_pages( $wp ) {
     
     // Skip if this is likely a blog post (check if it's a post, not a page)
     // First, check if it matches any known page template slugs
-    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'podcast-4', 'podcast-5', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7', 'blog-8', 'blog-9', 'blog-10', 'blog-11', 'blog-12', 'blog-13', 'blog-14', 'blog-15', 'blog-16', 'blog-17' );
+    $known_page_slugs = array( 'expertise', 'about-book', 'speaker-reel', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'podcast-4', 'podcast-5', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7', 'blog-8', 'blog-9', 'blog-10', 'blog-11', 'blog-12', 'blog-13', 'blog-14', 'blog-15', 'blog-16', 'blog-17' );
     
     $path_parts_temp = array_filter( explode( '/', $request_uri ) );
     $last_slug_temp = end( $path_parts_temp );
@@ -465,7 +466,7 @@ function toddpatkin_handle_404_create_page() {
     $request_uri = rtrim( $request_uri, '/.html' );
     
     // Skip if this is likely a blog post
-    $known_page_slugs = array( 'expertise', 'about-book', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'podcast-4', 'podcast-5', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7', 'blog-8', 'blog-9', 'blog-10', 'blog-11', 'blog-12', 'blog-13', 'blog-14', 'blog-15', 'blog-16', 'blog-17' );
+    $known_page_slugs = array( 'expertise', 'about-book', 'speaker-reel', 'about-author', 'course', 'podcast', 'blog', 'preview-book', 'preview-boot-camp', 'boot-camp', 'hire-todd', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6', 'module-7', 'module-8', 'module-9', 'module-10', 'module-11', 'module-12', 'podcast-1', 'podcast-2', 'podcast-3', 'podcast-4', 'podcast-5', 'blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5', 'blog-6', 'blog-7', 'blog-8', 'blog-9', 'blog-10', 'blog-11', 'blog-12', 'blog-13', 'blog-14', 'blog-15', 'blog-16', 'blog-17' );
     
     $path_parts = array_filter( explode( '/', $request_uri ) );
     $slug = end( $path_parts );
@@ -543,6 +544,7 @@ function toddpatkin_handle_404_create_page() {
     $page_templates = array(
         'expertise' => array( 'title' => 'Expertise', 'template' => 'templates/template-expertise.php' ),
         'about-book' => array( 'title' => 'About Book', 'template' => 'templates/template-about-book.php' ),
+        'speaker-reel' => array( 'title' => 'Speaker Reel', 'template' => 'templates/template-speaker-reel.php' ),
         'about-author' => array( 'title' => 'About Author', 'template' => 'templates/template-about-author.php' ),
         'course' => array( 'title' => 'Course', 'template' => 'templates/template-course.php' ),
         'podcast' => array( 'title' => 'Podcast', 'template' => 'templates/template-podcast.php' ),
@@ -796,6 +798,7 @@ function toddpatkin_force_page_template( $template ) {
     $template_map = array(
         'expertise' => 'templates/template-expertise.php',
         'about-book' => 'templates/template-about-book.php',
+        'speaker-reel' => 'templates/template-speaker-reel.php',
         'about-author' => 'templates/template-about-author.php',
         'course' => 'templates/template-course.php',
         'podcast' => 'templates/template-podcast.php',
@@ -992,6 +995,7 @@ function toddpatkin_force_template_include( $template ) {
     $template_map = array(
         'expertise' => 'templates/template-expertise.php',
         'about-book' => 'templates/template-about-book.php',
+        'speaker-reel' => 'templates/template-speaker-reel.php',
         'about-author' => 'templates/template-about-author.php',
         'course' => 'templates/template-course.php',
         'podcast' => 'templates/template-podcast.php',
