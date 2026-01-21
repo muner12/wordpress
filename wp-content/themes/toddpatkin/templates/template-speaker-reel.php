@@ -327,11 +327,11 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="col-lg-5 text-center text-lg-start">
                 <div class="book-cover-container" style="position: relative; display: inline-block;">
                     <!-- Decorative Background Element -->
-                    <div style="position: absolute; top: -15px; left: -15px; width: calc(100% + 30px); height: calc(100% + 30px); background: linear-gradient(135deg, rgba(39, 91, 167, 0.1) 0%, rgba(250, 211, 12, 0.1) 100%); border-radius: 16px; z-index: 0;"></div>
+                    <div style="position: absolute; top: -15px; left: -15px; width: calc(100% + 30px); height: calc(100% + 30px);  border-radius: 16px; z-index: 0;"></div>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/speak_reel_book.png" 
                          alt="Happiness Code Cracker Book Cover" 
                          class="img-fluid" 
-                         style="max-width: 450px; border-radius: 12px; box-shadow: 0 12px 30px rgba(0,0,0,0.15); position: relative; z-index: 1; transition: transform 0.3s ease;">
+                         style="max-width: 450px; border-radius: 12px;  position: relative; z-index: 1; transition: transform 0.3s ease;">
                 </div>
             </div>
 
