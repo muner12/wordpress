@@ -1828,6 +1828,33 @@ h5 {
     border-radius: 20px;
 }
 
+/* Mobile specific video thumbnail fixes */
+@media (max-width: 768px) {
+    .video-thumbnail {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    
+    .video-thumbnail img {
+        margin-left: 0 !important;
+        max-height: 220px;
+    }
+}
+
+@media (max-width: 576px) {
+    .video-thumbnail img {
+        max-height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-thumbnail img {
+        max-height: 180px;
+    }
+}
+
 .video-wrapper:hover .video-thumbnail img {
     transform: scale(1.02);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
@@ -1997,22 +2024,97 @@ h5 {
     }
 
     .video-play-overlay {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
     }
 
     .video-play-overlay i {
-        font-size: 24px;
+        font-size: 22px;
         margin-left: 3px;
     }
+}
 
-    .video-inner-title {
-        font-size: 32px;
+/* Extra responsive adjustments for smaller mobile devices */
+@media (max-width: 576px) {
+    .video-play-overlay {
+        width: 50px !important;
+        height: 50px !important;
     }
 
+    .video-play-overlay i {
+        font-size: 20px !important;
+        margin-left: 2px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-play-overlay {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    .video-play-overlay i {
+        font-size: 18px !important;
+        margin-left: 2px !important;
+    }
+
+    /* Video section mobile layout fixes */
+    .video-section .carousel-item {
+        overflow: visible !important;
+    }
+    
+    .video-inner-title {
+        font-size: 26px;
+        margin-top: 0 !important;
+        margin-bottom: 15px !important;
+        padding-top: 0 !important;
+    }
+    
+    .video-content-wrapper {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        clear: both;
+        width: 100%;
+        position: relative !important;
+    }
+    
+    /* Remove ALL height constraints from text content */
     .video-text-content {
-        font-size: 14px;
-        max-height: 280px;
+        font-size: 14px !important;
+        max-height: none !important;
+        min-height: 0 !important;
+        height: auto !important;
+        overflow: visible !important;
+        display: block !important;
+    }
+    
+    .d-lg-none .video-text-content {
+        max-height: none !important;
+        min-height: 0 !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+    
+    .video-text-item {
+        height: auto !important;
+        overflow: visible !important;
+    }
+    
+    .video-text-item p {
+        white-space: normal !important;
+        overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
+    }
+    
+    /* Ensure mobile title wrapper has space */
+    .d-lg-none.mb-3 {
+        margin-bottom: 1rem !important;
+        margin-top: 0 !important;
+    }
+    
+    .d-lg-none.mt-3 {
+        margin-top: 1rem !important;
     }
     
     .video-section .col-lg-6 .d-flex {
@@ -2050,9 +2152,50 @@ h5 {
     }
 
     .video-text-content {
-        font-size: 14px;
-        max-height: none;
-        display: block;
+        font-size: 13px !important;
+        max-height: none !important;
+        min-height: 0 !important;
+        height: auto !important;
+        display: block !important;
+        overflow: visible !important;
+    }
+    
+    .video-text-item {
+        margin-bottom: 15px !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    
+    .video-text-item p {
+        display: block !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        white-space: normal !important;
+        height: auto !important;
+        max-height: none !important;
+        line-height: 1.6 !important;
+    }
+    
+    .d-lg-none {
+        height: auto !important;
+        overflow: visible !important;
+        max-height: none !important;
+    }
+    
+    .d-lg-none .video-text-content {
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    
+    .video-content-wrapper {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    .carousel-item .row {
+        overflow: visible !important;
     }
 
     .video-section-btn {
@@ -2599,6 +2742,70 @@ h5 {
     left: auto;
 }
 
+/* Mobile responsive adjustments for carousel controls */
+@media (max-width: 768px) {
+    .video-carousel-control-mobile {
+        width: 38px !important;
+        height: 38px !important;
+        border: 2px solid var(--text-200);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .video-carousel-control-mobile .carousel-control-prev-icon,
+    .video-carousel-control-mobile .carousel-control-next-icon {
+        width: 16px !important;
+        height: 16px !important;
+        background-size: 16px 16px !important;
+    }
+    
+    .video-carousel-control-mobile.carousel-control-prev {
+        left: 15px;
+    }
+    
+    .video-carousel-control-mobile.carousel-control-next {
+        right: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .video-carousel-control-mobile {
+        width: 36px !important;
+        height: 36px !important;
+    }
+    
+    .video-carousel-control-mobile.carousel-control-prev {
+        left: 18px;
+    }
+    
+    .video-carousel-control-mobile.carousel-control-next {
+        right: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-carousel-control-mobile {
+        width: 34px !important;
+        height: 34px !important;
+    }
+    
+    .video-carousel-control-mobile .carousel-control-prev-icon,
+    .video-carousel-control-mobile .carousel-control-next-icon {
+        width: 14px !important;
+        height: 14px !important;
+        background-size: 14px 14px !important;
+    }
+    
+    .video-carousel-control-mobile.carousel-control-prev {
+        left: 20px;
+    }
+    
+    .video-carousel-control-mobile.carousel-control-next {
+        right: 20px;
+    }
+}
+
 .video-carousel-control:hover {
     background-color: var(--primary-blue);
     border-color: var(--primary-blue);
@@ -2662,12 +2869,99 @@ h5 {
     height: 5px;
 }
 
+/* Mobile responsive adjustments for carousel indicators */
+@media (max-width: 768px) {
+    .video-carousel-indicators {
+        margin-top: 15px !important;
+        margin-bottom: 30px !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
+    
+    .video-carousel-indicators button {
+        width: 40px;
+        height: 4px;
+    }
+    
+    .video-carousel-indicators button.active {
+        width: 70px;
+        height: 4px;
+    }
+    
+    /* Ensure proper stacking and spacing */
+    .video-section .col-12.col-lg-6 {
+        display: block !important;
+        position: relative !important;
+    }
+    
+    .video-section .col-12.order-1 {
+        margin-bottom: 30px !important;
+    }
+    
+    .video-section .col-12.order-2 {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        clear: both !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .video-carousel-indicators {
+        gap: 8px;
+        margin-top: 12px !important;
+    }
+    
+    .video-carousel-indicators button {
+        width: 35px;
+        height: 4px;
+    }
+    
+    .video-carousel-indicators button.active {
+        width: 60px;
+        height: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-carousel-indicators button {
+        width: 30px;
+        height: 3px;
+    }
+    
+    .video-carousel-indicators button.active {
+        width: 50px;
+        height: 3px;
+    }
+}
+
 /* Video image wrapper styling */
 .video-image-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+}
+
+/* Mobile responsive adjustments for video image wrapper */
+@media (max-width: 768px) {
+    .video-image-wrapper {
+        padding: 0 30px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .video-image-wrapper {
+        padding: 0 30px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-image-wrapper {
+        padding: 0 32px;
+        margin-bottom: 15px;
+    }
 }
 
 .book-preview-btn {
@@ -10437,9 +10731,23 @@ section .text-muted {
     }
 
     .video-text-content {
-        font-size: 13px;
-        max-height: none;
-        display: block;
+        font-size: 13px !important;
+        max-height: none !important;
+        min-height: 0 !important;
+        height: auto !important;
+        display: block !important;
+        overflow: visible !important;
+    }
+    
+    .video-text-item {
+        height: auto !important;
+        max-height: none !important;
+    }
+    
+    .video-text-item p {
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
     }
 
     .video-wrapper {

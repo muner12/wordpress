@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todd Patkin - Discover the Power of Positive Mind</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/Favicon TP/Fav icon 128-128.ico">
+    <link rel="icon" type="image/png" sizes="128x128" href="<?php echo get_template_directory_uri(); ?>/assets/images/Favicon TP/128-128.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="<?php echo get_template_directory_uri(); ?>/assets/images/Favicon TP/512-512.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="<?php echo get_template_directory_uri(); ?>/assets/images/Favicon TP/128-128.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="<?php echo get_template_directory_uri(); ?>/assets/images/Favicon TP/512-512.png">
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 

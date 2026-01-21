@@ -95,8 +95,8 @@
     </section>
 
     <!-- Video Section -->
-    <section id="video" class="video-section ">
-        <div class="container">
+    <section id="video" class=" ">
+        <div class="">
             <div class="text-center mb-4">
                 <h2 class="video-section-title mb-3">Watch <span class="text-warning">todd</span> Speak</h2>
                 <p class="book-section-subtitle mb-0">See why audiences call Todd's message 'life-changing'</p>

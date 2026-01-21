@@ -7,6 +7,8 @@ get_header();
 
 <style>
 /* Speaker Reel Responsive Styles */
+
+/* Tablet and smaller */
 @media (max-width: 991px) {
     .speaker-reel-hero h1 {
         font-size: 38px !important;
@@ -14,6 +16,13 @@ get_header();
     
     .speaker-reel-hero .section-description {
         font-size: 16px !important;
+        padding: 0 20px !important;
+    }
+    
+    .speaker-reel-hero .video-container {
+        max-width: 100% !important;
+        padding: 0 20px !important;
+        margin: 0 auto !important;
     }
     
     .speaker-one-sheet h2 {
@@ -24,14 +33,25 @@ get_header();
         font-size: 42px !important;
     }
     
+    .speaker-one-sheet .container {
+        padding: 0 20px !important;
+    }
+    
+    .speaker-info .book-cover-container {
+        text-align: center !important;
+        margin-bottom: 30px !important;
+    }
+    
     .speaker-info .book-cover-container img {
         max-width: 300px !important;
+        margin: 0 auto !important;
     }
 }
 
+/* Mobile devices */
 @media (max-width: 768px) {
     .speaker-reel-hero {
-        padding: 40px 0 !important;
+        padding: 30px 0 !important;
     }
     
     .speaker-reel-hero h1 {
@@ -41,11 +61,31 @@ get_header();
     
     .speaker-reel-hero .section-description {
         font-size: 15px !important;
-        padding: 0 15px;
+        padding: 0 15px !important;
+        text-align: center !important;
+        text-align-last: center !important;
+    }
+    
+    .speaker-reel-hero .video-container {
+        padding: 0 15px !important;
+        border-radius: 12px !important;
+    }
+    
+    .speaker-reel-play-overlay > div {
+        width: 70px !important;
+        height: 70px !important;
+    }
+    
+    .speaker-reel-play-overlay i {
+        font-size: 28px !important;
     }
     
     .speaker-one-sheet {
-        padding: 40px 0 !important;
+        padding: 30px 0 !important;
+    }
+    
+    .speaker-one-sheet .container {
+        padding: 0 15px !important;
     }
     
     .speaker-one-sheet h2 {
@@ -54,32 +94,54 @@ get_header();
     }
     
     .speaker-one-sheet h3 {
-        font-size: 36px !important;
+        font-size: 32px !important;
         margin-bottom: 12px !important;
+        text-align: center !important;
     }
     
-    .speaker-info .book-cover-container img {
-        max-width: 250px !important;
-        margin: 0 auto 30px !important;
+    .book-cover-container {
+        text-align: center !important;
+        margin: 0 auto 30px auto !important;
+        display: block !important;
+    }
+    
+    .book-cover-container img {
+        max-width: 280px !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+    
+    .col-lg-5 {
+        text-align: center !important;
+    }
+    
+    .speaker-info .d-flex.align-items-center {
+        justify-content: center !important;
     }
     
     .speaker-info p {
         font-size: 14px !important;
+        text-align: center !important;
     }
     
     .speaker-info ul {
         font-size: 14px !important;
     }
     
-    .speaker-info .btn {
-        padding: 12px 28px !important;
+    .speaker-info ul li {
         font-size: 14px !important;
-        width: 100%;
-        text-align: center;
+    }
+    
+    .speaker-info .btn {
+        padding: 14px 32px !important;
+        font-size: 14px !important;
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
     }
     
     .testimonials-section {
-        padding: 40px 0 !important;
+        padding: 30px 0 !important;
     }
     
     .testimonial-card {
@@ -88,6 +150,43 @@ get_header();
     
     .testimonial-card p {
         font-size: 14px !important;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 576px) {
+    .speaker-reel-hero h1 {
+        font-size: 28px !important;
+    }
+    
+    .speaker-reel-hero .section-description {
+        font-size: 14px !important;
+    }
+    
+    .speaker-reel-hero .video-container {
+        padding: 0 10px !important;
+        border-radius: 8px !important;
+    }
+    
+    .speaker-reel-play-overlay > div {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .speaker-reel-play-overlay i {
+        font-size: 24px !important;
+    }
+    
+    .speaker-one-sheet h2 {
+        font-size: 24px !important;
+    }
+    
+    .speaker-one-sheet h3 {
+        font-size: 28px !important;
+    }
+    
+    .book-cover-container img {
+        max-width: 240px !important;
     }
 }
 
@@ -160,17 +259,6 @@ get_header();
 
 #speakerReelThumbnailWrapper {
     transition: all 0.3s ease;
-}
-
-#speakerReelThumbnailWrapper:hover .speaker-reel-thumbnail {
-    transform: scale(1.02);
-    filter: brightness(0.95);
-}
-
-#speakerReelThumbnailWrapper:hover .speaker-reel-play-overlay > div {
-    transform: scale(1.1);
-    background: rgba(250, 211, 12, 1);
-    box-shadow: 0 12px 32px rgba(250, 211, 12, 0.5);
 }
 
 /* Play Button Overlay Animation */
@@ -277,6 +365,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 speakerReelPlayOverlay.style.setProperty('display', 'none', 'important');
             }
             
+            // Get responsive height based on screen size
+            let iframeHeight = '550px';
+            if (window.innerWidth <= 576) {
+                iframeHeight = '350px';
+            } else if (window.innerWidth <= 768) {
+                iframeHeight = '420px';
+            }
+            
             // Show and load iframe - use setProperty with important to override inline styles
             speakerReelVideoIframe.classList.add('active');
             speakerReelVideoIframe.style.setProperty('display', 'block', 'important');
@@ -285,11 +381,11 @@ document.addEventListener('DOMContentLoaded', function() {
             speakerReelVideoIframe.style.setProperty('top', '0', 'important');
             speakerReelVideoIframe.style.setProperty('left', '0', 'important');
             speakerReelVideoIframe.style.setProperty('width', '100%', 'important');
-            speakerReelVideoIframe.style.setProperty('height', '550px', 'important');
+            speakerReelVideoIframe.style.setProperty('height', iframeHeight, 'important');
             speakerReelVideoIframe.style.setProperty('max-width', '100%', 'important');
             speakerReelVideoIframe.style.setProperty('opacity', '1', 'important');
             speakerReelVideoIframe.style.setProperty('pointer-events', 'auto', 'important');
-            speakerReelVideoIframe.style.setProperty('border-radius', '16px', 'important');
+            speakerReelVideoIframe.style.setProperty('border-radius', window.innerWidth <= 576 ? '8px' : '16px', 'important');
             
             // Set autoplay permissions
             speakerReelVideoIframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
@@ -308,6 +404,20 @@ document.addEventListener('DOMContentLoaded', function() {
         speakerReelThumbnailWrapper.addEventListener('click', playSpeakerReelVideo);
         console.log('Click handler attached to speaker reel thumbnail wrapper');
     }
+    
+    // Handle window resize to adjust video height dynamically
+    window.addEventListener('resize', function() {
+        if (speakerReelVideoIframe && speakerReelVideoIframe.classList.contains('active')) {
+            let iframeHeight = '550px';
+            if (window.innerWidth <= 576) {
+                iframeHeight = '350px';
+            } else if (window.innerWidth <= 768) {
+                iframeHeight = '420px';
+            }
+            speakerReelVideoIframe.style.setProperty('height', iframeHeight, 'important');
+            speakerReelVideoIframe.style.setProperty('border-radius', window.innerWidth <= 576 ? '8px' : '16px', 'important');
+        }
+    });
 });
 </script>
 
@@ -324,14 +434,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         <div class="row align-items-center justify-content-center g-5">
             <!-- Book Cover Column with Enhanced Styling -->
-            <div class="col-lg-5 text-center text-lg-start">
+            <div class="col-lg-5 text-center">
                 <div class="book-cover-container" style="position: relative; display: inline-block;">
                     <!-- Decorative Background Element -->
                     <div style="position: absolute; top: -15px; left: -15px; width: calc(100% + 30px); height: calc(100% + 30px);  border-radius: 16px; z-index: 0;"></div>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/speak_reel_book.png" 
                          alt="Happiness Code Cracker Book Cover" 
-                         class="img-fluid" 
-                         style="max-width: 450px; border-radius: 12px;  position: relative; z-index: 1; transition: transform 0.3s ease;">
+                         class="img-fluid book-cover-image" 
+                         style="max-width: 450px; border-radius: 12px; position: relative; z-index: 1; transition: transform 0.3s ease;">
                 </div>
             </div>
 
@@ -407,15 +517,36 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <style>
-/* Enhanced hover effects */
-.book-cover-container img:hover {
-    transform: translateY(-5px);
+/* Enhanced hover effects - Desktop only */
+@media (hover: hover) and (pointer: fine) {
+    .book-cover-container img:hover {
+        transform: translateY(-5px);
+    }
+
+    .speaker-download-btn:hover {
+        background: linear-gradient(135deg, #FFC107 0%, #FAD30C 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(250, 211, 12, 0.4);
+    }
+    
+    #speakerReelThumbnailWrapper:hover .speaker-reel-thumbnail {
+        transform: scale(1.02);
+        filter: brightness(0.95);
+    }
+
+    #speakerReelThumbnailWrapper:hover .speaker-reel-play-overlay > div {
+        transform: scale(1.1);
+        background: rgba(250, 211, 12, 1);
+        box-shadow: 0 12px 32px rgba(250, 211, 12, 0.5);
+    }
 }
 
-.speaker-download-btn:hover {
-    background: linear-gradient(135deg, #FFC107 0%, #FAD30C 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(250, 211, 12, 0.4);
+/* Mobile tap feedback */
+@media (hover: none) {
+    .speaker-download-btn:active {
+        background: linear-gradient(135deg, #FFC107 0%, #FAD30C 100%);
+        transform: scale(0.98);
+    }
 }
 </style>
 
