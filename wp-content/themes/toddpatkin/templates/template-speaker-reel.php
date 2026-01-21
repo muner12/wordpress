@@ -118,27 +118,32 @@ get_header();
 
         <!-- Enhanced Video Section with Click-to-Play -->
         <div class="video-container mb-4" style="border-radius: 16px; overflow: hidden; position: relative; max-width: 1200px; margin: 0 auto; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
-            <div style="position: relative; width: 100%; max-width: 100%; margin: 0 auto; line-height: 0;">
+            <div id="speakerReelThumbnailWrapper" style="position: relative; width: 100%; max-width: 100%; margin: 0 auto; line-height: 0; cursor: pointer;">
                 <!-- Thumbnail Image (shown initially) -->
                 <img 
                     id="speakerReelVideoThumbnail"
                     src="<?php echo get_template_directory_uri(); ?>/assets/images/speak_reel_book_video.png" 
                     alt="Speaker Reel Preview"
-                    style="width: 100%; max-width: 100%; object-fit: contain; object-position: center; display: block; margin: 0; padding: 0; cursor: pointer; border-radius: 16px;"
+                    style="width: 100%; max-width: 100%; height: 550px; object-fit: cover; object-position: center; display: block; margin: 0; padding: 0; border-radius: 16px;"
                     class="speaker-reel-thumbnail">
+                
+                <!-- Play Button Overlay -->
+                <div class="speaker-reel-play-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; pointer-events: none;">
+                    <div style="width: 90px; height: 90px; background: rgba(250, 211, 12, 0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.3); transition: all 0.3s ease;">
+                        <i class="fas fa-play" style="color: #275BA7; font-size: 36px; margin-left: 6px;"></i>
+                    </div>
+                </div>
                 
                 <!-- Video Iframe (hidden initially - completely removed from layout, takes no space) -->
                 <iframe 
                     id="speakerReelVideoIframe"
                     src=""
-                    width="744"
-                    height="504"
-                    frameborder="0"
+                    frameborder="0" 
                     title="Finding Happiness - Happiness Thought Leader Todd Patkin"
                     webkitallowfullscreen
                     mozallowfullscreen
                     allowfullscreen
-                    style="display: none; visibility: hidden; width: 0; height: 0; border: none; margin: 0; padding: 0; position: absolute; top: -9999px; left: -9999px; opacity: 0; pointer-events: none;"
+                    style="display: none; visibility: hidden; border: none; margin: 0; padding: 0; position: absolute; top: -9999px; left: -9999px; opacity: 0; pointer-events: none;"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     loading="lazy">
                 </iframe>
@@ -150,12 +155,41 @@ get_header();
 <style>
 /* Speaker Reel Video Styles */
 .speaker-reel-thumbnail {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
-.speaker-reel-thumbnail:hover {
+#speakerReelThumbnailWrapper {
+    transition: all 0.3s ease;
+}
+
+#speakerReelThumbnailWrapper:hover .speaker-reel-thumbnail {
     transform: scale(1.02);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+    filter: brightness(0.95);
+}
+
+#speakerReelThumbnailWrapper:hover .speaker-reel-play-overlay > div {
+    transform: scale(1.1);
+    background: rgba(250, 211, 12, 1);
+    box-shadow: 0 12px 32px rgba(250, 211, 12, 0.5);
+}
+
+/* Play Button Overlay Animation */
+.speaker-reel-play-overlay {
+    transition: all 0.3s ease;
+}
+
+.speaker-reel-play-overlay > div {
+    transition: all 0.3s ease;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(250, 211, 12, 0.6);
+    }
 }
 
 /* Hide iframe completely when it has no src or is empty - takes no space */
@@ -181,19 +215,41 @@ get_header();
     visibility: visible !important;
     position: relative !important;
     width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 744 / 504 !important;
+    height: 550px !important;
     max-width: 100% !important;
     opacity: 1 !important;
     pointer-events: auto !important;
+}
+
+/* Responsive thumbnail and iframe heights */
+@media (max-width: 768px) {
+    #speakerReelVideoThumbnail {
+        height: 420px !important;
+    }
+    
+    #speakerReelVideoIframe.active {
+        height: 420px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    #speakerReelVideoThumbnail {
+        height: 350px !important;
+    }
+    
+    #speakerReelVideoIframe.active {
+        height: 350px !important;
+    }
 }
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Speaker Reel video thumbnail click handler
+    const speakerReelThumbnailWrapper = document.getElementById('speakerReelThumbnailWrapper');
     const speakerReelVideoThumbnail = document.getElementById('speakerReelVideoThumbnail');
     const speakerReelVideoIframe = document.getElementById('speakerReelVideoIframe');
+    const speakerReelPlayOverlay = document.querySelector('.speaker-reel-play-overlay');
     const speakerReelVideoUrl = 'https://www.veed.io/embed/9eb82739-66fd-425f-9415-9e86fd897d48?watermark=0&color=&sharing=0&title=0&autoplay=1';
     
     function playSpeakerReelVideo(e) {
@@ -203,15 +259,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         console.log('playSpeakerReelVideo called');
-        console.log('Thumbnail:', speakerReelVideoThumbnail);
-        console.log('Iframe:', speakerReelVideoIframe);
         
         if (speakerReelVideoThumbnail && speakerReelVideoIframe) {
             console.log('All elements found, hiding thumbnail and showing iframe');
             
+            // DO NOT hide the wrapper - keep it visible so iframe can be seen
+            if (speakerReelThumbnailWrapper) {
+                speakerReelThumbnailWrapper.style.cursor = 'default';
+            }
+            
             // Hide thumbnail completely
             speakerReelVideoThumbnail.style.setProperty('display', 'none', 'important');
             speakerReelVideoThumbnail.style.setProperty('visibility', 'hidden', 'important');
+            
+            // Hide play overlay
+            if (speakerReelPlayOverlay) {
+                speakerReelPlayOverlay.style.setProperty('display', 'none', 'important');
+            }
             
             // Show and load iframe - use setProperty with important to override inline styles
             speakerReelVideoIframe.classList.add('active');
@@ -221,11 +285,11 @@ document.addEventListener('DOMContentLoaded', function() {
             speakerReelVideoIframe.style.setProperty('top', '0', 'important');
             speakerReelVideoIframe.style.setProperty('left', '0', 'important');
             speakerReelVideoIframe.style.setProperty('width', '100%', 'important');
-            speakerReelVideoIframe.style.setProperty('height', 'auto', 'important');
-            speakerReelVideoIframe.style.setProperty('aspect-ratio', '744 / 504', 'important');
+            speakerReelVideoIframe.style.setProperty('height', '550px', 'important');
             speakerReelVideoIframe.style.setProperty('max-width', '100%', 'important');
             speakerReelVideoIframe.style.setProperty('opacity', '1', 'important');
             speakerReelVideoIframe.style.setProperty('pointer-events', 'auto', 'important');
+            speakerReelVideoIframe.style.setProperty('border-radius', '16px', 'important');
             
             // Set autoplay permissions
             speakerReelVideoIframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
@@ -234,17 +298,15 @@ document.addEventListener('DOMContentLoaded', function() {
             speakerReelVideoIframe.src = speakerReelVideoUrl;
             
             console.log('Iframe src set to:', speakerReelVideoUrl);
-            console.log('Iframe display:', speakerReelVideoIframe.style.display);
-            console.log('Iframe computed display:', window.getComputedStyle(speakerReelVideoIframe).display);
         } else {
             console.error('One or more elements not found!');
         }
     }
     
-    // Add click handler
-    if (speakerReelVideoThumbnail) {
-        speakerReelVideoThumbnail.addEventListener('click', playSpeakerReelVideo);
-        console.log('Click handler attached to speaker reel thumbnail');
+    // Add click handler to the wrapper (so play button is also clickable)
+    if (speakerReelThumbnailWrapper) {
+        speakerReelThumbnailWrapper.addEventListener('click', playSpeakerReelVideo);
+        console.log('Click handler attached to speaker reel thumbnail wrapper');
     }
 });
 </script>
@@ -334,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </ul>
 
                     <!-- Enhanced Download Button with Hover Effect -->
-                    <a href="#" class="btn speaker-download-btn" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 40px; background: linear-gradient(135deg, #FAD30C 0%, #FFC107 100%); border: none; border-radius: 8px; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 16px; line-height: 1.5; text-transform: uppercase; text-align: center; color: #333333; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(250, 211, 12, 0.3);">
+                    <a href="<?php echo get_template_directory_uri(); ?>/assets/images/Todd_Patkin_One_Sheet .pdf" target="_blank" class="btn speaker-download-btn" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 40px; background: linear-gradient(135deg, #FAD30C 0%, #FFC107 100%); border: none; border-radius: 8px; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 16px; line-height: 1.5; text-transform: uppercase; text-align: center; color: #333333; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(250, 211, 12, 0.3);">
                         <i class="fas fa-download" style="font-size: 18px;"></i>
                         <span>Download one sheet pdf</span>
                     </a>
