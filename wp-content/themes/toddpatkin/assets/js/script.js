@@ -757,6 +757,23 @@ document.addEventListener('DOMContentLoaded', function() {
             bullyingVideoIframe.src = '';
         });
     }
+
+    // Hero Video Modal Handler
+    const heroVideoModal = document.getElementById('heroVideoModal');
+    const heroVideoIframe = document.getElementById('heroVideoIframe');
+    const heroVideoUrl = 'https://www.veed.io/embed/9eb82739-66fd-425f-9415-9e86fd897d48?watermark=0&color=&sharing=0&title=0';
+    
+    if (heroVideoModal && heroVideoIframe) {
+        // Load video when modal is shown
+        heroVideoModal.addEventListener('show.bs.modal', function () {
+            heroVideoIframe.src = heroVideoUrl;
+        });
+        
+        // Stop video when modal is closed
+        heroVideoModal.addEventListener('hide.bs.modal', function () {
+            heroVideoIframe.src = '';
+        });
+    }
 });
 
 // Course Video Inline Handler (Replaces thumbnail with video on click)
