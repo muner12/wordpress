@@ -306,23 +306,16 @@ document.addEventListener('DOMContentLoaded', function () {
         updateIndicators(getCurrentSlideIndex());
         updateCarouselVisibility();
         
-        // Handle indicator clicks ourselves so Bootstrap does not overwrite our indicator state
+        // Handle indicator clicks - only process clicks on visible indicators
         const indicators = reviewsCarousel.querySelectorAll('.carousel-indicators button');
         indicators.forEach(function (indicator) {
             indicator.addEventListener('click', function (e) {
+                // Skip if indicator is hidden (display:none elements shouldn't receive clicks, but be safe)
+                if (window.getComputedStyle(this).display === 'none') return;
                 e.preventDefault();
                 e.stopPropagation();
                 var slideTo = parseInt(this.getAttribute('data-bs-slide-to'), 10);
                 if (isNaN(slideTo) || slideTo < 0) return;
-                var isDesktop = window.innerWidth > 1024;
-                var isTabletView = isTablet();
-                if (isTabletView) {
-                    if (!this.classList.contains('reviews-tablet-indicator')) return;
-                } else if (isDesktop) {
-                    if (this.classList.contains('d-md-none') || this.classList.contains('reviews-tablet-indicator')) return;
-                } else {
-                    if (this.classList.contains('d-none') || this.classList.contains('reviews-tablet-indicator')) return;
-                }
                 updateIndicators(slideTo);
                 carousel.to(slideTo);
             }, true);

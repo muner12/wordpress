@@ -1712,10 +1712,11 @@ h5 {
 }
 
 @media (max-width: 576px) {
-    .features-heading {
+    .features-heading,
+    .video-section-title {
         font-family: 'Oswald', sans-serif;
         font-weight: 500;
-        font-size: 20px;
+        font-size: 22px;
         line-height: 1.5;
         letter-spacing: 0.02em;
         text-align: center;
@@ -2132,6 +2133,7 @@ h5 {
 /* Responsive adjustments for video section */
 @media (max-width: 991px) {
 
+    .features-heading,
     .video-section-title {
         font-size: 28px;
     }
@@ -2260,6 +2262,7 @@ h5 {
         margin-bottom: 15px;
     }
 
+    .features-heading,
     .video-section-title {
         font-size: 24px;
     }
@@ -2429,6 +2432,13 @@ h5 {
     color: #CCCCCC;
 }
 
+/* Book section - left align text (no justify) */
+.book-section .book-description-text,
+.book-section .book-description-secondary,
+.book-section .book-description-italic {
+    text-align: left;
+}
+
 .book-description-text {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -2474,8 +2484,13 @@ h5 {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
 }
 
+.book-description-content {
+    overflow: visible;
+}
+
 .book-description-item {
     transition: all 0.3s ease;
+    overflow: visible;
 }
 
 .book-description-item:hover {
@@ -2485,6 +2500,12 @@ h5 {
 
 .book-icon-badge {
     transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.book-icon-badge i {
+    display: block !important;
+    line-height: 1;
 }
 
 .book-description-item:hover .book-icon-badge {
@@ -3521,7 +3542,7 @@ h5 {
     color: #4A4A4A;
     font-style: normal;
     flex-grow: 1;
-    text-align: justify;
+    text-align: left;
     margin-bottom: 0;
     letter-spacing: 0.01em;
     min-height: 85px;
@@ -7958,6 +7979,13 @@ section .text-muted {
     width: 100%;
 }
 
+/* About Author - left align on mobile & tablet (no justify) */
+@media (max-width: 1024px) {
+    .about-section .about-paragraph {
+        text-align: left !important;
+    }
+}
+
 .about-text-paragraphs {
     margin-bottom: 20px;
 }
@@ -10414,7 +10442,8 @@ section .text-muted {
         font-size: 16px;
     }
 
-    /* Section-specific mobile font sizes */
+    /* Section-specific mobile font sizes - Features & Video section headers match */
+    .features-heading,
     .video-section-title {
         font-size: 22px;
     }
@@ -10452,6 +10481,12 @@ section .text-muted {
     .book-description-italic {
         font-size: 15px;
         text-align: justify;
+    }
+
+    .book-section .book-description-text,
+    .book-section .book-description-secondary,
+    .book-section .book-description-italic {
+        text-align: left !important;
     }
 
     /* Book buttons responsive on mobile */

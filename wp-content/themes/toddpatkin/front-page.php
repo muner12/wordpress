@@ -563,18 +563,18 @@
                                 
                                 <div class="book-description-content" style="position: relative;">
                                     <div class="book-description-item mb-4" style="padding-left: 24px; border-left: 3px solid #FFC107; position: relative;">
-                                        <div class="book-icon-badge" style="position: absolute; left: -12px; top: 0; width: 24px; height: 24px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4);">
-                                            <i class="fas fa-lightbulb" style="color: #275BA7; font-size: 12px;"></i>
-                </div>
+                                        <div class="book-icon-badge" style="position: absolute; left: -12px; top: 0; width: 24px; height: 24px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4); z-index: 2;">
+                                            <i class="fas fa-lightbulb" style="color: #275BA7; font-size: 12px; display: block;"></i>
+                                        </div>
                                         <p class="book-description-text mb-0" style="font-size: 16px; line-height: 1.7; color: #2D2D2D;">Earlier in my life, if you had told me that happiness was a choice, I would have told you that you were crazy. After all, no one chooses to experience things like the pain of low self-esteem, anxiety, or depression. But what I've come to realize is that happiness isn't about leading an obstacle-free life—instead, it's about learning how to change what you focus on and how you react to circumstances, regardless of whether they're good or bad.</p>
-                        </div>
+                                    </div>
                                     
                                     <div class="book-description-item mb-4" style="padding-left: 24px; border-left: 3px solid #275BA7; position: relative;">
-                                        <div class="book-icon-badge" style="position: absolute; left: -12px; top: 0; width: 24px; height: 24px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4);">
-                                            <i class="fas fa-target" style="color: #FFC107; font-size: 12px;"></i>
-                    </div>
+                                        <div class="book-icon-badge" style="position: absolute; left: -12px; top: 0; width: 24px; height: 24px; background: #275BA7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(39, 91, 167, 0.4); z-index: 2;">
+                                            <i class="fas fa-lightbulb" style="color: #FFC107; font-size: 12px; display: block;"></i>
+                                        </div>
                                         <p class="book-description-text book-description-secondary mb-0" style="font-size: 16px; line-height: 1.7; color: #2D2D2D;">"Twelve Weeks to Finding Happiness" is designed to help you do just that—focus more often on the behaviors, people, and things that will enrich and fulfill you, and that will inspire your positive physical, mental, and emotional growth.</p>
-                                </div>
+                                    </div>
                                     
                                     <div class="book-highlight-box p-4 mb-4" style="background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); border: 2px solid #275BA7; border-radius: 12px; box-shadow: 0 4px 12px rgba(39, 91, 167, 0.15); position: relative;">
                                         <div class="d-flex align-items-start gap-3">
@@ -1373,19 +1373,16 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                     </div>
-                    <!-- Carousel Indicators - always below carousel -->
+                    <!-- Carousel Indicators -->
                     <div class="carousel-indicators reviews-carousel-indicators mt-4">
-                        <!-- Desktop: 3 indicators (for 3 slides with 3 cards each) -->
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" class="active d-none d-md-inline-block d-tablet-none" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="3" class="d-none d-md-inline-block d-tablet-none" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="6" class="d-none d-md-inline-block d-tablet-none" aria-label="Slide 3"></button>
-                        <!-- Tablet (667-1024px): 5 indicators (2 cards per slide) -->
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="11" class="active d-none d-tablet-inline-block reviews-tablet-indicator" aria-current="true" aria-label="Tablet Slide 1"></button>
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="12" class="d-none d-tablet-inline-block reviews-tablet-indicator" aria-label="Tablet Slide 2"></button>
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="13" class="d-none d-tablet-inline-block reviews-tablet-indicator" aria-label="Tablet Slide 3"></button>
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="14" class="d-none d-tablet-inline-block reviews-tablet-indicator" aria-label="Tablet Slide 4"></button>
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="15" class="d-none d-tablet-inline-block reviews-tablet-indicator" aria-label="Tablet Slide 5"></button>
-                        <!-- Mobile: 9 indicators (for 9 individual card slides) -->
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" class="active d-md-none d-tablet-none" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="1" class="d-md-none d-tablet-none" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="2" class="d-md-none d-tablet-none" aria-label="Slide 3"></button>
