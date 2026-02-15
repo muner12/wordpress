@@ -209,7 +209,7 @@ get_header();
                                     <p class="review-text">Todd is a gifted storyteller whose powerful, uplifting stories motivate and inspire us to strive for the stars. He provides a true-life path that can take any one of us from despair to hope, from anguish to joy, transforming lives through his authentic journey.</p>
                                     <hr class="review-divider">
                                     <div class="d-flex align-items-center gap-3">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Dr. Richard Levin.jpeg" alt="Dr. Richard Levin"
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Dr. Richard Levin.webp" alt="Dr. Richard Levin"
                                             class="review-author-image rounded-3">
                                         <div class="review-author-info">
                                             <h5 class="review-author-name">Dr. Richard Levin</h5>

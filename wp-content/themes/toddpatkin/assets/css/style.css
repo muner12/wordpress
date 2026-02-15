@@ -2446,7 +2446,7 @@ h5 {
     line-height: 1.6em;
     color: #2D2D2D;
     margin-bottom: 20px;
-    text-align: justify;
+    text-align: left;
 }
 
 .book-description-secondary {
@@ -10480,7 +10480,7 @@ section .text-muted {
     .book-description-secondary,
     .book-description-italic {
         font-size: 15px;
-        text-align: justify;
+        text-align: left;
     }
 
     .book-section .book-description-text,
@@ -10601,6 +10601,7 @@ section .text-muted {
 
     .course-description-text {
         font-size: 14px;
+        text-align: left !important;
     }
 
     .course-cta-text-line1 {

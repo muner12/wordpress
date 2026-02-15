@@ -14,7 +14,7 @@ get_header();
         </h1>
 
         <!-- Book Content Area - Using same structure as index.html book section -->
-        <div class="row align-items-start">
+        <div class="row align-items-start ">
             <!-- Book Image Column - Same structure as index.html -->
             <div class="col-12 col-lg-5 mb-4 mb-lg-0">
                 <div class="book-image-wrapper position-relative">
@@ -35,7 +35,7 @@ get_header();
             </div>
 
             <!-- Book Details Column - Same structure as index.html -->
-            <div class="col-12 col-lg-7 book-content-wrapper">
+            <div class="col-12  col-lg-7 book-content-wrapper">
                 <div class="book-header-section mb-4">
                     <h2 class="book-section-title">FINDING<br>HAPPINESS</h2>
                     <div class="book-subtitle-badge d-inline-flex align-items-center gap-2 px-3 py-2 mb-3" style="background: linear-gradient(135deg, #FFC107 0%, #FFD54F 100%); border-radius: 8px; box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);">
@@ -187,7 +187,7 @@ get_header();
                                     <p class="review-text">Todd is a gifted storyteller whose powerful, uplifting stories motivate and inspire us to strive for the stars. He provides a true-life path that can take any one of us from despair to hope, from anguish to joy, transforming lives through his authentic journey.</p>
                                     <hr class="review-divider">
                                     <div class="d-flex align-items-center gap-3">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Dr. Richard Levin.jpeg" alt="Dr. Richard Levin"
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Dr. Richard Levin.webp" alt="Dr. Richard Levin"
                                             class="review-author-image rounded-3">
                                         <div class="review-author-info">
                                             <h5 class="review-author-name">Dr. Richard Levin</h5>
