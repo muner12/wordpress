@@ -31,11 +31,11 @@ get_header();
                         <!-- Floating Stats -->
                         <div class="about-floating-stats">
                             <div class="about-stat-item">
-                                <div class="about-stat-number">18+</div>
+                                <div class="about-stat-number">40+</div>
                                 <div class="about-stat-label">Years Experience</div>
                             </div>
                             <div class="about-stat-item">
-                                <div class="about-stat-number">1000+</div>
+                                <div class="about-stat-number">10000+</div>
                                 <div class="about-stat-label">Lives Changed</div>
                             </div>
                         </div>
@@ -141,7 +141,7 @@ get_header();
                             <div class="about-paragraph-icon-badge">
                                 <i class="fas fa-lightbulb"></i>
                             </div>
-                            <p class="about-paragraph mb-0" style="text-align: justify;">Hi, my name is Todd Patkin. I'm forty-seven years young, and I'm incredibly excited because I have so much more I want to learn and do with my life. Most importantly, I hope to help as many people as possible to live much happier and much less burdened lives. My book, Finding Happiness, will tell you my life story and so much more... but I wanted to give you the proverbial "nickel tour" of my life right here.</p>
+                            <p class="about-paragraph mb-0" style="text-align: justify;">Hi, my name is Todd Patkin. I'm sixty  years young, and I'm incredibly excited because I have so much more I want to learn and do with my life. Most importantly, I hope to help as many people as possible to live much happier and much less burdened lives. My book, Finding Happiness, will tell you my life story and so much more... but I wanted to give you the proverbial "nickel tour" of my life right here.</p>
                         </div>
                         
                         <!-- Second Paragraph with Timeline Badge -->

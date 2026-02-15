@@ -30,7 +30,7 @@ get_header();
                         <div class="courses-video-wrapper w-100 position-relative">
                             <img 
                                 src="<?php echo get_template_directory_uri(); ?>/assets/images/week_5.png" 
-                                alt="Module 5: Exercise as Medicine"
+                                alt="Module 5: Focus on Eliminating Stressors"
                                 class="img-fluid w-100"
                                 style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
                             <!-- Lock Icon Overlay -->
@@ -59,7 +59,7 @@ get_header();
                             <div class="courses-icon-badge" style="position: absolute; left: -14px; top: 0; width: 28px; height: 28px; background: #FAD30C; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(250, 211, 12, 0.4);">
                                 <i class="fas fa-ban" style="color: #1a1a1a; font-size: 14px;"></i>
                             </div>
-                            <p class="courses-description-paragraph mb-0" style="font-size: 16px; line-height: 1.75; color: #2D2D2D; text-align: justify;">Most of us assume that stress is an inescapable part of modern life. What we don't realize is that our ability to eliminate stressors (or at least minimize their impact) is much greater than we assume. Once you make specific changes to your circumstances or at least to how you look at them, you'll wave goodbye to a surprising amount of your anxiety!</p>
+                            <p class="courses-description-paragraph mb-0" style="font-size: 16px; line-height: 1.75; color: #2D2D2D; text-align: justify;">Stress isn't always about what happens - it's about how you see it. In this module, Todd walks you through identifying everyday stressors that quietly drain your energy. You'll learn how to eliminate what you can, adjust expectations, and change your perspective on what you can't control.</p>
                         </div>
                         
                         <!-- Highlight Box -->
@@ -69,7 +69,7 @@ get_header();
                                     <i class="fas fa-check-circle" style="color: #1a1a1a; font-size: 18px;"></i>
                                 </div>
                                 <div>
-                                    <p class="courses-description-paragraph mb-0" style="font-size: 15px; line-height: 1.7; color: #2D2D2D; font-style: italic;">The surprising science behind why movement is non-negotiable for mental health. <strong style="color: #275BA7; font-weight: 600;">Learn practical strategies to identify and eliminate stressors that are holding you back.</strong></p>
+                                    <p class="courses-description-paragraph mb-0" style="font-size: 15px; line-height: 1.7; color: #2D2D2D; font-style: italic;">This module helps you reduce stress at its source. <strong style="color: #275BA7; font-weight: 600;">Learn how changing your viewpoint can immediately lower anxiety and restore calm.</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -117,11 +117,11 @@ get_header();
                                     <span>Week 1</span>
                                 </div>
                             </div>
-                            <h5 class="course-episode-title">Module 1: Being Easier on Yourself</h5>
-                            <p class="course-episode-description">Learn to recognize and break free from perfectionism and self-criticism that's keeping you stuck.</p>
+                            <h5 class="course-episode-title">Module 1: Focus on Exercising</h5>
+                            <p class="course-episode-description">Exercise is the foundation of lasting happiness. This module shows how simple, consistent movement improves mood and opens the door to positive change.</p>
                         </div>
                         <a href="<?php echo esc_url( home_url( '/course/module-1' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">
-                            Read More <i class="fas fa-arrow-right"></i>
+                            Learn More <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -155,7 +155,7 @@ get_header();
                             <p class="course-episode-description">Discover how to manage negative thought patterns and anxiety before they manage you.</p>
                         </div>
                         <a href="<?php echo esc_url( home_url( '/course/module-2' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">
-                            Read More <i class="fas fa-arrow-right"></i>
+                            Learn More <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -185,11 +185,11 @@ get_header();
                                     <span>Week 3</span>
                                 </div>
                             </div>
-                            <h5 class="course-episode-title">Module 3: Living in the Present</h5>
-                            <p class="course-episode-description">Stop dwelling on the past or worrying about the future. Learn presence practices that create immediate calm.</p>
+                            <h5 class="course-episode-title">Module 3: Focus on Being Easier on Yourself</h5>
+                            <p class="course-episode-description">Perfectionism fuels unhappiness. This module teaches how to replace harsh self-criticism with self-compassion and build confidence.</p>
                         </div>
                         <a href="<?php echo esc_url( home_url( '/course/module-3' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">
-                            Read More <i class="fas fa-arrow-right"></i>
+                            Learn More <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -203,7 +203,7 @@ get_header();
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content" style="border-radius: 16px; border: none; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
             <div class="modal-header" style="border-bottom: 2px solid #F0F0F0; padding: 24px 30px;">
-                <h5 class="modal-title" id="coursePurchaseModalLabel" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; color: #275BA7; text-transform: uppercase;">Unlock Module 5</h5>
+                <h5 class="modal-title" id="coursePurchaseModalLabel" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; color: #275BA7; text-transform: uppercase;">Unlock Module 5: Focus on Eliminating Stressors</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" style="padding: 30px;">
@@ -211,12 +211,12 @@ get_header();
                     <div class="mb-3" style="width: 80px; height: 80px; background: linear-gradient(135deg, #FFC107 0%, #FFD700 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);">
                         <i class="fas fa-lock-open" style="color: #275BA7; font-size: 36px;"></i>
                     </div>
-                    <h4 style="font-family: 'Oswald', sans-serif; font-weight: 600; color: #2D2D2D; margin-bottom: 12px;">Module 5: Exercise as Medicine</h4>
+                    <h4 style="font-family: 'Oswald', sans-serif; font-weight: 600; color: #2D2D2D; margin-bottom: 12px;">Module 5: Focus on Eliminating Stressors</h4>
                     <p style="color: #666; font-size: 15px; line-height: 1.6; margin-bottom: 0;">Purchase this module to access the full course content and unlock all features.</p>
                 </div>
             </div>
             <div class="modal-footer" style="border-top: 2px solid #F0F0F0; padding: 20px 30px; justify-content: center;">
-                <a href="<?php echo esc_url( home_url( '/course/module-5' ) ); ?>" class="btn btn-warning btn-lg" style="padding: 14px 40px; font-weight: 600; font-size: 16px; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4); transition: all 0.3s ease;">
+                <a href="https://www.udemy.com/course/twelve-weeks-to-living-a-happier-life/" target="_blank" rel="noopener noreferrer" class="btn btn-warning btn-lg" style="padding: 14px 40px; font-weight: 600; font-size: 16px; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4); transition: all 0.3s ease;">
                     Purchase Now <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>

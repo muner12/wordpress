@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+<div class="front-page-wrapper">
  <!-- Hero Section -->
      <section class="hero-section-main">
 
@@ -18,7 +19,7 @@
                  <div class="row justify-content-center ">
                 <div class="col-lg-10">
                          <p class="hero-tagline">TWELVE WEEKS TO LIVING A HAPPIER LIFE</p>
-                    <h1 class="hero-main-heading mb-4">Discover the power <br class="d-none d-md-block">of <span class="text-warning">happy mind</span></h1>
+                    <h1 class="hero-main-heading mb-4">Discover the power <br class="d-none d-md-block">of <span class="text-warning">a happy mind</span></h1>
                          <p class="hero-subtitle mb-2">Finding Happiness with Todd</p>
                          <p class="hero-subtitle-secondary mb-4">Check out Todd's new video series</p>
                     <div class="hero-buttons-wrapper d-flex justify-content-center gap-3 flex-wrap mb-5">
@@ -42,54 +43,53 @@
     </section>
 
     <!-- Logos Section -->
-    <section class="logos-section py-5">
-        <div class="container">
-            <div class="row justify-content-center align-items-center opacity-50 grayscale-logos g-4 logos-row">
-                <div class="col-3 col-md-2 text-center"><i class="fab fa-amazon fa-3x logos-icon"></i></div>
-                <div class="col-3 col-md-2 text-center"><i class="fab fa-google fa-3x logos-icon"></i></div>
-                <div class="col-3 col-md-2 text-center"><i class="fab fa-facebook fa-3x logos-icon"></i></div>
-                <div class="col-3 col-md-2 text-center"><i class="fab fa-twitter fa-3x logos-icon"></i></div>
-                <div class="col-3 col-md-2 text-center d-none d-md-block"><i class="fab fa-linkedin fa-3x logos-icon"></i></div>
+    <section class="logos-section py-4 py-sm-5">
+        <div class="container logos-section-container">
+            <div class="row justify-content-center align-items-center opacity-50 grayscale-logos g-3 g-sm-4 logos-row">
+                <div class="col-4 col-sm-3 col-md-2 text-center logos-col"><a href="https://www.amazon.com/Finding-Happiness-Depression-Finally-Let-Sunshine-ebook/dp/B0GKZWYC3S" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark logos-link" aria-label="Amazon"><i class="fab fa-amazon logos-icon" aria-hidden="true"></i></a></div>
+                <div class="col-4 col-sm-3 col-md-2 text-center logos-col"><a href="https://www.facebook.com/ToddPatkin" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark logos-link" aria-label="Facebook"><i class="fab fa-facebook logos-icon"></i></a></div>
+                <div class="col-4 col-sm-3 col-md-2 text-center logos-col"><a href="http://twitter.com/#!/ToddPatkin" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark logos-link" aria-label="Twitter"><i class="fab fa-twitter logos-icon"></i></a></div>
+                <div class="col-4 col-sm-3 col-md-2 text-center logos-col"><a href="https://www.linkedin.com/in/toddpatkinthehappinesscoach/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark logos-link" aria-label="LinkedIn"><i class="fab fa-linkedin logos-icon"></i></a></div>
+                <div class="col-4 col-sm-3 col-md-2 text-center logos-col"><a href="https://www.instagram.com/tpatkin2023/?igsh=eHFuZHQxcjkyNWJw" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark logos-link" aria-label="Instagram"><i class="fab fa-instagram logos-icon"></i></a></div>
+                <div class="col-4 col-sm-3 col-md-2 text-center logos-col"><a href="https://www.youtube.com/@findinghappinesswithtodd3719?si=dDC3EKwObiviM1eU" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark logos-link" aria-label="YouTube"><i class="fab fa-youtube logos-icon"></i></a></div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="expertise" class="features-section text-center  bg-light">
+    <section id="expertise" class="features-section text-center bg-light">
         <!-- Decorative Group Image -->
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-decorative-group.png" alt="Decorative" class="features-decorative-group">
         <div class="container">
-            <h2 class="features-heading  mb-5">WHAT THE <span class="text-warning">Todd Patkin</span> CAN DO<br>FOR YOUR TEAM</h2>
+            <h2 class="features-heading mb-5">WHAT <span class="text-warning">Todd Patkin</span> CAN DO<br>FOR YOUR TEAM</h2>
             <div class="row g-4 g-lg-5 justify-content-center mb-5">
                 <div class="col-4 col-md-6 col-lg-4">
                     <div class="d-flex flex-column align-items-center text-center py-4">
                         <div class="feature-icon mb-4">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/break-barriers-56586a.png" alt="Break Barriers" class="img-fluid">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/break-barriers-56586a.png" alt="Break Barriers" class="img-fluid">
                         </div>
-                        <p class="feature-text mb-0">Guide your team to overcome perfectionism, handle stress better, and build resilience for thriving through workplace transitions and life's challenges.</p>
+                        <p class="feature-text mb-0">Help your team move past perfectionism, manage stress more effectively, and build resilience for navigating workplace change and life's challenges.</p>
                     </div>
                 </div>
                 <div class="col-4 col-md-6 col-lg-4">
                     <div class="d-flex flex-column align-items-center text-center py-4">
                         <div class="feature-icon mb-4">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/increase-accountability-5368cb.png" alt="Increase Accountability"
-                                class="img-fluid">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/increase-accountability-5368cb.png" alt="Increase Accountability" class="img-fluid">
                         </div>
-                        <p class="feature-text mb-0">Create a workplace culture where employees feel valued, supported, and empowered to bring their best selves to work every day,resulting in higher engagement and retention.</p>
+                        <p class="feature-text mb-0">Build a workplace where people feel valued, supported, and empowered to do their best, leading to higher engagement and better retention.</p>
                     </div>
                 </div>
                 <div class="col-4 col-md-6 col-lg-4">
                     <div class="d-flex flex-column align-items-center text-center py-4">
                         <div class="feature-icon mb-4">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/singular-mission-375067.png" alt="Singular Mission" class="img-fluid">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/singular-mission-375067.png" alt="Singular Mission" class="img-fluid">
                         </div>
-                        <p class="feature-text feature-text-third mb-0">Equip your team with practical, proven strategies for managing anxiety, improving work-life balance, and developing sustainable happiness habits that last.</p>
+                        <p class="feature-text mb-0">Give your team practical strategies for managing anxiety, improving work-life balance, and building lasting habits for sustainable happiness.</p>
                     </div>
                 </div>
             </div>
             <div class="text-center">
-                <a href="<?php echo esc_url( home_url( '/expertise' ) ); ?>" class="btn btn-warning features-btn mb-1"><span class="btn-content">Explore
-                        More</span></a>
+                <a href="<?php echo esc_url( home_url( '/expertise' ) ); ?>" class="btn btn-warning features-btn mb-1"><span class="btn-content">Explore More</span></a>
             </div>
         </div>
     </section>
@@ -497,11 +497,16 @@
                                     </div>
                                 </div>
                                 
-                                <div class="d-flex gap-3 flex-nowrap mb-4 mt-4">
+                                <div class="d-flex gap-3 flex-wrap mb-4 mt-4 align-items-center">
                                     <a href="<?php echo esc_url( home_url( '/preview-book' ) ); ?>" class="btn btn-warning btn-lg book-preview-btn" style="box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4); transition: all 0.3s ease;"><span
                                             class="btn-content">PREVIEW BOOK</span></a>
-                                    <a href="<?php echo esc_url( home_url( '/about-book' ) ); ?>" class="btn btn-outline-dark btn-lg book-purchase-btn" style="box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;"><span
+                                    <a href="<?php echo esc_url( home_url( '/about-book' ) ); ?>"
+                                     class="btn btn-outline-dark btn-lg book-purchase-btn" style="box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;"><span
                                             class="btn-content">PURCHASE BOOK</span></a>
+                                    <a href="https://www.amazon.com/Finding-Happiness-Depression-Finally-Let-Sunshine/dp/B0GN1SJFMQ/ref=tmm_pap_swatch_0" 
+                                    target="_blank" rel="noopener noreferrer" 
+                                    class="btn btn-lg book-price-btn" style="background: #275BA7; color: #FFFFFF; border: none; box-shadow: 0 2px 8px rgba(39, 91, 167, 0.3); transition: all 0.3s ease;">
+                                        <span class="btn-content">$19.95</span></a>
                                 </div>
                             </div>
                         </div>
@@ -622,11 +627,12 @@
             <h2 class="reviews-section-title text-primary-blue">REVIEWS</h2>
             <div class="reviews-cards-wrapper position-relative">
                 <!-- Reviews Carousel -->
-                <div id="reviewsCarousel" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
+                <div id="reviewsCarousel" class="carousel slide reviews-carousel-wrap" data-bs-ride="false" data-bs-interval="false">
+                    <div class="reviews-carousel-content position-relative">
                     <div class="carousel-inner">
                         <!-- Desktop: Slide 1 (Cards 1, 2, 3) | Mobile: Individual slides -->
                     <!-- Review Card 1 -->
-                        <div class="carousel-item active">
+                        <div class="carousel-item active d-tablet-none">
                             <div class="row g-4 justify-content-center">
                     <div class="col-12 col-md-4">
                         <div class="review-card h-100 d-flex flex-column">
@@ -714,7 +720,7 @@
                             </div>
                         </div>
                         <!-- Review Card 2 - Mobile only -->
-                        <div class="carousel-item d-md-none">
+                        <div class="carousel-item d-md-none d-tablet-none">
                             <div class="row g-4 justify-content-center">
                                 <div class="col-12">
                                     <div class="review-card h-100 d-flex flex-column">
@@ -746,7 +752,7 @@
                             </div>
                         </div>
                         <!-- Review Card 3 - Mobile only -->
-                        <div class="carousel-item d-md-none">
+                        <div class="carousel-item d-md-none d-tablet-none">
                             <div class="row g-4 justify-content-center">
                                 <div class="col-12">
                                     <div class="review-card h-100 d-flex flex-column">
@@ -779,7 +785,7 @@
                         </div>
                         <!-- Desktop: Slide 2 (Cards 4, 5, 6) | Mobile: Individual slides -->
                         <!-- Review Card 4 -->
-                        <div class="carousel-item">
+                        <div class="carousel-item d-tablet-none">
                             <div class="row g-4 justify-content-center">
                                 <div class="col-12 col-md-4">
                                     <div class="review-card h-100 d-flex flex-column">
@@ -867,7 +873,7 @@
                             </div>
                         </div>
                         <!-- Review Card 5 - Mobile only -->
-                        <div class="carousel-item d-md-none">
+                        <div class="carousel-item d-md-none d-tablet-none">
                             <div class="row g-4 justify-content-center">
                                 <div class="col-12">
                                     <div class="review-card h-100 d-flex flex-column">
@@ -899,7 +905,7 @@
                             </div>
                         </div>
                         <!-- Review Card 6 - Mobile only -->
-                        <div class="carousel-item d-md-none">
+                        <div class="carousel-item d-md-none d-tablet-none">
                             <div class="row g-4 justify-content-center">
                                 <div class="col-12">
                                     <div class="review-card h-100 d-flex flex-column">
@@ -936,7 +942,7 @@
                         <!-- Desktop: Slide 3 (Cards 7, 8, 9) | Mobile: Individual slides -->
 
                         <!-- Review Card 7 -->
-                        <div class="carousel-item">
+                        <div class="carousel-item d-tablet-none">
                             <div class="row g-4 justify-content-center">
                                 <div class="col-12 col-md-4">
                                     <div class="review-card h-100 d-flex flex-column">
@@ -1033,7 +1039,7 @@
                             </div>
                         </div>
                         <!-- Review Card 7 - Mobile only -->
-                        <div class="carousel-item d-md-none">
+                        <div class="carousel-item d-md-none d-tablet-none">
                             <div class="row g-4 justify-content-center">
                                 <div class="col-12">
                                     <div class="review-card h-100 d-flex flex-column">
@@ -1071,7 +1077,7 @@
                             </div>
                         </div>
                         <!-- Review Card 8 - Mobile only -->
-                        <div class="carousel-item d-md-none">
+                        <div class="carousel-item d-md-none d-tablet-none">
                             <div class="row g-4 justify-content-center">
                                 <div class="col-12">
                                     <div class="review-card h-100 d-flex flex-column">
@@ -1105,7 +1111,7 @@
                             </div>
                         </div>
                         <!-- Review Card 9 - Mobile only -->
-                        <div class="carousel-item d-md-none">
+                        <div class="carousel-item d-md-none d-tablet-none">
                             <div class="row g-4 justify-content-center">
                                 <div class="col-12">
                                     <div class="review-card h-100 d-flex flex-column">
@@ -1137,6 +1143,226 @@
                             </div>
                         </div>
                     </div>
+                        <!-- Tablet (667-1024px): 2 cards per slide -->
+                        <div class="carousel-item d-none d-tablet-block tablet-slide" data-bs-slide-index="11">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-12 col-tablet-6">
+                                    <div class="review-card h-100 d-flex flex-column">
+                                        <div class="review-card-header d-flex align-items-center justify-content-between mb-3">
+                                            <i class="fas fa-quote-left review-quote-icon"></i>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="review-stars d-flex gap-1">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="review-rating-number">5.0</span>
+                                            </div>
+                                        </div>
+                                        <p class="review-text">Todd is a gifted storyteller whose powerful, uplifting stories motivate and inspire us to strive for the stars. He provides a true-life path that can take any one of us from despair to hope, from anguish to joy, transforming lives through his authentic journey.</p>
+                                        <hr class="review-divider">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Dr. Richard Levin.webp" alt="Dr. Richard Levin" class="review-author-image rounded-3">
+                                            <div class="review-author-info">
+                                                <h5 class="review-author-name">Dr. Richard Levin</h5>
+                                                <small class="review-author-role">Executive Coach & Leadership Developer</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-tablet-6">
+                                    <div class="review-card h-100 d-flex flex-column">
+                                        <div class="review-card-header d-flex align-items-center justify-content-between mb-3">
+                                            <i class="fas fa-quote-left review-quote-icon"></i>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="review-stars d-flex gap-1">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="review-rating-number">5.0</span>
+                                            </div>
+                                        </div>
+                                        <p class="review-text">Depression with high achievers is sadly too common. Todd courageously pulls back the curtain and reveals a practical prescription to a more balanced and satisfying life through his own heartfelt and inspiring story.</p>
+                                        <hr class="review-divider">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Jeffrey S. Davis.jpeg" alt="Jeffrey S. Davis" class="review-author-image rounded-3">
+                                            <div class="review-author-info">
+                                                <h5 class="review-author-name">Jeffrey S. Davis</h5>
+                                                <small class="review-author-role">CEO & Founder, Mage LLC | Adjunct Professor, Babson College</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item d-none d-tablet-block tablet-slide" data-bs-slide-index="12">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-12 col-tablet-6">
+                                    <div class="review-card h-100 d-flex flex-column">
+                                        <div class="review-card-header d-flex align-items-center justify-content-between mb-3">
+                                            <i class="fas fa-quote-left review-quote-icon"></i>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="review-stars d-flex gap-1">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="review-rating-number">5.0</span>
+                                            </div>
+                                        </div>
+                                        <p class="review-text">Todd radiates positive energy and love, in person and throughout the pages of his book. His success in overcoming life's obstacles is truly inspirational and will further his lifelong goal to help others find their own path to happiness.</p>
+                                        <hr class="review-divider">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/review-author-3.webp" alt="Dr. Mary Ann McDonnell" class="review-author-image rounded-3">
+                                            <div class="review-author-info">
+                                                <h5 class="review-author-name">Dr. Mary Ann McDonnell</h5>
+                                                <small class="review-author-role">CEO & Cofounder, STEP Up for Kids, Inc.</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-tablet-6">
+                                    <div class="review-card h-100 d-flex flex-column">
+                                        <div class="review-card-header d-flex align-items-center justify-content-between mb-3">
+                                            <i class="fas fa-quote-left review-quote-icon"></i>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="review-stars d-flex gap-1">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="review-rating-number">5.0</span>
+                                            </div>
+                                        </div>
+                                        <p class="review-text">"Helping others—and not just yourself—is a key component of cultivating happiness. I know. I have a small optometry practice in a close-knit Massachusetts town. I like to think that my job enables me to make people's lives better—and I am continually amazed by how much joy that brings me."</p>
+                                        <hr class="review-divider">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Dr. Fatima Garcia-Fedorowicz.jfif" alt="Dr. Fatima Garcia-Fedorowicz" class="review-author-image rounded-3">
+                                            <div class="review-author-info">
+                                                <h5 class="review-author-name">Dr. Fatima Garcia-Fedorowicz</h5>
+                                                <small class="review-author-role">Optometrist</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item d-none d-tablet-block tablet-slide" data-bs-slide-index="13">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-12 col-tablet-6">
+                                    <div class="review-card h-100 d-flex flex-column">
+                                        <div class="review-card-header d-flex align-items-center justify-content-between mb-3">
+                                            <i class="fas fa-quote-left review-quote-icon"></i>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="review-stars d-flex gap-1">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="review-rating-number">5.0</span>
+                                            </div>
+                                        </div>
+                                        <p class="review-text">"I have known Todd Patkin for many years. When I read Finding Happiness, I was pleased to see his forthright honesty on subjects that most people shy away from. I deeply admire him for exposing his life so that others can learn what the components of happiness truly are."</p>
+                                        <hr class="review-divider">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/brian fox.jpeg" alt="Brian Fox" class="review-author-image rounded-3">
+                                            <div class="review-author-info">
+                                                <h5 class="review-author-name">Brian Fox</h5>
+                                                <small class="review-author-role">Creative Fine Artist</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-tablet-6">
+                                    <div class="review-card h-100 d-flex flex-column">
+                                        <div class="review-card-header d-flex align-items-center justify-content-between mb-3">
+                                            <i class="fas fa-quote-left review-quote-icon"></i>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="review-stars d-flex gap-1">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="review-rating-number">5.0</span>
+                                            </div>
+                                        </div>
+                                        <p class="review-text">"Whether you read one page or one hundred pages of Todd Patkin's book, you will find hope and inspiration in his words. He offers practical steps that will help all of us build happier lives. As Todd reminds us, happiness is a journey, not a destination."</p>
+                                        <hr class="review-divider">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Renée Kwok.jfif" alt="Renée Kwok" class="review-author-image rounded-3">
+                                            <div class="review-author-info">
+                                                <h5 class="review-author-name">Renée Kwok</h5>
+                                                <small class="review-author-role">President, TFC Financial Management</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item d-none d-tablet-block tablet-slide" data-bs-slide-index="14">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-12 col-tablet-6">
+                                    <div class="review-card h-100 d-flex flex-column">
+                                        <div class="review-card-header d-flex align-items-center justify-content-between mb-3">
+                                            <i class="fas fa-quote-left review-quote-icon"></i>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="review-stars d-flex gap-1">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="review-rating-number">5.0</span>
+                                            </div>
+                                        </div>
+                                        <p class="review-text">"This book tells one man's compelling story—but it's also a powerful call to action. It's time for us to change what we prioritize, how we live our lives, and how we measure success. We can choose to pursue our present course of being overstressed, overworked, and fundamentally dissatisfied, or we can choose to take Todd Patkin's message of healing and hope to heart."</p>
+                                        <hr class="review-divider">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Salman Ahmad.jfif" alt="Salman Ahmad" class="review-author-image rounded-3">
+                                            <div class="review-author-info">
+                                                <h5 class="review-author-name">Salman Ahmad</h5>
+                                                <small class="review-author-role">UN Goodwill Ambassador</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-tablet-6">
+                                    <div class="review-card h-100 d-flex flex-column">
+                                        <div class="review-card-header d-flex align-items-center justify-content-between mb-3">
+                                            <i class="fas fa-quote-left review-quote-icon"></i>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="review-stars d-flex gap-1">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="review-rating-number">5.0</span>
+                                            </div>
+                                        </div>
+                                        <p class="review-text">"There are plenty of people in the world who have enjoyed financial success... but very few who have done with that success what Todd Patkin has. He has given back to the world in so many ways and with so many different causes and personal relationships. Finding Happiness is yet another gift to a world Todd's already done so much for."</p>
+                                        <hr class="review-divider">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Gary Marino.jpeg" alt="Gary Marino" class="review-author-image rounded-3">
+                                            <div class="review-author-info">
+                                                <h5 class="review-author-name">Gary Marino</h5>
+                                                <small class="review-author-role">Executive Director of Generation Excell</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item d-none d-tablet-block tablet-slide" data-bs-slide-index="15">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-12">
+                                    <div class="review-card h-100 d-flex flex-column">
+                                        <div class="review-card-header d-flex align-items-center justify-content-between mb-3">
+                                            <i class="fas fa-quote-left review-quote-icon"></i>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="review-stars d-flex gap-1">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="review-rating-number">5.0</span>
+                                            </div>
+                                        </div>
+                                        <p class="review-text">"Reading this book is like having a conversation with Todd Patkin. It's frank, funny, and disarming. As one who has seen depression, I was grateful for this tour through the mind of someone who suffered from the condition and got out. Finding Happiness is a useful guidebook for anyone who is looking to break out of a rut as well as for those who would like to help another person through to the sunshine on the other side of sadness."</p>
+                                        <hr class="review-divider">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Charity Sunshine Tillemann Dick.jfif" alt="Charity Sunshine Tillemann Dick" class="review-author-image rounded-3">
+                                            <div class="review-author-info">
+                                                <h5 class="review-author-name">Charity Sunshine Tillemann Dick</h5>
+                                                <small class="review-author-role">Soprano</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Carousel Controls -->
                     <button class="carousel-control-prev reviews-carousel-control" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -1146,22 +1372,29 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
-                    <!-- Carousel Indicators -->
+                    </div>
+                    <!-- Carousel Indicators - always below carousel -->
                     <div class="carousel-indicators reviews-carousel-indicators mt-4">
                         <!-- Desktop: 3 indicators (for 3 slides with 3 cards each) -->
-                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" class="active d-none d-md-inline-block" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="3" class="d-none d-md-inline-block" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="6" class="d-none d-md-inline-block" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" class="active d-none d-md-inline-block d-tablet-none" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="3" class="d-none d-md-inline-block d-tablet-none" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="6" class="d-none d-md-inline-block d-tablet-none" aria-label="Slide 3"></button>
+                        <!-- Tablet (667-1024px): 5 indicators (2 cards per slide) -->
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="11" class="active d-none d-tablet-inline-block reviews-tablet-indicator" aria-current="true" aria-label="Tablet Slide 1"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="12" class="d-none d-tablet-inline-block reviews-tablet-indicator" aria-label="Tablet Slide 2"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="13" class="d-none d-tablet-inline-block reviews-tablet-indicator" aria-label="Tablet Slide 3"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="14" class="d-none d-tablet-inline-block reviews-tablet-indicator" aria-label="Tablet Slide 4"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="15" class="d-none d-tablet-inline-block reviews-tablet-indicator" aria-label="Tablet Slide 5"></button>
                         <!-- Mobile: 9 indicators (for 9 individual card slides) -->
-                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" class="active d-md-none" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="1" class="d-md-none" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="2" class="d-md-none" aria-label="Slide 3"></button>
-                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="3" class="d-md-none" aria-label="Slide 4"></button>
-                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="4" class="d-md-none" aria-label="Slide 5"></button>
-                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="5" class="d-md-none" aria-label="Slide 6"></button>
-                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="6" class="d-md-none" aria-label="Slide 7"></button>
-                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="7" class="d-md-none" aria-label="Slide 8"></button>
-                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="8" class="d-md-none" aria-label="Slide 9"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" class="active d-md-none d-tablet-none" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="1" class="d-md-none d-tablet-none" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="2" class="d-md-none d-tablet-none" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="3" class="d-md-none d-tablet-none" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="4" class="d-md-none d-tablet-none" aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="5" class="d-md-none d-tablet-none" aria-label="Slide 6"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="6" class="d-md-none d-tablet-none" aria-label="Slide 7"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="7" class="d-md-none d-tablet-none" aria-label="Slide 8"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="8" class="d-md-none d-tablet-none" aria-label="Slide 9"></button>
                     </div>
                 </div>
             </div>
@@ -1355,19 +1588,23 @@
                             <div class="course-topics-list">
                                 <div class="d-flex align-items-start gap-3 mb-2">
                                     <i class="fas fa-check-circle" style="color: #FAD30C; font-size: 14px; margin-top: 4px; flex-shrink: 0;"></i>
-                                    <span style="color: #FFFFFF; font-size: 15px; line-height: 1.6;">Understanding the root causes of anxiety</span>
+                                    <span style="color: #FFFFFF; font-size: 15px; line-height: 1.6;">Exercise and physical wellness</span>
                                 </div>
                                 <div class="d-flex align-items-start gap-3 mb-2">
                                     <i class="fas fa-check-circle" style="color: #FAD30C; font-size: 14px; margin-top: 4px; flex-shrink: 0;"></i>
-                                    <span style="color: #FFFFFF; font-size: 15px; line-height: 1.6;">Developing healthy coping mechanisms</span>
+                                    <span style="color: #FFFFFF; font-size: 15px; line-height: 1.6;">Managing your thoughts effectively</span>
                                 </div>
                                 <div class="d-flex align-items-start gap-3 mb-2">
                                     <i class="fas fa-check-circle" style="color: #FAD30C; font-size: 14px; margin-top: 4px; flex-shrink: 0;"></i>
-                                    <span style="color: #FFFFFF; font-size: 15px; line-height: 1.6;">Building self-compassion and meaningful connections</span>
+                                    <span style="color: #FFFFFF; font-size: 15px; line-height: 1.6;">Being kinder to yourself</span>
+                                </div>
+                                <div class="d-flex align-items-start gap-3 mb-2">
+                                    <i class="fas fa-check-circle" style="color: #FAD30C; font-size: 14px; margin-top: 4px; flex-shrink: 0;"></i>
+                                    <span style="color: #FFFFFF; font-size: 15px; line-height: 1.6;">Reducing stress and improving relationships</span>
                                 </div>
                                 <div class="d-flex align-items-start gap-3">
                                     <i class="fas fa-check-circle" style="color: #FAD30C; font-size: 14px; margin-top: 4px; flex-shrink: 0;"></i>
-                                    <span style="color: #FFFFFF; font-size: 15px; line-height: 1.6;">Practical exercises for daily implementation</span>
+                                    <span style="color: #FFFFFF; font-size: 15px; line-height: 1.6;">Cultivating gratitude</span>
                                 </div>
                             </div>
                         </div>
@@ -1388,24 +1625,40 @@
                             <div class="course-icon-badge" style="position: absolute; left: -14px; top: 0; width: 28px; height: 28px; background: #FAD30C; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(250, 211, 12, 0.4);">
                                 <i class="fas fa-play-circle" style="color: #1a1a1a; font-size: 14px;"></i>
                             </div>
-                            <p class="course-description-text mb-0" style="font-size: 16px; line-height: 1.75; color: #FFFFFF; text-align: justify;">Transform your relationship with stress, anxiety, and negative thinking through Todd's comprehensive 12-week video course. Based on the proven program that helped him recover from complete breakdown and refined through years of helping others, this MasterClass takes you step-by-step through practical strategies for building sustainable happiness.</p>
+                            <p class="course-description-text mb-0" style="font-size: 16px; line-height: 1.75; color: #FFFFFF; text-align: justify;">This 12-week MasterClass is a practical guide to creating a happier, more balanced life - one week at a time. Based on Todd's personal recovery journey and years of helping others, the course focuses on simple, proven habits that address the real causes of stress, anxiety, and negative thinking.</p>
                         </div>
                         
-                        <!-- Description with Icon - Same styling as main description -->
+                        <!-- Description with Icon -->
                         <div class="course-description-item mb-4" style="padding-left: 28px; border-left: 3px solid #FAD30C; position: relative;">
                             <div class="course-icon-badge" style="position: absolute; left: -14px; top: 0; width: 28px; height: 28px; background: #FAD30C; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(250, 211, 12, 0.4);">
                                 <i class="fas fa-chart-line" style="color: #1a1a1a; font-size: 14px;"></i>
                             </div>
-                            <p class="course-description-text mb-0" style="font-size: 16px; line-height: 1.75; color: #FFFFFF; text-align: justify;">Each week builds on the last, creating sustainable change rather than quick fixes. You'll discover how to identify and break free from the patterns that keep you stuck in cycles of worry and self-doubt. Through Todd's personal stories and evidence-based techniques, you'll learn to reframe your thoughts, manage overwhelming emotions, and develop <strong style="color: #FAD30C; font-weight: 600;">resilience that lasts</strong>.</p>
+                            <p class="course-description-text mb-0" style="font-size: 16px; line-height: 1.75; color: #FFFFFF; text-align: justify;">Each week introduces one focused practice - such as exercise, managing your thoughts, being kinder to yourself, reducing stress, improving relationships, and cultivating gratitude. These lessons are designed to build on one another, creating steady progress without overwhelm or quick-fix promises.</p>
+                        </div>
+                        
+                        <!-- Description with Icon -->
+                        <div class="course-description-item mb-4" style="padding-left: 28px; border-left: 3px solid #FAD30C; position: relative;">
+                            <div class="course-icon-badge" style="position: absolute; left: -14px; top: 0; width: 28px; height: 28px; background: #FAD30C; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(250, 211, 12, 0.4);">
+                                <i class="fas fa-lightbulb" style="color: #1a1a1a; font-size: 14px;"></i>
+                            </div>
+                            <p class="course-description-text mb-0" style="font-size: 16px; line-height: 1.75; color: #FFFFFF; text-align: justify;">Through short video lessons, real-life examples, and practical exercises from the workbook, you'll learn how to change the way you think, feel, and respond to everyday challenges. The goal isn't perfection - it's consistency, self-awareness, and learning how to make your own happiness a priority in a realistic, sustainable way.</p>
+                        </div>
+                        
+                        <!-- Description with Icon -->
+                        <div class="course-description-item mb-4" style="padding-left: 28px; border-left: 3px solid #FAD30C; position: relative;">
+                            <div class="course-icon-badge" style="position: absolute; left: -14px; top: 0; width: 28px; height: 28px; background: #FAD30C; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(250, 211, 12, 0.4);">
+                                <i class="fas fa-heart" style="color: #1a1a1a; font-size: 14px;"></i>
+                            </div>
+                            <p class="course-description-text mb-0" style="font-size: 16px; line-height: 1.75; color: #FFFFFF; text-align: justify;">This course is for anyone who feels stuck, overwhelmed, or disconnected - and is ready to make meaningful change, one small step at a time.</p>
                         </div>
                         
                         <!-- Final CTA Text -->
                         <div class="course-cta-text-box p-3 mb-0" style="background: linear-gradient(135deg, rgba(250, 211, 12, 0.15) 0%, rgba(250, 211, 12, 0.05) 100%); border-left: 4px solid #FAD30C; border-radius: 8px;">
                             <div class="d-flex align-items-center gap-2 mb-2">
                                 <i class="fas fa-rocket" style="color: #FAD30C; font-size: 18px;"></i>
-                                <span style="color: #FAD30C; font-weight: 600; font-size: 15px; letter-spacing: 0.5px;">YOUR JOURNEY TO HAPPINESS STARTS HERE</span>
+                                <span style="color: #FAD30C; font-weight: 600; font-size: 15px; letter-spacing: 0.5px;">✨ YOUR JOURNEY TO HAPPINESS STARTS HERE</span>
                             </div>
-                            <p class="course-description-text mb-0" style="font-size: 15px; line-height: 1.7; color: #FFFFFF; margin: 0; text-align: justify;">You'll explore practical exercises designed to help you implement these strategies in your daily life, making real progress week by week.</p>
+                            <p class="course-description-text mb-0" style="font-size: 15px; line-height: 1.7; color: #FFFFFF; margin: 0; text-align: justify;">You'll work through practical exercises designed to fit into real life - helping you apply what you learn immediately and see steady progress week by week.</p>
                         </div>
                     </div>
                 </div>
@@ -1416,12 +1669,12 @@
                 <div class="col-12">
                     <div class="course-cta-box w-100">
                         <div class="text-center">
-                            <p class="course-cta-text-line1">Purchase the MasterClass and receive a FREE signed copy of</p>
+                            <p class="course-cta-text-line1">Purchase the MasterClass and receive a FREE digital copy of</p>
                             
                             <p class="course-cta-text-line2">Finding Happiness</p>
                         </div>
                         <div class="text-center mt-3">
-                            <a href="#" class="btn course-cta-button">Buy Now ($27.99)</a>
+                            <a href='https://www.amazon.com/Finding-Happiness-Depression-Finally-Let-Sunshine/dp/B0GN1SJFMQ/ref=tmm_pap_swatch_0' target="_blank" rel="noopener noreferrer" class="btn course-cta-button">Buy Now ($27.99)</a>
                         </div>
                     </div>
                 </div>
@@ -1444,18 +1697,18 @@
                                     <div class="d-flex align-items-center gap-3 mb-2">
                                         <div class="d-flex align-items-center gap-1">
                                             <i class="fas fa-user"></i>
-                                            <span>200+</span>
+                                            <span>180+</span>
                                         </div>
                                         <span class="course-meta-divider"></span>
                                         <div class="d-flex align-items-center gap-1">
                                             <i class="far fa-clock"></i>
-                                            <span>Preview Course</span>
+                                            <span>Week 1</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Week 1: Focus on: Movement</h5>
-                                    <p class="course-episode-description">Congratulations, graduates! (And parents of graduates, too.) As you gaze with pride on your diplomas, I'm sure you're also thinking about what comes next. No</p>
+                                    <h5 class="course-episode-title">Module 1: Focus on Exercising</h5>
+                                    <p class="course-episode-description">If you want to change your life, you must start with your body. Exercise is not about weight loss or appearance...</p>
                                 </div>
-                                <a href="<?php echo esc_url( home_url( '/course/module-1' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Purchase Now <i class="fas fa-arrow-right text-black"></i></a>
+                                <a href="<?php echo esc_url( home_url( '/course/module-1' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Learn More <i class="fas fa-arrow-right text-black"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1474,18 +1727,18 @@
                                     <div class="d-flex align-items-center gap-3 mb-2">
                                         <div class="d-flex align-items-center gap-1">
                                             <i class="fas fa-user"></i>
-                                            <span>180+</span>
+                                            <span>340+</span>
                                         </div>
                                         <span class="course-meta-divider bg-muted"></span>
                                         <div class="course-meta-item">
                                             <i class="far fa-clock"></i>
-                                            <span>Preview Course</span>
+                                            <span>Week 2</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Week 2: Focus on Taking Change of Your Mind</h5>
-                                    <p class="course-episode-description">Congratulations, graduates! (And parents of graduates, too.) As you gaze with pride on your diplomas, I'm sure you're also thinking about what comes next. No</p>
+                                    <h5 class="course-episode-title">Module 2: Focus on Taking Charge of Your Mind</h5>
+                                    <p class="course-episode-description">What you feed your mind determines how you experience life. In this module, Todd shows why daily exposure...</p>
                                 </div>
-                                <a href="<?php echo esc_url( home_url( '/course/module-2' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Purchase Now <i class="fas fa-arrow-right"></i></a>
+                                <a href="<?php echo esc_url( home_url( '/course/module-2' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Learn More  <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1504,18 +1757,19 @@
                                     <div class="d-flex align-items-center gap-2 mb-2">
                                         <div class="d-flex align-items-center gap-1">
                                             <i class="fas fa-user"></i>
-                                            <span>180+</span>
+                                            <span>230+</span>
                                         </div>
                                         <span class="course-meta-divider"></span>
                                         <div class="course-meta-item">
                                             <i class="far fa-clock"></i>
-                                            <span>Preview Course</span>
+                                            <span>Week 3</span>
                                         </div>
                                     </div>
-                                    <h5 class="course-episode-title">Week 3: Focus on Living in the Present</h5>
-                                    <p class="course-episode-description">Congratulations, graduates! (And parents of graduates, too.) As you gaze with pride on your diplomas, I'm sure you're also thinking about what comes next. No</p>
+                                    <h5 class="course-episode-title">Module 3: Focus on Being Easier on Yourself</h5>
+                                    <p class="course-episode-description">
+                                    Most unhappiness begins with how you talk to yourself. In this module, Todd reveals how negative inner dialogue...</p>
                                 </div>
-                                <a href="<?php echo esc_url( home_url( '/course/module-3' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Purchase Now <i class="fas fa-arrow-right"></i></a>
+                                <a href="<?php echo esc_url( home_url( '/course/module-3' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">Learn More  <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1652,8 +1906,7 @@
                 <div class="about-content-wrapper">
                     <div class="about-text-content">
                         <!-- Enhanced Title Section -->
-                        <div class="about-section-title-wrapper d-none d-lg-block">
-                            
+                        <div class="about-section-title-wrapper d-none d-md-block">
                             <h2 class="about-section-title">
                                 <span class="about-title-blue">ABOUT</span>
                                 <span class="about-title-yellow">TODD PATKIN</span>
@@ -1662,7 +1915,7 @@
                                 <span>Transforming Lives Through Authentic Stories</span>
                             </div>
                         </div>
-                        <div class="about-section-title-wrapper-mobile d-block d-lg-none text-center mb-4">
+                        <div class="about-section-title-wrapper-mobile d-block d-md-none text-center mb-4">
                             <div class="about-title-decoration mb-3">
                                 <div class="about-title-line"></div>
                                 <div class="about-title-icon">
@@ -1678,15 +1931,15 @@
                                 <span>Transforming Lives Through Authentic Stories</span>
                             </div>
                         </div>
-                        <div class="about-image-wrapper d-block d-lg-none mb-4">
+                        <div class="about-image-wrapper about-image-wrapper-mobile d-block d-md-none mb-4">
                             <div class="about-image-container-mobile">
                                 <div class="about-image-frame">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-todd-1eb55f.png" alt="Todd Patkin" class="about-image">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-todd-1eb55f.png" alt="Todd Patkin" class="about-image">
                                     <div class="about-image-overlay"></div>
                                 </div>
                             </div>
                             <!-- Passions Highlight Box - Moved under image for mobile -->
-                            <div class="about-passions-box d-block d-lg-none mt-4">
+                            <div class="about-passions-box d-block d-md-none mt-4">
                                 <div class="d-flex align-items-start gap-2">
                                     <i class="fas fa-heart" style="color: #FAD30C; font-size: 18px; margin-top: 3px; flex-shrink: 0;"></i>
                                     <p class="about-paragraph mb-0" style="font-style: italic;">Since the sale of the family business to Advance Auto Parts in 2005, Todd has devoted himself to his true passions: philanthropy, giving back, spending time with family and friends, and helping people discover genuine happiness.</p>
@@ -1721,7 +1974,7 @@
                             <div class="about-breakthrough-box mb-4">
                                 <div class="d-flex align-items-center gap-2 mb-2">
                                     <i class="fas fa-rocket" style="color: #FAD30C; font-size: 20px;"></i>
-                                    <strong style="color: #275BA7; font-size: 18px; font-family: 'Oswald', sans-serif;">That breakdown became his breakthrough.</strong>
+                                    <strong style="color: #275BA7; font-size: 18px; font-family: 'Poppins', sans-serif;">That breakdown became his breakthrough.</strong>
                                 </div>
                             </div>
                             
@@ -1746,7 +1999,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="about-image-wrapper d-none d-lg-block">
+                    <div class="about-image-wrapper about-image-wrapper-desktop d-none d-md-block">
                         <div class="about-image-container">
                             <div class="about-image-frame">
                                 <div class="about-image-bg-pattern"></div>
@@ -1760,17 +2013,17 @@
                             <!-- Floating Stats -->
                             <div class="about-floating-stats">
                                 <div class="about-stat-item">
-                                    <div class="about-stat-number">18+</div>
+                                    <div class="about-stat-number">40</div>
                                     <div class="about-stat-label">Years Experience</div>
                                 </div>
                                 <div class="about-stat-item">
-                                    <div class="about-stat-number">1000+</div>
+                                    <div class="about-stat-number">10000+</div>
                                     <div class="about-stat-label">Lives Changed</div>
                                 </div>
                             </div>
                         </div>
                         <!-- Passions Highlight Box - Moved under image for desktop -->
-                        <div class="about-passions-box d-none d-lg-block mt-4">
+                        <div class="about-passions-box d-none d-md-block mt-4">
                             <div class="d-flex align-items-start gap-2">
                                 <i class="fas fa-heart" style="color: #FAD30C; font-size: 18px; margin-top: 3px; flex-shrink: 0;"></i>
                                 <p class="about-paragraph mb-0" style="font-style: italic;">Since the sale of the family business to Advance Auto Parts in 2005, Todd has devoted himself to his true passions: philanthropy, giving back, spending time with family and friends, and helping people discover genuine happiness.</p>
@@ -2127,5 +2380,7 @@
             </div>
         </div>
     </div>
+
+</div><!-- .front-page-wrapper -->
 
 <?php get_footer(); ?>

@@ -240,7 +240,7 @@ get_header();
         <div class="text-center mb-5">
             <h2 class="display-5 fw-bold text-primary-blue text-uppercase mb-2">Featured <span
                     class="text-warning">Blogs</span></h2>
-            <p class="text-muted">Listen to Todd share insights on happiness, mental health, and personal transformation</p>
+            <p class="text-muted">Read Todd's insights on happiness, mental health, and personal transformation</p>
         </div>
 
         <!-- Blog Cards Grid -->

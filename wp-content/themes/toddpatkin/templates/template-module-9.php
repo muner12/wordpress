@@ -27,15 +27,12 @@ get_header();
             <!-- Left Side: Video Player - First on Mobile -->
                 <div class="col-12 col-lg-6 courses-video-column order-1 order-lg-1">
                     <div class="courses-video-container w-100">
-                        <div class="courses-video-wrapper w-100 position-relative" style="padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                            <iframe 
-                            src="https://www.veed.io/embed/6612ef59-46f4-4f09-955d-e3d14eca05e9?watermark=0&color=default&sharing=0&title=0" 
-                            frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen
-                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                                class="courses-video-iframe">
-                            </iframe>
+                        <div class="courses-video-wrapper w-100 position-relative">
+                            <img 
+                                src="<?php echo get_template_directory_uri(); ?>/assets/images/week_9.png" 
+                                alt="Module 9: Focus on Being Friendly"
+                                class="img-fluid w-100"
+                                style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
                             <!-- Lock Icon Overlay -->
                             <div class="course-video-lock-overlay position-absolute top-50 start-50 translate-middle" style="width: 80px; height: 80px; background: rgba(0, 0, 0, 0.7); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; transition: all 0.3s ease;" data-bs-toggle="modal" data-bs-target="#coursePurchaseModal">
                                 <i class="fas fa-lock" style="color: #FFC107; font-size: 36px;"></i>
@@ -62,7 +59,7 @@ get_header();
                             <div class="courses-icon-badge" style="position: absolute; left: -14px; top: 0; width: 28px; height: 28px; background: #FAD30C; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(250, 211, 12, 0.4);">
                                 <i class="fas fa-smile" style="color: #1a1a1a; font-size: 14px;"></i>
                             </div>
-                            <p class="courses-description-paragraph mb-0" style="font-size: 16px; line-height: 1.75; color: #2D2D2D; text-align: justify;">Think about it: How much more pleasant would the world be if we all smiled at and greeted one another instead of steadfastly ignoring fellow bus riders, coworkers, cashiers, etc.? When you make friendliness a habit, you'll be surprised by the positive reactions you get…and by how good it makes you feel, too.</p>
+                            <p class="courses-description-paragraph mb-0" style="font-size: 16px; line-height: 1.75; color: #2D2D2D; text-align: justify;">Being friendly is one of the simplest - and most powerful - ways to increase happiness. In this module, Todd shares why friendliness is a "secret weapon" for feeling better about yourself while also lifting others up. You'll learn how small, intentional acts of kindness toward everyday people can change the emotional tone of your entire day.</p>
                         </div>
                         
                         <!-- Highlight Box -->
@@ -72,7 +69,7 @@ get_header();
                                     <i class="fas fa-check-circle" style="color: #1a1a1a; font-size: 18px;"></i>
                                 </div>
                                 <div>
-                                    <p class="courses-description-paragraph mb-0" style="font-size: 15px; line-height: 1.7; color: #2D2D2D; font-style: italic;">Moving beyond simple "thank you" to truly transformative gratitude. <strong style="color: #275BA7; font-weight: 600;">Discover how small acts of friendliness can create a ripple effect of positivity in your life.</strong></p>
+                                    <p class="courses-description-paragraph mb-0" style="font-size: 15px; line-height: 1.7; color: #2D2D2D; font-style: italic;">This module helps you use friendliness as a daily happiness tool. <strong style="color: #275BA7; font-weight: 600;">Learn how simple human connection boosts your mood, confidence, and sense of purpose.</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -120,11 +117,11 @@ get_header();
                                     <span>Week 1</span>
                                 </div>
                             </div>
-                            <h5 class="course-episode-title">Module 1: Being Easier on Yourself</h5>
-                            <p class="course-episode-description">Learn to recognize and break free from perfectionism and self-criticism that's keeping you stuck.</p>
+                            <h5 class="course-episode-title">Module 1: Focus on Exercising</h5>
+                            <p class="course-episode-description">Exercise is the foundation of lasting happiness. This module shows how simple, consistent movement improves mood and opens the door to positive change.</p>
                         </div>
                         <a href="<?php echo esc_url( home_url( '/course/module-1' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">
-                            Read More <i class="fas fa-arrow-right"></i>
+                            Learn More <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -154,11 +151,11 @@ get_header();
                                     <span>Week 2</span>
                                 </div>
                             </div>
-                            <h5 class="course-episode-title">Module 2: Taking Charge of Your Mind</h5>
-                            <p class="course-episode-description">Discover how to manage negative thought patterns and anxiety before they manage you.</p>
+                            <h5 class="course-episode-title">Module 2: Focus on Taking Charge of Your Mind</h5>
+                            <p class="course-episode-description">Your thoughts shape your happiness. Learn how to "feed" your mind with positive input and break free from self-doubt.</p>
                         </div>
                         <a href="<?php echo esc_url( home_url( '/course/module-2' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">
-                            Read More <i class="fas fa-arrow-right"></i>
+                            Learn More <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -188,11 +185,11 @@ get_header();
                                     <span>Week 3</span>
                                 </div>
                             </div>
-                            <h5 class="course-episode-title">Module 3: Living in the Present</h5>
-                            <p class="course-episode-description">Stop dwelling on the past or worrying about the future. Learn presence practices that create immediate calm.</p>
+                            <h5 class="course-episode-title">Module 3: Focus on Being Easier on Yourself</h5>
+                            <p class="course-episode-description">Perfectionism fuels unhappiness. This module teaches how to replace harsh self-criticism with self-compassion and build confidence.</p>
                         </div>
                         <a href="<?php echo esc_url( home_url( '/course/module-3' ) ); ?>" class="btn course-episode-button d-flex align-items-center justify-content-center" style="gap: 5.41px;">
-                            Read More <i class="fas fa-arrow-right"></i>
+                            Learn More <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -206,7 +203,7 @@ get_header();
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content" style="border-radius: 16px; border: none; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
             <div class="modal-header" style="border-bottom: 2px solid #F0F0F0; padding: 24px 30px;">
-                <h5 class="modal-title" id="coursePurchaseModalLabel" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; color: #275BA7; text-transform: uppercase;">Unlock Module 9</h5>
+                <h5 class="modal-title" id="coursePurchaseModalLabel" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; color: #275BA7; text-transform: uppercase;">Unlock Module 9: Focus on Being Friendly</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" style="padding: 30px;">
@@ -214,12 +211,12 @@ get_header();
                     <div class="mb-3" style="width: 80px; height: 80px; background: linear-gradient(135deg, #FFC107 0%, #FFD700 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);">
                         <i class="fas fa-lock-open" style="color: #275BA7; font-size: 36px;"></i>
                     </div>
-                    <h4 style="font-family: 'Oswald', sans-serif; font-weight: 600; color: #2D2D2D; margin-bottom: 12px;">Module 9: The Gratitude Practice</h4>
+                    <h4 style="font-family: 'Oswald', sans-serif; font-weight: 600; color: #2D2D2D; margin-bottom: 12px;">Module 9: Focus on Being Friendly</h4>
                     <p style="color: #666; font-size: 15px; line-height: 1.6; margin-bottom: 0;">Purchase this module to access the full course content and unlock all features.</p>
                 </div>
             </div>
             <div class="modal-footer" style="border-top: 2px solid #F0F0F0; padding: 20px 30px; justify-content: center;">
-                <a href="<?php echo esc_url( home_url( '/course/module-9' ) ); ?>" class="btn btn-warning btn-lg" style="padding: 14px 40px; font-weight: 600; font-size: 16px; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4); transition: all 0.3s ease;">
+                <a href="https://www.udemy.com/course/twelve-weeks-to-living-a-happier-life/" target="_blank" rel="noopener noreferrer" class="btn btn-warning btn-lg" style="padding: 14px 40px; font-weight: 600; font-size: 16px; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4); transition: all 0.3s ease;">
                     Purchase Now <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>

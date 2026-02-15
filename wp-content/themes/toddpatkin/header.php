@@ -130,7 +130,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
-            <a style="font-size: 24px; margin-left:80px;" class="navbar-brand fw-bold text-warning text-uppercase d-flex align-items-center" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <a class="navbar-brand fw-bold text-warning text-uppercase d-flex align-items-center" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                 Todd Patkin
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -146,16 +146,16 @@
                     <?php
                     }
                     ?>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/expertise' ) ); ?>">Expertise</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/about-book' ) ); ?>">About Book</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/speaker-reel' ) ); ?>">Speaker Reel</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/about-author' ) ); ?>">About Author</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/course' ) ); ?>">Course</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/about-book' ) ); ?>">About Book</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/expertise' ) ); ?>">Expertise</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/speaker-reel' ) ); ?>">Speaker Reel</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/podcast' ) ); ?>">Podcast</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( home_url( '/blog' ) ); ?>">Blog</a></li>
                 </ul>
                 <div class="d-flex align-items-center">
-                    <a href="<?php echo esc_url( home_url( '/hire-todd' ) ); ?>" class="btn btn-warning"><span class="btn-content">Hire Todd</span></a>
+                    <a href="<?php echo esc_url( home_url( '/hire-todd' ) ); ?>" class="btn btn-warning navbar-hire-btn"><span class="btn-content">Hire Todd</span></a>
                 </div>
             </div>
         </div>
