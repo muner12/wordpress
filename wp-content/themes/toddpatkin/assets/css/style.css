@@ -1715,7 +1715,7 @@ h5 {
     .features-heading {
         font-family: 'Oswald', sans-serif;
         font-weight: 500;
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1.5;
         letter-spacing: 0.02em;
         text-align: center;
@@ -1779,6 +1779,13 @@ h5 {
         line-height: 1.5;
         font-style: normal;
         font-weight: 400;
+    }
+}
+
+/* Left-align feature text on mobile and iPad */
+@media (max-width: 1024px) {
+    .features-section .feature-text {
+        text-align: left;
     }
 }
 
@@ -6786,6 +6793,10 @@ section .text-muted {
         font-size: 12px;
     }
 
+    .service-card-description-box {
+        display: none;
+    }
+
     .services-cards-container {
         gap: 1rem;
     }
@@ -7073,6 +7084,10 @@ section .text-muted {
     .service-card-description {
         margin-top: 16px;
         font-size: 12px;
+    }
+
+    .service-card-description-box {
+        display: none;
     }
 
     .services-cards-container {
@@ -10472,6 +10487,11 @@ section .text-muted {
         justify-content: center !important;
     }
 
+    /* Center the third button ($19.95) on mobile when it wraps to its own row */
+    .book-section .d-flex.gap-3.flex-wrap.align-items-center {
+        justify-content: center;
+    }
+
     .book-content-wrapper{
         text-align: center;
     }
@@ -11709,4 +11729,14 @@ section .text-muted {
     text-justify: inter-word;
     hyphens: auto;
     word-spacing: 0.02em;
+}
+
+/* Remove justify text on mobile - improves readability on narrow screens */
+@media (max-width: 991px) {
+    .front-page-wrapper [style*="text-align: justify"] {
+        text-align: left !important;
+        text-justify: auto;
+        hyphens: none;
+        word-spacing: normal;
+    }
 }

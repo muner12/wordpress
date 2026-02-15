@@ -1625,7 +1625,7 @@
                             <div class="course-icon-badge" style="position: absolute; left: -14px; top: 0; width: 28px; height: 28px; background: #FAD30C; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(250, 211, 12, 0.4);">
                                 <i class="fas fa-play-circle" style="color: #1a1a1a; font-size: 14px;"></i>
                             </div>
-                            <p class="course-description-text mb-0" style="font-size: 16px; line-height: 1.75; color: #FFFFFF; text-align: justify;">This 12-week MasterClass is a practical guide to creating a happier, more balanced life - one week at a time. Based on Todd's personal recovery journey and years of helping others, the course focuses on simple, proven habits that address the real causes of stress, anxiety, and negative thinking.</p>
+                            <p class="course-description-text mb-0" style="font-size: 16px; line-height: 1.75; color: #FFFFFF; text-align: left;">This 12-week MasterClass is a practical guide to creating a happier, more balanced life - one week at a time. Based on Todd's personal recovery journey and years of helping others, the course focuses on simple, proven habits that address the real causes of stress, anxiety, and negative thinking.</p>
                         </div>
                         
                         <!-- Description with Icon -->
@@ -1633,7 +1633,7 @@
                             <div class="course-icon-badge" style="position: absolute; left: -14px; top: 0; width: 28px; height: 28px; background: #FAD30C; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(250, 211, 12, 0.4);">
                                 <i class="fas fa-chart-line" style="color: #1a1a1a; font-size: 14px;"></i>
                             </div>
-                            <p class="course-description-text mb-0" style="font-size: 16px; line-height: 1.75; color: #FFFFFF; text-align: justify;">Each week introduces one focused practice - such as exercise, managing your thoughts, being kinder to yourself, reducing stress, improving relationships, and cultivating gratitude. These lessons are designed to build on one another, creating steady progress without overwhelm or quick-fix promises.</p>
+                            <p class="course-description-text mb-0" style="font-size: 16px; line-height: 1.75; color: #FFFFFF; text-align: left;">Each week introduces one focused practice - such as exercise, managing your thoughts, being kinder to yourself, reducing stress, improving relationships, and cultivating gratitude. These lessons are designed to build on one another, creating steady progress without overwhelm or quick-fix promises.</p>
                         </div>
                         
                         <!-- Description with Icon -->
@@ -1641,7 +1641,7 @@
                             <div class="course-icon-badge" style="position: absolute; left: -14px; top: 0; width: 28px; height: 28px; background: #FAD30C; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(250, 211, 12, 0.4);">
                                 <i class="fas fa-lightbulb" style="color: #1a1a1a; font-size: 14px;"></i>
                             </div>
-                            <p class="course-description-text mb-0" style="font-size: 16px; line-height: 1.75; color: #FFFFFF; text-align: justify;">Through short video lessons, real-life examples, and practical exercises from the workbook, you'll learn how to change the way you think, feel, and respond to everyday challenges. The goal isn't perfection - it's consistency, self-awareness, and learning how to make your own happiness a priority in a realistic, sustainable way.</p>
+                            <p class="course-description-text mb-0" style="font-size: 16px; line-height: 1.75; color: #FFFFFF; text-align: left;">Through short video lessons, real-life examples, and practical exercises from the workbook, you'll learn how to change the way you think, feel, and respond to everyday challenges. The goal isn't perfection - it's consistency, self-awareness, and learning how to make your own happiness a priority in a realistic, sustainable way.</p>
                         </div>
                         
                         <!-- Description with Icon -->
@@ -1649,7 +1649,7 @@
                             <div class="course-icon-badge" style="position: absolute; left: -14px; top: 0; width: 28px; height: 28px; background: #FAD30C; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(250, 211, 12, 0.4);">
                                 <i class="fas fa-heart" style="color: #1a1a1a; font-size: 14px;"></i>
                             </div>
-                            <p class="course-description-text mb-0" style="font-size: 16px; line-height: 1.75; color: #FFFFFF; text-align: justify;">This course is for anyone who feels stuck, overwhelmed, or disconnected - and is ready to make meaningful change, one small step at a time.</p>
+                            <p class="course-description-text mb-0" style="font-size: 16px; line-height: 1.75; color: #FFFFFF; text-align: left;">This course is for anyone who feels stuck, overwhelmed, or disconnected - and is ready to make meaningful change, one small step at a time.</p>
                         </div>
                         
                         <!-- Final CTA Text -->
@@ -1658,7 +1658,7 @@
                                 <i class="fas fa-rocket" style="color: #FAD30C; font-size: 18px;"></i>
                                 <span style="color: #FAD30C; font-weight: 600; font-size: 15px; letter-spacing: 0.5px;">✨ YOUR JOURNEY TO HAPPINESS STARTS HERE</span>
                             </div>
-                            <p class="course-description-text mb-0" style="font-size: 15px; line-height: 1.7; color: #FFFFFF; margin: 0; text-align: justify;">You'll work through practical exercises designed to fit into real life - helping you apply what you learn immediately and see steady progress week by week.</p>
+                            <p class="course-description-text mb-0" style="font-size: 15px; line-height: 1.7; color: #FFFFFF; margin: 0; text-align: left;">You'll work through practical exercises designed to fit into real life - helping you apply what you learn immediately and see steady progress week by week.</p>
                         </div>
                     </div>
                 </div>
